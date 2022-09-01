@@ -18,16 +18,16 @@ export default function Index() {
           />
 
           <div className="flex flex-col items-center md:items-start md:max-w-[29rem]">
-            <div className="text-xs py-1 mt-7 md:mt-0 px-3 rounded-xl bg-blue-600 text-white font-bold">
+            <div className="text-xs py-1 mt-7 md:mt-0 px-3 rounded-xl bg-sky-600 text-white font-bold">
               <span>Fullstack Javascript Developer</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl my-4 md:mt-4 md:mb-5 font-extrabold -tracking-[0.03rem]">
+            <h1 className="text-3xl sm:text-5xl my-4 md:mt-4 md:mb-5 font-extrabold text-sky-900 -tracking-[0.03rem]">
               Helmi Satria{" "}
               <span className="text-[2.5rem] md:text-5xl ">👋</span>
             </h1>
 
-            <p className="text-sm sm:text-base leading-[150%] text-center md:text-left font-medium">
+            <p className="text-sm sm:text-base leading-[150%] text-center md:text-left font-medium text-sky-900">
               Fullstack Javascript Developer who actively shares things on my
               Youtube and Twitter accounts about web development and other
               things to help other engineers in Indonesia
@@ -35,7 +35,7 @@ export default function Index() {
           </div>
         </div>
 
-        <p className="max-w-5xl mx-auto text-xl md:text-3xl !leading-[180%] py-14 md:pb-20 border-b-2 border-gray-200">
+        <p className="max-w-5xl text-sky-900 mx-auto text-xl md:text-3xl !leading-[180%] py-14 md:pb-20 border-b-2 border-gray-200">
           Hi, I am a software engineer with more than 4 yoe in using Vue.js and
           5 yoe in using Node.js for full-stack development. I'm enthusiastic to
           explore new things and highly interested in building huge userbase
