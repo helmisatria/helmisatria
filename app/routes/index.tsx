@@ -1,9 +1,68 @@
 import helmiProfile from "../images/helmi.png";
 import headerBackground from "../images/BG-Header.png";
 
+import IconGovtech from "../images/Govtech.png";
+import IconBL from "../images/BL.png";
+
+const CONTENT = {
+  experiences: [
+    {
+      companyIcon: IconGovtech,
+      title: "Govtech Edu @ Telkom Indonesia",
+      job: "as Frontend Developer",
+      date: "Jul 2022 - Present",
+      description:
+        "Working on the core web experience team that focusing on developer experience, design system, and web performance.",
+      responsibilities: [
+        "Lead or contribute to technical design, implementation, deployment, and operational excellence efforts to build and run scalable solutions for complex engineering challenges.",
+        "Champion high-quality products and services through adopting best practices in resilience, observability, maintainability, and testing.",
+        "Collaborate with cross-functional teams in delivering customer-centric tech products and services.",
+      ],
+      technologies: [
+        {
+          img: IconGovtech,
+          name: "React",
+        },
+        {
+          img: IconGovtech,
+          name: "Next.js",
+        },
+      ],
+    },
+    {
+      companyIcon: IconBL,
+      title: "Bukalapak.com",
+      job: "as Frontend Developer",
+      date: "Apr 2019 - Jul 2022 · 3 yrs 4 mos",
+      description:
+        "Working on the virtual product development team using Vue.js and creating a scalable product, page, and component that is used by all across the teams",
+      responsibilities: [
+        "Maintaining web page performance and create a guideline for other engineers",
+        "Ship a high quality code and result with minimum bug deployed to production",
+        "Have a good way to explain things clearly to the team even to the non-technical person",
+        "Improve a product page performance score from 20 to 80 (in fragment-based architecture that is harder than usual)",
+        "Create a universal application (bukalapak admin transaction) used by all across the team in Bukalapak, so someone can add a new product easily using a templated config",
+      ],
+      appreciations: [
+        "Performance appraisal results told that I am 1x Exceptional and 5x Exceeded Expectations",
+      ],
+      technologies: [
+        {
+          img: IconGovtech,
+          name: "Vue.js",
+        },
+        {
+          img: IconGovtech,
+          name: "Nuxt.js",
+        },
+      ],
+    },
+  ],
+};
+
 export default function Index() {
   return (
-    <main className="">
+    <main>
       <header
         className="px-6 pt-16 md:pt-40 bg-no-repeat bg-right md:bg-left bg-cover"
         style={{
@@ -42,6 +101,99 @@ export default function Index() {
           applications using any web technology.
         </p>
       </header>
+
+      <section className="py-14 md:py-20 bg-sky-100 bg-opacity-[15%]">
+        <div className="max-w-5xl mx-auto px-6 md:py-20">
+          <h2 className="text-2xl md:text-[2rem] font-extrabold -tracking-[0.03rem] text-slate-900">
+            <span className="inline-block mr-2">💼</span> Experiences
+          </h2>
+
+          <ul className="max-w-[43rem]">
+            {CONTENT.experiences.map((experience, index) => (
+              <li
+                key={index}
+                className="flex flex-col items-start !leading-[180%] pt-14"
+              >
+                <div className="flex space-x-4 md:space-x-6 leading-normal">
+                  <img
+                    className="w-10 h-10"
+                    src={experience.companyIcon}
+                    alt=""
+                  />
+                  <div>
+                    <h3 className="font-bold text-gray-900">
+                      {experience.title}
+                    </h3>
+                    <p className="text-sm md:text-base font-semibold text-gray-900">
+                      {experience.job}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="py-[2px] px-2 text-gray-900 font-bold text-xs bg-sky-100 rounded-lg mt-4">
+                  <span>{experience.date}</span>
+                </div>
+
+                <p className="text-sm md:text-base font-semibold text-gray-900 mt-5 !leading-[180%]">
+                  {experience.description}
+                </p>
+
+                <br></br>
+                <h4 className="text-gray-900 font-semibold text-sm md:text-base">
+                  Responsibilities and things I did:
+                </h4>
+
+                <ul className="text-sm md:text-base list-disc !leading-[180%]">
+                  <div className="mt-2"></div>
+                  {experience.responsibilities.map((responsibility, index) => (
+                    <li className="ml-4" key={index}>
+                      {responsibility}
+                    </li>
+                  ))}
+                </ul>
+
+                {experience.appreciations && (
+                  <>
+                    <br></br>
+                    <h4 className="text-gray-900 font-semibold text-sm md:text-base">
+                      Appreciation from the company:
+                    </h4>
+                    <ul className="text-sm md:text-base list-disc !leading-[180%]">
+                      <div className="mt-2"></div>
+                      {experience.appreciations.map((appreciation, index) => (
+                        <li className="ml-4" key={index}>
+                          {appreciation}
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+
+                <br></br>
+                <h4 className="text-gray-900 font-semibold text-sm md:text-base">
+                  Technology Skills
+                </h4>
+
+                <ul className="flex space-x-3 mt-5">
+                  {experience.technologies.map((technology, index) => (
+                    <li
+                      key={index}
+                      className="text-sm !leading-[180%] font-semibold text-gray-600 shadow-sm border-1 border-gray-100 rounded-lg bg-white"
+                    >
+                      <div className="flex flex-col items-center space-y-3 py-2 px-3">
+                        <img src={technology.img} alt="" className="h-10" />
+                        <span>{technology.name}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section></section>
     </main>
   );
 }
