@@ -9,8 +9,15 @@ import {
 } from "@remix-run/react";
 import styles from "./styles/app.css";
 
+import sal from "sal.js";
+import salcss from "sal.js/dist/sal.css";
+import { useEffect } from "react";
+
 export function links() {
-  return [{ rel: "stylesheet", href: styles }];
+  return [
+    { rel: "stylesheet", href: styles },
+    { rel: "stylesheet", href: salcss },
+  ];
 }
 
 export const meta: MetaFunction = () => ({
@@ -20,6 +27,10 @@ export const meta: MetaFunction = () => ({
 });
 
 export default function App() {
+  useEffect(() => {
+    sal();
+  }, []);
+
   return (
     <html lang="en">
       <head>

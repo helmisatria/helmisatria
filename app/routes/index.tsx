@@ -191,6 +191,7 @@ export default function Index() {
       >
         <div className="flex flex-col md:flex-row items-center md:items-start max-w-5xl md:space-x-10 mx-auto">
           <img
+            data-sal="zoom-in"
             height={160}
             width={160}
             className="w-40 h-40 md:w-[180px] md:h-[180px]"
@@ -198,7 +199,12 @@ export default function Index() {
             alt="helmi satria"
           />
 
-          <div className="flex flex-col items-center md:items-start md:max-w-[29rem]">
+          <div
+            data-sal="slide-up"
+            data-sal-delay="300"
+            data-sal-easing="ease-out-back"
+            className="flex flex-col items-center md:items-start md:max-w-[29rem]"
+          >
             <div className="text-xs py-1 mt-7 md:mt-0 px-3 rounded-xl bg-sky-600 text-white font-bold">
               <span>Fullstack Javascript Developer</span>
             </div>
@@ -216,7 +222,11 @@ export default function Index() {
           </div>
         </div>
 
-        <p className="max-w-5xl text-sky-900 mx-auto text-xl md:text-3xl !leading-[180%] py-14 md:pb-20 border-b-2 border-sky-100">
+        <p
+          data-sal="slide-up"
+          data-sal-delay="600"
+          className="max-w-5xl text-sky-900 mx-auto text-xl md:text-3xl !leading-[180%] py-14 md:pb-20 border-b-2 border-sky-100"
+        >
           Hi, I am a software engineer with more than 4 yoe in using Vue.js and
           5 yoe in using Node.js for full-stack development. I'm enthusiastic to
           explore new things and highly interested in building huge userbase
@@ -242,7 +252,7 @@ export default function Index() {
                     src={experience.companyIcon}
                     alt=""
                   />
-                  <div>
+                  <div data-sal="slide-right">
                     <h3 className="font-bold text-gray-900">
                       {experience.title}
                     </h3>
@@ -252,7 +262,7 @@ export default function Index() {
                   </div>
                 </div>
 
-                <div className="flex md:space-x-16">
+                <div data-sal="slide-up" className="flex md:space-x-16">
                   <div></div>
 
                   <div className="flex flex-col items-start">
@@ -348,6 +358,7 @@ export default function Index() {
                   index
                 ) => (
                   <li
+                    data-sal="slide-up"
                     key={index}
                     className="md:w-[48rem] md:border-l-4 md:pl-14 border-sky-100 border-opacity-60"
                   >
@@ -443,8 +454,8 @@ export default function Index() {
           </h2>
 
           <p className="!leading-[180%] md:max-w-[37rem] mb-8 text-sm md:text-base">
-            It is not a big list, but currently I'm in the way to add more
-            writings while actively updating my youtube channel
+            It is not a big list but I'm in the way to add more writings while
+            actively updating my youtube channel, stay tuned for more updates.
           </p>
 
           <ul className="!leading-[180%] flex gap-3 md:max-w-[32rem] flex-wrap list-disc">
@@ -469,17 +480,48 @@ export default function Index() {
 
       <footer className="bg-sky-900 pb-8 md:pb-[5rem] md:pt-[9rem] pt-[4rem]">
         <div className="max-w-5xl px-6 mx-auto text-white">
-          <h2 className="font-bold text-2xl md:text-3xl">
+          <h2
+            data-sal="fade"
+            data-sal-delay="800"
+            data-sal-duration="500"
+            className="font-bold text-2xl md:text-3xl"
+          >
             🤝 Let's get in touch
           </h2>
 
           <p className="text-sky-200 flex flex-col-reverse md:flex-col font-semibold leading-[150%] md:leading-[130%] text-3xl md:text-[4rem] pt-[5rem] md:pb-[4.5rem] pb-10">
-            <span className="inline">Suka kopi, mau ngopi bareng?</span>
-            <span className="inline">Have any project ideas?</span>
-            <span className="inline">Ask something?</span>
+            <span
+              data-sal="slide-up"
+              data-sal-easing="ease-out-back"
+              className="inline"
+            >
+              Suka kopi, mau ngopi bareng?
+            </span>
+            <span
+              data-sal="slide-up"
+              data-sal-delay="300"
+              data-sal-easing="ease-out-back"
+              className="inline"
+            >
+              Have any project ideas?
+            </span>
+            <span
+              data-sal="slide-up"
+              data-sal-delay="600"
+              data-sal-easing="ease-out-back"
+              className="inline"
+            >
+              Ask something?
+            </span>
           </p>
 
-          <p className="text-sky-50 text-sm md:text-xl md:mb-[9rem] mb-20">
+          <p
+            data-sal="slide-up"
+            data-sal-delay="800"
+            data-sal-duration="500"
+            data-sal-easing="ease-out-back"
+            className="text-sky-50 text-sm md:text-xl md:mb-[9rem] mb-20"
+          >
             Contact me via{" "}
             <a
               className="underline"
@@ -510,7 +552,12 @@ export default function Index() {
             <span className="text-sky-300">(boleh subscribe 😜)</span>
           </p>
 
-          <p className="font-semibold text-sky-300 text-opacity-70 text-sm md:w-full">
+          <p
+            data-sal="slide-up"
+            data-sal-delay="1000"
+            data-sal-easing="ease-out-back"
+            className="font-semibold text-sky-300 text-opacity-70 text-sm md:w-full"
+          >
             Made with{" "}
             <a href="https://remix.run" target="_blank" rel="noreferrer">
               Remix.run
