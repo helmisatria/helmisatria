@@ -13,16 +13,20 @@ import sal from "sal.js";
 import salcss from "sal.js/dist/sal.css";
 import { useEffect } from "react";
 
+import { getSeo } from "~/seo";
+let [seoMeta, seoLinks] = getSeo();
+
 export function links() {
   return [
+    ...seoLinks,
     { rel: "stylesheet", href: styles },
     { rel: "stylesheet", href: salcss },
   ];
 }
 
 export const meta: MetaFunction = () => ({
+  ...seoMeta,
   charset: "utf-8",
-  title: "Helmi Satria - Fullstack Javascript Developer",
   viewport: "width=device-width,initial-scale=1",
 });
 

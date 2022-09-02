@@ -17,6 +17,7 @@
     "cross-env": "^7.0.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "remix-seo": "^0.1.0",
     "sal.js": "^0.8.5"
   },
   "devDependencies": {

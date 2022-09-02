@@ -209,9 +209,9 @@ export default function Index() {
             </h1>
 
             <p className="text-sm sm:text-base !leading-[160%] text-center md:text-left font-medium text-sky-900">
-              Fullstack Javascript Developer who actively shares things on my
-              Youtube and Twitter accounts about web development and other
-              things to help other engineers in Indonesia
+              Full stack javascript developer who actively shares things about
+              web development and other stuff on socials to help other engineers
+              in Indonesia
             </p>
           </div>
         </div>
