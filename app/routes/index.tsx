@@ -4,7 +4,96 @@ import headerBackground from "../images/BG-Header.png";
 import IconGovtech from "../images/Govtech.png";
 import IconBL from "../images/BL.png";
 
+import { NatanyaSvg } from "../svg/Natanya";
+import { NatatokoSvg } from "../svg/Natatoko";
+
 const CONTENT = {
+  projects: [
+    {
+      icon: NatanyaSvg,
+      title: "Natanya",
+      description:
+        "Open source project as the free alternatives of Slido and Mentimeter. This project is to help my team host a survey in a live event easily (like with slido) but without budget. It is also a project that I will used to demonstrate and learn react.js application in my Youtube channel",
+      lowerDescription: () => (
+        <p className="!leading-[180%] text-sm md:text-base">
+          Check the open source project:{" "}
+          <a
+            className="underline"
+            href="https://github.com/helmisatria/natanya"
+          >
+            https://github.com/helmisatria/natanya
+          </a>
+          <br />
+          Live project hosted in vercel:{" "}
+          <a className="underline" href="https://natanya.vercel.app">
+            https://natanya.vercel.app
+          </a>
+        </p>
+      ),
+      technologies: [
+        {
+          img: IconGovtech,
+          name: "Next.js",
+        },
+        {
+          img: IconGovtech,
+          name: "React.js",
+        },
+      ],
+      demo: [
+        {
+          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          alt: "Preview Natanya 1",
+        },
+        {
+          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          alt: "Preview Natanya 2",
+        },
+        {
+          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          alt: "Preview Natanya 3",
+        },
+      ],
+    },
+    {
+      icon: NatatokoSvg,
+      title: "Natatoko",
+      description:
+        "Build a customizable well designed web store in 5 minutes with ease and sell products that supported by comprehensive income estimation and web traffic analytics for our users",
+      lowerDescription: () => (
+        <p className="!leading-[180%] text-sm md:text-base">
+          Check the application here:{" "}
+          <a href="https://natatoko.com" className="underline">
+            https://natatoko.com
+          </a>
+        </p>
+      ),
+      technologies: [
+        { img: IconGovtech, name: "Vue.js" },
+        { img: IconGovtech, name: "Nuxt.js" },
+        { img: IconGovtech, name: "Sentry" },
+        { img: IconGovtech, name: "Hasura" },
+        { img: IconGovtech, name: "Dokku" },
+        { img: IconGovtech, name: "Cloudflare" },
+        { img: IconGovtech, name: "Digital Ocean" },
+        { img: IconGovtech, name: "Mixpanel" },
+      ],
+      demo: [
+        {
+          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          alt: "Preview Natatoko 1",
+        },
+        {
+          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          alt: "Preview Natatoko 2",
+        },
+        {
+          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          alt: "Preview Natatoko 3",
+        },
+      ],
+    },
+  ],
   experiences: [
     {
       companyIcon: IconGovtech,
@@ -105,7 +194,7 @@ export default function Index() {
       </header>
 
       <section className="bg-sky-100  bg-opacity-[15%]">
-        <div className="max-w-5xl mx-auto px-6 md:py-20 border-b-2 border-sky-100 py-14">
+        <div className="max-w-5xl mx-auto px-6 md:py-[5.2rem] border-b-2 border-sky-100 py-14">
           <h2 className="text-2xl md:text-[2rem] font-extrabold -tracking-[0.03em] text-slate-900">
             <span className="inline-block mr-2">💼</span> Experiences
           </h2>
@@ -205,11 +294,80 @@ export default function Index() {
         </div>
       </section>
 
-      <section>
-        <div className="max-w-5xl mx-auto px-6 md:py-20">
-          <h2 className="text-2xl md:text-[2rem] font-extrabold -tracking-[0.03em] text-slate-900">
+      <section className="bg-sky-50 bg-opacity-60">
+        <div className="max-w-5xl mx-auto px-6 md:py-24 py-16">
+          <h2 className="mb-16 text-2xl md:text-[2rem] font-extrabold -tracking-[0.03em] text-slate-900">
             <span className="inline-block mr-2">🚀</span> Side Projects
           </h2>
+
+          <div>
+            <ul className="space-y-20">
+              {CONTENT.projects.map(
+                (
+                  {
+                    icon: Icon,
+                    lowerDescription: LowerDescription,
+                    ...project
+                  },
+                  index
+                ) => (
+                  <li
+                    key={index}
+                    className="md:w-[48rem] md:border-l-4 md:pl-14 border-sky-100 border-opacity-60"
+                  >
+                    <h3>
+                      <span className="sr-only">{project.title}</span>
+                      <span className="w-[7.75rem] inline-block">
+                        <Icon />
+                      </span>
+                    </h3>
+
+                    <p className="!leading-[180%] mt-10 mb-6 text-sm md:text-base font-semibold">
+                      {project.description}
+                    </p>
+
+                    <LowerDescription />
+
+                    <h4 className="text-xl md:text-lg mt-6 font-extrabold !leading-[180%]">
+                      Technologies
+                    </h4>
+
+                    <ul className="flex gap-3 flex-wrap mt-5">
+                      {project.technologies.map((technology, index) => (
+                        <li
+                          key={index}
+                          className="text-sm !leading-[180%] font-semibold text-gray-600 shadow-sm border-1 border-gray-100 rounded-lg bg-white"
+                        >
+                          <div className="flex flex-col items-center space-y-3 py-2 px-3">
+                            <img src={technology.img} alt="" className="h-10" />
+                            <span>{technology.name}</span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <h4 className="text-xl md:text-lg mt-6 font-extrabold !leading-[180%]">
+                      Preview
+                    </h4>
+
+                    <ul className="flex space-x-3 mt-5">
+                      {project.demo.map((demo, index) => (
+                        <li key={index}>
+                          <img
+                            width={200}
+                            height={120}
+                            className="w-[12.5rem] h-[7.5rem] object-cover rounded-lg shadow border border-sky-50"
+                            src={demo.img}
+                            alt={demo.alt}
+                          />
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
         </div>
       </section>
     </main>
