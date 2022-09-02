@@ -262,20 +262,29 @@ export default function Index() {
                   </div>
                 </div>
 
-                <div data-sal="slide-up" className="flex md:space-x-16">
+                <div className="flex md:space-x-16">
                   <div></div>
 
                   <div className="flex flex-col items-start">
-                    <div className="py-[2px] px-2 text-gray-900 font-bold text-xs bg-sky-100 rounded-lg mt-4">
+                    <div
+                      data-sal="slide-up"
+                      className="py-[2px] px-2 text-gray-900 font-bold text-xs bg-sky-100 rounded-lg mt-4"
+                    >
                       <span>{experience.date}</span>
                     </div>
 
-                    <p className="text-sm md:text-base font-semibold text-gray-900 mt-5 !leading-[180%]">
+                    <p
+                      data-sal="slide-up"
+                      className="text-sm md:text-base font-semibold text-gray-900 mt-5 !leading-[180%]"
+                    >
                       {experience.description}
                     </p>
 
                     <br></br>
-                    <h4 className="text-gray-900 font-semibold text-sm md:text-base">
+                    <h4
+                      data-sal="slide-up"
+                      className="text-gray-900 font-semibold text-sm md:text-base"
+                    >
                       Responsibilities and things I did:
                     </h4>
 
@@ -283,7 +292,7 @@ export default function Index() {
                       <div className="mt-2"></div>
                       {experience.responsibilities.map(
                         (responsibility, index) => (
-                          <li className="ml-4" key={index}>
+                          <li data-sal="slide-up" className="ml-4" key={index}>
                             {responsibility}
                           </li>
                         )
@@ -293,14 +302,21 @@ export default function Index() {
                     {experience.appreciations && (
                       <>
                         <br></br>
-                        <h4 className="text-gray-900 font-semibold text-sm md:text-base">
+                        <h4
+                          data-sal="slide-up"
+                          className="text-gray-900 font-semibold text-sm md:text-base"
+                        >
                           Appreciation from the company:
                         </h4>
                         <ul className="text-sm md:text-base list-disc !leading-[180%]">
                           <div className="mt-2"></div>
                           {experience.appreciations.map(
                             (appreciation, index) => (
-                              <li className="ml-4" key={index}>
+                              <li
+                                data-sal="slide-up"
+                                className="ml-4"
+                                key={index}
+                              >
                                 {appreciation}
                               </li>
                             )
@@ -310,13 +326,17 @@ export default function Index() {
                     )}
 
                     <br></br>
-                    <h4 className="text-gray-900 font-semibold text-sm md:text-base">
+                    <h4
+                      data-sal="slide-up"
+                      className="text-gray-900 font-semibold text-sm md:text-base"
+                    >
                       Technology Skills
                     </h4>
 
                     <ul className="flex space-x-3 mt-5">
                       {experience.technologies.map((technology, index) => (
                         <li
+                          data-sal="slide-up"
                           key={index}
                           className="text-sm !leading-[180%] font-semibold text-gray-600 shadow-sm border-1 border-gray-100 rounded-lg bg-white"
                         >
@@ -358,28 +378,38 @@ export default function Index() {
                   index
                 ) => (
                   <li
-                    data-sal="slide-up"
                     key={index}
                     className="md:w-[48rem] md:border-l-4 md:pl-14 border-sky-100 border-opacity-60"
                   >
-                    <h3>
+                    <h3 data-sal="slide-up">
                       <span className="sr-only">{project.title}</span>
                       <span className="w-[7.75rem] inline-block">
                         <Icon />
                       </span>
                     </h3>
 
-                    <p className="!leading-[180%] mt-10 mb-6 text-sm md:text-base font-semibold">
+                    <p
+                      data-sal="slide-up"
+                      className="!leading-[180%] mt-10 mb-6 text-sm md:text-base font-semibold"
+                    >
                       {project.description}
                     </p>
 
-                    <LowerDescription />
+                    <div data-sal="slide-up">
+                      <LowerDescription />
+                    </div>
 
-                    <h4 className="text-xl md:text-lg mt-6 font-extrabold !leading-[180%]">
+                    <h4
+                      data-sal="slide-up"
+                      className="text-xl md:text-lg mt-6 font-extrabold !leading-[180%]"
+                    >
                       Technologies
                     </h4>
 
-                    <ul className="flex gap-3 flex-wrap mt-5">
+                    <ul
+                      data-sal="slide-up"
+                      className="flex gap-3 flex-wrap mt-5"
+                    >
                       {project.technologies.map((technology, index) => (
                         <li
                           key={index}
@@ -393,13 +423,16 @@ export default function Index() {
                       ))}
                     </ul>
 
-                    <h4 className="text-xl md:text-lg mt-6 font-extrabold !leading-[180%]">
+                    <h4
+                      data-sal="slide-up"
+                      className="text-xl md:text-lg mt-6 font-extrabold !leading-[180%]"
+                    >
                       Preview
                     </h4>
 
-                    <ul className="flex flex-col md:flex-row md:space-x-3 space-y-3 mt-5">
+                    <ul className="flex flex-col md:flex-row md:space-x-3 space-y-3 md:space-y-0 mt-5">
                       {project.demo.map((demo, index) => (
-                        <li key={index}>
+                        <li key={index} data-sal="slide-up">
                           <img
                             loading="lazy"
                             width={200}
@@ -429,6 +462,7 @@ export default function Index() {
           <ul className="flex gap-3 md:max-w-[32rem] flex-wrap">
             {CONTENT.technologiesOftenUsed.map((technology, index) => (
               <li
+                data-sal="slide-up"
                 key={index}
                 className="text-sm md:text-base !leading-[180%] font-semibold shadow-sm border-1 border-gray-100 rounded-lg bg-white"
               >
