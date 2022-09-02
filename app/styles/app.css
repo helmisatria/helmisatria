@@ -943,6 +943,18 @@ video {
   line-height: 1.5;
 }
 
+.leading-\[180\%\] {
+  line-height: 180%;
+}
+
+.\!leading-\[150\%\] {
+  line-height: 150% !important;
+}
+
+.\!leading-\[160\%\] {
+  line-height: 160% !important;
+}
+
 .-tracking-\[0\.03em\] {
   letter-spacing: -0.03em;
 }

@@ -192,6 +192,7 @@ export default function Index() {
         <div className="flex flex-col md:flex-row items-center md:items-start max-w-5xl md:space-x-10 mx-auto">
           <img
             data-sal="zoom-in"
+            data-sal-duration="500"
             height={160}
             width={160}
             className="w-40 h-40 md:w-[180px] md:h-[180px]"
@@ -200,21 +201,28 @@ export default function Index() {
           />
 
           <div
-            data-sal="slide-up"
-            data-sal-delay="300"
             data-sal-easing="ease-out-back"
             className="flex flex-col items-center md:items-start md:max-w-[29rem]"
           >
-            <div className="text-xs py-1 mt-7 md:mt-0 px-3 rounded-xl bg-sky-600 text-white font-bold">
+            <div
+              data-sal="slide-up"
+              className="text-xs py-1 mt-7 md:mt-0 px-3 rounded-xl bg-sky-600 text-white font-bold"
+            >
               <span>Fullstack Javascript Developer</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl my-4 md:mt-4 md:mb-5 font-extrabold text-sky-900 -tracking-[0.03em]">
+            <h1
+              data-sal="slide-up"
+              className="text-3xl sm:text-5xl my-4 md:mt-4 md:mb-5 font-extrabold text-sky-900 -tracking-[0.03em]"
+            >
               Helmi Satria{" "}
               <span className="text-[2.5rem] md:text-5xl ">👋</span>
             </h1>
 
-            <p className="text-sm sm:text-base leading-[150%] text-center md:text-left font-medium text-sky-900">
+            <p
+              data-sal="slide-up"
+              className="text-sm sm:text-base !leading-[160%] text-center md:text-left font-medium text-sky-900"
+            >
               Fullstack Javascript Developer who actively shares things on my
               Youtube and Twitter accounts about web development and other
               things to help other engineers in Indonesia
@@ -224,7 +232,7 @@ export default function Index() {
 
         <p
           data-sal="slide-up"
-          data-sal-delay="600"
+          data-sal-delay="200"
           className="max-w-5xl text-sky-900 mx-auto text-xl md:text-3xl !leading-[180%] py-14 md:pb-20 border-b-2 border-sky-100"
         >
           Hi, I am a software engineer with more than 4 yoe in using Vue.js and
@@ -487,7 +495,10 @@ export default function Index() {
             <span className="inline-block mr-2">✍️</span> Writings
           </h2>
 
-          <p className="!leading-[180%] md:max-w-[37rem] mb-8 text-sm md:text-base">
+          <p
+            data-sal="slide-up"
+            className="!leading-[180%] md:max-w-[37rem] mb-8 text-sm md:text-base"
+          >
             It is not a big list but I'm in the way to add more writings while
             actively updating my youtube channel, stay tuned for more updates.
           </p>
@@ -495,6 +506,7 @@ export default function Index() {
           <ul className="!leading-[180%] flex gap-3 md:max-w-[32rem] flex-wrap list-disc">
             {CONTENT.writings.map((writing, index) => (
               <li
+                data-sal="slide-up"
                 key={index}
                 className="pl-2 ml-4 text-sky-800 md:text-lg hover:underline"
               >
