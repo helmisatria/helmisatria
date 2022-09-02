@@ -71,7 +71,9 @@ export default function Index() {
       >
         <div className="flex flex-col md:flex-row items-center md:items-start max-w-5xl md:space-x-10 mx-auto">
           <img
-            className="w-40 h-40 md:w-[180px] md:h-[180px] text-"
+            height={160}
+            width={160}
+            className="w-40 h-40 md:w-[180px] md:h-[180px]"
             src={helmiProfile}
             alt="helmi satria"
           />
@@ -81,7 +83,7 @@ export default function Index() {
               <span>Fullstack Javascript Developer</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl my-4 md:mt-4 md:mb-5 font-extrabold text-sky-900 -tracking-[0.03rem]">
+            <h1 className="text-3xl sm:text-5xl my-4 md:mt-4 md:mb-5 font-extrabold text-sky-900 -tracking-[0.03em]">
               Helmi Satria{" "}
               <span className="text-[2.5rem] md:text-5xl ">👋</span>
             </h1>
@@ -94,7 +96,7 @@ export default function Index() {
           </div>
         </div>
 
-        <p className="max-w-5xl text-sky-900 mx-auto text-xl md:text-3xl !leading-[180%] py-14 md:pb-20 border-b-2 border-gray-200">
+        <p className="max-w-5xl text-sky-900 mx-auto text-xl md:text-3xl !leading-[180%] py-14 md:pb-20 border-b-2 border-sky-100">
           Hi, I am a software engineer with more than 4 yoe in using Vue.js and
           5 yoe in using Node.js for full-stack development. I'm enthusiastic to
           explore new things and highly interested in building huge userbase
@@ -102,9 +104,9 @@ export default function Index() {
         </p>
       </header>
 
-      <section className="py-14 md:py-20 bg-sky-100 bg-opacity-[15%]">
-        <div className="max-w-5xl mx-auto px-6 md:py-20">
-          <h2 className="text-2xl md:text-[2rem] font-extrabold -tracking-[0.03rem] text-slate-900">
+      <section className="bg-sky-100  bg-opacity-[15%]">
+        <div className="max-w-5xl mx-auto px-6 md:py-20 border-b-2 border-sky-100 py-14">
+          <h2 className="text-2xl md:text-[2rem] font-extrabold -tracking-[0.03em] text-slate-900">
             <span className="inline-block mr-2">💼</span> Experiences
           </h2>
 
@@ -130,70 +132,86 @@ export default function Index() {
                   </div>
                 </div>
 
-                <div className="py-[2px] px-2 text-gray-900 font-bold text-xs bg-sky-100 rounded-lg mt-4">
-                  <span>{experience.date}</span>
-                </div>
+                <div className="flex md:space-x-16">
+                  <div></div>
 
-                <p className="text-sm md:text-base font-semibold text-gray-900 mt-5 !leading-[180%]">
-                  {experience.description}
-                </p>
+                  <div className="flex flex-col items-start">
+                    <div className="py-[2px] px-2 text-gray-900 font-bold text-xs bg-sky-100 rounded-lg mt-4">
+                      <span>{experience.date}</span>
+                    </div>
 
-                <br></br>
-                <h4 className="text-gray-900 font-semibold text-sm md:text-base">
-                  Responsibilities and things I did:
-                </h4>
+                    <p className="text-sm md:text-base font-semibold text-gray-900 mt-5 !leading-[180%]">
+                      {experience.description}
+                    </p>
 
-                <ul className="text-sm md:text-base list-disc !leading-[180%]">
-                  <div className="mt-2"></div>
-                  {experience.responsibilities.map((responsibility, index) => (
-                    <li className="ml-4" key={index}>
-                      {responsibility}
-                    </li>
-                  ))}
-                </ul>
-
-                {experience.appreciations && (
-                  <>
                     <br></br>
                     <h4 className="text-gray-900 font-semibold text-sm md:text-base">
-                      Appreciation from the company:
+                      Responsibilities and things I did:
                     </h4>
+
                     <ul className="text-sm md:text-base list-disc !leading-[180%]">
                       <div className="mt-2"></div>
-                      {experience.appreciations.map((appreciation, index) => (
-                        <li className="ml-4" key={index}>
-                          {appreciation}
+                      {experience.responsibilities.map(
+                        (responsibility, index) => (
+                          <li className="ml-4" key={index}>
+                            {responsibility}
+                          </li>
+                        )
+                      )}
+                    </ul>
+
+                    {experience.appreciations && (
+                      <>
+                        <br></br>
+                        <h4 className="text-gray-900 font-semibold text-sm md:text-base">
+                          Appreciation from the company:
+                        </h4>
+                        <ul className="text-sm md:text-base list-disc !leading-[180%]">
+                          <div className="mt-2"></div>
+                          {experience.appreciations.map(
+                            (appreciation, index) => (
+                              <li className="ml-4" key={index}>
+                                {appreciation}
+                              </li>
+                            )
+                          )}
+                        </ul>
+                      </>
+                    )}
+
+                    <br></br>
+                    <h4 className="text-gray-900 font-semibold text-sm md:text-base">
+                      Technology Skills
+                    </h4>
+
+                    <ul className="flex space-x-3 mt-5">
+                      {experience.technologies.map((technology, index) => (
+                        <li
+                          key={index}
+                          className="text-sm !leading-[180%] font-semibold text-gray-600 shadow-sm border-1 border-gray-100 rounded-lg bg-white"
+                        >
+                          <div className="flex flex-col items-center space-y-3 py-2 px-3">
+                            <img src={technology.img} alt="" className="h-10" />
+                            <span>{technology.name}</span>
+                          </div>
                         </li>
                       ))}
                     </ul>
-                  </>
-                )}
-
-                <br></br>
-                <h4 className="text-gray-900 font-semibold text-sm md:text-base">
-                  Technology Skills
-                </h4>
-
-                <ul className="flex space-x-3 mt-5">
-                  {experience.technologies.map((technology, index) => (
-                    <li
-                      key={index}
-                      className="text-sm !leading-[180%] font-semibold text-gray-600 shadow-sm border-1 border-gray-100 rounded-lg bg-white"
-                    >
-                      <div className="flex flex-col items-center space-y-3 py-2 px-3">
-                        <img src={technology.img} alt="" className="h-10" />
-                        <span>{technology.name}</span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section></section>
+      <section>
+        <div className="max-w-5xl mx-auto px-6 md:py-20">
+          <h2 className="text-2xl md:text-[2rem] font-extrabold -tracking-[0.03em] text-slate-900">
+            <span className="inline-block mr-2">🚀</span> Side Projects
+          </h2>
+        </div>
+      </section>
     </main>
   );
 }
