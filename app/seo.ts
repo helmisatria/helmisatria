@@ -11,12 +11,16 @@ export const { getSeo, getSeoMeta, getSeoLinks } = initSeo({
     },
   },
   openGraph: {
+    description:
+      "Experienced full-stack javascript developer with 4+ years of experience in building web applications.",
+    defaultImageHeight: 630,
+    defaultImageWidth: 1200,
     images: [
       {
+        width: 1200,
         height: 300,
-        width: 300,
         alt: "Helmi Satria",
-        url: "https://res.cloudinary.com/helmisatria/image/upload/c_fill,h_400,w_400/v1662137627/Helmi_Satria_compressed.jpg",
+        url: "https://res.cloudinary.com/helmisatria/image/upload/v1662170636/helmisatria.com/v2/Helmi%20Satria%20Twitter.png",
       },
     ],
   },

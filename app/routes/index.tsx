@@ -19,13 +19,34 @@ const CONTENT = {
     },
   ],
   technologiesOftenUsed: [
-    { img: IconGovtech, name: "Typescript" },
-    { img: IconGovtech, name: "Remix.run" },
-    { img: IconGovtech, name: "Next.js" },
-    { img: IconGovtech, name: "Redis" },
-    { img: IconGovtech, name: "Docker" },
-    { img: IconGovtech, name: "PostgreSQL" },
-    { img: IconGovtech, name: "Cloudflare Worker" },
+    {
+      img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171583/helmisatria.com/v2/Typescript_3x.png",
+      name: "Typescript",
+    },
+    {
+      img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171583/helmisatria.com/v2/Remix.run_3x.png",
+      name: "Remix.run",
+    },
+    {
+      img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Next.js_3x-1.png",
+      name: "Next.js",
+    },
+    {
+      img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Redis_3x.png",
+      name: "Redis",
+    },
+    {
+      img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Docker_3x.png",
+      name: "Docker",
+    },
+    {
+      img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171583/helmisatria.com/v2/Postgresql_3x.png",
+      name: "PostgreSQL",
+    },
+    {
+      img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Cloudflare_Worker_3x.png",
+      name: "Cloudflare Worker",
+    },
   ],
   projects: [
     {
@@ -58,25 +79,29 @@ const CONTENT = {
       ),
       technologies: [
         {
-          img: IconGovtech,
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Next.js_3x.png",
           name: "Next.js",
         },
         {
-          img: IconGovtech,
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/React_3x.png",
           name: "React.js",
+        },
+        {
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662172435/helmisatria.com/v2/Firebase.png",
+          name: "Firebase",
         },
       ],
       demo: [
         {
-          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662172969/helmisatria.com/v2/Natanya_1.png",
           alt: "Preview Natanya 1",
         },
         {
-          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662172969/helmisatria.com/v2/Natanya_2.png",
           alt: "Preview Natanya 2",
         },
         {
-          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662172969/helmisatria.com/v2/Natanya_3.png",
           alt: "Preview Natanya 3",
         },
       ],
@@ -100,26 +125,50 @@ const CONTENT = {
         </p>
       ),
       technologies: [
-        { img: IconGovtech, name: "Vue.js" },
-        { img: IconGovtech, name: "Nuxt.js" },
-        { img: IconGovtech, name: "Sentry" },
-        { img: IconGovtech, name: "Hasura" },
-        { img: IconGovtech, name: "Dokku" },
-        { img: IconGovtech, name: "Cloudflare" },
-        { img: IconGovtech, name: "Digital Ocean" },
-        { img: IconGovtech, name: "Mixpanel" },
+        {
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171583/helmisatria.com/v2/Vue.js_3x.png",
+          name: "Vue.js",
+        },
+        {
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Nuxt.js_3x.png",
+          name: "Nuxt.js",
+        },
+        {
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171583/helmisatria.com/v2/Sentry_3x.png",
+          name: "Sentry",
+        },
+        {
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Hasura_3x.png",
+          name: "Hasura",
+        },
+        {
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Dokku_3x.png",
+          name: "Dokku",
+        },
+        {
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Cloudflare_3x.png",
+          name: "Cloudflare",
+        },
+        {
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Digital_Ocean_3x.png",
+          name: "Digital Ocean",
+        },
+        {
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Mixpanel_3x.png",
+          name: "Mixpanel",
+        },
       ],
       demo: [
         {
-          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662172969/helmisatria.com/v2/Natatoko_1.png",
           alt: "Preview Natatoko 1",
         },
         {
-          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662172969/helmisatria.com/v2/Natatoko_2.png",
           alt: "Preview Natatoko 2",
         },
         {
-          img: "https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2148&q=80",
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662172969/helmisatria.com/v2/Natatoko_3.png",
           alt: "Preview Natatoko 3",
         },
       ],
@@ -140,11 +189,11 @@ const CONTENT = {
       ],
       technologies: [
         {
-          img: IconGovtech,
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/React_3x.png",
           name: "React",
         },
         {
-          img: IconGovtech,
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Next.js_3x.png",
           name: "Next.js",
         },
       ],
@@ -168,11 +217,11 @@ const CONTENT = {
       ],
       technologies: [
         {
-          img: IconGovtech,
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171583/helmisatria.com/v2/Vue.js_3x.png",
           name: "Vue.js",
         },
         {
-          img: IconGovtech,
+          img: "https://res.cloudinary.com/helmisatria/image/upload/v1662171582/helmisatria.com/v2/Nuxt.js_3x.png",
           name: "Nuxt.js",
         },
       ],
@@ -208,7 +257,7 @@ export default function Index() {
               <span className="text-[2.5rem] md:text-5xl ">👋</span>
             </h1>
 
-            <p className="text-sm sm:text-base !leading-[160%] text-center md:text-left font-medium text-sky-900">
+            <p className="text-sm text-opacity-70 sm:text-base !leading-[160%] text-center md:text-left font-medium text-sky-900">
               Full stack javascript developer who actively shares things about
               web development and other stuff on socials to help other engineers
               in Indonesia
