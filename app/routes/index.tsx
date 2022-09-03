@@ -555,8 +555,8 @@ export default function Index() {
         </div>
       </section>
 
-      <footer className="bg-sky-900 pb-8 md:pb-[5rem] md:pt-[9rem] pt-[4rem]">
-        <div className="max-w-5xl px-6 mx-auto text-white">
+      <footer className="bg-sky-900 flex pb-8 h-screen max-h-[1046px] md:pb-[5rem] md:pt-[9rem] pt-[4rem]">
+        <div className="flex flex-col justify-between flex-1 max-w-5xl px-6 mx-auto text-white">
           <h2
             data-sal="fade"
             data-sal-delay="800"
@@ -566,68 +566,70 @@ export default function Index() {
             🤝 Let's get in touch
           </h2>
 
-          <p className="text-sky-200 flex flex-col-reverse md:flex-col font-semibold leading-[150%] md:leading-[130%] text-3xl md:text-[4rem] pt-[5rem] md:pb-[4.5rem] pb-10">
-            <span
-              data-sal="slide-up"
-              data-sal-easing="ease-out-back"
-              className="inline"
-            >
-              Suka kopi, mau ngopi bareng?
-            </span>
-            <span
-              data-sal="slide-up"
-              data-sal-delay="300"
-              data-sal-easing="ease-out-back"
-              className="inline"
-            >
-              Have any project ideas?
-            </span>
-            <span
-              data-sal="slide-up"
-              data-sal-delay="600"
-              data-sal-easing="ease-out-back"
-              className="inline"
-            >
-              Ask something?
-            </span>
-          </p>
+          <div>
+            <p className="text-sky-200 flex flex-col-reverse md:flex-col font-semibold leading-[150%] md:leading-[130%] text-3xl md:text-[4rem] pt-[5rem] md:pb-[4.5rem] pb-10">
+              <span
+                data-sal="slide-up"
+                data-sal-easing="ease-out-back"
+                className="inline"
+              >
+                Suka kopi, mau ngopi bareng?
+              </span>
+              <span
+                data-sal="slide-up"
+                data-sal-delay="300"
+                data-sal-easing="ease-out-back"
+                className="inline"
+              >
+                Have any project ideas?
+              </span>
+              <span
+                data-sal="slide-up"
+                data-sal-delay="600"
+                data-sal-easing="ease-out-back"
+                className="inline"
+              >
+                Ask something?
+              </span>
+            </p>
 
-          <p
-            data-sal="slide-up"
-            data-sal-delay="800"
-            data-sal-duration="500"
-            data-sal-easing="ease-out-back"
-            className="text-sky-50 text-sm md:text-xl md:mb-[9rem] mb-20"
-          >
-            Contact me via{" "}
-            <a
-              className="underline"
-              target="_blank"
-              href="mailto:satriahelmi@gmail.com"
-              rel="noreferrer"
+            <p
+              data-sal="slide-up"
+              data-sal-delay="800"
+              data-sal-duration="500"
+              data-sal-easing="ease-out-back"
+              className="text-sky-50 text-sm md:text-xl md:mb-[9rem] mb-20"
             >
-              email
-            </a>
-            ,{" "}
-            <a
-              className="underline"
-              target="_blank"
-              href="https://twitter.com/helmisatria_"
-              rel="noreferrer"
-            >
-              twitter
-            </a>
-            , or{" "}
-            <a
-              className="underline"
-              target="_blank"
-              href="https://www.youtube.com/channel/UC5ZR_JynIx14bmcZP_Pz8vw"
-              rel="noreferrer"
-            >
-              my youtube channel
-            </a>{" "}
-            <span className="text-sky-300">(boleh subscribe 😜)</span>
-          </p>
+              Contact me via{" "}
+              <a
+                className="underline"
+                target="_blank"
+                href="mailto:satriahelmi@gmail.com"
+                rel="noreferrer"
+              >
+                email
+              </a>
+              ,{" "}
+              <a
+                className="underline"
+                target="_blank"
+                href="https://twitter.com/helmisatria_"
+                rel="noreferrer"
+              >
+                twitter
+              </a>
+              , or{" "}
+              <a
+                className="underline"
+                target="_blank"
+                href="https://www.youtube.com/channel/UC5ZR_JynIx14bmcZP_Pz8vw"
+                rel="noreferrer"
+              >
+                my youtube channel
+              </a>{" "}
+              <span className="text-sky-300">(boleh subscribe 😜)</span>
+            </p>
+          </div>
 
           <p
             data-sal="slide-up"
