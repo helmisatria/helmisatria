@@ -39,8 +39,8 @@ type LoaderData = {
   gaTrackingId: string | undefined;
 };
 
-export const loader: LoaderFunction = async () => {
-  return json<LoaderData>({ gaTrackingId: "G-40YQWWQ9TY" });
+export const loader: LoaderFunction = async ({ context }) => {
+  return json<LoaderData>({ gaTrackingId: context.GA_TRACKING_ID as string });
 };
 
 export default function App() {
