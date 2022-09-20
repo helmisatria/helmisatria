@@ -67,6 +67,11 @@ export default function App() {
         {process.env.NODE_ENV !== "development" && (
           <>
             <script
+              defer
+              src="https://static.cloudflareinsights.com/beacon.min.js"
+              data-cf-beacon='{"token": "242a39e8853f4e1b897bdb789be8398f"}'
+            ></script>
+            <script
               async
               src={`https://www.googletagmanager.com/gtag/js?id=${gaTrackingId}`}
             />
