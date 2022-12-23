@@ -17,5 +17,8 @@
     "astro": "^1.7.2",
     "astro-seo": "^0.6.1",
     "tailwindcss": "^3.2.4"
+  },
+  "volta": {
+    "node": "16.19.0"
   }
 }
