@@ -8,10 +8,11 @@ import partytown from "@astrojs/partytown";
 
 // https://astro.build/config
 import cloudflare from "@astrojs/cloudflare";
+import { astroImageTools } from "astro-imagetools";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), partytown()],
+  integrations: [tailwind(), partytown(), astroImageTools],
   output: "server",
   adapter: cloudflare(),
 });

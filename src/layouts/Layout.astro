@@ -1,12 +1,6 @@
 ---
 import { SEO } from "astro-seo";
 import "../styles/fonts.css";
-
-export interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -45,18 +39,11 @@ const { title } = Astro.props;
   </head>
   <body>
     <slot />
+
     <style is:global>
-      :root {
-        --accent: 124, 58, 237;
-        --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
-      }
       html {
         font-family: "Figtree", system-ui, sans-serif;
         background-color: #f6f6f6;
-      }
-      code {
-        font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono,
-          Courier New, monospace;
       }
     </style>
   </body>
