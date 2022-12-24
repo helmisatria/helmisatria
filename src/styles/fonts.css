@@ -2,6 +2,7 @@
 @font-face {
   font-family: "Figtree";
   font-style: normal;
+  font-display: swap;
   font-weight: 400;
   src: url("/fonts/figtree-v2-latin-regular.eot"); /* IE9 Compat Modes */
   src: local(""), url("/fonts/figtree-v2-latin-regular.eot?#iefix") format("embedded-opentype"),
@@ -15,6 +16,7 @@
 @font-face {
   font-family: "Figtree";
   font-style: normal;
+  font-display: swap;
   font-weight: 600;
   src: url("/fonts/figtree-v2-latin-600.eot"); /* IE9 Compat Modes */
   src: local(""), url("/fonts/figtree-v2-latin-600.eot?#iefix") format("embedded-opentype"),
@@ -28,6 +30,7 @@
 @font-face {
   font-family: "Figtree";
   font-style: normal;
+  font-display: swap;
   font-weight: 700;
   src: url("/fonts/figtree-v2-latin-700.eot"); /* IE9 Compat Modes */
   src: local(""), url("/fonts/figtree-v2-latin-700.eot?#iefix") format("embedded-opentype"),
