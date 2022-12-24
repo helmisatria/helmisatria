@@ -1,0 +1,120 @@
+---
+import Arrow from "../icons/Arrow.astro";
+import Wave from "../icons/Wave.astro";
+import HeaderWaveMobile from "../icons/HeaderWaveMobile.astro";
+import HeroOurnament from "./HeroOurnament.astro";
+import HeroWaveWebText from "./HeroWaveWebText.astro";
+import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
+---
+
+<section id="header" class="relative w-full pb-[5rem] overflow-x-hidden min-h-screen">
+  <!-- top separator -->
+  <div
+    class="h-[10px] w-full"
+    style="background: radial-gradient(530% 530% at 50% -135%, rgba(12, 74, 110, 0.7) 0%, rgba(12, 74, 110, 0) 100%), #06B6D4;"
+  >
+  </div>
+
+  <!-- ournament -->
+  <div class="absolute z-[1] mt-0 sm:mt-6 2xl:mt-16 w-full">
+    <HeroOurnament className="absolute 2xl:scale-105 sm:scale-100 inset-0 sm:mx-auto" />
+  </div>
+
+  <!-- overlay -->
+  <div class="header-overlay absolute z-0 inset-0 top-[10px]"></div>
+
+  <div
+    class="px-6 sm:px-10 md:px-16 lg:px-12 xl:px-4 md:max-w-[1244px] mt-14 sm:mt-[6.25rem] md:mt-28 2xl:mt-[12rem] relative z-20 mx-auto"
+  >
+    <div class="relative z-20">
+      <!-- title -->
+      <h1 class="header-title font-bold tracking-tighter text-[2rem] mob:text-[2.6rem] md:text-[4rem] z-10">
+        helmi satria.
+      </h1>
+
+      <!-- subtitle -->
+      <p
+        class="header-subtitle max-w-[1170px] md:mt-[6px] mt-3 lowercase md:tracking-tighter tracking-tight font-bold text-[2.875rem] mob:text-[3.4rem] sm:text-[4rem] md:text-[5rem] xl:text-[5.9rem] lg:leading-[6.25rem] leading-[100%]"
+      >
+        a
+        <span class="relative no-text-fill-color">
+          <span class="relative z-20">happy</span>
+          <span
+            class="happy-bg z-0 absolute inset-0 md:-left-2 -left-1 mob:top-5 sm:top-6 md:top-3 lg:top-5 xl:top-6 top-3 w-full sm:h-[45px] md:h-[73px] h-[29px] rotate-[-2.2deg]"
+            style="background: linear-gradient(85.27deg, #57E9F9 0.78%, rgba(165, 243, 252, 0) 123.9%);"></span>
+        </span>
+        full-stack developer <br class="hidden md:block" /> who aims to help others grow in
+        <br class="xl:hidden block" />
+        <span class="relative">
+          <span class="relative z-10"
+            ><span class="relative overflow-x-hidden">
+              <span>web</span>
+              <span class="absolute bottom-0 -left-2 mob:left-0 scale-75 mob:scale-100 min-[484px]:hidden">
+                <HeroWaveWebText />
+              </span>
+            </span>
+            <br class="min-[484px]:hidden inline-block" />
+            <span class="relative overflow-x-hidden">
+              <span>development</span>
+              <span class="bottom-0 absolute left-0 mob:left-6 mob:scale-[118%] min-[484px]:hidden max-[359px]:hidden">
+                <HeroWaveDevelopmentText />
+              </span>
+            </span>
+          </span>
+          <span
+            class="absolute min-[484px]:inline-block hidden min-[484px]:scale-[65%] sm:scale-[76%] md:scale-90 lg:scale-95 xl:scale-100 min-[484px]:-left-24 sm:-left-14 md:-left-2 lg:left-0 xl:left-12 min-[484px]:-bottom-2 lg:bottom-0"
+            ><Wave />
+          </span>
+        </span>
+      </p>
+
+      <!-- description -->
+      <p class="md:mt-[8.5rem] mt-12 text-dark text-xl mob:text-2xl md:text-4xl md:!leading-140 leading-normal">
+        <span class="font-semibold">5 years of experience</span> in using Node.js and <span class="relative">
+          vue.js
+          <span class="absolute lg:inline-block hidden min-w-[24rem] text-2xl tracking-tight inset-0 top-12 left-7">
+            <Arrow /><span class="transform inline-block -rotate-12 -translate-y-6 text-cyan-600"
+              >recently moved to react.js anyway 😜</span
+            >
+          </span>
+        </span>
+        <br class="hidden md:block" /> for full-stack development.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .no-text-fill-color {
+    -webkit-text-fill-color: initial;
+    text-fill-color: initial;
+  }
+
+  .header-overlay {
+    background: radial-gradient(78.99% 31.58% at 9.03% 10.81%, rgba(12, 74, 110, 0.3) 0%, rgba(14, 165, 233, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      linear-gradient(180deg, #c7fcff 0%, rgba(236, 254, 255, 0) 100%);
+  }
+
+  .header-title {
+    background: radial-gradient(79.22% 146.6% at 80.79% 5.19%, rgba(255, 255, 255, 0.3) 0%, rgba(71, 85, 105, 0.3) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #075985;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    line-height: 77px;
+  }
+
+  .header-subtitle {
+    background: radial-gradient(64.5% 64.5% at 62.82% 5.33%, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0) 100%),
+      radial-gradient(22.67% 61.17% at 20.34% 73.83%, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #051c29;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-clip: text;
+  }
+</style>

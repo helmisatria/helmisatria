@@ -15,6 +15,9 @@ module.exports = {
       lineHeight: {
         140: "140%",
       },
+      colors: {
+        dark: "#051C29",
+      },
     },
   },
   plugins: [],
