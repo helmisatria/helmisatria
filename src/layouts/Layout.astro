@@ -9,6 +9,10 @@ declare global {
     };
   }
 }
+
+const title = "Helmi Satria - Fullstack Developer";
+const description =
+  "Experienced fullstack javascript developer with 5+ years of experience in building web applications";
 ---
 
 <!DOCTYPE html>
@@ -19,8 +23,8 @@ declare global {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <SEO
-      title="Helmi Satria - Fullstack Developer"
-      description="Experienced fullstack javascript developer with 5+ years of experience in building web applications"
+      title={title}
+      description={description}
       openGraph={{
         basic: {
           image: "",
@@ -39,8 +43,11 @@ declare global {
             name: "twitter:image",
             content: "https://example.com/image.jpg",
           },
-          { name: "twitter:title", content: "Helmi Satria - Fullstack Developer" },
-          { name: "twitter:description", content: "Agent" },
+          { name: "twitter:title", content: description },
+          {
+            name: "twitter:description",
+            content: description,
+          },
         ],
       }}
     />

@@ -12,7 +12,15 @@ import { astroImageTools } from "astro-imagetools";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), partytown(), astroImageTools],
+  integrations: [
+    tailwind(),
+    partytown({
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
+    astroImageTools,
+  ],
   output: "server",
   adapter: cloudflare(),
 });
