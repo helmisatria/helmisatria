@@ -2,7 +2,7 @@
 import { SEO } from "astro-seo";
 import "../styles/fonts.css";
 
-const title = "Helmi Satria - Fullstack Developer";
+const title = "Helmi Satria - Experienced Fullstack Developer";
 const description =
   "Experienced fullstack javascript developer with 5+ years of experience in building web applications";
 ---
@@ -15,7 +15,7 @@ const description =
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <SEO
-      title={title}
+      title="Helmi Satria - Fullstack Developer"
       description={description}
       openGraph={{
         optional: {
@@ -27,25 +27,30 @@ const description =
           alt: "Helmi Satria",
           height: 630,
           width: 1200,
-          url: "/images/og.png",
+          url: "https://v2.helmisatria.pages.dev/images/og.png",
         },
         basic: {
-          image: "/images/og.png",
+          image: "https://v2.helmisatria.pages.dev/images/og.png",
           title: title,
           type: "website",
         },
+      }}
+      twitter={{
+        card: "summary_large_image",
+        creator: "@helmisatra_",
+        site: "@helmisatra_",
       }}
       extend={{
         link: [{ rel: "icon", href: "/favicon.ico" }],
         meta: [
           {
             name: "twitter:image",
-            content: "/images/og.png",
+            content: "https://v2.helmisatria.pages.dev/images/og.png",
           },
           { name: "twitter:title", content: title },
           {
             name: "twitter:description",
-            content: description,
+            content: "Helmi Satria - Experienced Fullstack Developer",
           },
         ],
       }}
