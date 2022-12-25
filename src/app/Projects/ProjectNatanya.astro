@@ -1,24 +1,39 @@
 ---
 import ButtonLiveProduction from "../../components/ButtonLiveProduction/ButtonLiveProduction.astro";
 import NatanyaIcon from "./Natanya/NatanyaIcon.astro";
+import ProjectSlider from "./ProjectSlider.astro";
 ---
 
-<article class="max-w-[1244px] mx-auto z-10 relative py-16 px-12 rounded-3xl">
-  <img src="/images/project-ournament-lines.png" alt="" class="absolute z-0 left-0 top-0 w-[1000px]" />
-  <img src="/images/project-ournament-lines-btm.png" alt="" class="absolute z-0 right-0 bottom-0 w-[1000px]" />
-  <div class="lg:px-12 relative z-10">
+<article class="max-w-[1244px] mx-auto z-10 relative py-20 rounded-3xl">
+  <img
+    src="/images/project-ournament-lines.png"
+    width="1000"
+    height="1000"
+    alt=""
+    class="absolute z-0 left-0 top-0 w-[1000px]"
+  />
+  <img
+    src="/images/project-ournament-lines-btm.png"
+    width="1000"
+    height="1000"
+    alt=""
+    class="absolute z-0 right-0 bottom-0 w-[1000px]"
+  />
+  <div class="lg:px-16 relative z-10">
     <NatanyaIcon />
 
-    <p class="text-2xl leading-150 text-dark mt-20">
+    <p class="text-2xl leading-150 text-dark mt-10">
       <strong>Introducing Natanya</strong> - an interactive polling tool that makes it easy to create engaging polls and
       collect data from an audience in real-time. It can be used during live events, and the results can be displayed with
       a chart data visualization.
     </p>
   </div>
 
-  <div class="portfolio-images py-40"></div>
+  <div class="portfolio-images py-20">
+    <ProjectSlider />
+  </div>
 
-  <div class="lg:px-12 relative z-10">
+  <div class="lg:px-16 relative z-10">
     <p class="text-2xl leading-150 text-dark">
       Maybe you're ever heard about Slido? Mentimeter? Yes, Natanya is the alternative of those services. The
       difference? It is free 🤑 and open source.
@@ -32,6 +47,47 @@ import NatanyaIcon from "./Natanya/NatanyaIcon.astro";
       <ButtonLiveProduction />
     </div>
 
+    <div class="pl-8 flex items-start space-x-10">
+      <a href="#" class="tracking-tight font-semibold leading-6">
+        <span class="block text-[32px] text-dark">natanya</span>
+        <span class="inline-flex text-xl space-x-[6px] text-slate-700 pt-2">
+          <span>a</span>
+          <span
+            ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_67_250)">
+                <path
+                  d="M12.5 0.297119C5.87 0.297119 0.5 5.67012 0.5 12.2971C0.5 17.6001 3.938 22.0971 8.705 23.6821C9.305 23.7951 9.525 23.4241 9.525 23.1051C9.525 22.8201 9.515 22.0651 9.51 21.0651C6.172 21.7891 5.468 19.4551 5.468 19.4551C4.922 18.0701 4.133 17.7001 4.133 17.7001C3.046 16.9561 4.217 16.9711 4.217 16.9711C5.422 17.0551 6.055 18.2071 6.055 18.2071C7.125 20.0421 8.864 19.5121 9.55 19.2051C9.658 18.4291 9.967 17.9001 10.31 17.6001C7.645 17.3001 4.844 16.2681 4.844 11.6701C4.844 10.3601 5.309 9.29012 6.079 8.45012C5.944 8.14712 5.539 6.92712 6.184 5.27412C6.184 5.27412 7.189 4.95212 9.484 6.50412C10.444 6.23712 11.464 6.10512 12.484 6.09912C13.504 6.10512 14.524 6.23712 15.484 6.50412C17.764 4.95212 18.769 5.27412 18.769 5.27412C19.414 6.92712 19.009 8.14712 18.889 8.45012C19.654 9.29012 20.119 10.3601 20.119 11.6701C20.119 16.2801 17.314 17.2951 14.644 17.5901C15.064 17.9501 15.454 18.6861 15.454 19.8101C15.454 21.4161 15.439 22.7061 15.439 23.0961C15.439 23.4111 15.649 23.7861 16.264 23.6661C21.065 22.0921 24.5 17.5921 24.5 12.2971C24.5 5.67012 19.127 0.297119 12.5 0.297119"
+                  fill="#334155"></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_67_250">
+                  <rect width="24" height="24" fill="white"></rect>
+                </clipPath>
+              </defs>
+            </svg>
+          </span>
+          <span>github.com</span>
+        </span>
+      </a>
+
+      <a href="#" class="tracking-tight inline-flex items-center space-x-3 font-semibold leading-6">
+        <div class="border-[1.5px] border-slate-500 border-opacity-50 rounded-lg p-2.5">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M8.07966 0.306529C3.7729 1.48407 0.0636546 5.96584 0.0505296 10.0082L0.0478601 10.8191L0.399787 10.9542C0.927677 11.157 10.3485 11.1103 10.6744 10.9033L10.9565 10.7241L10.8969 5.39755L10.837 0.0707981L10.0584 0.0247206C9.63019 -0.000878128 8.73969 0.126002 8.07966 0.306529ZM13.1025 0.103965C13.0189 0.187662 12.9504 2.58125 12.9504 5.42293V10.5896L13.2609 10.8474L13.5712 11.1052L15.2074 10.7392C17.3975 10.2491 19.1849 9.26718 20.765 7.68607L22.0717 6.37854L22.8906 4.67478L23.7095 2.97124L23.7246 1.52102L23.7395 0.0707981L18.4971 0.0111422C15.6138 -0.0215796 13.1864 0.0202686 13.1025 0.103965ZM0.126165 13.2094C-0.543207 14.9554 1.55122 19.3571 4.03851 21.431C5.79214 22.893 9.56923 24.321 10.6179 23.9181L10.9562 23.7883L10.8966 18.385L10.837 12.9814L5.54833 12.9218L0.259417 12.8621L0.126165 13.2094ZM13.1172 12.9999C13.0255 13.0918 12.9504 15.5435 12.9504 18.4484V23.7298L13.3023 23.8649C13.4958 23.9392 15.8932 24 18.6301 24H23.6063L23.8031 23.6479L24 23.2957L23.8069 22.034C23.2523 18.4106 20.4276 14.9837 16.8351 13.5758C15.5838 13.0854 13.3737 12.743 13.1172 12.9999Z"
+              fill="#64748B"></path>
+          </svg>
+        </div>
+
+        <div>
+          <span class="block text-[32px] text-dark">full story</span>
+          <span class="inline-flex text-xl space-x-[6px] text-slate-700 mt-1">+ more video demonstration</span>
+        </div>
+      </a>
+    </div>
+
     <div class="mt-52"></div>
   </div>
 </article>
@@ -43,5 +99,34 @@ import NatanyaIcon from "./Natanya/NatanyaIcon.astro";
       linear-gradient(325.76deg, rgba(2, 132, 199, 0.2) 3.68%, rgba(236, 254, 255, 0) 66.89%), #ffffff;
     box-shadow: 15px 24px 17px rgba(0, 0, 0, 0.01), 7px 11px 13px rgba(0, 0, 0, 0.02), 2px 3px 7px rgba(0, 0, 0, 0.02),
       0px 0px 0px rgba(0, 0, 0, 0.02);
+  }
+
+  article::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        #0285c7aa 5%,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      ),
+      linear-gradient(300deg, #0284c7 10%, transparent, transparent, transparent, transparent, transparent);
+    mask-mode: match-source, match-source;
+    mask-repeat: repeat, repeat;
+    mask-clip: content-box, border-box;
+    mask-origin: content-box, border-box;
+    mask-position: 0% 0%, 0% 0%;
+    mask-size: auto, auto;
+    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    mask-composite: exclude;
   }
 </style>

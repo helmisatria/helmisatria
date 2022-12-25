@@ -1,0 +1,27 @@
+---
+const data = Array(5).fill(0);
+---
+
+<div class="relative">
+  <div class="hide-scrollbar z-0 grid relative overflow-y-hidden pl-16 grid-flow-col snap-x snap-center mx-[2px]">
+    {
+      data.map((_, i) => (
+        <div class="w-[484px] pr-5">
+          <div class="bg-cyan-100 rounded-3xl h-80" />
+        </div>
+      ))
+    }
+    <div class="pr-11"></div>
+  </div>
+</div>
+
+<style>
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+</style>

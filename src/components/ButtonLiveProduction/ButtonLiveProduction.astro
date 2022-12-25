@@ -4,20 +4,37 @@ import WaveButtonLiveProduction from "./WaveButtonLiveProduction.astro";
 
 <a
   href="#"
-  class="button-live-production inline-block rounded-2xl px-8 py-6 pb-8 w-[495px]"
+  class="button-live-production relative inline-flex justify-between items-start rounded-2xl px-8 py-6 pb-8 w-[495px]"
   style="background: radial-gradient(94.57% 1117.67% at 2.02% 94.57%, rgba(34, 211, 238, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #123E4F;"
 >
-  <div class="inline-flex space-x-3 items-center">
-    <div class="w-[10px] h-[10px] rounded-full bg-green-light"></div>
-    <span class="tracking-tight text-2xl leading-100 text-green-light font-semibold">Live in production</span>
+  <div>
+    <div class="inline-flex space-x-3 items-center">
+      <div class="w-[10px] h-[10px] rounded-full bg-green-light"></div>
+      <span class="tracking-tight text-2xl leading-100 text-green-light font-semibold">Live in production</span>
+    </div>
+
+    <span class="relative block text-[3.5rem] text-sky-50 font-semibold tracking-tight leading-100"
+      >natanya.app
+      <div class="absolute -bottom-3">
+        <WaveButtonLiveProduction />
+      </div>
+    </span>
   </div>
 
-  <span class="relative block text-[3.5rem] text-sky-50 font-semibold tracking-tight leading-100"
-    >natanya.app
-    <div class="absolute -bottom-3">
-      <WaveButtonLiveProduction />
-    </div>
-  </span>
+  <div
+    class="bg-cyan-900 rounded-lg p-3"
+    style="box-shadow: 10px 11px 6px rgba(0, 0, 0, 0.01), 6px 6px 5px rgba(0, 0, 0, 0.05), 3px 3px 4px rgba(0, 0, 0, 0.09), 1px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  "
+  >
+    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M1 16.5L16 1.5M16 1.5H4.75M16 1.5V12.75"
+        stroke="#ECFEFF"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"></path>
+    </svg>
+  </div>
 </a>
 
 <style>
