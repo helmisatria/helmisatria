@@ -98,12 +98,12 @@ import ProjectSlider from "./ProjectSlider.astro";
     </div>
 
     <div class="mt-20">
-      <h4 class="font-semibold text-[32px] leading-140 text-dark">Featured technologies used</h4>
-      <div class="flex gap-3 mt-6">
+      <h4 class="font-semibold text-2xl sm:text-[32px] leading-140 text-dark">Featured technologies used</h4>
+      <div class="flex flex-wrap gap-4 mt-6">
         {
           Array(4)
             .fill(0)
-            .map((_, i) => <div class="w-[100px] h-[100px] bg-blue-200 rounded-lg" />)
+            .map((_, i) => <div class="min-w-[100px] min-h-[100px] bg-blue-200 rounded-lg" />)
         }
       </div>
     </div>
