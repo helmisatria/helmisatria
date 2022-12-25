@@ -5,8 +5,18 @@ import ProjectSection from "../app/Projects/ProjectSection.astro";
 ---
 
 <Layout>
-  <main class="min-h-screen">
+  <main class="min-h-screen relative overflow-hidden">
     <HeroSection />
+    <div>
+      <!-- ournament -->
+      <img
+        src="/images/hero-ournament.png"
+        alt=""
+        width="800"
+        height="100%"
+        class="absolute min-w-[950px] top-[-10px] left-[-50px] sm:min-w-[1420px] 2xl:min-w-[1600px] 2xl:scale-105 sm:scale-100 scale-125 inset-0 sm:mx-auto"
+      />
+    </div>
     <ProjectSection />
   </main>
 </Layout>

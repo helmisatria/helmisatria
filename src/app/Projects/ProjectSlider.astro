@@ -3,15 +3,17 @@ const data = Array(5).fill(0);
 ---
 
 <div class="relative">
-  <div class="hide-scrollbar z-0 grid relative overflow-y-hidden pl-16 grid-flow-col snap-x snap-center mx-[2px]">
+  <div
+    class="hide-scrollbar z-0 grid relative overflow-y-hidden pl-5 sm:pl-10 lg:pl-16 grid-flow-col snap-x snap-center mx-[2px]"
+  >
     {
       data.map((_, i) => (
-        <div class="w-[484px] pr-5">
-          <div class="bg-cyan-100 rounded-3xl h-80" />
+        <div class="w-[86vw] max-w-[86vw] sm:max-w-none sm:w-[484px] pr-5">
+          <div class="bg-blue-100 sm:rounded-3xl rounded-xl h-80" />
         </div>
       ))
     }
-    <div class="pr-11"></div>
+    <div class="sm:pr-11"></div>
   </div>
 </div>
 

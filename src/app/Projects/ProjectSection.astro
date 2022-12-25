@@ -3,19 +3,35 @@ import ProjectHeader from "./ProjectHeader.astro";
 import ProjectNatanya from "./ProjectNatanya.astro";
 ---
 
-<section class="relative overflow-hidden">
+<section class="relative">
   <!-- mesh -->
   <img
     src="/images/mesh.png"
     alt=""
     width="1400"
     height="1089"
-    class="absolute top-[-150px] left-[450px] right-0 min-w-[1400px]"
+    class="absolute top-[-150px] sm:top-[-150px] sm:left-[450px] right-0 min-w-[554px] lg:min-w-[1400px]"
   />
+
   <ProjectHeader />
 
-  <div class="mt-36"></div>
-  <ProjectNatanya />
+  <div class="sm:mt-36 mt-20 px-0 sm:px-12 md:px-16">
+    <ProjectNatanya />
+  </div>
+
+  <div class="mt-36 relative">
+    <img
+      src="/images/mesh.png"
+      alt=""
+      width="1400"
+      height="1089"
+      class="absolute top-[-1000px] left-[-250px] min-h-[1400px] min-w-[1400px]"
+    />
+  </div>
+
+  <div class="sm:mt-36 mt-20 px-0 sm:px-12 md:px-16">
+    <ProjectNatanya />
+  </div>
 
   <div class="mt-36"></div>
 </section>

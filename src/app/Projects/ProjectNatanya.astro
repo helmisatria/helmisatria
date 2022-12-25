@@ -4,37 +4,44 @@ import NatanyaIcon from "./Natanya/NatanyaIcon.astro";
 import ProjectSlider from "./ProjectSlider.astro";
 ---
 
-<article class="max-w-[1244px] mx-auto z-10 relative py-20 rounded-3xl">
+<article class="max-w-[1244px] mx-auto z-10 relative py-20 sm:rounded-3xl overflow-hidden">
+  <!-- Outnament Lines (Top) -->
   <img
     src="/images/project-ournament-lines.png"
     width="1000"
     height="1000"
     alt=""
-    class="absolute z-0 left-0 top-0 w-[1000px]"
+    class="absolute z-0 left-0 top-0 min-w-[600px] sm:min-w-[1000px]"
   />
+
+  <!-- Outnament Lines (Bottom) -->
   <img
     src="/images/project-ournament-lines-btm.png"
     width="1000"
     height="1000"
     alt=""
-    class="absolute z-0 right-0 bottom-0 w-[1000px]"
+    class="absolute z-0 right-0 bottom-0 min-w-[500px] sm:min-w-[1000px]"
   />
-  <div class="lg:px-16 relative z-10">
+
+  <div class="lg:px-16 sm:px-10 px-5 relative z-10">
+    <h3 class="sr-only">Natanya</h3>
     <NatanyaIcon />
 
-    <p class="text-2xl leading-150 text-dark mt-10">
-      <strong>Introducing Natanya</strong> - an interactive polling tool that makes it easy to create engaging polls and
-      collect data from an audience in real-time. It can be used during live events, and the results can be displayed with
-      a chart data visualization.
+    <h4 class="sr-only">About Natanya</h4>
+
+    <p class="sm:text-2xl text-xl !leading-150 text-dark mt-10">
+      <span class="font-semibold">Introducing Natanya</span> - an interactive polling tool that makes it easy to create engaging
+      polls and collect data from an audience in real-time. It can be used during live events, and the results can be displayed
+      with a chart data visualization.
     </p>
   </div>
 
-  <div class="portfolio-images py-20">
+  <div class="portfolio-images py-10 sm:py-20">
     <ProjectSlider />
   </div>
 
-  <div class="lg:px-16 relative z-10">
-    <p class="text-2xl leading-150 text-dark">
+  <div class="lg:px-16 sm:px-10 px-5 relative z-10">
+    <p class="sm:text-2xl text-xl !leading-150 text-dark">
       Maybe you're ever heard about Slido? Mentimeter? Yes, Natanya is the alternative of those services. The
       difference? It is free 🤑 and open source.
       <br />
@@ -43,17 +50,17 @@ import ProjectSlider from "./ProjectSlider.astro";
       during a live event, similar to using Slido.
     </p>
 
-    <div class="mt-[4.4rem] mb-[3.4rem]">
+    <div class="mt-10 sm:mt-[4.4rem] mb-10 sm:mb-14">
       <ButtonLiveProduction />
     </div>
 
-    <div class="pl-8 flex items-start space-x-10">
+    <div class="pl-5 sm:pl-8 flex items-start space-x-4 sm:space-x-10">
       <a href="#" class="tracking-tight font-semibold leading-6">
-        <span class="block text-[32px] text-dark">natanya</span>
-        <span class="inline-flex text-xl space-x-[6px] text-slate-700 pt-2">
+        <span class="block text-xl sm:text-[32px] text-dark leading-4 sm:!leading-100">natanya</span>
+        <span class="inline-flex text-sm sm:text-xl space-x-[6px] text-slate-700 sm:pt-2">
           <span>a</span>
           <span
-            ><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            ><svg class="w-[18px] sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_67_250)">
                 <path
                   d="M12.5 0.297119C5.87 0.297119 0.5 5.67012 0.5 12.2971C0.5 17.6001 3.938 22.0971 8.705 23.6821C9.305 23.7951 9.525 23.4241 9.525 23.1051C9.525 22.8201 9.515 22.0651 9.51 21.0651C6.172 21.7891 5.468 19.4551 5.468 19.4551C4.922 18.0701 4.133 17.7001 4.133 17.7001C3.046 16.9561 4.217 16.9711 4.217 16.9711C5.422 17.0551 6.055 18.2071 6.055 18.2071C7.125 20.0421 8.864 19.5121 9.55 19.2051C9.658 18.4291 9.967 17.9001 10.31 17.6001C7.645 17.3001 4.844 16.2681 4.844 11.6701C4.844 10.3601 5.309 9.29012 6.079 8.45012C5.944 8.14712 5.539 6.92712 6.184 5.27412C6.184 5.27412 7.189 4.95212 9.484 6.50412C10.444 6.23712 11.464 6.10512 12.484 6.09912C13.504 6.10512 14.524 6.23712 15.484 6.50412C17.764 4.95212 18.769 5.27412 18.769 5.27412C19.414 6.92712 19.009 8.14712 18.889 8.45012C19.654 9.29012 20.119 10.3601 20.119 11.6701C20.119 16.2801 17.314 17.2951 14.644 17.5901C15.064 17.9501 15.454 18.6861 15.454 19.8101C15.454 21.4161 15.439 22.7061 15.439 23.0961C15.439 23.4111 15.649 23.7861 16.264 23.6661C21.065 22.0921 24.5 17.5921 24.5 12.2971C24.5 5.67012 19.127 0.297119 12.5 0.297119"
@@ -70,8 +77,8 @@ import ProjectSlider from "./ProjectSlider.astro";
         </span>
       </a>
 
-      <a href="#" class="tracking-tight inline-flex items-center space-x-3 font-semibold leading-6">
-        <div class="border-[1.5px] border-slate-500 border-opacity-50 rounded-lg p-2.5">
+      <a href="#" class="tracking-tight inline-flex items-center space-x-2 sm:space-x-3 font-semibold leading-6">
+        <div class="hidden sm:inline-block border-[1px] border-slate-500 border-opacity-50 rounded-lg p-1 sm:p-2.5">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               fill-rule="evenodd"
@@ -82,13 +89,26 @@ import ProjectSlider from "./ProjectSlider.astro";
         </div>
 
         <div>
-          <span class="block text-[32px] text-dark">full story</span>
-          <span class="inline-flex text-xl space-x-[6px] text-slate-700 mt-1">+ more video demonstration</span>
+          <span class="block text-xl leading-4 sm:!leading-100 sm:text-[32px] text-dark">full story</span>
+          <span class="inline-flex text-sm sm:text-xl space-x-[6px] text-slate-700 sm:mt-1"
+            >+ more video demonstration</span
+          >
         </div>
       </a>
     </div>
 
-    <div class="mt-52"></div>
+    <div class="mt-20">
+      <h4 class="font-semibold text-[32px] leading-140 text-dark">Featured technologies used</h4>
+      <div class="flex gap-3 mt-6">
+        {
+          Array(4)
+            .fill(0)
+            .map((_, i) => <div class="w-[100px] h-[100px] bg-blue-200 rounded-lg" />)
+        }
+      </div>
+    </div>
+
+    <div class="mt-14"></div>
   </div>
 </article>
 
