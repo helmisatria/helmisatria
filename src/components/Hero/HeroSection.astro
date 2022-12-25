@@ -22,15 +22,15 @@ import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
       alt=""
       width="800"
       height="100%"
-      class="absolute min-w-[800px] sm:min-w-[1360px] 2xl:scale-105 sm:scale-100 inset-0 sm:mx-auto"
+      class="absolute min-w-[666px] sm:min-w-[1360px] 2xl:scale-105 sm:scale-100 scale-125 inset-0 sm:mx-auto"
     />
   </div>
 
   <!-- overlay -->
-  <div class="header-overlay max-w-[562px] sm:max-w-full absolute z-0 inset-0 top-[10px]"></div>
+  <div class="header-overlay sm:max-w-full absolute z-0 inset-0 top-[10px]"></div>
 
   <div
-    class="px-6 sm:px-10 md:px-16 lg:px-12 xl:px-4 md:max-w-[1244px] mt-14 sm:mt-[6.25rem] md:mt-28 2xl:mt-[12rem] relative z-20 mx-auto"
+    class="px-5 sm:px-10 md:px-16 lg:px-12 xl:px-4 md:max-w-[1244px] mt-14 sm:mt-[6.25rem] md:mt-28 2xl:mt-[12rem] relative z-20 mx-auto"
   >
     <div class="relative z-20">
       <!-- title -->
@@ -40,7 +40,7 @@ import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
 
       <!-- subtitle -->
       <p
-        class="header-subtitle max-w-[1170px] md:mt-[6px] sm:mt-3 mt-1 lowercase md:tracking-tighter tracking-tight font-bold text-[2.875rem] mob:text-[3.4rem] sm:text-[4rem] md:text-[5rem] xl:text-[5.9rem] lg:leading-[6.25rem] leading-[100%]"
+        class="header-subtitle sm:max-w-[1170px] max-w-[560px] md:mt-[6px] sm:mt-3 mt-1 lowercase md:tracking-tighter tracking-tight font-bold text-[2.875rem] mob:text-[3.4rem] sm:text-[4rem] md:text-[5rem] xl:text-[5.9rem] lg:leading-[6.25rem] leading-[100%]"
       >
         a
         <span class="relative no-text-fill-color">
@@ -50,7 +50,7 @@ import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
             style="background: linear-gradient(85.27deg, #57E9F9 0.78%, rgba(165, 243, 252, 0) 123.9%);"></span>
         </span>
         full-stack developer <br class="hidden md:block" /> who aims to help others grow in
-        <br class="xl:hidden block" />
+        <br class="hidden min-[500px]:block min-[533px]:hidden min-[630px]:block lg:hidden" />
         <span class="relative no-text-fill-color">
           <span class="relative z-10"
             ><span class="relative overflow-x-hidden">
@@ -100,6 +100,12 @@ import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
     background: radial-gradient(78.99% 31.58% at 9.03% 10.81%, rgba(12, 74, 110, 0.3) 0%, rgba(14, 165, 233, 0) 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
       linear-gradient(180deg, #c7fcff 0%, rgba(236, 254, 255, 0) 100%);
+  }
+
+  @media (max-width: 767px) {
+    .header-overlay {
+      background: linear-gradient(180deg, #c7fcff 0%, rgba(236, 254, 255, 0) 100%);
+    }
   }
 
   .header-title {
