@@ -1,0 +1,47 @@
+---
+import ButtonLiveProduction from "../../components/ButtonLiveProduction/ButtonLiveProduction.astro";
+import NatanyaIcon from "./Natanya/NatanyaIcon.astro";
+---
+
+<article class="max-w-[1244px] mx-auto z-10 relative py-16 px-12 rounded-3xl">
+  <img src="/images/project-ournament-lines.png" alt="" class="absolute left-0 top-0 w-[1000px]" />
+  <img src="/images/project-ournament-lines-btm.png" alt="" class="absolute right-0 bottom-0 w-[1000px]" />
+  <div class="lg:px-12">
+    <NatanyaIcon />
+
+    <p class="text-2xl leading-150 text-dark mt-20">
+      <strong>Introducing Natanya</strong> - an interactive polling tool that makes it easy to create engaging polls and
+      collect data from an audience in real-time. It can be used during live events, and the results can be displayed with
+      a chart data visualization.
+    </p>
+  </div>
+
+  <div class="portfolio-images py-40"></div>
+
+  <div class="lg:px-12">
+    <p class="text-2xl leading-150 text-dark">
+      Maybe you're ever heard about Slido? Mentimeter? Yes, Natanya is the alternative of those services. The
+      difference? It is free 🤑 and open source.
+      <br />
+      <br />
+      Why create this project? My team (core web experience) at Govtech wanted to find an “economical way” to host a survey
+      during a live event, similar to using Slido.
+    </p>
+
+    <div class="mt-[4.4rem] mb-[3.4rem]">
+      <ButtonLiveProduction />
+    </div>
+
+    <div class="mt-52"></div>
+  </div>
+</article>
+
+<style>
+  article {
+    background: radial-gradient(74.81% 55.08% at 2.7% 3.34%, rgba(2, 132, 199, 0.1) 0%, rgba(236, 254, 255, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      linear-gradient(325.76deg, rgba(2, 132, 199, 0.2) 3.68%, rgba(236, 254, 255, 0) 66.89%), #ffffff;
+    box-shadow: 15px 24px 17px rgba(0, 0, 0, 0.01), 7px 11px 13px rgba(0, 0, 0, 0.02), 2px 3px 7px rgba(0, 0, 0, 0.02),
+      0px 0px 0px rgba(0, 0, 0, 0.02);
+  }
+</style>

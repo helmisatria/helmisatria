@@ -13,10 +13,18 @@ module.exports = {
         wide: "0.05em",
       },
       lineHeight: {
+        100: "100%",
         140: "140%",
+        150: "150%",
       },
       colors: {
         dark: "#051C29",
+        cyan: {
+          dark: "#093853",
+        },
+        green: {
+          light: "#40F4B2",
+        },
       },
     },
   },

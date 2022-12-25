@@ -1,0 +1,28 @@
+---
+import WaveButtonLiveProduction from "./WaveButtonLiveProduction.astro";
+---
+
+<a
+  class="button-live-production inline-block rounded-2xl px-8 py-6 pb-8 w-[495px]"
+  style="background: radial-gradient(94.57% 1117.67% at 2.02% 94.57%, rgba(34, 211, 238, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #123E4F;"
+>
+  <div class="inline-flex space-x-3 items-center">
+    <div class="w-[10px] h-[10px] rounded-full bg-green-light"></div>
+    <span class="tracking-tight text-2xl leading-100 text-green-light font-semibold">Live in production</span>
+  </div>
+
+  <span class="relative block text-[3.5rem] text-sky-50 font-semibold tracking-tight leading-100"
+    >natanya.app
+    <div class="absolute -bottom-3">
+      <WaveButtonLiveProduction />
+    </div>
+  </span>
+</a>
+
+<style>
+  .button-live-production {
+    box-shadow: 22px 17px 11px rgba(0, 0, 0, 0.01), 13px 10px 9px rgba(0, 0, 0, 0.05), 6px 4px 7px rgba(0, 0, 0, 0.09),
+      1px 1px 4px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border: 1.5px solid transparent;
+  }
+</style>
