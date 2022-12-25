@@ -18,20 +18,22 @@ const description =
       title={title}
       description={description}
       openGraph={{
+        optional: {
+          locale: "en_US",
+          description: description,
+          siteName: "Helmi Satria",
+        },
         image: {
           alt: "Helmi Satria",
-          height: 900,
-          width: 1600,
+          height: 630,
+          width: 1200,
+          url: "/images/og.png",
         },
         basic: {
           image: "/images/og.png",
-          title:
-            "Helmi Satria - Professional Fullstack Developer with 5 Years of Experience Aiming To Help Others Grow in Web Development",
+          title: title,
           type: "website",
         },
-      }}
-      twitter={{
-        creator: "@helmisatria_",
       }}
       extend={{
         link: [{ rel: "icon", href: "/favicon.ico" }],
@@ -40,7 +42,7 @@ const description =
             name: "twitter:image",
             content: "/images/og.png",
           },
-          { name: "twitter:title", content: description },
+          { name: "twitter:title", content: title },
           {
             name: "twitter:description",
             content: description,
