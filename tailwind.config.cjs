@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     extend: {
       screens: {
+        mini: "484px",
         mob: "420px",
       },
       letterSpacing: {

@@ -17,7 +17,7 @@ import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
   <div class="header-overlay sm:max-w-full absolute z-0 inset-0 top-[10px]"></div>
 
   <div
-    class="px-5 sm:px-10 md:px-16 lg:px-12 xl:px-4 md:max-w-[1244px] mt-14 sm:mt-16 lg:mt-20 2xl:mt-[12rem] relative z-20 mx-auto"
+    class="px-5 sm:px-10 md:px-16 lg:px-12 xl:px-4 md:max-w-[1244px] mt-8 sm:mt-16 lg:mt-16 xl:mt-24 2xl:mt-[12rem] relative z-20 mx-auto"
   >
     <div class="relative z-20">
       <!-- title -->
@@ -27,45 +27,44 @@ import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
 
       <!-- subtitle -->
       <p
-        class="header-subtitle lg:max-w-[900px] xl:max-w-[1200px] md:mt-1.5 sm:mt-3 mt-1 lowercase md:tracking-tighter tracking-tight font-bold text-[2.875rem] mob:text-[3.4rem] sm:text-[4rem] md:text-[5rem] xl:text-[5.9rem] leading-[100%] md:leading-[5rem] xl:leading-[6.25rem]"
+        class="header-subtitle lg:max-w-[850px] xl:max-w-[1200px] md:mt-1.5 sm:mt-3 mt-1 lowercase md:tracking-[-0.06em] tracking-tight font-bold text-[2.2rem] mob:text-[3.4rem] sm:text-[4rem] md:text-[5rem] xl:text-[5.9rem] leading-[100%] md:leading-[5rem] xl:leading-[6.25rem]"
       >
-        a
-        <span class="relative no-text-fill-color">
-          <span class="relative z-[1] text-[#294049]">happy</span>
-          <span
-            class="happy-bg z-0 absolute inset-0 md:-left-2 -left-1 mob:top-5 sm:top-6 md:top-3 lg:top-5 xl:top-6 top-3 w-full sm:h-[45px] md:h-[73px] h-[29px] rotate-[-2.2deg]"
-            style="background: linear-gradient(85.27deg, #57E9F9 0.78%, rgba(165, 243, 252, 0) 123.9%);"></span>
-        </span>
-        full-stack developer <br class="hidden xl:block" /> who aims to help others grow in
-        <br class="hidden min-[500px]:block min-[533px]:hidden min-[630px]:block lg:hidden" />
-        <span class="relative inline-block no-text-fill-color text-[#294049]">
-          <span class="relative z-10"
-            ><span class="relative overflow-x-hidden">
-              <span>web</span>
-              <span class="absolute bottom-0 -left-2 mob:left-0 scale-75 mob:scale-100 min-[484px]:hidden">
-                <HeroWaveWebText />
-              </span>
-            </span>
-            <br class="min-[484px]:hidden inline-block" />
-            <span class="relative overflow-x-hidden">
-              <span>development</span>
-              <span class="bottom-0 absolute left-0 mob:left-6 mob:scale-[118%] min-[484px]:hidden max-[359px]:hidden">
-                <HeroWaveDevelopmentText />
-              </span>
-            </span>
+        <span
+          class="max-md:block max-mob:text-[70px] max-sm:text-[85px] max-md:text-[90px] max-mob:max-w-[310px] max-sm:max-w-[360px] max-md:max-w-[420px] md:min-w-none max-md:tracking-[-0.06em] max-md:leading-[85%]"
+        >
+          a
+          <span class="relative no-text-fill-color">
+            <span class="relative z-[1] text-[#294049]">happy</span>
+            <span
+              class="happy-bg z-0 inline-block absolute inset-0 -left-1 md:-left-2 top-6 mob:top-7 sm:top-8 md:top-3 lg:top-5 xl:top-6 w-full h-[42px] mob:h-[48px] sm:h-[54px] md:h-[73px] rotate-[-2.2deg]"
+              style="background: linear-gradient(85.27deg, #57E9F9 0.78%, rgba(165, 243, 252, 0) 123.9%);"></span>
           </span>
-          <span
-            class="absolute min-[484px]:inline-block hidden min-[484px]:scale-[65%] sm:scale-[76%] md:scale-90 lg:scale-95 xl:scale-100 min-[484px]:-left-24 sm:-left-14 md:-left-2 lg:left-0 xl:left-12 min-[484px]:-bottom-2 xl:bottom-0"
-            ><Wave />
+          full-stack developer
+        </span>
+        <br class="hidden xl:block" />
+
+        <span
+          class="max-md:inline-block max-md:tracking-tighter max-md:font-semibold max-sm:mt-6 max-md:mt-8 max-sm:text-[32px] max-md:text-[38px] max-md:leading-100 max-sm:max-w-[261px] max-md:max-w-[300px]"
+        >
+          who aims to help others grow in
+          <span class="relative md:inline-block no-text-fill-color text-[#294049]">
+            <span>web</span>
+            <span>development</span>
+            <span
+              class="absolute md:inline-block hidden sm:scale-[76%] md:scale-90 lg:scale-95 xl:scale-100 min-[484px]:-left-24 sm:-left-14 md:-left-2 lg:left-0 xl:left-12 min-[484px]:-bottom-2 xl:bottom-0"
+              ><Wave />
+            </span>
           </span>
         </span>
       </p>
 
       <!-- description -->
       <p
-        class="mt-12 sm:mt-20 xl:mt-24 2xl:mt-[8.5rem] text-cyan-dark text-xl mob:text-2xl md:text-3xl xl:text-4xl md:!leading-140 leading-normal"
+        class="mt-12 sm:mt-20 xl:mt-24 2xl:mt-[8.5rem] text-cyan-dark text-xl mob:text-2xl md:text-3xl xl:text-4xl md:!leading-140 leading-120"
       >
-        <span class="font-semibold">5 years of experience</span> in using Node.js and <span class="relative">
+        <span class="font-semibold">5 years of experience</span> in using <br class="block md:hidden" /> Node.js and <span
+          class="relative"
+        >
           vue.js
           <span
             class="absolute lg:inline-block hidden min-w-[24rem] text-2xl tracking-tight inset-0 top-12 left-2 xl:left-7"
