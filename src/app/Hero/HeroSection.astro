@@ -5,7 +5,7 @@ import HeroWaveWebText from "./HeroWaveWebText.astro";
 import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
 ---
 
-<section id="header" class="relative w-full pb-32 xl:pb-[22rem]">
+<section id="header" class="relative w-full pb-32 lg:pb-72 xl:pb-[22rem]">
   <!-- top separator -->
   <div
     class="h-[10px] w-full"
@@ -17,7 +17,7 @@ import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
   <div class="header-overlay sm:max-w-full absolute z-0 inset-0 top-[10px]"></div>
 
   <div
-    class="px-5 sm:px-10 md:px-16 lg:px-12 xl:px-4 md:max-w-[1244px] mt-14 sm:mt-[6.25rem] md:mt-28 2xl:mt-[12rem] relative z-20 mx-auto"
+    class="px-5 sm:px-10 md:px-16 lg:px-12 xl:px-4 md:max-w-[1244px] mt-14 sm:mt-16 xl:mt-28 2xl:mt-[12rem] relative z-20 mx-auto"
   >
     <div class="relative z-20">
       <!-- title -->
@@ -27,7 +27,7 @@ import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
 
       <!-- subtitle -->
       <p
-        class="header-subtitle sm:max-w-[1170px] xl:max-w-[1200px] max-w-[560px] md:mt-[6px] sm:mt-3 mt-1 lowercase md:tracking-tighter tracking-tight font-bold text-[2.875rem] mob:text-[3.4rem] sm:text-[4rem] md:text-[5rem] xl:text-[5.9rem] lg:leading-[6.25rem] leading-[100%]"
+        class="header-subtitle sm:max-w-[1170px] xl:max-w-[1200px] max-w-[560px] md:mt-[6px] sm:mt-3 mt-1 lowercase md:tracking-tighter tracking-tight font-bold text-[2.875rem] mob:text-[3.4rem] sm:text-[4rem] md:text-[5rem] xl:text-[5.9rem] leading-[100%] md:leading-[5rem] xl:leading-[6.25rem]"
       >
         a
         <span class="relative no-text-fill-color">
@@ -55,17 +55,21 @@ import HeroWaveDevelopmentText from "./HeroWaveDevelopmentText.astro";
             </span>
           </span>
           <span
-            class="absolute min-[484px]:inline-block hidden min-[484px]:scale-[65%] sm:scale-[76%] md:scale-90 lg:scale-95 xl:scale-100 min-[484px]:-left-24 sm:-left-14 md:-left-2 lg:left-0 xl:left-12 min-[484px]:-bottom-2 lg:bottom-0"
+            class="absolute min-[484px]:inline-block hidden min-[484px]:scale-[65%] sm:scale-[76%] md:scale-90 lg:scale-95 xl:scale-100 min-[484px]:-left-24 sm:-left-14 md:-left-2 lg:left-0 xl:left-12 min-[484px]:-bottom-2 xl:bottom-0"
             ><Wave />
           </span>
         </span>
       </p>
 
       <!-- description -->
-      <p class="md:mt-[8.5rem] mt-12 text-dark text-xl mob:text-2xl md:text-4xl md:!leading-140 leading-normal">
+      <p
+        class="md:mt-[8.5rem] mt-12 text-dark text-xl mob:text-2xl md:text-3xl xl:text-4xl md:!leading-140 leading-normal"
+      >
         <span class="font-semibold">5 years of experience</span> in using Node.js and <span class="relative">
           vue.js
-          <span class="absolute lg:inline-block hidden min-w-[24rem] text-2xl tracking-tight inset-0 top-12 left-7">
+          <span
+            class="absolute lg:inline-block hidden min-w-[24rem] text-2xl tracking-tight inset-0 top-12 left-2 xl:left-7"
+          >
             <Arrow /><span class="transform whitespace-nowrap inline-block -rotate-12 -translate-y-6 text-cyan-600"
               >recently moved to react.js anyway 😜</span
             >
