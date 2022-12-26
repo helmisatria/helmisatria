@@ -121,34 +121,38 @@ import ProjectSlider from "./ProjectSlider.astro";
       0px 0px 0px rgba(0, 0, 0, 0.02);
   }
 
-  @media (min-width: 640px) {
+  article::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        #0285c7aa 5%,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      ),
+      linear-gradient(300deg, #0284c7 10%, transparent, transparent, transparent, transparent, transparent);
+    mask-mode: match-source, match-source;
+    mask-repeat: repeat, repeat;
+    mask-clip: content-box, border-box;
+    mask-origin: content-box, border-box;
+    mask-position: 0% 0%, 0% 0%;
+    mask-size: auto, auto;
+    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    mask-composite: exclude;
+  }
+
+  @media (max-width: 640px) {
     article::before {
-      content: "";
-      pointer-events: none;
-      user-select: none;
-      position: absolute;
-      inset: 0px;
-      border-radius: inherit;
-      padding: 2px;
-      background: linear-gradient(
-          135deg,
-          #0285c7aa 5%,
-          transparent,
-          transparent,
-          transparent,
-          transparent,
-          transparent,
-          transparent
-        ),
-        linear-gradient(300deg, #0284c7 10%, transparent, transparent, transparent, transparent, transparent);
-      mask-mode: match-source, match-source;
-      mask-repeat: repeat, repeat;
-      mask-clip: content-box, border-box;
-      mask-origin: content-box, border-box;
-      mask-position: 0% 0%, 0% 0%;
-      mask-size: auto, auto;
-      mask-image: linear-gradient(black, black), linear-gradient(black, black);
-      mask-composite: exclude;
+      padding: 2px 0;
     }
   }
 </style>
