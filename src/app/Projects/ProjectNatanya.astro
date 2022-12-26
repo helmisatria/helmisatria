@@ -103,7 +103,7 @@ import ProjectSlider from "./ProjectSlider.astro";
         {
           Array(4)
             .fill(0)
-            .map((_, i) => <div class="min-w-[100px] min-h-[100px] bg-blue-200 rounded-lg" />)
+            .map((_, i) => <div class="w-[60px] sm:min-w-[100px] h-[60px] sm:min-h-[100px] bg-blue-200 rounded-lg" />)
         }
       </div>
     </div>
@@ -152,7 +152,8 @@ import ProjectSlider from "./ProjectSlider.astro";
 
   @media (max-width: 640px) {
     article::before {
-      padding: 2px 0;
+      padding: 0;
+      padding-top: 2px !important;
     }
   }
 </style>
