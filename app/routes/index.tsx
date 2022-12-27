@@ -322,7 +322,7 @@ export default function Index() {
                     <br></br>
                     <h4
                       data-sal="slide-up"
-                      className="text-gray-900 font-semibold text-sm md:text-base"
+                      className="text-gray-900 pt-4 font-semibold text-sm md:text-base"
                     >
                       Responsibilities and things I did:
                     </h4>
@@ -343,7 +343,7 @@ export default function Index() {
                         <br></br>
                         <h4
                           data-sal="slide-up"
-                          className="text-gray-900 font-semibold text-sm md:text-base"
+                          className="text-gray-900 mt-4 font-semibold text-sm md:text-base"
                         >
                           Appreciation from the company:
                         </h4>
@@ -367,7 +367,7 @@ export default function Index() {
                     <br></br>
                     <h4
                       data-sal="slide-up"
-                      className="text-gray-900 font-semibold text-sm md:text-base"
+                      className="text-gray-900 mt-4 font-semibold text-sm md:text-base"
                     >
                       Technology Skills
                     </h4>
