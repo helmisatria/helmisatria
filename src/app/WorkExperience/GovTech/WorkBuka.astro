@@ -1,0 +1,134 @@
+---
+import IconBuka from "../../../components/icons/IconBuka.astro";
+
+const responsibilities = [
+  "Maintaining web page performance and create a guideline for other engineers",
+  "Ship a high quality code and result with minimum bug deployed to production",
+  "Have a good way to explain things clearly to the team even to the non-technical person",
+  "Improve a product page performance score from 20 to 80 (in fragment-based architecture that is harder than usual)",
+  "Create a universal application (bukalapak admin transaction) used by all across the team in Bukalapak, so someone can add a new product easily using a templated config",
+];
+---
+
+<article
+  class="max-w-[1244px] sm:rounded-2xl px-5 sm:px-10 lg:px-[5.4rem] mx-auto z-10 relative py-20 pb-40 overflow-hidden"
+>
+  <img class="absolute pointer-events-none z-0 right-0 bottom-0" src="/images/work-experience-ournament.png" alt="" />
+
+  <header class="flex z-10 flex-col sm:flex-row justify-between items-start">
+    <div class="flex space-x-4 items-center sm:space-x-6">
+      <div class="sm:mt-1 scale-90 sm:scale-100">
+        <IconBuka />
+      </div>
+      <div>
+        <h3 class="font-semibold text-cyan-50 text-2xl sm:text-3xl md:text-[40px] leading-100">Bukalapak.com</h3>
+      </div>
+    </div>
+
+    <div class="relative role-label px-4 py-3 rounded-2xl mt-9 sm:mt-0">
+      <span class="text-cyan-50 font-bold sm:text-lg md:text-xl">Front-end Developer</span>
+    </div>
+  </header>
+
+  <div class="mt-20 z-10">
+    <h4 class="text-rose-300 text-lg sm:text-xl font-semibold">
+      <span class="sr-only">Since:</span> July 2022 - Present
+    </h4>
+    <p class="font-medium text-xl md:text-2xl leading-140 mt-8 text-rose-50 max-w-[570px]">
+      Working on the virtual product development team using Vue.js and creating a scalable product, page, and component
+      that is used by all across the teams
+    </p>
+
+    <h4
+      class="flex sm:flex-row flex-col sm:space-x-3 space-y-3 sm:space-y-0 max-w-[200px] mob:max-w-none text-rose-300 text-xl md:text-2xl font-semibold sm:items-center mt-10 sm:mt-16"
+    >
+      <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M15.8692 0.612197C13.5928 1.79879 10.4777 6.24644 8.64977 10.9197C8.45276 11.4236 8.27445 11.8428 8.25357 11.8514C8.23275 11.8599 7.83875 11.6166 7.37808 11.3105C6.04837 10.4273 3.65416 9.31041 2.48703 9.02896C0.618402 8.57838 -0.282493 11.2487 1.50513 11.9397C1.69094 12.0116 2.20597 12.2085 2.64964 12.3774C4.3462 13.0235 5.86528 13.9227 7.45943 15.2246C8.62064 16.1729 8.91336 16.2977 9.57143 16.1246C10.2673 15.9415 10.5938 15.5146 10.758 14.5726C11.3577 11.1335 14.7034 5.34067 17.2272 3.37189C18.2933 2.54017 18.5 2.15079 18.2905 1.36866C17.9909 0.250603 17.0979 -0.0283695 15.8692 0.612197Z"
+          fill="#FDA4AF"></path>
+      </svg>
+      <span>Responsibilities and things I did</span>
+    </h4>
+
+    <ul class="mt-10 mob:pl-4 text-rose-50 sm:text-lg md:text-xl !leading-[180%] space-y-5 max-w-[674px]">
+      {responsibilities.map((responsibility) => <li>{responsibility}</li>)}
+    </ul>
+  </div>
+</article>
+
+<style>
+  article {
+    background: radial-gradient(38.17% 38.17% at 0.97% 0%, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%),
+      linear-gradient(0deg, rgba(40, 11, 20, 0.6), rgba(40, 11, 20, 0.6)), #280b14;
+  }
+
+  ul li::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #cceeff;
+    margin-right: 0.5rem;
+    margin-bottom: 4px;
+  }
+
+  article::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        hsla(342, 75%, 30%, 0.5) 1%,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      ),
+      linear-gradient(300deg, hsla(342, 75%, 30%, 1) 10%, transparent, transparent, transparent);
+    mask-mode: match-source, match-source;
+    mask-repeat: repeat, repeat;
+    mask-clip: content-box, border-box;
+    mask-origin: content-box, border-box;
+    mask-position: 0% 0%, 0% 0%;
+    mask-size: auto, auto;
+    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    mask-composite: exclude;
+  }
+
+  @media (max-width: 640px) {
+    article::before {
+      padding: 0;
+      padding-top: 2px;
+    }
+  }
+
+  .role-label::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: linear-gradient(180deg, hsla(341, 37%, 52%, 1), hsla(351, 95%, 71%, 0));
+    mask-mode: match-source, match-source;
+    mask-repeat: repeat, repeat;
+    mask-clip: content-box, border-box;
+    mask-origin: content-box, border-box;
+    mask-position: 0% 0%, 0% 0%;
+    mask-size: auto, auto;
+    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    mask-composite: exclude;
+  }
+</style>
