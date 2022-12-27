@@ -1,9 +1,17 @@
 ---
 import WaveButtonLiveProduction from "./WaveButtonLiveProduction.astro";
+
+export type Props = {
+  name: string;
+  link: string;
+};
+
+const { name, link } = Astro.props as Props;
 ---
 
 <a
-  href="#"
+  href={link}
+  target="_blank"
   class="button-live-production relative inline-flex justify-between items-start rounded-2xl px-5 sm:px-8 py-5 sm:py-6 pb-8 w-full sm:w-[495px]"
   style="background: radial-gradient(94.57% 1117.67% at 2.02% 94.57%, rgba(34, 211, 238, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #123E4F;"
 >
@@ -16,7 +24,7 @@ import WaveButtonLiveProduction from "./WaveButtonLiveProduction.astro";
     </div>
 
     <span class="relative block text-[32px] sm:text-[3.5rem] text-sky-50 font-semibold tracking-tight leading-100"
-      >natanya.app
+      >{name}
       <div class="absolute -bottom-3">
         <WaveButtonLiveProduction />
       </div>
