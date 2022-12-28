@@ -1,5 +1,8 @@
 ---
 import ButtonLiveProduction from "../../../components/ButtonLiveProduction/ButtonLiveProduction.astro";
+import IconFirebase from "../Icons/IconFirebase.astro";
+import IconNext from "../Icons/IconNext.astro";
+import IconReact from "../Icons/IconReact.astro";
 import NatanyaIcon from "../Natanya/IconNatanya.astro";
 import ProjectSlider from "../ProjectSlider.astro";
 ---
@@ -102,11 +105,11 @@ import ProjectSlider from "../ProjectSlider.astro";
 
     <div class="mt-20">
       <h4 class="font-semibold text-2xl sm:text-[32px] leading-140 text-dark">Featured technologies used</h4>
-      <div class="flex flex-wrap gap-4 mt-6">
+      <div class="flex flex-wrap gap-3 mt-6">
         {
-          Array(4)
-            .fill(0)
-            .map((_, i) => <div class="w-[60px] sm:min-w-[100px] h-[60px] sm:min-h-[100px] bg-blue-200 rounded-lg" />)
+          [<IconNext />, <IconFirebase />, <IconReact />].map((icon, i) => (
+            <div class="w-[60px] h-[60px] sm:min-w-[100px] sm:min-h-[100px]">{icon}</div>
+          ))
         }
       </div>
     </div>
