@@ -1,12 +1,64 @@
 ---
 import WritingListItem from "./WritingListItem.astro";
+
+const query = `{
+  user(username: "helmisatria") {
+    username
+    publicationDomain
+    publication {
+      posts {
+        title
+        coverImage
+        slug
+      }
+    }
+  }
+}`;
+
+const fetchMediumPosts = fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@helmisatria")
+  .then((res) => res.json())
+  .then((data) => {
+    return data.items.map((item: { title: string; thumbnail: string; link: string }) => ({
+      title: item.title,
+      coverImage: item.thumbnail,
+      link: item.link,
+    }));
+  });
+
+const fetchBlogPosts = fetch("https://api.hashnode.com/", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ query }),
+})
+  .then((res) => res.json())
+  .then((data) => {
+    return data.data.user.publication.posts.map((post: { title: string; coverImage: string; slug: string }) => ({
+      title: post.title,
+      coverImage: post.coverImage,
+      slug: post.slug,
+      domain: data.data.user.publicationDomain,
+    }));
+  });
+
+const [mediumPosts, blogPosts] = await Promise.all([fetchMediumPosts, fetchBlogPosts]);
+
+const articles = [...blogPosts, ...mediumPosts];
 ---
 
 <ul
   class="max-w-[1244px] mx-auto gap-x-5 gap-y-3 sm:gap-y-6 place-content-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(2,480px)] xl:grid-cols-[repeat(2,545px)]"
 >
-  <WritingListItem />
-  <WritingListItem />
-  <WritingListItem />
-  <WritingListItem />
+  {
+    articles.map((article: { title: string; coverImage: string; slug?: string; domain?: string; link?: string }) => (
+      <WritingListItem
+        hostname={article.domain as string}
+        slug={article.slug}
+        link={article.link}
+        title={article.title}
+        coverImage={article.coverImage}
+      />
+    ))
+  }
 </ul>

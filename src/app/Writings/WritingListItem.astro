@@ -1,23 +1,30 @@
+---
+export type Props = {
+  title: string;
+  coverImage: string;
+  hostname?: string;
+  slug?: string;
+  link?: string;
+};
+
+const { title, coverImage, hostname, slug, link } = Astro.props;
+const linkUrl = link ?? `https://${hostname}/${slug}`;
+---
+
 <li class="rounded-2xl h-[150px] sm:h-[230px] lg:h-[300px] relative overflow-hidden">
   <article class="h-full">
-    <a href="#" class="block relative h-full px-6 py-5 sm:py-6 md:p-9">
+    <a href={linkUrl} target="_blank" class="block relative h-full px-6 py-5 sm:py-6 md:p-9">
       <h3
-        class="text-cyan-50 font-semibold text-xl sm:text-2xl lg:text-3xl lg:text-[32px] leading-7 sm:leading-[120%] md:leading-8 max-w-[250px] sm:max-w-[424px] md:max-w-[300px] lg:max-w-[350px]"
+        class="text-cyan-50 font-semibold text-xl sm:text-2xl lg:text-[28px] leading-7 sm:leading-[120%] md:leading-8 max-w-[250px] sm:max-w-[424px] md:max-w-[300px] lg:max-w-[350px]"
       >
-        What can you do with Natanya?
+        {title}
       </h3>
 
       <div
         style="transform: rotate(-11.26deg); background: radial-gradient(67.35% 67.35% at 45.72% 0.81%, #0C4A6E 0%, rgba(12, 74, 110, 0) 100%);"
         class="p-1 sm:p-2 h-32 sm:h-44 lg:h-60 inline-block absolute -bottom-11 md:-bottom-14 lg:-bottom-11 rounded-2xl right-0 sm:-right-3 md:right-4 w-48 sm:w-64"
       >
-        <img
-          class="object-cover h-full w-full rounded-2xl"
-          height="240"
-          loading="lazy"
-          src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
-          alt="What can you do with Natanya?"
-        />
+        <img class="object-cover h-full w-full rounded-2xl" height="240" loading="lazy" src={coverImage} alt={title} />
       </div>
     </a>
   </article>
