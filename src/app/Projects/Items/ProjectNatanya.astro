@@ -105,10 +105,10 @@ import ProjectSlider from "../ProjectSlider.astro";
 
     <div class="mt-20">
       <h4 class="font-semibold text-2xl sm:text-[32px] leading-140 text-dark">Featured technologies used</h4>
-      <div class="flex flex-wrap gap-3 mt-6">
+      <div class="flex flex-wrap gap-3 mt-6 -ml-2 sm:ml-0">
         {
-          [<IconNext />, <IconFirebase />, <IconReact />].map((icon, i) => (
-            <div class="w-[60px] h-[60px] sm:min-w-[100px] sm:min-h-[100px]">{icon}</div>
+          [<IconNext />, <IconFirebase />, <IconReact />].map((icon) => (
+            <div class="scale-[90%] -ml-2 sm:ml-0 sm:scale-100 w-20 sm:min-w-[100px] sm:min-h-[100px]">{icon}</div>
           ))
         }
       </div>
