@@ -31,7 +31,7 @@ import ProjectSlider from "../ProjectSlider.astro";
 
     <h4 class="sr-only">About Natanya</h4>
 
-    <p class="text-base sm:text-2xl !leading-150 text-dark mt-10">
+    <p class="text-lg sm:text-2xl !leading-150 text-dark mt-10">
       <span class="font-semibold">Introducing Natanya</span> - an interactive polling tool that makes it easy to create engaging
       polls and collect data from an audience in real-time. It can be used during live events, and the results can be displayed
       with a chart data visualization.
@@ -43,7 +43,7 @@ import ProjectSlider from "../ProjectSlider.astro";
   </div>
 
   <div class="lg:px-16 sm:px-10 px-5 relative z-10">
-    <p class="sm:text-2xl text-base !leading-150 text-dark">
+    <p class="sm:text-2xl text-lg !leading-150 text-dark">
       Maybe you're ever heard about Slido? Mentimeter? Yes, <span class="font-semibold"
         >Natanya is the alternative of those services.</span
       > The difference? It is <span class="font-semibold">free 🤑 and open source.</span>
@@ -157,6 +157,11 @@ import ProjectSlider from "../ProjectSlider.astro";
     article::before {
       padding: 0;
       padding-top: 2px !important;
+      background: radial-gradient(
+        50.45% 6538499.72% at 49.24% 99.77%,
+        hsla(200, 98%, 39%, 1) 0%,
+        rgba(217, 217, 217, 0) 100%
+      );
     }
   }
 </style>

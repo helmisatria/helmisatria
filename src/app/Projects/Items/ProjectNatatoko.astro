@@ -32,7 +32,7 @@ import ProjectSlider from "../ProjectSlider.astro";
 
     <h4 class="sr-only">About Natatoko</h4>
 
-    <p class="sm:text-2xl text-base !leading-150 text-dark mt-10">
+    <p class="sm:text-2xl text-lg !leading-150 text-dark mt-10">
       <strong class="font-semibold">Build a customizable well designed web store in 5 minutes</strong> with ease and sell
       products that supported by comprehensive income estimation and web traffic analytics for our users
     </p>
@@ -43,7 +43,7 @@ import ProjectSlider from "../ProjectSlider.astro";
   </div>
 
   <div class="lg:px-16 sm:px-10 px-5 relative z-10">
-    <p class="sm:text-2xl text-base !leading-150 text-dark">
+    <p class="sm:text-2xl text-lg !leading-150 text-dark">
       It offers <strong>comprehensive income estimation and web traffic analytics</strong> to help users make informed business
       decisions. Setup, orders, products and business analysis are all easily adjustable with Natatoko.
       <br />
@@ -146,7 +146,12 @@ import ProjectSlider from "../ProjectSlider.astro";
   @media (max-width: 640px) {
     article::before {
       padding: 0;
-      padding-top: 2px !important;
+      padding-top: 2px;
+      background: radial-gradient(
+        50.45% 6538499.72% at 49.24% 99.77%,
+        hsla(345, 76%, 62%, 0.7) 0%,
+        rgba(217, 217, 217, 0) 100%
+      );
     }
   }
 </style>
