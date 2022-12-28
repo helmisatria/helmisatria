@@ -1,0 +1,63 @@
+---
+import ProjectHeader from "./ProjectHeader.astro";
+import ProjectNatanya from "./Items/ProjectNatanya.astro";
+import ProjectNatatoko from "./Items/ProjectNatatoko.astro";
+---
+
+<section class="relative">
+  <!-- mesh -->
+  <img
+    loading="lazy"
+    src="/images/mesh.png"
+    alt=""
+    width="1400"
+    height="1089"
+    class="hidden sm:block aspect-auto absolute top-[-150px] sm:top-[-150px] sm:left-[550px] right-0 min-w-[554px] lg:min-w-[1400px]"
+  />
+
+  <ProjectHeader />
+
+  <div class="mt-20 lg:mt-24 xl:mt-32 px-0 sm:px-8 md:px-12">
+    <ProjectNatanya />
+  </div>
+
+  <div class="relative">
+    <img
+      loading="lazy"
+      src="/images/mesh.png"
+      alt=""
+      width="1400"
+      height="1089"
+      class="hidden sm:block absolute top-[-700px] left-[-250px] sm:min-h-[1400px] w-auto aspect-auto"
+    />
+  </div>
+
+  <div class="mt-0 sm:mt-12 lg:mt-24 xl:mt-32 px-0 sm:px-8 md:px-12">
+    <ProjectNatatoko />
+    <div class="overlay-natatoko w-screen hidden sm:block sm:h-[2050px] xl:h-[2000px] absolute bottom-0 right-0"></div>
+  </div>
+
+  <div class="sm:pt-32"></div>
+</section>
+
+<style>
+  .overlay-natatoko {
+    background: radial-gradient(
+        136.64% 61.58% at 89.55% 104.49%,
+        rgba(225, 29, 72, 0.17) 0%,
+        rgba(255, 241, 242, 0) 100%
+      ),
+      radial-gradient(21.08% 15.61% at 21.46% 19.85%, rgba(225, 29, 72, 0.1) 0%, rgba(255, 241, 242, 0) 100%);
+  }
+
+  @media (max-width: 1268px) {
+    .overlay-natatoko {
+      background: radial-gradient(
+          136.64% 61.58% at 89.55% 104.49%,
+          rgba(225, 29, 72, 0.17) 0%,
+          rgba(255, 241, 242, 0) 100%
+        ),
+        radial-gradient(21.08% 15.61% at 21.46% 19.85%, rgba(225, 29, 72, 0.45) 0%, rgba(255, 241, 242, 0) 100%);
+    }
+  }
+</style>

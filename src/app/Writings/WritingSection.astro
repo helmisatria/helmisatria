@@ -1,0 +1,112 @@
+---
+import WritingHeader from "./WritingHeader.astro";
+import WritingList from "./WritingList.astro";
+---
+
+<section class="relative overflow-hidden">
+  <!-- Ournament at Top -->
+  <img
+    class="absolute pointer-events-none z-0 mx-auto -left-4 scale-[350%] sm:scale-150 xl:scale-105 -right-4 top-[-30px]"
+    src="/images/work-experiences-ournament.png"
+    width="1406"
+    height="1052"
+    alt=""
+  />
+
+  <!-- Ournament at Bottom -->
+  <img
+    class="absolute pointer-events-none z-0 mx-auto 2xl:scale-[120%] -bottom-5 inset-x-0"
+    src="/images/writings-ournament-bottom.png"
+    width="1406"
+    height="1052"
+    alt=""
+  />
+
+  <div class="px-5 pt-12 sm:pt-[14rem]">
+    <WritingHeader />
+    <WritingList />
+
+    <div class="w-full flex justify-center mb-10 sm:mb-20 lg:mb-40 mt-11 sm:mt-28">
+      <a
+        class="btn-blog relative mx-auto rounded-xl sm:rounded-[32px] px-5 sm:px-10 py-6 sm:py-9 w-full sm:w-[550px] md:w-[650px] lg:w-[865px] inline-block"
+        href="https://blog.helmisatria.com"
+        target="_blank"
+      >
+        <h3 class="font-semibold text-2xl sm:text-3xl text-cyan-100 sm:leading-[120%]">Check out my blog 📖</h3>
+        <p class="text-cyan-100 text-sm sm:text-xl leading-140 max-w-[300px] sm:max-w-none md:max-w-[506px] mt-2.5">
+          If you want to stay up-to-date with my writing content, you can subscribe to my blog.
+        </p>
+        <p class="text-cyan-400 font-semibold mt-6 sm:mt-14 text-2xl md:text-3xl lg:text-[46px]">
+          blog.helmisatria.com
+        </p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    background: radial-gradient(47.26% 39.32% at 7.08% 8.39%, rgba(5, 31, 46, 0.53) 0%, rgba(0, 0, 0, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #091f2a;
+  }
+
+  .btn-blog {
+    background: linear-gradient(97.44deg, rgba(0, 0, 0, 0.33) -1.06%, rgba(0, 0, 0, 0) 102.45%),
+      radial-gradient(72.37% 256.4% at 94.8% 96.28%, rgba(3, 105, 161, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #041f2a;
+    box-shadow: 0px 146px 58px rgba(0, 0, 0, 0.01), 0px 82px 49px rgba(0, 0, 0, 0.05), 0px 36px 36px rgba(0, 0, 0, 0.09),
+      0px 9px 20px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  section::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding-top: 3px;
+    background: radial-gradient(
+      50.45% 6538499.72% at 49.24% 99.77%,
+      hsla(200, 98%, 39%, 1) 0%,
+      rgba(217, 217, 217, 0) 100%
+    );
+    mask-mode: match-source, match-source;
+    mask-repeat: repeat, repeat;
+    mask-clip: content-box, border-box;
+    mask-origin: content-box, border-box;
+    mask-position: 0% 0%, 0% 0%;
+    mask-size: auto, auto;
+    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    mask-composite: exclude;
+  }
+
+  .btn-blog::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(
+        135deg,
+        hsla(189, 94%, 43%, 1) 1%,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      ),
+      linear-gradient(300deg, hsla(200, 98%, 39%, 0.32) 10%, transparent, transparent, transparent, transparent);
+    mask-mode: match-source, match-source;
+    mask-repeat: repeat, repeat;
+    mask-clip: content-box, border-box;
+    mask-origin: content-box, border-box;
+    mask-position: 0% 0%, 0% 0%;
+    mask-size: auto, auto;
+    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    mask-composite: exclude;
+  }
+</style>

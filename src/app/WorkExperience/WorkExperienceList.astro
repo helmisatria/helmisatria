@@ -1,0 +1,45 @@
+---
+import WorkBuka from "./GovTech/WorkBuka.astro";
+import WorkGovTech from "./GovTech/WorkGovTech.astro";
+---
+
+<div class="sm:space-y-16 relative">
+  <div class="bg-govtech relative z-10 px-0 sm:px-8 md:px-12">
+    <WorkGovTech />
+  </div>
+
+  <div class="bg-buka relative bg-red-50">
+    <div class="hidden sm:block overlay-transition z-0 absolute w-screen h-80"></div>
+    <div class="px-0 sm:px-8 md:px-12 pt-0 md:pt-12 lg:pt-24">
+      <WorkBuka />
+      <div class="sm:pb-40"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .overlay-transition {
+    background: linear-gradient(180deg, #091f2a 0%, rgba(9, 31, 42, 0) 100%),
+      linear-gradient(180deg, #091f2a 0%, rgba(9, 31, 42, 0) 100%);
+  }
+
+  .mesh-transition {
+    width: 1172px;
+    height: 1571px;
+    left: -500px;
+    top: -500px;
+
+    background: radial-gradient(24.02% 16.2% at 34.04% 37.78%, rgba(176, 100, 124, 0.54) 0%, rgba(7, 38, 54, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      radial-gradient(29.99% 17.78% at 30.59% 32.21%, #0c4a6e 0%, rgba(7, 38, 54, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      radial-gradient(50% 50% at 50% 50%, rgba(41, 121, 163, 0.2997) 0%, rgba(7, 38, 54, 0) 100%);
+    opacity: 0.7;
+  }
+
+  .bg-buka {
+    background: radial-gradient(34.79% 44.8% at 3.12% 97.15%, rgba(159, 18, 57, 0.2) 0%, rgba(82, 10, 29, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #280b14;
+  }
+</style>

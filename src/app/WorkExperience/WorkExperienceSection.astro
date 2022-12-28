@@ -1,0 +1,45 @@
+---
+import WorkExperienceHeader from "./WorkExperienceHeader.astro";
+import WorkExperienceList from "./WorkExperienceList.astro";
+---
+
+<section class="relative overflow-hidden">
+  <img
+    class="absolute pointer-events-none z-0 mx-auto -left-4 scale-[350%] sm:scale-150 xl:scale-105 -right-4 top-[-30px]"
+    src="/images/work-experiences-ournament.png"
+    width="1406"
+    height="1052"
+    alt=""
+  />
+
+  <div class="bg-top px-5 pt-32 sm:pt-[14rem]">
+    <WorkExperienceHeader />
+  </div>
+
+  <WorkExperienceList />
+</section>
+
+<style>
+  section {
+    background: radial-gradient(47.26% 39.32% at 7.08% 8.39%, rgba(5, 31, 46, 0.53) 0%, rgba(0, 0, 0, 0) 100%), #091f2a;
+  }
+
+  section::before {
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding-top: 3px;
+    background: radial-gradient(50.45% 6538499.72% at 49.24% 99.77%, #67e8f9 0%, rgba(217, 217, 217, 0) 100%);
+    mask-mode: match-source, match-source;
+    mask-repeat: repeat, repeat;
+    mask-clip: content-box, border-box;
+    mask-origin: content-box, border-box;
+    mask-position: 0% 0%, 0% 0%;
+    mask-size: auto, auto;
+    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    mask-composite: exclude;
+  }
+</style>
