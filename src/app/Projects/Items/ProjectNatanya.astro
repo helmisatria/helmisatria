@@ -41,8 +41,16 @@ import ProjectSlider from "../ProjectSlider.astro";
     </p>
   </div>
 
-  <div class="portfolio-images py-10 sm:py-20">
-    <ProjectSlider />
+  <div class="portfolio-images">
+    <ProjectSlider
+      images={[
+        { url: "/images/projects/5@natanya.png", alt: "Natanya" },
+        { url: "/images/projects/1@natanya.png", alt: "Natanya" },
+        { url: "/images/projects/2@natanya.png", alt: "Natanya" },
+        { url: "/images/projects/3@natanya.png", alt: "Natanya" },
+        { url: "/images/projects/4@natanya.png", alt: "Natanya" },
+      ]}
+    />
   </div>
 
   <div class="lg:px-16 sm:px-10 px-5 relative z-10">
@@ -64,7 +72,7 @@ import ProjectSlider from "../ProjectSlider.astro";
       <a href="#" class="tracking-tight font-semibold leading-6">
         <span class="block text-xl sm:text-[32px] text-dark leading-4 sm:!leading-100">natanya</span>
         <span class="inline-flex text-sm sm:text-xl space-x-[6px] text-slate-700 sm:pt-2">
-          <span>a</span>
+          <span>on</span>
           <span
             ><svg class="w-[18px] sm:w-6 sm:h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clip-path="url(#clip0_67_250)">

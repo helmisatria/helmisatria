@@ -1,5 +1,12 @@
 ---
-const data = Array(5).fill(0);
+export type Props = {
+  images: {
+    url: string;
+    alt: string;
+  }[];
+};
+
+const { images } = Astro.props as Props;
 ---
 
 <div class="relative">
@@ -7,9 +14,9 @@ const data = Array(5).fill(0);
     class="hide-scrollbar z-0 grid relative overflow-y-hidden pl-5 sm:pl-10 lg:pl-16 grid-flow-col snap-x snap-center mx-[2px]"
   >
     {
-      data.map((_, i) => (
-        <div class="w-[86vw] max-w-[86vw] sm:max-w-none sm:w-[484px] pr-5">
-          <div class="bg-blue-100 sm:rounded-3xl rounded-xl h-80" />
+      images.map((image) => (
+        <div class="w-[86vw] max-w-[86vw] sm:max-w-none sm:w-[484px] pr-5 py-10 sm:py-16">
+          <img class="rounded-3xl" loading="lazy" src={image.url} alt={image.alt} />
         </div>
       ))
     }
@@ -25,5 +32,10 @@ const data = Array(5).fill(0);
   .hide-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  img {
+    box-shadow: 14px 15px 8px rgba(160, 171, 176, 0.01), 8px 8px 7px rgba(160, 171, 176, 0.05),
+      4px 4px 5px rgba(160, 171, 176, 0.09), 1px 1px 3px rgba(160, 171, 176, 0.1), 0px 0px 0px rgba(160, 171, 176, 0.1);
   }
 </style>
