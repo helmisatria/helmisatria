@@ -23,12 +23,13 @@ const fetchMediumPosts = fetch("https://api.rss2json.com/v1/api.json?rss_url=htt
 } as any)
   .then((res) => res.json())
   .then((data) => {
-    return data.items.map((item: { title: string; thumbnail: string; link: string }) => ({
+    return data?.items?.map((item: { title: string; thumbnail: string; link: string }) => ({
       title: item.title,
       coverImage: item.thumbnail,
       link: item.link,
     }));
-  });
+  })
+  .catch(() => []);
 
 const fetchBlogPosts = fetch("https://api.hashnode.com/", {
   cf: {
@@ -43,15 +44,16 @@ const fetchBlogPosts = fetch("https://api.hashnode.com/", {
 } as any)
   .then((res) => res.json())
   .then((data) => {
-    return data.data.user.publication.posts.map((post: { title: string; coverImage: string; slug: string }) => ({
+    return data?.data?.user?.publication?.posts?.map((post: { title: string; coverImage: string; slug: string }) => ({
       title: post.title,
       coverImage: post.coverImage,
       slug: post.slug,
       domain: data.data.user.publicationDomain,
     }));
-  });
+  })
+  .catch(() => []);
 
-const [mediumPosts, blogPosts] = await Promise.all([fetchMediumPosts, fetchBlogPosts]);
+const [mediumPosts, blogPosts] = await Promise.all([fetchMediumPosts, fetchBlogPosts]).catch(() => [[], []]);
 
 const articles = [...blogPosts, ...mediumPosts];
 ---
