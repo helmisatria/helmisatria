@@ -10,6 +10,7 @@ const query = `{
         title
         coverImage
         slug
+        dateAdded
       }
     }
   }
@@ -24,10 +25,11 @@ const fetchMediumPosts = fetch("https://api.rss2json.com/v1/api.json?rss_url=htt
   .then((res) => res.json())
   .then((data) => {
     return (
-      data?.items?.map((item: { title: string; thumbnail: string; link: string }) => ({
+      data?.items?.map((item: { title: string; thumbnail: string; link: string; pubDate: string }) => ({
         title: item.title,
         coverImage: item.thumbnail,
         link: item.link,
+        publishedAt: new Date(item.pubDate),
       })) ?? []
     );
   })
@@ -47,19 +49,22 @@ const fetchBlogPosts = fetch("https://api.hashnode.com/", {
   .then((res) => res.json())
   .then((data) => {
     return (
-      data?.data?.user?.publication?.posts?.map((post: { title: string; coverImage: string; slug: string }) => ({
-        title: post.title,
-        coverImage: post.coverImage,
-        slug: post.slug,
-        domain: data.data.user.publicationDomain,
-      })) ?? []
+      data?.data?.user?.publication?.posts?.map(
+        (post: { title: string; coverImage: string; slug: string; dateAdded: string }) => ({
+          title: post.title,
+          coverImage: post.coverImage,
+          slug: post.slug,
+          domain: data.data.user.publicationDomain,
+          publishedAt: new Date(post.dateAdded),
+        })
+      ) ?? []
     );
   })
   .catch(() => []);
 
 const [mediumPosts, blogPosts] = await Promise.all([fetchMediumPosts, fetchBlogPosts]);
 
-const articles = [...blogPosts, ...mediumPosts];
+const articles = [...blogPosts, ...mediumPosts].sort((a, b) => b.publishedAt - a.publishedAt);
 ---
 
 <ul
