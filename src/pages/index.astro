@@ -14,10 +14,11 @@ import Contact from "../app/Contact/Contact.astro";
       <!-- ournament -->
       <img
         src="/images/hero-ournament.png"
+        id="hero-ournament"
         alt=""
         width="800"
         height="100%"
-        class="absolute pointer-events-none min-w-[950px] top-[-10px] left-[-50px] sm:min-w-[1420px] 2xl:min-w-[1600px] 2xl:scale-105 sm:scale-100 scale-125 inset-0 sm:mx-auto"
+        class="absolute opacity-0 pointer-events-none min-w-[950px] top-[-10px] left-[-50px] sm:min-w-[1420px] 2xl:min-w-[1600px] 2xl:scale-105 sm:scale-100 scale-125 inset-0 sm:mx-auto"
       />
     </div>
     <ProjectSection />
@@ -26,3 +27,11 @@ import Contact from "../app/Contact/Contact.astro";
     <Contact />
   </main>
 </Layout>
+
+<script>
+  import { animate } from "motion";
+
+  // easieng bezier
+  animate("#hero-ournament", { opacity: 1 }, { duration: 1, delay: 0.5, easing: [0.19, 1, 0.22, 1] });
+  animate("#happy-bg", { opacity: 1 }, { duration: 0.5, delay: 0.3, easing: "ease-out" });
+</script>
