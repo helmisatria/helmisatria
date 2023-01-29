@@ -7,7 +7,6 @@ specifiers:
   astro: ^2.0.2
   astro-imagetools: ^0.6.17
   astro-seo: ^0.6.1
-  clsx: ^1.2.1
   prettier: ^2.8.3
   prettier-plugin-astro: ^0.8.0
   prettier-plugin-tailwindcss: ^0.2.2
@@ -22,7 +21,6 @@ dependencies:
   astro: 2.0.2
   astro-imagetools: 0.6.17_astro@2.0.2
   astro-seo: 0.6.1
-  clsx: 1.2.1
   tailwind-merge: 1.8.1
   tailwindcss: 3.2.4
 
@@ -1790,11 +1788,6 @@ packages:
   /clone/1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
-    dev: false
-
-  /clsx/1.2.1:
-    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
-    engines: {node: '>=6'}
     dev: false
 
   /color-convert/1.9.3:
