@@ -1,4 +1,5 @@
 ---
+import { tw } from "../../utils/clsx";
 import WaveButtonLiveProduction from "./WaveButtonLiveProduction.astro";
 
 export type Props = {
@@ -6,13 +7,16 @@ export type Props = {
   link: string;
 };
 
-const { name, link } = Astro.props as Props;
+const { link, name } = Astro.props;
 ---
 
 <a
   href={link}
   target="_blank"
-  class="button-live-production relative inline-flex w-full items-start justify-between rounded-2xl px-5 py-5 pb-8 sm:w-[495px] sm:px-8 sm:py-6"
+  class={tw(
+    "button-live-production relative inline-flex w-full items-start justify-between rounded-2xl px-5 py-5 pb-8",
+    "sm:px-8 sm:py-6 sm:w-[495px]"
+  )}
   style="background: radial-gradient(94.57% 1117.67% at 2.02% 94.57%, rgba(34, 211, 238, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #123E4F;"
 >
   <div>
