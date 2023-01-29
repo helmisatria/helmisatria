@@ -2,7 +2,6 @@ lockfileVersion: 5.4
 
 specifiers:
   '@astrojs/cloudflare': ^6.1.0
-  '@astrojs/compiler': ^0.31.4
   '@astrojs/partytown': ^1.0.3
   '@astrojs/tailwind': ^3.0.0
   astro: ^2.0.2
@@ -13,7 +12,6 @@ specifiers:
 
 dependencies:
   '@astrojs/cloudflare': 6.1.0_astro@2.0.2
-  '@astrojs/compiler': 0.31.4
   '@astrojs/partytown': 1.0.3
   '@astrojs/tailwind': 3.0.0_uhsc6pehih5huiqhsy5i7sy5um
   astro: 2.0.2
