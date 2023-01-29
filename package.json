@@ -1,6 +1,5 @@
 {
   "name": "helmisatria.com",
-  "type": "module",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -24,6 +23,9 @@
     "node": "16.19.0"
   },
   "devDependencies": {
+    "prettier": "^2.8.3",
+    "prettier-plugin-astro": "^0.8.0",
+    "prettier-plugin-tailwindcss": "^0.2.2",
     "wrangler": "^2.8.1"
   }
 }
