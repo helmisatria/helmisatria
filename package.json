@@ -11,11 +11,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^6.0.0",
-    "@astrojs/compiler": "^0.31.4",
+    "@astrojs/cloudflare": "^6.1.0",
     "@astrojs/partytown": "^1.0.3",
     "@astrojs/tailwind": "^3.0.0",
-    "astro": "^2.0.1",
+    "astro": "^2.0.2",
     "astro-imagetools": "^0.6.17",
     "astro-seo": "^0.6.1",
     "tailwindcss": "^3.2.4"
