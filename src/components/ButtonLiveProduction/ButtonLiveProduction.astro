@@ -12,18 +12,18 @@ const { name, link } = Astro.props as Props;
 <a
   href={link}
   target="_blank"
-  class="button-live-production relative inline-flex justify-between items-start rounded-2xl px-5 sm:px-8 py-5 sm:py-6 pb-8 w-full sm:w-[495px]"
+  class="button-live-production relative inline-flex w-full items-start justify-between rounded-2xl px-5 py-5 pb-8 sm:w-[495px] sm:px-8 sm:py-6"
   style="background: radial-gradient(94.57% 1117.67% at 2.02% 94.57%, rgba(34, 211, 238, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #123E4F;"
 >
   <div>
-    <div class="inline-flex space-x-2 sm:space-x-3 items-center">
-      <div class="w-[8px] sm:w-[10px] h-[8px] sm:h-[10px] rounded-full bg-green-light"></div>
-      <span class="tracking-tight text-base sm:text-2xl leading-100 text-green-light font-semibold"
+    <div class="inline-flex items-center space-x-2 sm:space-x-3">
+      <div class="h-[8px] w-[8px] rounded-full bg-green-light sm:h-[10px] sm:w-[10px]"></div>
+      <span class="text-base font-semibold leading-100 tracking-tight text-green-light sm:text-2xl"
         >Live in production</span
       >
     </div>
 
-    <span class="relative block text-[32px] sm:text-[3.5rem] text-sky-50 font-semibold tracking-tight leading-100"
+    <span class="relative block text-[32px] font-semibold leading-100 tracking-tight text-sky-50 sm:text-[3.5rem]"
       >{name}
       <div class="absolute -bottom-3">
         <WaveButtonLiveProduction />
@@ -32,7 +32,7 @@ const { name, link } = Astro.props as Props;
   </div>
 
   <div
-    class="bg-cyan-900 rounded-lg p-3"
+    class="rounded-lg bg-cyan-900 p-3"
     style="box-shadow: 10px 11px 6px rgba(0, 0, 0, 0.01), 6px 6px 5px rgba(0, 0, 0, 0.05), 3px 3px 4px rgba(0, 0, 0, 0.09), 1px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
   "
   >
