@@ -1,0 +1,13 @@
+---
+import BlogSideNavigation from "../components/Blog/BlogSideNavigation.astro";
+import BlogSidebar from "../components/Blog/BlogSidebar.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="flex min-h-screen flex-col bg-white sm:flex-row">
+    <BlogSideNavigation />
+    <BlogSidebar />
+    <slot />
+  </div>
+</Layout>
