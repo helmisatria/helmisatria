@@ -5,6 +5,11 @@ import "../styles/fonts.css";
 const seoDescription =
   "Experienced fullstack javascript developer with 5+ years of experience in building web applications";
 
+type Props = {
+  title?: string;
+  seoTitle?: string;
+};
+
 const { title = "Helmi Satria - Fullstack Developer", seoTitle = "Helmi Satria - Experienced Fullstack Developer" } =
   Astro.props;
 ---
