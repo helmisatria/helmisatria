@@ -20,16 +20,16 @@ posts.forEach((post) => {
 ---
 
 <main class="bg-white">
-  <img src="/images/blog-ournament.png" class="fixed bottom-0 right-0 z-0 h-full" alt="" />
+  <img src="/images/blog-ournament.png" class="bottom-0 right-0 z-0 hidden h-full lg:fixed lg:block" alt="" />
 
   <div class="relative mt-11">
-    <ul class="mx-auto max-w-4xl space-y-10 px-5">
+    <ul class="mx-auto max-w-xl space-y-10 px-5 xl:max-w-3xl">
       {
         posts.map((post) => (
           <li>
-            <div class="-ml-10 inline-flex space-x-5">
+            <div class="inline-flex lg:-ml-10 lg:space-x-5">
               <svg
-                class="mt-9 inline-block"
+                class="mt-9 hidden lg:inline-block"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
@@ -46,10 +46,10 @@ posts.forEach((post) => {
               </svg>
 
               <article class="max-w-[580px]">
-                <a href={post.url}>
+                <a class="group text-slate-900 visited:text-cyan-800" href={post.url}>
                   <div class="">
                     <span class="mb-3 inline-block text-xs text-slate-500">{post.frontmatter.publishDate}</span>
-                    <h2 class="text-xl font-semibold text-slate-900">{post.frontmatter.title}</h2>
+                    <h2 class="text-xl font-semibold group-hover:underline">{post.frontmatter.title}</h2>
                     <p class="max-w-[540px] pt-2 text-sm text-slate-600">{post.frontmatter.description}</p>
                   </div>
                 </a>
