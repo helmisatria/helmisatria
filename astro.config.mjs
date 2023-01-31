@@ -21,7 +21,6 @@ export default defineConfig({
         theme: "min-light",
       },
     }),
-    image(),
   ],
   output: "server",
   adapter: cloudflare(),
