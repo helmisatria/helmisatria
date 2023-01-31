@@ -8,6 +8,14 @@ import Layout from "../layouts/Layout.astro";
   <div class="flex min-h-screen flex-col bg-white sm:flex-row">
     <BlogSideNavigation />
     <BlogSidebar />
-    <slot />
+
+    <div class="flex-1">
+      <div class="w-full border-b border-slate-200 py-6">
+        <div class="mx-auto max-w-4xl px-5">
+          <h1 class="text-xl font-semibold text-slate-900">Blog</h1>
+        </div>
+      </div>
+      <slot />
+    </div>
   </div>
 </Layout>

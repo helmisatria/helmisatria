@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.1.0",
+    "@astrojs/image": "^0.13.1",
+    "@astrojs/mdx": "^0.15.1",
     "@astrojs/partytown": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
-    "astro": "^2.0.2",
+    "astro": "^2.0.4",
     "astro-imagetools": "^0.6.17",
     "astro-seo": "^0.6.1",
     "dayjs": "^1.11.7",
@@ -28,6 +30,7 @@
     "prettier": "^2.8.3",
     "prettier-plugin-astro": "^0.8.0",
     "prettier-plugin-tailwindcss": "^0.2.2",
+    "sass": "^1.57.1",
     "wrangler": "^2.8.1"
   }
 }

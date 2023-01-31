@@ -2,11 +2,11 @@
 import { SEO } from "astro-seo";
 import "../styles/fonts.css";
 
-const seoTitle = "Helmi Satria - Experienced Fullstack Developer";
 const seoDescription =
   "Experienced fullstack javascript developer with 5+ years of experience in building web applications";
 
-const { title = "Helmi Satria - Fullstack Developer" } = Astro.props;
+const { title = "Helmi Satria - Fullstack Developer", seoTitle = "Helmi Satria - Experienced Fullstack Developer" } =
+  Astro.props;
 ---
 
 <!DOCTYPE html>

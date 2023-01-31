@@ -2,14 +2,122 @@
 import BlogSideNavigation from "../components/Blog/BlogSideNavigation.astro";
 import BlogSidebar from "../components/Blog/BlogSidebar.astro";
 import Layout from "../layouts/Layout.astro";
+
+type Props = {
+  frontmatter: {
+    title: string;
+    author: string;
+    description: string;
+    tags: string[];
+    published: boolean;
+    publishDate: string;
+  };
+};
+
+const { frontmatter } = Astro.props;
 ---
 
-<Layout>
+<Layout title={frontmatter.title} seoTitle={frontmatter.title}>
   <div class="flex min-h-screen flex-col bg-white sm:flex-row">
     <BlogSideNavigation />
     <BlogSidebar />
-    <main>
-      <slot />
+
+    <main class="flex-1">
+      <div class="w-full border-b border-slate-200 py-6">
+        <div class="mx-auto max-w-4xl px-5">
+          <a href="/blog" class="text-xl font-semibold text-slate-900">Blog</a>
+          <span>{frontmatter.title}</span>
+        </div>
+      </div>
+      <div>
+        <div class="relative mt-11">
+          <div class="mx-auto max-w-4xl px-5">
+            <article class="blog-detail">
+              <slot />
+            </article>
+          </div>
+        </div>
+      </div>
     </main>
   </div>
 </Layout>
+
+<style lang="scss" is:global>
+  .gist {
+    font-size: 13px;
+    line-height: 18px;
+    width: 53em;
+  }
+
+  .gist pre {
+    font-family: Menlo, Monaco, "Bitstream Vera Sans Mono", "Courier New", monospace !important;
+  }
+
+  .gist-meta {
+    font-family: Arial, sans-serif;
+    font-size: 13px !important;
+  }
+
+  .gist-meta a {
+    color: #3b5998 !important;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .gist-meta a:hover {
+    text-decoration: underline;
+  }
+
+  .gist-data {
+    max-height: 600px;
+  }
+
+  /* Blog styling */
+  .blog-detail {
+    h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      max-width: 580px;
+      line-height: 130%;
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      max-width: 580px;
+      line-height: 130%;
+      margin-bottom: 20px;
+      padding-top: 10px;
+    }
+
+    p,
+    ul,
+    li,
+    ol {
+      font-size: 1rem;
+      line-height: 150%;
+      margin-bottom: 1rem;
+      @apply text-slate-800;
+      max-width: 620px;
+    }
+
+    li > ol {
+      margin-top: 0.5rem;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
+    ol {
+      list-style: decimal;
+      padding-left: 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.2rem;
+    }
+  }
+</style>
