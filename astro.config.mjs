@@ -13,11 +13,7 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
-    mdx({
-      shikiConfig: {
-        theme: "min-light",
-      },
-    }),
+    mdx(),
   ],
   output: "server",
   adapter: cloudflare(),
