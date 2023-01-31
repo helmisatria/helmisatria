@@ -1,6 +1,7 @@
 ---
 import BlogSideNavigation from "../components/Blog/BlogSideNavigation.astro";
 import BlogSidebar from "../components/Blog/BlogSidebar.astro";
+import BlogTitleOurnament from "../components/Blog/BlogTitleOurnament.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -9,8 +10,10 @@ import Layout from "../layouts/Layout.astro";
     <BlogSideNavigation />
     <BlogSidebar />
 
-    <div class="flex-1">
-      <div class="w-full border-b border-slate-200 py-6">
+    <div class="relative flex-1 overflow-x-hidden">
+      <BlogTitleOurnament />
+
+      <div class="relative z-10 w-full border-b border-slate-200 py-6">
         <div class="mx-auto max-w-4xl px-5">
           <h1 class="text-xl font-semibold text-slate-900">Blog</h1>
         </div>

@@ -1,6 +1,7 @@
 ---
 import BlogSideNavigation from "../components/Blog/BlogSideNavigation.astro";
 import BlogSidebar from "../components/Blog/BlogSidebar.astro";
+import BlogTitleOurnament from "../components/Blog/BlogTitleOurnament.astro";
 import Layout from "../layouts/Layout.astro";
 
 type Props = {
@@ -22,15 +23,16 @@ const { frontmatter } = Astro.props;
     <BlogSideNavigation />
     <BlogSidebar />
 
-    <main class="flex-1">
-      <div class="w-full border-b border-slate-200 py-6">
+    <main class="relative flex-1 overflow-x-hidden">
+      <BlogTitleOurnament />
+      <div class="relative w-full border-b border-slate-200 py-4 sm:py-6">
         <div class="mx-auto max-w-4xl px-5">
           <a href="/blog" class="text-xl font-semibold text-slate-900">Blog</a>
-          <span>{frontmatter.title}</span>
+          <span class="inline-block text-xs text-slate-800 sm:pl-2">{frontmatter.title}</span>
         </div>
       </div>
-      <div>
-        <div class="relative mt-11">
+      <div class="relative z-10 bg-white">
+        <div class="mt-11">
           <div class="mx-auto max-w-4xl px-5">
             <article class="blog-detail">
               <slot />
@@ -46,7 +48,13 @@ const { frontmatter } = Astro.props;
   .gist {
     font-size: 13px;
     line-height: 18px;
-    width: 53em;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .gist {
+      width: 100%;
+    }
   }
 
   .gist pre {
@@ -72,6 +80,12 @@ const { frontmatter } = Astro.props;
     max-height: 600px;
   }
 
+  @media (max-width: 768px) {
+    .gist-data {
+      max-height: 300px;
+    }
+  }
+
   /* Blog styling */
   .blog-detail {
     h1 {
@@ -85,7 +99,7 @@ const { frontmatter } = Astro.props;
     h2 {
       font-size: 1.25rem;
       font-weight: 600;
-      max-width: 580px;
+      max-width: 480px;
       line-height: 130%;
       margin-bottom: 20px;
       padding-top: 10px;
@@ -100,6 +114,7 @@ const { frontmatter } = Astro.props;
       margin-bottom: 1rem;
       @apply text-slate-800;
       max-width: 620px;
+      line-height: 150%;
     }
 
     li > ol {

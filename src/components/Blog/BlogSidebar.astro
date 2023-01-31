@@ -2,33 +2,33 @@
 import { tw } from "../../utils/clsx";
 ---
 
-<div class="w-[310px] sm:min-w-[310px]">
+<div class="w-full sm:w-[310px] sm:min-w-[310px]">
   <aside class="flex h-full flex-col items-stretch bg-slate-50 px-6 py-6 sm:px-9 sm:pt-12">
     <div
       style="box-shadow: 0px 43px 17px rgba(0, 0, 0, 0.01), 0px 24px 14px rgba(0, 0, 0, 0.05), 0px 11px 11px rgba(0, 0, 0, 0.09), 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1)"
       class={tw("rounded-lg sm:p-4 p-2 bg-white sm:w-full w-50 self-center")}
     >
       <img
-        height="184"
-        width="184"
+        height={184}
+        width={184}
         class="w-50 aspect-square rounded-lg object-cover sm:h-full sm:w-full"
         src="/images/helmi-blog-square.png"
         alt="Helmi Satria"
       />
     </div>
 
-    <div class="mt-12 flex flex-col">
+    <div class="mt-8 flex flex-col sm:mt-12">
       <h2 class="text-base font-semibold tracking-tight text-slate-900">Helmi Satria</h2>
       <p class="mt-2 text-sm leading-150 tracking-tight">
         a happy full-stack developer who aims to help others grow in web development
       </p>
 
-      <p class="mt-5 text-xs leading-140 tracking-tight text-slate-600">
+      <p class="mt-2 text-xs leading-140 tracking-tight text-slate-600 sm:mt-5">
         5 years of experience in using node.js and vue.js (also react.js) for full-stack development.
       </p>
     </div>
 
-    <div class="mt-10 space-x-6">
+    <div class="mt-7 space-x-6 sm:mt-10">
       <a href="#" class="inline-flex items-center space-x-2 text-sm font-medium">
         <!-- Tiktok SVG -->
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
