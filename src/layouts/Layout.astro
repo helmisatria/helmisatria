@@ -2,15 +2,20 @@
 import { SEO } from "astro-seo";
 import "../styles/fonts.css";
 
-const seoTitle = "Helmi Satria - Experienced Fullstack Developer";
 const seoDescription =
   "Experienced fullstack javascript developer with 5+ years of experience in building web applications";
 
-const { title = "Helmi Satria - Fullstack Developer" } = Astro.props;
+type Props = {
+  title?: string;
+  seoTitle?: string;
+};
+
+const { title = "Helmi Satria - Fullstack Developer", seoTitle = "Helmi Satria - Experienced Fullstack Developer" } =
+  Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -20,7 +25,7 @@ const { title = "Helmi Satria - Fullstack Developer" } = Astro.props;
       description={seoDescription}
       openGraph={{
         optional: {
-          locale: "en_US",
+          locale: "id_ID",
           description: seoDescription,
           siteName: "Helmi Satria",
         },

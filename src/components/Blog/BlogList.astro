@@ -1,0 +1,71 @@
+---
+import dayjs from "dayjs";
+
+// dayjs locale id
+import "dayjs/locale/id";
+dayjs.locale("id");
+
+// dayjs timezone
+import timezone from "dayjs/plugin/timezone";
+dayjs.extend(timezone);
+dayjs.tz.setDefault("Asia/Jakarta");
+
+// get all blog posts from the filesystem directory: /blog/*
+const posts = await Astro.glob("../../pages/blog/*");
+
+// format publishDate based on Asia/Jakarta timezone
+posts.forEach((post) => {
+  post.frontmatter.publishDate = dayjs(post.frontmatter.publishDate).format("DD MMMM YYYY HH:mm");
+});
+---
+
+<main class="bg-white">
+  <img src="/images/blog-ournament.png" class="bottom-0 right-0 z-0 hidden h-full lg:fixed lg:block" alt="" />
+
+  <div class="relative mt-11">
+    <ul class="mx-auto max-w-xl space-y-10 px-5 xl:max-w-3xl">
+      {
+        posts.map((post) => (
+          <li>
+            <div class="inline-flex lg:-ml-10 lg:space-x-5">
+              <svg
+                class="mt-9 hidden lg:inline-block"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M16.25 11.875V9.6875C16.25 8.94158 15.9537 8.22621 15.4262 7.69876C14.8988 7.17132 14.1834 6.875 13.4375 6.875H12.1875C11.9389 6.875 11.7004 6.77623 11.5246 6.60041C11.3488 6.4246 11.25 6.18614 11.25 5.9375V4.6875C11.25 3.94158 10.9537 3.22621 10.4262 2.69876C9.89879 2.17132 9.18342 1.875 8.4375 1.875H6.875M6.875 12.5H13.125M6.875 15H10M8.75 1.875H4.6875C4.17 1.875 3.75 2.295 3.75 2.8125V17.1875C3.75 17.705 4.17 18.125 4.6875 18.125H15.3125C15.83 18.125 16.25 17.705 16.25 17.1875V9.375C16.25 7.38588 15.4598 5.47822 14.0533 4.0717C12.6468 2.66518 10.7391 1.875 8.75 1.875Z"
+                  stroke="#94A3B8"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+
+              <article class="max-w-[580px]">
+                <a class="group text-slate-900 visited:text-cyan-800" href={post.url}>
+                  <div class="">
+                    <span class="mb-3 inline-block text-xs text-slate-500">{post.frontmatter.publishDate}</span>
+                    <h2 class="text-xl font-semibold group-hover:underline">{post.frontmatter.title}</h2>
+                    <p class="max-w-[540px] pt-2 text-sm text-slate-600">{post.frontmatter.description}</p>
+                  </div>
+                </a>
+
+                <div class="mt-4">
+                  {post.frontmatter.tags.map((tag: string) => (
+                    <a href="#" class="mr-2">
+                      <span class="inline-block rounded-full bg-slate-100 px-2 py-1 text-xs text-slate-500">{tag}</span>
+                    </a>
+                  ))}
+                </div>
+              </article>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</main>

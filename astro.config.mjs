@@ -1,14 +1,8 @@
 import { defineConfig } from "astro/config";
-
-// https://astro.build/config
 import tailwind from "@astrojs/tailwind";
-
-// https://astro.build/config
 import partytown from "@astrojs/partytown";
-
-// https://astro.build/config
 import cloudflare from "@astrojs/cloudflare";
-import { astroImageTools } from "astro-imagetools";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,8 +13,8 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
-    astroImageTools,
+    mdx(),
   ],
   output: "server",
-  adapter: cloudflare(),
+  adapter: cloudflare({ mode: "directory" }),
 });
