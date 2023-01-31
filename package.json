@@ -10,12 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^6.1.0",
+    "@astrojs/cloudflare": "^5.0.0",
     "@astrojs/mdx": "^0.15.1",
     "@astrojs/partytown": "^1.0.3",
     "@astrojs/sitemap": "^1.0.0",
     "@astrojs/tailwind": "^3.0.0",
-    "astro": "^2.0.4",
+    "astro": "^1.9.1",
     "astro-imagetools": "^0.6.17",
     "astro-seo": "^0.6.1",
     "dayjs": "^1.11.7",
