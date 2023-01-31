@@ -16,5 +16,5 @@ export default defineConfig({
     mdx(),
   ],
   output: "server",
-  adapter: cloudflare({ adapter: "directory" }),
+  adapter: cloudflare({ mode: "directory" }),
 });
