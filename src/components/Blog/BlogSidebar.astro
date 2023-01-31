@@ -2,34 +2,41 @@
 import { tw } from "../../utils/clsx";
 ---
 
-<div class="w-full sm:w-[310px] sm:min-w-[310px]">
-  <aside class="flex h-full flex-col items-stretch bg-slate-50 px-6 py-6 sm:px-9 sm:pt-12">
+<div class="w-full sm:w-[380px] sm:min-w-[380px]">
+  <div class="relative flex h-full flex-col items-stretch bg-slate-50 px-6 py-6 sm:px-9 sm:pt-12">
+    <div class="separator-highlight absolute right-0 mt-20 h-[600px] w-[2px]"></div>
+
     <div
       style="box-shadow: 0px 43px 17px rgba(0, 0, 0, 0.01), 0px 24px 14px rgba(0, 0, 0, 0.05), 0px 11px 11px rgba(0, 0, 0, 0.09), 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1)"
-      class={tw("rounded-lg sm:p-4 p-2 bg-white sm:w-full w-50 self-center")}
+      class={tw("rounded-lg sm:p-4 p-2 bg-white self-center flex items-center justify-center")}
     >
       <img
         height={184}
         width={184}
-        class="w-50 aspect-square rounded-lg object-cover sm:h-full sm:w-full"
+        class="aspect-square h-52 max-w-sm rounded-lg object-cover sm:w-52"
         src="/images/helmi-blog-square.png"
         alt="Helmi Satria"
       />
     </div>
 
     <div class="mt-8 flex flex-col sm:mt-12">
-      <h2 class="text-base font-semibold tracking-tight text-slate-900">Helmi Satria</h2>
-      <p class="mt-2 text-sm leading-150 tracking-tight">
+      <h2 class="text-base font-semibold tracking-tight text-slate-900 sm:text-xl">Helmi Satria</h2>
+      <p class="mt-2 text-sm leading-140 tracking-tight sm:text-lg">
         a happy full-stack developer who aims to help others grow in web development
       </p>
 
-      <p class="mt-2 text-xs leading-140 tracking-tight text-slate-600 sm:mt-5">
-        5 years of experience in using node.js and vue.js (also react.js) for full-stack development.
+      <p class="mt-2 text-xs leading-140 tracking-tight text-slate-600 sm:mt-5 sm:text-base">
+        5 years of experience in using node.js and vue.js (also react.js) for full-stack development
       </p>
     </div>
 
-    <div class="mt-7 space-x-6 sm:mt-10">
-      <a href="#" class="inline-flex items-center space-x-2 text-sm font-medium">
+    <div class="mt-7 space-x-6 text-slate-600 sm:mt-10">
+      <a
+        href="https://www.tiktok.com/@helmisatria_"
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center space-x-2 text-sm font-medium"
+      >
         <!-- Tiktok SVG -->
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_305_621)">
@@ -47,7 +54,12 @@ import { tw } from "../../utils/clsx";
         <span>Tiktok</span>
       </a>
 
-      <a href="#" class="inline-flex items-center space-x-2 text-sm font-medium">
+      <a
+        href="https://twitter.com/helmisatria_"
+        target="_blank"
+        rel="noreferrer"
+        class="inline-flex items-center space-x-2 text-sm font-medium"
+      >
         <!-- Twitter SVG -->
         <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -58,5 +70,11 @@ import { tw } from "../../utils/clsx";
         <span>Twitter</span>
       </a>
     </div>
-  </aside>
+  </div>
 </div>
+
+<style>
+  .separator-highlight {
+    background: radial-gradient(1000% 50% at 50% 50%, #cbd5e1 0%, rgba(217, 217, 217, 0) 100%);
+  }
+</style>

@@ -7,10 +7,12 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout>
   <div class="flex min-h-screen flex-col bg-white sm:flex-row">
-    <BlogSideNavigation />
-    <BlogSidebar />
+    <header class="fixed flex min-h-screen w-[420px]">
+      <BlogSideNavigation />
+      <BlogSidebar />
+    </header>
 
-    <div class="relative flex-1 overflow-x-hidden">
+    <div class="relative ml-[440px] flex-1 overflow-x-hidden">
       <BlogTitleOurnament />
 
       <div class="relative z-10 w-full border-b border-slate-200 py-6">
