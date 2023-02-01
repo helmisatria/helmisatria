@@ -13,7 +13,11 @@ export default defineConfig({
         forward: ["dataLayer.push"],
       },
     }),
-    mdx(),
+    mdx({
+      shikiConfig: {
+        theme: "github-light",
+      },
+    }),
   ],
   output: "server",
   adapter: cloudflare({ mode: "directory" }),

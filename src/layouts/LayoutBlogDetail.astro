@@ -88,6 +88,12 @@ const { frontmatter } = Astro.props;
     max-height: 600px;
   }
 
+  .astro-code {
+    padding: 1rem;
+    @apply rounded-md text-sm shadow-md;
+    margin-bottom: 2rem;
+  }
+
   @media (max-width: 768px) {
     .gist-data {
       max-height: 300px;
@@ -96,6 +102,17 @@ const { frontmatter } = Astro.props;
 
   /* Blog styling */
   .blog-detail {
+    a {
+      color: #3b5998;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease-in-out;
+      &:hover {
+        color: #1a1a1a;
+        text-decoration: underline;
+      }
+    }
+
     h1 {
       font-size: 1.5rem;
       font-weight: bold;
