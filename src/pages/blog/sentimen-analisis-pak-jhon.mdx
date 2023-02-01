@@ -1,0 +1,32 @@
+---
+layout: ../../layouts/LayoutBlogDetail.astro
+title: Sentimen Analisis Pak Jhon
+author: Helmi Satria
+description: "Setelah coba beberapa kali dengan berbagai cara, ini adalah cara yg menurut saya paling mudah dan cepat untuk digunakan. Tanpa API, tanpa limit, bisa..."
+tags: ["Tiktok", "Data"]
+published: true
+publishDate: 2023-01-30T17:21:00+07:00
+---
+
+# Blog - Sentimen Analisis pak John di Twitter
+Di awal tahun 2023 ini sempat ramai di twitter tentang pak John yang sering viral di Twitter ya, di blog ini saya akan melakukan sentimen analisis terhadap semua tweet yang me-reply tweet ini  [https://twitter.com/Askrlfess/status/1616059242561310720](https://twitter.com/Askrlfess/status/1616059242561310720) 
+
+Jadi, hal yang kita lakukan ada 2 langkah:
+1.	Crawl data twitter
+2.	Sentimen analisis menggunakan pre-trained model (BERT)
+
+
+## 1. Crawl Data Twitter
+
+
+Untuk melakukan crawl data kamu dapat membaca dan mempelajarinya lebih dalam dan detail di artikel medium yang sudah saya tulis disini  [https://medium.com/@helmisatria/cara-mendapatkan-data-twitter-di-2023-44aaefb616ea](https://medium.com/@helmisatria/cara-mendapatkan-data-twitter-di-2023-44aaefb616ea) 
+
+
+## 2. Sentimen Analisis Menggunakan Pre-trained Model (BERT)
+
+
+Setelah kita memiliki data yang dibutuhkan, sekarang kita akan melakukan sentimen analisis menggunakan pre-trained model BERT. Pre-trained model BERT mampu mengaturan kompleksitas dari kalimat dan membantu kita menentukan sentimen dari tweet.
+Untuk melakukannya, kita dapat melakukan / menjalankan model BERT di jupyter notebook atau Google Colab. Model BERT akan membuat laporan dan menampilkan hasil sentimen dari data crawl yang kita lakukan.
+Pada artikel ini saya akan menggunakan jupyter notebook dan menggunakan code editor VS Code, berikut adalah source code yang saya gunakan
+
+<script src="https://gist.github.com/helmisatria/3f75de8878988740b40104876c433918.js"></script>
