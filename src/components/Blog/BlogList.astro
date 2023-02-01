@@ -17,6 +17,11 @@ const posts = await Astro.glob("../../pages/blog/*");
 posts.forEach((post) => {
   post.frontmatter.publishDate = dayjs(post.frontmatter.publishDate).format("DD MMMM YYYY HH:mm");
 });
+
+// order by publishDate
+posts.sort((a, b) => {
+  return dayjs(b.frontmatter.publishDate).unix() - dayjs(a.frontmatter.publishDate).unix();
+});
 ---
 
 <main class="bg-white">

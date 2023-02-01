@@ -1,46 +1,50 @@
-<section class="relative overflow-hidden lg:min-h-screen lg:max-h-screen flex items-center">
+<section class="relative flex items-center overflow-hidden lg:max-h-screen lg:min-h-screen">
   <!-- Background -->
   <img
     src="/images/contact-bg.png"
     alt=""
-    class="absolute bottom-0 -right-24 sm:right-0 z-0 aspect-auto min-w-[800px] sm:min-w-[1200px]"
+    class="aspect-auto absolute bottom-0 -right-24 z-0 min-w-[800px] sm:right-0 sm:min-w-[1200px]"
   />
 
   <div
-    class="px-5 mob:px-8 sm:px-10 md:px-16 lg:px-0 xl:px-4 xl:max-w-[1244px] mx-auto h-full max-lg:py-20 max-lg:pb-36 lg:pb-16 xl:pb-10 2xl:pb-32 z-10"
+    class="z-10 mx-auto h-full px-5 max-lg:py-20 max-lg:pb-36 mob:px-8 sm:px-10 md:px-16 lg:px-0 lg:pb-16 xl:max-w-[1244px] xl:px-4 xl:pb-10 2xl:pb-32"
   >
     <!-- Section Title -->
-    <h2 class="font-semibold tracking-tight md:font-bold !leading-140 text-3xl 2xl:text-4xl">
-      <span class="no-text-fill-color block sm:inline-block mr-2">🤝</span> Let's get in touch
+    <h2 id="contact-me" class="text-3xl font-semibold !leading-140 tracking-tight md:font-bold 2xl:text-4xl">
+      <span class="no-text-fill-color mr-2 block sm:inline-block">🤝</span> Let's get in touch
     </h2>
 
     <!-- Body Content -->
     <div
-      class="body-content mt-12 2xl:mt-16 tracking-tighter text-5xl sm:text-6xl lg:text-[68px] xl:text-[84px] 2xl:text-[92px] font-semibold"
+      class="body-content mt-12 text-5xl font-semibold tracking-tighter sm:text-6xl lg:text-[68px] xl:text-[84px] 2xl:mt-16 2xl:text-[92px]"
     >
-      <p class="leading-[90%] mt-5 xl:leading-[120%] lg:mt-2 xl:-mt-5 2xl:-mt-4">Suka kopi, mau ngopi bareng?</p>
-      <p class="leading-[90%] mt-5 xl:leading-[120%] lg:mt-2 xl:-mt-5 2xl:-mt-4">Have any project ideas?</p>
-      <p class="leading-[90%] mt-5 xl:leading-[120%] pb-2 xl:pb-0 lg:mt-2 xl:-mt-5 2xl:-mt-4">Ask something?</p>
+      <p class="mt-5 leading-[90%] lg:mt-2 xl:-mt-5 xl:leading-[120%] 2xl:-mt-4">Suka kopi, mau ngopi bareng?</p>
+      <p class="mt-5 leading-[90%] lg:mt-2 xl:-mt-5 xl:leading-[120%] 2xl:-mt-4">Have any project ideas?</p>
+      <p class="mt-5 pb-2 leading-[90%] lg:mt-2 xl:-mt-5 xl:pb-0 xl:leading-[120%] 2xl:-mt-4">Ask something?</p>
     </div>
 
     <div class="mt-20 2xl:mt-24">
-      <div class="flex flex-col sm:flex-row sm:space-x-8 items-start">
+      <div class="flex flex-col items-start sm:flex-row sm:space-x-8">
         <!-- Avatar -->
         <div
-          class="h-24 md:h-28 xl:h-32 aspect-square inline-block sm:min-w-[32px] sm:min-h-[32px] bg-cyan-dark rounded-full relative"
+          class="aspect-square relative inline-block h-24 rounded-full bg-cyan-dark sm:min-h-[32px] sm:min-w-[32px] md:h-28 xl:h-32"
         >
-          <img src="/images/helmi-square.png" alt="Helmi Satria" class="object-cover w-full h-full rounded-full" />
+          <img
+            src="/images/helmi-square.png"
+            alt="Helmi Satria"
+            class="h-24 w-24 rounded-full object-cover sm:h-32 sm:min-h-[32px] sm:w-32 sm:min-w-[32px] md:h-28 xl:h-32"
+          />
           <span class="absolute -bottom-1 right-0 text-4xl xl:text-5xl">🔥</span>
         </div>
 
         <!-- Contact me -->
         <div class="mt-6 sm:mt-0">
           <!-- Contact me - Title -->
-          <p class="text-[#38BDF8] text-xl xl:text-2xl font-medium">Contact me via</p>
+          <p class="text-xl font-medium text-[#38BDF8] xl:text-2xl">Contact me via</p>
 
           <!-- Contact me - Content -->
-          <div class="lg:text-base xl:text-2xl mt-4 md:mt-6 xl:mt-8 space-y-1 sm:space-y-0 text-[#CFFAFE]">
-            <a href="mailto:satriahelmi@gmail.com" class="flex space-x-3 items-center">
+          <div class="mt-4 space-y-1 text-[#CFFAFE] sm:space-y-0 md:mt-6 lg:text-base xl:mt-8 xl:text-2xl">
+            <a href="mailto:satriahelmi@gmail.com" class="flex items-center space-x-3">
               <div class="h-4 w-4">
                 <svg class="fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                   ><title>Gmail</title><path
@@ -50,7 +54,7 @@
               </div>
               <span>satriahelmi@gmail.com</span>
             </a>
-            <a href="https://twitter.com/@helmisatria_" target="_blank" class="flex space-x-3 items-center">
+            <a href="https://twitter.com/@helmisatria_" target="_blank" class="flex items-center space-x-3">
               <div class="h-4 w-4">
                 <svg class="fill-current" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
                   ><title>Twitter</title><path
@@ -64,8 +68,8 @@
         </div>
       </div>
 
-      <div class="absolute bottom-0 pb-10 2xl:pb-20">
-        <p class="text-cyan-700 xl:text-lg leading-140">
+      <div id="footer" class="absolute bottom-0 pb-10 2xl:pb-20">
+        <p class="leading-140 text-cyan-700 xl:text-lg">
           Made with Astro and designed <br class="inline-block sm:hidden" /> happily using Figma by Helmi Satria
         </p>
       </div>

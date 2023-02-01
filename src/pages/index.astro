@@ -5,9 +5,11 @@ import ProjectSection from "../app/Projects/ProjectSection.astro";
 import WorkExperienceSection from "../app/WorkExperience/WorkExperienceSection.astro";
 import WritingSection from "../app/Writings/WritingSection.astro";
 import Contact from "../app/Contact/Contact.astro";
+import NavbarPortfolio from "../components/NavbarPortfolio";
 ---
 
 <Layout title="Helmi Satria - Fullstack Developer" seoTitle="Helmi Satria - Experienced Fullstack Developer">
+  <NavbarPortfolio client:idle />
   <main class="relative min-h-screen overflow-hidden">
     <HeroSection />
     <div>
@@ -21,8 +23,10 @@ import Contact from "../app/Contact/Contact.astro";
       />
     </div>
     <ProjectSection />
-    <WorkExperienceSection />
-    <WritingSection />
+    <div id="dark-section">
+      <WorkExperienceSection />
+      <WritingSection />
+    </div>
     <Contact />
   </main>
 </Layout>

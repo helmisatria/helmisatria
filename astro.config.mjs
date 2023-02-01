@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import partytown from "@astrojs/partytown";
 import cloudflare from "@astrojs/cloudflare";
 import mdx from "@astrojs/mdx";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,7 @@ export default defineConfig({
         theme: "github-light",
       },
     }),
+    react(),
   ],
   output: "server",
   adapter: cloudflare(),

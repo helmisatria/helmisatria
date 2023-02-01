@@ -4,7 +4,7 @@ import ProjectNatanya from "./Items/ProjectNatanya.astro";
 import ProjectNatatoko from "./Items/ProjectNatatoko.astro";
 ---
 
-<section class="relative">
+<section class="relative" id="project-section">
   <!-- mesh -->
   <img
     loading="lazy"
@@ -12,12 +12,12 @@ import ProjectNatatoko from "./Items/ProjectNatatoko.astro";
     alt=""
     width="1400"
     height="1089"
-    class="hidden sm:block aspect-auto absolute top-[-150px] sm:top-[-150px] sm:left-[550px] right-0 min-w-[554px] lg:min-w-[1400px]"
+    class="aspect-auto absolute top-[-150px] right-0 hidden min-w-[554px] sm:top-[-150px] sm:left-[550px] sm:block lg:min-w-[1400px]"
   />
 
   <ProjectHeader />
 
-  <div class="mt-20 lg:mt-24 xl:mt-32 px-0 sm:px-8 md:px-12">
+  <div class="mt-20 px-0 sm:px-8 md:px-12 lg:mt-24 xl:mt-32">
     <ProjectNatanya />
   </div>
 
@@ -28,13 +28,13 @@ import ProjectNatatoko from "./Items/ProjectNatatoko.astro";
       alt=""
       width="1400"
       height="1089"
-      class="hidden sm:block absolute top-[-700px] left-[-250px] sm:min-h-[1400px] w-auto aspect-auto"
+      class="aspect-auto absolute top-[-700px] left-[-250px] hidden w-auto sm:block sm:min-h-[1400px]"
     />
   </div>
 
-  <div class="mt-0 sm:mt-12 lg:mt-24 xl:mt-32 px-0 sm:px-8 md:px-12">
+  <div class="mt-0 px-0 sm:mt-12 sm:px-8 md:px-12 lg:mt-24 xl:mt-32">
     <ProjectNatatoko />
-    <div class="overlay-natatoko w-screen hidden sm:block sm:h-[2050px] xl:h-[2000px] absolute bottom-0 right-0"></div>
+    <div class="overlay-natatoko absolute bottom-0 right-0 hidden w-screen sm:block sm:h-[2050px] xl:h-[2000px]"></div>
   </div>
 
   <div class="sm:pt-32"></div>
