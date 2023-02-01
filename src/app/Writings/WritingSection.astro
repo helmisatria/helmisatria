@@ -6,7 +6,7 @@ import WritingList from "./WritingList.astro";
 <section class="relative overflow-hidden">
   <!-- Ournament at Top -->
   <img
-    class="absolute pointer-events-none z-0 mx-auto -left-4 scale-[350%] sm:scale-150 xl:scale-105 -right-4 top-[-30px]"
+    class="pointer-events-none absolute -left-4 -right-4 top-[-30px] z-0 mx-auto scale-[350%] sm:scale-150 xl:scale-105"
     src="/images/work-experiences-ournament.png"
     width="1406"
     height="1052"
@@ -15,7 +15,7 @@ import WritingList from "./WritingList.astro";
 
   <!-- Ournament at Bottom -->
   <img
-    class="absolute pointer-events-none z-0 mx-auto 2xl:scale-[120%] -bottom-5 inset-x-0"
+    class="pointer-events-none absolute inset-x-0 -bottom-5 z-0 mx-auto 2xl:scale-[120%]"
     src="/images/writings-ournament-bottom.png"
     width="1406"
     height="1052"
@@ -26,18 +26,18 @@ import WritingList from "./WritingList.astro";
     <WritingHeader />
     <WritingList />
 
-    <div class="w-full flex justify-center mb-10 sm:mb-20 lg:mb-40 mt-11 sm:mt-28">
+    <div class="mb-10 mt-11 flex w-full justify-center sm:mb-20 sm:mt-28 lg:mb-40">
       <a
-        class="btn-blog relative mx-auto rounded-xl sm:rounded-[32px] px-5 sm:px-10 py-6 sm:py-9 w-full sm:w-[550px] md:w-[650px] lg:w-[865px] inline-block"
-        href="https://blog.helmisatria.com"
+        class="btn-blog relative mx-auto inline-block w-full rounded-xl px-5 py-6 sm:w-[550px] sm:rounded-[32px] sm:px-10 sm:py-9 md:w-[650px] lg:w-[865px]"
+        href="/blog"
         target="_blank"
       >
-        <h3 class="font-semibold text-2xl sm:text-3xl text-cyan-100 sm:leading-[120%]">Check out my blog 📖</h3>
-        <p class="text-cyan-100 text-sm sm:text-xl leading-140 max-w-[300px] sm:max-w-none md:max-w-[506px] mt-2.5">
+        <h3 class="text-2xl font-semibold text-cyan-100 sm:text-3xl sm:leading-[120%]">Check out my blog 📖</h3>
+        <p class="mt-2.5 max-w-[300px] text-sm leading-140 text-cyan-100 sm:max-w-none sm:text-xl md:max-w-[506px]">
           If you want to stay up-to-date with my writing content, you can subscribe to my blog.
         </p>
-        <p class="text-cyan-400 font-semibold mt-6 sm:mt-14 text-2xl md:text-3xl lg:text-[46px]">
-          blog.helmisatria.com
+        <p class="mt-6 text-2xl font-semibold text-cyan-400 sm:mt-14 md:text-3xl lg:text-[46px]">
+          helmisatria.com/blog
         </p>
       </a>
     </div>

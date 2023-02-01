@@ -1,14 +1,28 @@
 ---
 import { tw } from "../../utils/clsx";
+
+type Props = {
+  sidebarOnDetail?: boolean;
+};
+
+const { sidebarOnDetail = false } = Astro.props;
 ---
 
-<div class="w-full bg-slate-50 lg:w-[320px] lg:min-w-[320px] xl:w-[380px] xl:min-w-[380px]">
+<div
+  class={tw(
+    "w-full bg-white shadow-lg lg:w-[320px] lg:min-w-[320px] lg:bg-slate-50 xl:w-[380px] xl:min-w-[380px]",
+    sidebarOnDetail && "border-t"
+  )}
+>
   <div class="relative mx-auto flex max-w-xl flex-col items-stretch px-6 py-6 lg:h-full lg:px-9 lg:pt-12">
     <div class="separator-highlight absolute right-0 mt-20 hidden h-[600px] w-[2px] lg:block"></div>
 
     <div
       style="box-shadow: 0px 43px 17px rgba(0, 0, 0, 0.01), 0px 24px 14px rgba(0, 0, 0, 0.05), 0px 11px 11px rgba(0, 0, 0, 0.09), 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1)"
-      class={tw("rounded-lg lg:p-4 p-2 bg-white self-center flex items-center justify-center")}
+      class={tw(
+        "rounded-lg lg:p-4 mb-8 p-2 bg-white self-center hd flex items-center justify-center",
+        sidebarOnDetail && "hidden lg:block"
+      )}
     >
       <img
         height={184}
@@ -19,7 +33,7 @@ import { tw } from "../../utils/clsx";
       />
     </div>
 
-    <div class="mt-8 flex flex-col lg:mt-12">
+    <div class="flex flex-col lg:mt-12">
       <h2 class="text-xl font-semibold tracking-tight text-slate-900">Helmi Satria</h2>
       <p class="mt-2 max-w-sm text-base leading-140 tracking-tight lg:text-lg">
         a happy full-stack developer who aims to help others grow in web development
@@ -29,6 +43,8 @@ import { tw } from "../../utils/clsx";
         5 years of experience in using node.js and vue.js (also react.js) for full-stack development
       </p>
     </div>
+
+    <a class="mt-4 text-sm font-semibold tracking-tight text-cyan-800" href="/">Check my full profile</a>
 
     <div class="mt-7 space-x-6 text-slate-600 lg:mt-10">
       <a
