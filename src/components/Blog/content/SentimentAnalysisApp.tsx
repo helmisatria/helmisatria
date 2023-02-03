@@ -54,6 +54,8 @@ export const SentimentAnalysisApp = () => {
           'is_error': true
         });
       })
+
+    return false;
   }
 
   return (
