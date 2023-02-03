@@ -14,6 +14,8 @@ Aku baru pertama kali ini nge-hubungin teknologi AI - Machine Learning ke teknol
 
 Di percobaan ini aku pakai script sentimen analisis yang udah dibuat sebelumnya dan kubuat artikel nya disini. Agar sentimen analisis nya dapat digunakan oleh front-end atau teknologi web kita perlu expose scriptnya melalui API agar front-end (web) dapat berkomunikasi langsung dengan sentimen analisis nya.
 
+Sebenernya percobaannya udah berhasil, tapi aku belum berhasil untuk deploy ke cloud hosting karena ternyata butuh resource CPU dan RAM yang cukup besar dimana artinya butuh mengeluarkan uang lebih untuk membayar cloud resource nya 😅
+
 ![image](https://res.craft.do/user/full/057dc90f-1e61-29e4-0f33-e1e2cee2f42a/doc/236F864F-B79C-40F5-B6BB-F6AC657C24B4/F9C805FB-A9B5-4768-9FB3-21C2ADC8B191_2/dOZIIvJwf78be4heFxZxtQQkK8Fl0Mh6WrmPEBUzQcQz/sentimen-analisis-api.png)
 
 Untuk membuat API nya kita menggunakan Flask ini merupakan sebuah Web framework dari bahasa pemrograman python yang digunakan untuk membangun aplikasi web. Flask memudahkan kita untuk membuat dan menerapkan API REST dan dapat menggunakan beberapa fitur seperti routing, templating HTML, dan manajemen sesi.
@@ -29,7 +31,7 @@ Ketika mendapat request dari path /sentiment, kita akan memanggil fungsi sentime
 Kemudian, hasil dari sentimen analisis akan kita pakai untuk kirim balik ke pengguna berupa json dengan format sebagai berikut:
 
 ```json
-{"sentiment": "positif", "score": 0.8}
+{"label": "positif", "score": 0.8}
 ```
 Selesai!
 
