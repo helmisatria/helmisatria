@@ -32,8 +32,10 @@ export const SentimentAnalysisApp = () => {
       .then((response) => response.json())
       .then((data) => {
         window.dataLayer?.push?.({
+          'event_name': 'sentiment_analysis',
           'event': 'sentiment_analysis',
           'sentence': sentence,
+          'value': sentence,
           'is_error': data.error ? true : false,
         });
 
@@ -52,7 +54,9 @@ export const SentimentAnalysisApp = () => {
       .catch((error) => {
         console.error('Error:', error)
         window.dataLayer?.push?.({
+          'event_name': 'sentiment_analysis',
           'event': 'sentiment_analysis',
+          'value': sentence,
           'sentence': sentence,
           'is_error': true
         });
