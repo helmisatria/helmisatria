@@ -43,7 +43,10 @@ export const SentimentAnalysisApp = () => {
           resultRef.current.innerHTML = data.error
           return
         } else {
-          resultRef.current.innerHTML = `${data.label} => ${data.score}%`
+          const label = data.label.toUpperCase()
+          const score = Number(data.score.toFixed(2)) * 100
+
+          resultRef.current.innerHTML = `<span style="font-weight: 700">${label}</span> => ${score}%`
         }
       })
       .catch((error) => {
@@ -71,9 +74,9 @@ export const SentimentAnalysisApp = () => {
           <form onSubmit={onSubmit} className="mt-5 sm:flex flex-col space-y-3 sm:items-end">
             <div className="w-full">
               <label htmlFor="sentence" className="sr-only">Kalimat</label>
-              <input ref={sentenceInputRef} type="text" name="text" id="sentence" className="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Masukkan kalimat disini" />
+              <input ref={sentenceInputRef} type="text" name="text" id="sentence" className="block w-full rounded-md border-gray-300 shadow-sm focus:border-cyan-500 focus:ring-cyan-500 sm:text-sm !py-3" placeholder="Masukkan kalimat disini" />
             </div>
-            <button type="submit" className="mt-3 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-4 py-2 font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Cek Sentimen</button>
+            <button type="submit" className="mt-3 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-cyan-600 px-4 py-2 text-white shadow-sm hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm font-semibold">Cek Sentimen</button>
           </form>
           <div className="mt-5">
             <p className="text-sm text-gray-500">Hasil Sentimen Analisis</p>
