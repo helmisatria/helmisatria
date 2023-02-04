@@ -31,7 +31,7 @@ export default function NavbarPortfolio() {
     <div className={twMerge("fixed top-0 z-50 w-full bg-opacity-100 transition-all duration-500", navBackground)}>
       <Popover as="header" className="">
         <div className="py-6">
-          <nav className="relative mx-auto flex items-center justify-between px-12 xl:px-4 max-w-[1244px]" aria-label="Global">
+          <nav className="relative mx-auto flex items-center justify-between px-8 md:px-12 xl:px-4 max-w-[1244px]" aria-label="Global">
             <div className="flex flex-1 items-center">
               <div className="flex w-full items-center justify-end md:w-auto">
                 <div className="-mr-2 flex items-center md:hidden">
