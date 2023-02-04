@@ -1,74 +1,49 @@
 ---
+import dayjs from "dayjs";
 import WritingListItem from "./WritingListItem.astro";
 
-const query = `{
-  user(username: "helmisatria") {
-    username
-    publicationDomain
-    publication {
-      posts {
-        title
-        coverImage
-        slug
-        dateAdded
-      }
-    }
-  }
-}`;
+// dayjs locale id
+import "dayjs/locale/id";
+dayjs.locale("id");
 
-const fetchMediumPosts = fetch("https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@helmisatria", {
-  cf: {
-    cacheTtl: 60,
-    cacheEverything: true,
+// dayjs timezone
+import timezone from "dayjs/plugin/timezone";
+dayjs.extend(timezone);
+dayjs.tz.setDefault("Asia/Jakarta");
+
+let blogs = await Astro.glob("../../pages/blog/*.mdx");
+
+blogs.forEach((blogPost) => {
+  blogPost.frontmatter.publishedAt = dayjs(blogPost.frontmatter.publishedAt).format("YYYY-MM-DDTHH:mm:ss.000Z");
+});
+
+blogs = blogs.sort((a, b) => {
+  return dayjs(b.frontmatter.publishedAt).unix() - dayjs(a.frontmatter.publishedAt).unix();
+});
+
+const posts = blogs.map((blogPost) => {
+  return {
+    title: blogPost.frontmatter.title,
+    coverImage:
+      "https://images.unsplash.com/photo-1606206873764-fd15e242df52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
+    publishedAt: blogPost.frontmatter.publishedAt,
+    link: blogPost.url,
+  };
+});
+
+const articles = [
+  {
+    title: "Cara Berhasil Mendapatkan Data Tweet dari Twitter — 2023",
+    coverImage: "https://cdn-images-1.medium.com/max/1024/1*el-mdT2rvqkywHkwAbtHYg.png",
+    link: "https://medium.com/@helmisatria/cara-mendapatkan-data-twitter-di-2023-44aaefb616ea?source=rss-3ce7bcb10e65------2",
+    publishedAt: "2023-01-15T09:08:02.000Z",
   },
-} as any)
-  .then((res) => res.json())
-  .then((data) => {
-    return (
-      data?.items?.map((item: { title: string; thumbnail: string; link: string; pubDate: string }) => ({
-        title: item.title,
-        coverImage: item.thumbnail,
-        link: item.link,
-        publishedAt: new Date(item.pubDate),
-      })) ?? []
-    );
-  })
-  .catch(() => []);
-
-const fetchBlogPosts = fetch("https://api.hashnode.com/", {
-  cf: {
-    cacheTtl: 60,
-    cacheEverything: true,
-  },
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify({ query }),
-} as any)
-  .then((res) => res.json())
-  .then((data) => {
-    return (
-      data?.data?.user?.publication?.posts?.map(
-        (post: { title: string; coverImage: string; slug: string; dateAdded: string }) => ({
-          title: post.title,
-          coverImage: post.coverImage,
-          slug: post.slug,
-          domain: data.data.user.publicationDomain,
-          publishedAt: new Date(post.dateAdded),
-        })
-      ) ?? []
-    );
-  })
-  .catch(() => []);
-
-const [mediumPosts, blogPosts] = await Promise.all([fetchMediumPosts, fetchBlogPosts]);
-
-const articles = [...blogPosts, ...mediumPosts].sort((a, b) => b.publishedAt - a.publishedAt);
+  ...posts,
+].slice(0, 4);
 ---
 
 <ul
-  class="max-w-[1244px] mx-auto gap-x-5 gap-y-3 sm:gap-y-6 place-content-center grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[repeat(2,480px)] xl:grid-cols-[repeat(2,545px)]"
+  class="mx-auto grid max-w-[1244px] grid-cols-1 place-content-center gap-x-5 gap-y-3 sm:grid-cols-2 sm:gap-y-6 lg:grid-cols-[repeat(2,480px)] xl:grid-cols-[repeat(2,545px)]"
 >
   {
     articles?.map((article: { title: string; coverImage: string; slug?: string; domain?: string; link?: string }) => (
