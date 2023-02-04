@@ -3,14 +3,14 @@ import WorkBuka from "./GovTech/WorkBuka.astro";
 import WorkGovTech from "./GovTech/WorkGovTech.astro";
 ---
 
-<div class="sm:space-y-16 relative">
+<div class="relative sm:space-y-16">
   <div class="bg-govtech relative z-10 px-0 sm:px-8 md:px-12">
     <WorkGovTech />
   </div>
 
-  <div class="bg-buka relative bg-red-50">
-    <div class="hidden sm:block overlay-transition z-0 absolute w-screen h-80"></div>
-    <div class="px-0 sm:px-8 md:px-12 pt-0 md:pt-12 lg:pt-24">
+  <div class="bg-buka relative">
+    <div class="overlay-transition absolute z-0 hidden h-80 w-screen sm:block"></div>
+    <div class="px-0 pt-0 sm:px-8 md:px-12 md:pt-12 lg:pt-24">
       <WorkBuka />
       <div class="sm:pb-40"></div>
     </div>
