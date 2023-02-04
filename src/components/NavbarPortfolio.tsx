@@ -9,7 +9,7 @@ const navigation = [
   { name: "Projects", href: "#projects" },
   { name: "Work Experiences", href: "#work-experiences" },
   { name: "Latest Writings", href: "#latest-writings" },
-  { name: "✨ Blog", href: "/blog", target: "_blank" },
+  { name: "✨ Blog", href: "/blog" },
   { name: "Contact Me", href: "#contact-me" },
 ];
 
@@ -30,8 +30,8 @@ export default function NavbarPortfolio() {
   return (
     <div className={twMerge("fixed top-0 z-50 w-full bg-opacity-100 transition-all duration-500", navBackground)}>
       <Popover as="header" className="">
-        <div className=" py-6">
-          <nav className="relative mx-auto flex max-w-[1244px] items-center justify-between px-6" aria-label="Global">
+        <div className="py-6">
+          <nav className="relative mx-auto flex items-center justify-between px-12 xl:px-4 max-w-[1244px]" aria-label="Global">
             <div className="flex flex-1 items-center">
               <div className="flex w-full items-center justify-end md:w-auto">
                 <div className="-mr-2 flex items-center md:hidden">
@@ -46,7 +46,6 @@ export default function NavbarPortfolio() {
                   <a
                     key={item.name}
                     href={item.href}
-                    target={item.target}
                     className="text-base font-semibold text-cyan-600 hover:text-cyan-700 hover:underline"
                   >
                     {item.name}
@@ -85,7 +84,6 @@ export default function NavbarPortfolio() {
                     <a
                       key={item.name}
                       href={item.href}
-                      target={item.target}
                       className="block rounded-md px-3 py-2 text-base font-medium text-cyan-900 hover:bg-cyan-50"
                     >
                       {item.name}

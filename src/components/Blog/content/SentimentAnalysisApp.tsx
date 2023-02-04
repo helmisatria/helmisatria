@@ -7,6 +7,9 @@ declare global {
     dataLayer: {
       push: (data: {}) => void;
     };
+    posthog: {
+      capture: (event: string, data: {}) => void;
+    }
   }
 }
 
@@ -69,6 +72,8 @@ export const SentimentAnalysisApp = () => {
           event: "sentiment_analysis",
           sentiment_analysis_sentence: sentence,
         });
+
+        window.posthog.capture('sentiment_analysis', { $set: { sentence: sentence } })
       });
   };
 

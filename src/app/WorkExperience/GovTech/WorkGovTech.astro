@@ -3,39 +3,44 @@ import IconGovTech from "../../../components/icons/IconGovTech.astro";
 ---
 
 <article
-  class="max-w-[1244px] sm:rounded-2xl px-5 sm:px-10 lg:px-[5.4rem] mx-auto z-10 relative py-20 pb-40 overflow-hidden"
+  class="relative z-10 mx-auto max-w-[1244px] overflow-hidden px-5 py-20 pb-40 sm:rounded-2xl sm:px-10 lg:px-[5.4rem]"
 >
-  <img class="absolute pointer-events-none z-0 right-0 bottom-0" src="/images/work-ournament-blue.png" alt="" />
+  <img
+    loading="lazy"
+    class="pointer-events-none absolute right-0 bottom-0 z-0"
+    src="/images/work-ournament-blue.png"
+    alt=""
+  />
 
-  <header class="flex z-10 flex-col sm:flex-row justify-between items-start">
+  <header class="z-10 flex flex-col items-start justify-between sm:flex-row">
     <div class="flex space-x-4 sm:space-x-6">
-      <div class="sm:mt-1 scale-90 sm:scale-100">
+      <div class="scale-90 sm:mt-1 sm:scale-100">
         <IconGovTech />
       </div>
       <div>
-        <h3 class="font-semibold text-cyan-50 text-2xl sm:text-3xl md:text-[40px] leading-100">GovTech Edu</h3>
+        <h3 class="text-2xl font-semibold leading-100 text-cyan-50 sm:text-3xl md:text-[40px]">GovTech Edu</h3>
         <span
-          class="text-[#2FA5B6] font-semibold leading-100 text-sm sm:text-base md:text-2xl inline-block pt-1 md:pt-2"
+          class="inline-block pt-1 text-sm font-semibold leading-100 text-[#2FA5B6] sm:text-base md:pt-2 md:text-2xl"
           >@Telkom Indonesia</span
         >
       </div>
     </div>
 
-    <div class="relative role-label px-4 py-3 rounded-2xl mt-5 sm:mt-0">
-      <span class="text-cyan-50 font-bold sm:text-lg md:text-xl">Front-end Developer</span>
+    <div class="role-label relative mt-5 rounded-2xl px-4 py-3 sm:mt-0">
+      <span class="font-bold text-cyan-50 sm:text-lg md:text-xl">Front-end Developer</span>
     </div>
   </header>
 
-  <div class="mt-20 z-10">
-    <h4 class="text-sky-300 text-lg sm:text-xl font-semibold">
+  <div class="z-10 mt-20">
+    <h4 class="text-lg font-semibold text-sky-300 sm:text-xl">
       <span class="sr-only">Since:</span> July 2022 - Present
     </h4>
-    <p class="font-medium text-xl md:text-2xl leading-140 mt-8 text-sky-50 max-w-[570px]">
+    <p class="mt-8 max-w-[570px] text-xl font-medium leading-140 text-sky-50 md:text-2xl">
       Working on the core web experience team that focusing on developer experience, design system, and web performance.
     </p>
 
     <h4
-      class="flex sm:flex-row flex-col sm:space-x-3 space-y-3 sm:space-y-0 max-w-[200px] mob:max-w-none text-sky-300 text-xl md:text-2xl font-semibold sm:items-center mt-10 sm:mt-16"
+      class="mt-10 flex max-w-[200px] flex-col space-y-3 text-xl font-semibold text-sky-300 mob:max-w-none sm:mt-16 sm:flex-row sm:items-center sm:space-x-3 sm:space-y-0 md:text-2xl"
     >
       <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -47,7 +52,7 @@ import IconGovTech from "../../../components/icons/IconGovTech.astro";
       <span>Responsibilities and things I did</span>
     </h4>
 
-    <ul class="mt-10 mob:pl-4 text-[#CCEEFF] sm:text-lg md:text-xl !leading-[180%] space-y-5 max-w-[774px]">
+    <ul class="mt-10 max-w-[774px] space-y-5 !leading-[180%] text-[#CCEEFF] mob:pl-4 sm:text-lg md:text-xl">
       <li>
         Lead or contribute to technical design, implementation, deployment, and operational excellence efforts to build
         and run scalable solutions for complex engineering challenges.
