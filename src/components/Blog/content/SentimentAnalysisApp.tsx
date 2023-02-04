@@ -52,14 +52,6 @@ export const SentimentAnalysisApp = () => {
 
           resultRef.current.innerHTML = `<span style="font-weight: 700">${emoticon[label]} ${label}</span> => ${score}%`;
         }
-
-        return window.dataLayer.push({
-          event: "sentiment_analysis",
-          sentiment_analysis_sentence: sentence,
-          'eventCallback': function (id) {
-            alert(id);
-          }
-        })
       })
       .catch((error) => {
         if (error && resultRef.current) {
@@ -69,14 +61,14 @@ export const SentimentAnalysisApp = () => {
         else if (resultRef.current) {
           resultRef.current.innerHTML = `Maaf yaa, lagi mati servernya (mahal 😅). Boleh cek lagi nanti ya`;
         }
+      })
+      .finally(() => {
+        setIsLoading(false);
 
         window.dataLayer?.push?.({
           event: "sentiment_analysis",
           sentiment_analysis_sentence: sentence,
         });
-      })
-      .finally(() => {
-        setIsLoading(false);
       });
   };
 
