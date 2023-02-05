@@ -109,13 +109,13 @@ const responsibilities = [
         transparent
       ),
       linear-gradient(300deg, hsla(342, 75%, 30%, 1) 10%, transparent, transparent, transparent);
-    mask-mode: match-source, match-source;
-    mask-repeat: repeat, repeat;
-    mask-clip: content-box, border-box;
-    mask-origin: content-box, border-box;
-    mask-position: 0% 0%, 0% 0%;
-    mask-size: auto, auto;
-    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    border-radius: inherit;
+    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
 
@@ -140,13 +140,13 @@ const responsibilities = [
     border-radius: inherit;
     padding: 1.5px;
     background: linear-gradient(180deg, hsla(341, 37%, 52%, 1), hsla(351, 95%, 71%, 0));
-    mask-mode: match-source, match-source;
-    mask-repeat: repeat, repeat;
-    mask-clip: content-box, border-box;
-    mask-origin: content-box, border-box;
-    mask-position: 0% 0%, 0% 0%;
-    mask-size: auto, auto;
-    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    border-radius: inherit;
+    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
 </style>

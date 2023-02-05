@@ -113,13 +113,13 @@
     border-radius: inherit;
     padding-top: 3px;
     background: radial-gradient(50.45% 6538499.72% at 49.24% 99.77%, #67e8f9 0%, rgba(217, 217, 217, 0) 100%);
-    mask-mode: match-source, match-source;
-    mask-repeat: repeat, repeat;
-    mask-clip: content-box, border-box;
-    mask-origin: content-box, border-box;
-    mask-position: 0% 0%, 0% 0%;
-    mask-size: auto, auto;
-    mask-image: linear-gradient(black, black), linear-gradient(black, black);
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    border-radius: inherit;
+    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
 </style>
