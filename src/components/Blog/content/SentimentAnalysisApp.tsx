@@ -38,6 +38,8 @@ export const SentimentAnalysisApp = () => {
           throw new Error("Kamu keseringan ngecek sentimen 😨, coba lagi nanti ya");
         });
 
+        window.posthog?.capture?.('sentiment_analysis', { $set: { sentence: sentence } })
+
         if (!resultRef.current) return;
 
         if (!data.label) {
@@ -57,13 +59,19 @@ export const SentimentAnalysisApp = () => {
         }
       })
       .catch((error) => {
-        if (error && resultRef.current) {
-          resultRef.current.innerHTML = error.message;
+        if (!resultRef.current) return;
+
+        const defaultErrorMessage = "Maaf yaa, lagi mati servernya (mahal 😅). Boleh cek lagi nanti ya";
+        let errorMessage = defaultErrorMessage
+
+        if (error.message.includes('NetworkError')) {
+          errorMessage = defaultErrorMessage
+        } else if (error?.message) {
+          errorMessage = error.message;
         }
 
-        else if (resultRef.current) {
-          resultRef.current.innerHTML = `Maaf yaa, lagi mati servernya (mahal 😅). Boleh cek lagi nanti ya`;
-        }
+        resultRef.current.innerHTML = errorMessage;
+        window.posthog?.capture?.('sentiment_analysis', { $set: { sentence: sentence, error: error.message } })
       })
       .finally(() => {
         setIsLoading(false);
@@ -72,8 +80,6 @@ export const SentimentAnalysisApp = () => {
           event: "sentiment_analysis",
           sentiment_analysis_sentence: sentence,
         });
-
-        window.posthog.capture('sentiment_analysis', { $set: { sentence: sentence } })
       });
   };
 
