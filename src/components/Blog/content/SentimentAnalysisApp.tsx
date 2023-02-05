@@ -47,7 +47,7 @@ export const SentimentAnalysisApp = () => {
           return;
         } else {
           const label = data.label.toUpperCase();
-          const score = Number(data.score.toFixed(2)) * 100;
+          const score = (data.score * 100).toFixed(4);
 
           const emoticon = {
             POSITIVE: "😄",
@@ -64,7 +64,7 @@ export const SentimentAnalysisApp = () => {
         const defaultErrorMessage = "Maaf yaa, lagi mati servernya (mahal 😅). Boleh cek lagi nanti ya";
         let errorMessage = defaultErrorMessage
 
-        if (error.message.includes('NetworkError')) {
+        if (error.message.includes("NetworkError") || error.message.includes("failed")) {
           errorMessage = defaultErrorMessage
         } else if (error?.message) {
           errorMessage = error.message;
