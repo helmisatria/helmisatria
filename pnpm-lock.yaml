@@ -16,6 +16,7 @@ specifiers:
   astro: ^1.9.1
   astro-imagetools: ^0.6.17
   astro-seo: ^0.6.1
+  autoprefixer: ^10.4.13
   dayjs: ^1.11.7
   prettier: ^2.8.3
   prettier-plugin-astro: ^0.8.0
@@ -43,6 +44,7 @@ dependencies:
   astro: 1.9.1_sass@1.57.1
   astro-imagetools: 0.6.17_astro@1.9.1
   astro-seo: 0.6.1
+  autoprefixer: 10.4.13_postcss@8.4.21
   dayjs: 1.11.7
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0

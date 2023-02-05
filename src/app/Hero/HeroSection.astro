@@ -12,29 +12,29 @@ import Wave from "../../components/icons/Wave.astro";
   </div>
 
   <!-- overlay -->
-  <div class="header-overlay sm:max-w-full absolute z-0 inset-0 top-[10px]"></div>
+  <div class="header-overlay absolute inset-0 top-[10px] z-0 sm:max-w-full"></div>
 
   <div
-    class="px-5 sm:px-10 md:px-16 lg:px-12 xl:px-4 md:max-w-[1244px] mt-8 sm:mt-16 lg:mt-16 xl:mt-24 2xl:mt-[12rem] relative z-20 mx-auto"
+    class="relative z-20 mx-auto mt-8 px-5 sm:mt-16 sm:px-10 md:max-w-[1244px] md:px-16 lg:mt-16 lg:px-12 xl:mt-24 xl:px-4 2xl:mt-[12rem]"
   >
     <div class="relative z-20">
       <!-- title -->
-      <h1 class="header-title font-bold tracking-tighter text-[2rem] mob:text-[2.6rem] md:text-[4rem] z-10">
+      <h1 class="header-title z-10 text-[2rem] font-bold tracking-tighter mob:text-[2.6rem] md:text-[4rem]">
         helmi satria.
       </h1>
 
       <!-- subtitle -->
       <p
-        class="header-subtitle lg:max-w-[850px] xl:max-w-[1200px] md:mt-1.5 sm:mt-3 mt-1 lowercase md:tracking-[-0.06em] tracking-tight font-bold text-[2.2rem] mob:text-[3.4rem] sm:text-[4rem] md:text-[5rem] xl:text-[5.9rem] leading-[100%] md:leading-[5rem] xl:leading-[6.25rem]"
+        class="header-subtitle mt-1 text-[2.2rem] font-bold lowercase leading-[100%] tracking-tight mob:text-[3.4rem] sm:mt-3 sm:text-[4rem] md:mt-1.5 md:text-[5rem] md:leading-[5rem] md:tracking-[-0.06em] lg:max-w-[850px] xl:max-w-[1200px] xl:text-[5.9rem] xl:leading-[6.25rem]"
       >
         <span
-          class="max-md:block max-mob:text-[70px] max-sm:text-[85px] max-md:text-[90px] max-mob:max-w-[310px] max-sm:max-w-[360px] max-md:max-w-[420px] md:min-w-none max-md:tracking-[-0.06em] max-md:leading-[85%]"
+          class="md:min-w-none max-md:block max-md:max-w-[420px] max-md:text-[90px] max-md:leading-[85%] max-md:tracking-[-0.06em] max-sm:max-w-[360px] max-sm:text-[85px] max-mob:max-w-[310px] max-mob:text-[70px]"
         >
           a
-          <span class="relative no-text-fill-color">
+          <span class="no-text-fill-color relative">
             <span class="relative z-[1] text-[#294049]">happy</span>
             <span
-              class="happy-bg z-0 block absolute inset-0 -left-1 md:-left-2 top-6 mob:top-7 sm:top-8 md:top-7 lg:top-6 xl:top-8 w-full h-[42px] mob:h-[48px] sm:h-[54px] md:h-[50px] lg:h-[56px] xl:h-[60px] rotate-[-2.2deg]"
+              class="happy-bg absolute inset-0 -left-1 top-6 z-0 block h-[42px] w-full rotate-[-2.2deg] mob:top-7 mob:h-[48px] sm:top-8 sm:h-[54px] md:-left-2 md:top-7 md:h-[50px] lg:top-6 lg:h-[56px] xl:top-8 xl:h-[60px]"
               style="background: linear-gradient(85.27deg, #57E9F9 0.78%, rgba(165, 243, 252, 0) 123.9%);"></span>
           </span>
           full-stack developer
@@ -42,14 +42,14 @@ import Wave from "../../components/icons/Wave.astro";
         <br class="hidden xl:block" />
 
         <span
-          class="max-md:inline-block max-md:tracking-tighter max-md:font-semibold max-sm:mt-6 max-md:mt-8 max-sm:text-[32px] max-md:text-[38px] max-md:leading-100 max-sm:max-w-[261px] max-md:max-w-[300px]"
+          class="max-md:mt-8 max-md:inline-block max-md:max-w-[300px] max-md:text-[38px] max-md:font-semibold max-md:leading-100 max-md:tracking-tighter max-sm:mt-6 max-sm:max-w-[261px] max-sm:text-[32px]"
         >
           who aims to help others grow in
-          <span class="relative md:inline-block no-text-fill-color text-[#294049]">
+          <span class="no-text-fill-color relative text-[#294049] md:inline-block">
             <span>web</span>
             <span>development</span>
             <span
-              class="absolute md:inline-block hidden sm:scale-[76%] md:scale-90 lg:scale-95 xl:scale-100 min-[484px]:-left-24 sm:-left-14 md:-left-2 lg:left-0 xl:left-12 min-[484px]:-bottom-2 xl:bottom-0"
+              class="absolute hidden min-[484px]:-left-24 min-[484px]:-bottom-2 sm:-left-14 sm:scale-[76%] md:-left-2 md:inline-block md:scale-90 lg:left-0 lg:scale-95 xl:left-12 xl:bottom-0 xl:scale-100"
               ><Wave />
             </span>
           </span>
@@ -58,17 +58,17 @@ import Wave from "../../components/icons/Wave.astro";
 
       <!-- description -->
       <p
-        class="mt-12 sm:mt-20 xl:mt-24 2xl:mt-[8.5rem] text-cyan-dark text-xl mob:text-2xl md:text-3xl xl:text-4xl md:!leading-140 leading-120"
+        class="leading-120 mt-12 text-xl text-cyan-dark mob:text-2xl sm:mt-20 md:text-3xl md:!leading-140 xl:mt-24 xl:text-4xl 2xl:mt-[8.5rem]"
       >
         <span class="font-semibold">5 years of experience</span> in using <br class="block md:hidden" /> node.js and <span
           class="relative"
         >
           vue.js
           <span
-            class="absolute lg:inline-block hidden min-w-[24rem] text-2xl tracking-tight inset-0 top-12 left-2 xl:left-7"
+            class="absolute inset-0 top-12 left-2 hidden min-w-[24rem] text-2xl tracking-tight lg:inline-block xl:left-7"
           >
             <Arrow /><span
-              class="transform whitespace-nowrap inline-block -rotate-12 -translate-x-10 xl:-translate-x-0 -translate-y-6 text-cyan-600"
+              class="inline-block -translate-x-10 -translate-y-6 -rotate-12 transform whitespace-nowrap text-cyan-600 xl:-translate-x-0"
               >recently moved to react.js anyway 😜</span
             >
           </span>
@@ -93,24 +93,19 @@ import Wave from "../../components/icons/Wave.astro";
   }
 
   .header-title {
-    background: radial-gradient(79.22% 146.6% at 80.79% 5.19%, rgba(255, 255, 255, 0.3) 0%, rgba(71, 85, 105, 0.3) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
-      #075985;
-    -webkit-background-clip: text;
+    background: linear-gradient(to right bottom, rgb(7, 89, 133) 80%, rgb(10, 15, 17)) padding-box text;
+    box-decoration-break: clone;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     text-fill-color: transparent;
     line-height: 77px;
+    color: unset;
   }
 
   .header-subtitle {
-    background: radial-gradient(64.5% 64.5% at 62.82% 5.33%, rgba(255, 255, 255, 0.25) 0%, rgba(0, 0, 0, 0) 100%),
-      radial-gradient(22.67% 61.17% at 20.34% 73.83%, rgba(255, 255, 255, 0.44) 0%, rgba(0, 0, 0, 0) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
-      #051c29;
-    -webkit-background-clip: text;
+    background: linear-gradient(to right bottom, rgb(41, 64, 73) 30%, rgb(10, 15, 17)) padding-box text;
+    box-decoration-break: clone;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
-    background-clip: text;
+    color: unset;
   }
 </style>

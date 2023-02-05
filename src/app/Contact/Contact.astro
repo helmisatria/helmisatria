@@ -27,13 +27,13 @@
       <div class="flex flex-col items-start sm:flex-row sm:space-x-8">
         <!-- Avatar -->
         <div
-          class="aspect-square relative inline-block h-24 rounded-full bg-cyan-dark sm:min-h-[32px] sm:min-w-[32px] md:h-28 xl:h-32"
+          class="aspect-square relative inline-flex h-24 max-h-24 items-center justify-center rounded-full bg-cyan-dark sm:min-h-[32px] sm:min-w-[32px] md:h-28 xl:h-32"
         >
           <img
             src="/images/helmi-square.png"
             alt="Helmi Satria"
             loading="lazy"
-            class="h-24 w-24 rounded-full object-cover sm:h-32 sm:min-h-[32px] sm:w-32 sm:min-w-[32px] md:h-28 xl:h-32"
+            class="h-24 max-h-24 w-24 max-w-[96px] rounded-full object-cover sm:h-32 sm:min-h-[32px] sm:w-32 sm:min-w-[32px] md:h-28 xl:h-32"
           />
           <span class="absolute -bottom-1 right-0 text-4xl xl:text-5xl">🔥</span>
         </div>
@@ -85,23 +85,21 @@
   }
 
   h2 {
-    background: radial-gradient(155.21% 991.71% at 107.99% -17.71%, #0c4a6e 0%, rgba(12, 74, 110, 0) 100%)
-        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
-      #cffafe;
-    -webkit-background-clip: text;
+    background: linear-gradient(to right bottom, #cffafe 10%, rgb(10, 15, 17)) padding-box text;
+    box-decoration-break: clone;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     text-fill-color: transparent;
+    line-height: 77px;
+    color: unset;
   }
 
   .body-content {
-    background: radial-gradient(9.13% 220.67% at 0% 52.38%, rgba(12, 74, 110, 0.36) 0%, rgba(16, 98, 145, 0) 100%),
-      radial-gradient(17.86% 10.62% at 40.19% 73.99%, rgba(12, 74, 110, 0.54) 0%, rgba(16, 98, 145, 0) 100%),
-      radial-gradient(26.56% 26.56% at 50.05% 4.76%, rgba(12, 74, 110, 0.75) 0%, rgba(16, 98, 145, 0) 100%), #cffafe;
-    -webkit-background-clip: text;
+    background: linear-gradient(to right bottom, #cffafe 60%, rgba(12, 74, 110, 0.75)) padding-box text;
+    box-decoration-break: clone;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     text-fill-color: transparent;
+    line-height: 77px;
+    color: unset;
   }
 
   section::before {
