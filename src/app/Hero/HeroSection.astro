@@ -93,19 +93,24 @@ import Wave from "../../components/icons/Wave.astro";
   }
 
   .header-title {
-    background: linear-gradient(to right bottom, rgb(7, 89, 133) 80%, rgb(10, 15, 17)) padding-box text;
-    box-decoration-break: clone;
-    -webkit-text-fill-color: transparent;
+    background: radial-gradient(79.22% 146.6% at 80.79% 5.19%, rgba(255, 255, 255, 0.3) 0%, rgba(71, 85, 105, 0.3) 100%),
+      #075985;
+    background-clip: text;
     text-fill-color: transparent;
     line-height: 77px;
+    background: linear-gradient(to bottom, rgba(71, 85, 105, 0.9) 0%, #075985);
+    -webkit-box-decoration-break: clone;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     color: unset;
   }
 
   .header-subtitle {
-    background: linear-gradient(to right bottom, rgb(41, 64, 73) 30%, rgb(10, 15, 17)) padding-box text;
-    box-decoration-break: clone;
+    background: linear-gradient(to right bottom, rgb(41, 64, 73) 30%, rgb(10, 15, 17));
+    -webkit-box-decoration-break: clone;
     -webkit-text-fill-color: transparent;
-    text-fill-color: transparent;
+    -webkit-background-clip: text;
     color: unset;
+    background-clip: text;
   }
 </style>

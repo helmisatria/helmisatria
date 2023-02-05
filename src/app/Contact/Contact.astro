@@ -27,13 +27,13 @@
       <div class="flex flex-col items-start sm:flex-row sm:space-x-8">
         <!-- Avatar -->
         <div
-          class="aspect-square relative inline-flex h-24 max-h-24 items-center justify-center rounded-full bg-cyan-dark sm:min-h-[32px] sm:min-w-[32px] md:h-28 xl:h-32"
+          class="aspect-square relative inline-flex h-24 max-h-24 items-center justify-center rounded-full bg-cyan-dark sm:min-h-[32px] sm:min-w-[32px] md:h-28 xl:h-32 xl:max-h-32"
         >
           <img
             src="/images/helmi-square.png"
             alt="Helmi Satria"
             loading="lazy"
-            class="h-24 max-h-24 w-24 max-w-[96px] rounded-full object-cover sm:h-32 sm:min-h-[32px] sm:w-32 sm:min-w-[32px] md:h-28 xl:h-32"
+            class="h-24 max-h-24 w-24 max-w-[96px] rounded-full object-cover sm:h-32 sm:min-h-[32px] sm:w-32 sm:min-w-[32px] md:h-28 xl:h-32 xl:max-h-32 xl:max-w-[128px]"
           />
           <span class="absolute -bottom-1 right-0 text-4xl xl:text-5xl">🔥</span>
         </div>
@@ -85,20 +85,24 @@
   }
 
   h2 {
-    background: linear-gradient(to right bottom, #cffafe 10%, rgb(10, 15, 17)) padding-box text;
-    box-decoration-break: clone;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to bottom, #cffafe 0%, #075985);
+    background-clip: text;
     text-fill-color: transparent;
     line-height: 77px;
+    -webkit-box-decoration-break: clone;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     color: unset;
   }
 
   .body-content {
-    background: linear-gradient(to right bottom, #cffafe 60%, rgba(12, 74, 110, 0.75)) padding-box text;
-    box-decoration-break: clone;
-    -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right bottom, #cffafe 20%, rgba(12, 74, 110, 0.75));
+    background-clip: text;
     text-fill-color: transparent;
     line-height: 77px;
+    -webkit-box-decoration-break: clone;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     color: unset;
   }
 
