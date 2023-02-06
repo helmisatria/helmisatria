@@ -9,7 +9,7 @@ declare global {
     };
     posthog: {
       capture: (event: string, data: {}) => void;
-    }
+    };
   }
 }
 
@@ -22,7 +22,7 @@ export const SentimentAnalysisApp = () => {
     e.preventDefault();
 
     const sentence = sentenceInputRef.current?.value;
-    const url = `${import.meta.env.PUBLIC_SENTIMENT_API_HOST}/sentiment`
+    const url = `${import.meta.env.PUBLIC_SENTIMENT_API_HOST}/sentiment`;
 
     setIsLoading(true);
 
@@ -38,7 +38,7 @@ export const SentimentAnalysisApp = () => {
           throw new Error("Kamu keseringan ngecek sentimen 😨, coba lagi nanti ya");
         });
 
-        window.posthog?.capture?.('sentiment_analysis', { $set: { sentence: sentence } })
+        window.posthog?.capture?.("sentiment_analysis", { $set: { sentence: sentence } });
 
         if (!resultRef.current) return;
 
@@ -61,17 +61,20 @@ export const SentimentAnalysisApp = () => {
       .catch((error) => {
         if (!resultRef.current) return;
 
-        const defaultErrorMessage = "Maaf yaa, lagi mati servernya (mahal 😅). Boleh cek lagi nanti ya";
-        let errorMessage = defaultErrorMessage
+        const defaultErrorMessage = "Maaf yaa, lagi mati servernya (mahal 😅). Boleh cek lagi nanti di working hours ya";
+        let errorMessage = defaultErrorMessage;
 
-        if (error.message.includes("NetworkError") || error.message.includes("failed")) {
-          errorMessage = defaultErrorMessage
+        if (
+          error.message &&
+          (error.message.includes("NetworkError") || String(error.message).toLowerCase().includes("failed"))
+        ) {
+          errorMessage = defaultErrorMessage;
         } else if (error?.message) {
           errorMessage = error.message;
         }
 
         resultRef.current.innerHTML = errorMessage;
-        window.posthog?.capture?.('sentiment_analysis', { $set: { sentence: sentence, error: error.message } })
+        window.posthog?.capture?.("sentiment_analysis", { $set: { sentence: sentence, error: error.message } });
       })
       .finally(() => {
         setIsLoading(false);
