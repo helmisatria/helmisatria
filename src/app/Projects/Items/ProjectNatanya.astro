@@ -138,6 +138,12 @@ import ProjectSlider from "../ProjectSlider.astro";
       0px 0px 0px rgba(0, 0, 0, 0.02);
   }
 
+  @media (max-width: 640px) {
+    article {
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0.1) 0%, rgba(236, 254, 255, 0) 66.89%);
+    }
+  }
+
   article::before {
     content: "";
     pointer-events: none;
@@ -171,11 +177,7 @@ import ProjectSlider from "../ProjectSlider.astro";
     article::before {
       padding: 0;
       padding-top: 2px !important;
-      background: radial-gradient(
-        50.45% 6538499.72% at 49.24% 99.77%,
-        hsla(200, 98%, 39%, 1) 0%,
-        rgba(217, 217, 217, 0) 100%
-      );
+      background: linear-gradient(90deg, #0284c7 0%, #ffffff 66.89%);
     }
   }
 </style>
