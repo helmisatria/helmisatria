@@ -22,7 +22,7 @@ export const SentimentAnalysisApp = () => {
     e.preventDefault();
 
     const sentence = sentenceInputRef.current?.value;
-    const url = "https://4fa4-2404-8000-1025-3c-20c9-f787-6ff3-f2b.ap.ngrok.io/sentiment";
+    const url = `${import.meta.env.PUBLIC_SENTIMENT_API_HOST}/sentiment`
 
     setIsLoading(true);
 
