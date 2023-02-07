@@ -9,10 +9,16 @@ const seoDescription =
 type Props = {
   title?: string;
   seoTitle?: string;
+  description?: string;
+  publishedDate?: string;
 };
 
-const { title = "Helmi Satria - Fullstack Developer", seoTitle = "Helmi Satria - Experienced Fullstack Developer" } =
-  Astro.props;
+const {
+  title = "Helmi Satria - Fullstack Developer",
+  seoTitle = "Helmi Satria - Experienced Fullstack Developer",
+  description = seoDescription,
+  publishedDate,
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -21,13 +27,15 @@ const { title = "Helmi Satria - Fullstack Developer", seoTitle = "Helmi Satria -
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
+    {publishedDate && <meta property="article:published_time" content={publishedDate} />}
+
     <SEO
       title={title}
-      description={seoDescription}
+      description={description}
       openGraph={{
         optional: {
           locale: "id_ID",
-          description: seoDescription,
+          description: description,
           siteName: "Helmi Satria",
         },
         image: {
@@ -57,7 +65,7 @@ const { title = "Helmi Satria - Fullstack Developer", seoTitle = "Helmi Satria -
           { name: "twitter:title", content: seoTitle },
           {
             name: "twitter:description",
-            content: seoDescription,
+            content: description,
           },
         ],
       }}

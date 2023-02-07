@@ -1,4 +1,5 @@
 ---
+import dayjs from "dayjs";
 import BlogSideNavigation from "../components/Blog/BlogSideNavigation.astro";
 import BlogSidebar from "../components/Blog/BlogSidebar.astro";
 import BlogTitleOurnament from "../components/Blog/BlogTitleOurnament.astro";
@@ -16,9 +17,16 @@ type Props = {
 };
 
 const { frontmatter } = Astro.props;
+
+const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD");
 ---
 
-<Layout title={frontmatter.title} seoTitle={frontmatter.title}>
+<Layout
+  title={frontmatter.title}
+  seoTitle={frontmatter.title}
+  description={frontmatter.description}
+  publishedDate={articlePublishedDate}
+>
   <div class="flex min-h-screen flex-col-reverse bg-white lg:flex-row">
     <header class="z-30 lg:fixed lg:flex lg:min-h-screen lg:w-[360px] xl:w-[420px]">
       <BlogSideNavigation />
@@ -93,6 +101,11 @@ const { frontmatter } = Astro.props;
     padding: 1rem;
     @apply rounded-md text-sm shadow-md;
     margin-bottom: 2rem;
+  }
+
+  code {
+    @apply inline-block rounded-md bg-gray-100 text-sm tracking-tighter text-gray-800;
+    padding: 0.2rem 0.4rem;
   }
 
   @media (max-width: 768px) {
