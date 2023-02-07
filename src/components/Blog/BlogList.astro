@@ -24,17 +24,17 @@ posts.sort((a, b) => {
 });
 ---
 
-<main class="bg-white">
+<main class="bg-white lg:pb-32">
   <img src="/images/blog-ournament.png" class="bottom-0 right-0 z-0 hidden h-full lg:fixed lg:block" alt="" />
 
-  <div class="relative mt-11">
-    <ul class="mx-auto max-w-xl space-y-10 px-5 xl:max-w-3xl">
+  <div class="relative mx-auto mt-11 max-w-2xl lg:mx-0 xl:max-w-4xl">
+    <ul class="mx-auto max-w-2xl space-y-10 px-5 lg:space-y-14 lg:pl-24 xl:max-w-2xl xl:px-16">
       {
         posts.map((post) => (
           <li>
-            <div class="inline-flex lg:-ml-10 lg:space-x-5">
+            <div class="inline-flex lg:-ml-16 lg:space-x-5">
               <svg
-                class="mt-9 hidden lg:inline-block"
+                class="mt-9 hidden h-5 min-h-[20px] w-5 min-w-[20px] lg:inline-block"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
@@ -50,12 +50,14 @@ posts.sort((a, b) => {
                 />
               </svg>
 
-              <article class="max-w-[580px]">
+              <article class="">
                 <a class="group text-slate-900 visited:text-cyan-800" href={post.url}>
                   <div class="">
                     <span class="mb-3 inline-block text-xs text-slate-500">{post.frontmatter.publishDate}</span>
                     <h2 class="text-xl font-semibold group-hover:underline">{post.frontmatter.title}</h2>
-                    <p class="max-w-[540px] pt-2 text-sm text-slate-600">{post.frontmatter.description}</p>
+                    <p class="max-w-[680px] pt-2 leading-7 tracking-normal text-slate-600">
+                      {post.frontmatter.description}
+                    </p>
                   </div>
                 </a>
 

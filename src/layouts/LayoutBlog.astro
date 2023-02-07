@@ -7,20 +7,22 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Blog - Helmi Satria" seoTitle="Blog - Helmi Satria">
   <div class="flex min-h-screen flex-col bg-white lg:flex-row">
-    <header class="lg:fixed lg:flex lg:min-h-screen lg:w-[360px] xl:w-[420px]">
+    <header class="z-30 lg:fixed lg:flex lg:min-h-screen lg:w-[360px] xl:w-[420px]">
       <BlogSideNavigation />
       <BlogSidebar />
     </header>
 
-    <div class="relative flex-1 pb-20 lg:ml-[380px] xl:ml-[440px]">
+    <div class="relative flex-1 pb-20 lg:ml-[420px] 2xl:ml-[480px]">
       <div class="sticky top-0 z-20 bg-white/20 backdrop-blur-sm">
         <div class="absolute top-0 min-h-full w-full overflow-x-hidden">
           <BlogTitleOurnament />
         </div>
 
-        <div class="relative z-10 w-full border-b border-slate-200 py-6">
-          <div class="mx-auto max-w-xl px-5 xl:max-w-3xl">
-            <h1 class="text-xl font-semibold text-slate-900">Blog</h1>
+        <div class="relative z-10 w-full border-b border-slate-200 py-10">
+          <div class="mx-auto max-w-2xl px-6 lg:mx-0 xl:max-w-4xl">
+            <div class="mx-auto max-w-2xl px-0 lg:px-16 xl:px-8">
+              <h1 class="text-2xl font-semibold text-slate-700">Blog</h1>
+            </div>
           </div>
         </div>
       </div>

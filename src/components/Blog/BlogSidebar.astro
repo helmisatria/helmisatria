@@ -10,17 +10,19 @@ const { sidebarOnDetail = false } = Astro.props;
 
 <div
   class={tw(
-    "w-full bg-white shadow-lg lg:w-[320px] lg:min-w-[320px] lg:bg-slate-50 xl:w-[380px] xl:min-w-[380px]",
+    "w-full bg-white overflow-y-scroll lg:h-screen lg:w-[360px] lg:min-w-[360px] lg:bg-slate-50 xl:w-[420px] 2xl:min-w-[420px]",
     sidebarOnDetail && "border-t"
   )}
 >
-  <div class="relative mx-auto flex max-w-xl flex-col items-stretch px-6 py-6 lg:h-full lg:px-9 lg:pt-12">
+  <div
+    class="relative mx-auto flex max-w-xl flex-col items-center px-6 pt-20 lg:h-full lg:items-stretch lg:py-6 lg:px-9 lg:pt-12"
+  >
     <div class="separator-highlight absolute right-0 mt-20 hidden h-[600px] w-[2px] lg:block"></div>
 
     <div
       style="box-shadow: 0px 43px 17px rgba(0, 0, 0, 0.01), 0px 24px 14px rgba(0, 0, 0, 0.05), 0px 11px 11px rgba(0, 0, 0, 0.09), 0px 3px 6px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1)"
       class={tw(
-        "rounded-lg lg:p-4 mb-8 p-2 bg-white self-center hd flex items-center justify-center",
+        "rounded-lg lg:p-4 mb-8 p-2 bg-white self-center flex justify-center",
         sidebarOnDetail && "hidden lg:block"
       )}
     >
@@ -33,20 +35,22 @@ const { sidebarOnDetail = false } = Astro.props;
       />
     </div>
 
-    <div class="flex flex-col lg:mt-12">
+    <div class="flex flex-col items-center lg:mt-12 lg:items-start">
       <h2 class="text-xl font-semibold tracking-tight text-slate-900">Helmi Satria</h2>
-      <p class="mt-2 max-w-sm text-base leading-140 tracking-tight lg:text-lg">
+      <p class="mt-2 max-w-[310px] text-center text-lg leading-7 tracking-tight lg:text-start">
         a happy full-stack developer who aims to help others grow in web development
       </p>
 
-      <p class="mt-2 max-w-xs text-sm leading-140 tracking-tight text-slate-600 lg:mt-5 lg:text-base">
+      <span class="mt-10 inline-block text-slate-800">About</span>
+
+      <p class="mt-2 max-w-xs text-center text-base text-slate-600 lg:mt-3 lg:text-start">
         5 years of experience in using node.js and vue.js (also react.js) for full-stack development
       </p>
     </div>
 
-    <a class="mt-4 text-sm font-semibold tracking-tight text-cyan-800" href="/">Check my full profile</a>
+    <a class="mt-10 font-semibold tracking-tight text-cyan-800 hover:underline" href="/">Check my full profile</a>
 
-    <div class="mt-7 space-x-6 text-slate-600 lg:mt-10">
+    <div class="mb-4 space-x-6 py-10 text-slate-600">
       <a
         href="https://www.tiktok.com/@helmisatria_"
         target="_blank"
