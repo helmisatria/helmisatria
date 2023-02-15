@@ -10,12 +10,12 @@ const { sidebarOnDetail = false } = Astro.props;
 
 <div
   class={tw(
-    "w-full bg-white overflow-y-scroll lg:h-screen lg:w-[360px] lg:min-w-[360px] lg:bg-slate-50 xl:w-[420px] 2xl:min-w-[420px]",
+    "w-full bg-white overflow-y-auto lg:h-screen lg:w-[360px] lg:min-w-[360px] lg:bg-slate-50 xl:w-[420px] 2xl:min-w-[420px]",
     sidebarOnDetail && "border-t"
   )}
 >
   <div
-    class="relative mx-auto flex max-w-xl flex-col items-center px-6 pt-10 lg:h-full lg:items-stretch lg:py-6 lg:px-9 lg:pt-20 lg:pt-12"
+    class="relative mx-auto flex max-w-xl flex-col items-center px-6 pt-10 lg:h-full lg:items-stretch lg:py-6 lg:px-9 lg:pt-12"
   >
     <div class="separator-highlight absolute right-0 mt-20 hidden h-[600px] w-[2px] lg:block"></div>
 
