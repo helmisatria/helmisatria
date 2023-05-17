@@ -1,0 +1,149 @@
+---
+layout: ../../layouts/LayoutBlogDetail.astro
+title: Crawl Data Twitter Cepat dan Mudah dengan Python dan snscrape - Mei 2023
+author: Helmi Satria
+description: Pelajari cara mengambil data Twitter dengan mudah menggunakan snscrape dan Python. Temukan cara untuk mengekstrak tweet berdasarkan kata kunci, hashtag, tanggal, lokasi, dan lain sebagainya.
+tags: ["Twitter", "Crawl", "Data"]
+published: true
+publishDate: 2023-05-17T09:25:00+07:00
+---
+
+# Crawl Data Twitter Cepat dan Mudah dengan Python dan snscrape - Mei 2023
+
+Artikel ini membahas tentang snscrape, sebuah alat yang kuat untuk mengambil data dari Twitter, baik itu untuk keperluan penelitian, jurnalistik, atau sekadar penasaran. Dalam tutorial ini, kita akan membahas dasar-dasar penggunaan snscrape untuk mengambil data Twitter.
+
+## Cheatsheet Twitter Search Query
+
+Sebelum kita membahas snscrape, mari kita ulas beberapa operator pencarian yang dapat kamu gunakan di Twitter. Operator-operator ini memungkinkan kamu untuk menyaring tweet berdasarkan kata kunci, hashtag, tanggal, lokasi, dan lain sebagainya. Berikut adalah beberapa contoh:
+
+- `from:username`: tweet dari pengguna tertentu
+
+  Misalnya, mencari `from:BarackObama` akan mengembalikan tweet hanya dari akun Twitter Barack Obama.
+
+- `#hashtag`: tweet yang mengandung hashtag tertentu
+
+  Misalnya, mencari `#WorldCup` akan mengembalikan tweet yang mengandung hashtag `#WorldCup`.
+
+- `to:username`: tweet yang menyebutkan pengguna tertentu
+
+  Misalnya, mencari `to:elonmusk` akan mengembalikan tweet yang menyebutkan Elon Musk.
+
+- `keyword1 OR keyword2`: tweet yang mengandung keyword1 atau keyword2
+
+  Misalnya, mencari `pizza OR pasta` akan mengembalikan tweet yang mengandung keyword "pizza" atau keyword "pasta".
+
+- `since:yyyy-mm-dd until:yyyy-mm-dd`: tweet yang diposting antara dua tanggal
+
+  Misalnya, mencari `COVID19 since:2022-01-01 until:2022-01-31` akan mengembalikan tweet yang mengandung keyword "COVID19" yang diposting antara 1 Januari 2022 dan 31 Januari 2022.
+
+- `near:city within:km`: tweet yang diposting di dekat lokasi tertentu
+
+  Misalnya, mencari `near:Jakarta within:15km` akan mengembalikan tweet yang diposting dalam jarak 15 kilometer dari Jakarta.
+
+- `key1 AND key2`: tweet yang mengandung key1 dan key2
+
+  Misalnya, mencari `cat AND dog` hanya akan mengembalikan tweet yang mengandung "cat" dan "dog".
+
+- `"presiden Indonesia"`: tweet yang mengandung frase tepat
+
+  Misalnya, mencari `"presiden Indonesia"` hanya akan mengemb alikan tweet yang mengandung frase "presiden Indonesia".
+
+- `min_replies`: tweet dengan jumlah balasan minimum
+  Misalnya , menambahkan `min_replies:10` pada pencarian kamu hanya akan mengembalikan tweet yang memiliki setidaknya 10 balasan.
+- `min_faves`: tweet dengan jumlah like (favorit) minimum
+
+  Misalnya, menambahkan `min_faves:100` pada pencarian kamu hanya akan mengembalikan tweet yang memiliki setidaknya 100 like.
+
+- `min_retweets`: tweet dengan jumlah retweet minimum
+
+  Misalnya, menambahkan `min_retweets:50` pada pencarian kamu hanya akan mengembalikan tweet yang memiliki setidaknya 50 retweet.
+  Untuk daftar lengkap operator, lihat dokumentasi Twitter Search API.
+
+## Demo menggunakan Browser hanya dengan Google Colab dan Ekspor CSV
+
+Jika kamu tidak memiliki Python terinstal atau lebih suka menggunakan solusi berbasis browser, kamu dapat menggunakan Google Colab untuk menjalankan perintah snscrape dan mengekspor hasilnya sebagai file CSV. Berikut caranya:
+
+1. Buka Google Colab dan buat notebook baru.
+2. Instal snscrape dan pandas dengan menjalankan:
+
+```
+!pip3 install git+https://github.com/JustAnotherArchivist/snscrape.git
+!pip install pandas
+```
+
+3. Gunakan perintah snscrape untuk mengambil data Twitter. Misalnya, untuk mengekstrak semua tweet yang mengandung kata Presiden dengan bahasa Indonesia dan memiliki jumlah like minimum 10.000, kamu dapat menjalankan:
+
+```
+import os
+
+# Menggunakan library OS untuk memanggil perintah CLI di Python
+os.system("snscrape --jsonl --max-results 10 twitter-search 'Presiden lang:id min_faves:10000'> presiden.json")
+```
+
+Ini akan menyimpan hasilnya dalam file JSON Lines yang disebut presiden.json. 4. Konversi file JSON Lines menjadi file CSV dengan menjalankan:
+
+```
+import pandas as pd
+
+df = pd.read_json('tweets.json', lines=True)
+df.to_csv('tweets.csv', index=False)
+```
+
+Ini akan menyimpan hasilnya dalam file CSV yang disebut tweets.csv.
+
+## Demo menggunakan Python, snscrape, dan Jupyter Notebook
+
+Jika kamu sudah terbiasa dengan Python dan Jupyter Notebook, kamu dapat menggunakan snscrape langsung di notebook kamu. Berikut caranya:
+
+1. Instal snscrape dengan menjalankan
+
+```
+!pip3 install git+https://github.com/JustAnotherArchivist/snscrape.git
+!pip install pandas
+```
+
+2. Import modul snscrape dan tentukan kueri pencarian kamu. Misalnya, untuk mengekstrak semua tweet yang mengandung hashtag `#datascience` yang diposting sejak 20 Januari 2023, kamu dapat menjalankan:
+
+```
+import snscrape.modules.twitter as sntwitter
+import pandas as pd
+
+# Tentukan kueri pencarian
+query = '#datascience since:2023-01-20'
+
+# Ambil tweet dan simpan dalam sebuah list
+tweets = []
+for tweet in sntwitter.TwitterSearchScraper(query).get_items():
+    tweets.append([tweet.date, tweet.rawContent])
+
+# Konversi list ke DataFrame dan simpan sebagai file CSV
+df = pd.DataFrame(tweets, columns=['date', 'rawContent'])
+df.to_csv('tweets.csv', index=False)
+```
+
+Ini akan menyimpan hasilnya dalam file CSV yang disebut tweets.csv.
+
+## Demo menggunakan Python lengkap dengan snscrape
+
+Terakhir, jika kamu ingin menggunakan snscrape dalam sebuah skrip Python lengkap, kamu dapat melakukannya dengan mengimpor modul snscrape dan menggunakan fungsinya. Berikut contohnya:
+
+```
+import snscrape.modules.twitter as sntwitter
+import pandas as pd
+
+# Tentukan kueri pencarian
+query = '#datascience since:2023-01-20'
+
+# Ambil tweet dan simpan dalam sebuah list
+tweets = []
+for tweet in sntwitter.TwitterSearchScraper(query).get_items():
+    tweets.append([tweet.date, tweet.rawContent])
+
+# Konversi list ke DataFrame dan simpan sebagai file CSV
+df = pd.DataFrame(tweets, columns=['date', 'rawContent'])
+df.to_csv('tweets.csv', index=False)
+```
+
+Ini akan menyimpan hasilnya dalam file CSV yang disebut tweets.csv.
+
+Dan itulah semuanya! Dengan snscrape, kamu dapat dengan mudah mengambil data dari Twitter dan mendapatkan wawasan yang berharga. Selamat mencoba!

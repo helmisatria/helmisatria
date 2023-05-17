@@ -13,14 +13,9 @@ dayjs.tz.setDefault("Asia/Jakarta");
 // get all blog posts from the filesystem directory: /blog/*
 const posts = await Astro.glob("../../pages/blog/*");
 
-// format publishDate based on Asia/Jakarta timezone
-posts.forEach((post) => {
-  post.frontmatter.publishDate = dayjs(post.frontmatter.publishDate).format("DD MMMM YYYY HH:mm");
-});
-
 // order by publishDate
 posts.sort((a, b) => {
-  return dayjs(b.frontmatter.publishDate).unix() - dayjs(a.frontmatter.publishDate).unix();
+  return dayjs(b.frontmatter.publishDate).valueOf() - dayjs(a.frontmatter.publishDate).valueOf();
 });
 ---
 
@@ -53,7 +48,9 @@ posts.sort((a, b) => {
               <article class="">
                 <a class="group text-slate-900 visited:text-cyan-800" href={post.url}>
                   <div class="">
-                    <span class="mb-3 inline-block text-xs text-slate-500">{post.frontmatter.publishDate}</span>
+                    <span class="mb-3 inline-block text-xs text-slate-500">
+                      {dayjs(post.frontmatter.publishDate).format("D MMMM YYYY HH:mm")}
+                    </span>
                     <h2 class="text-xl font-semibold group-hover:underline">{post.frontmatter.title}</h2>
                     <p class="max-w-[680px] pt-2 leading-7 tracking-normal text-slate-600">
                       {post.frontmatter.description}
