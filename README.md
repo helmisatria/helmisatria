@@ -12,8 +12,7 @@ Check all of my past projects and complete experience on [https://helmisatria.co
 
 It built using Astro and design it using Figma.
 
-- Repository: [https://github.com/helmisatria/helmisatria](https://github.com/helmisatria/helmisatria)
-- Figma design: [https://www.figma.com/file/CzvBrdbcZSx5ZyI697unvM/helmisatria.com-v2?node-id=67%3A128&t=sMn08Ug1msNfV9Jx-4](https://www.figma.com/file/CzvBrdbcZSx5ZyI697unvM/helmisatria.com-v2?node-id=67%3A128&t=sMn08Ug1msNfV9Jx-4)
+- Figma design: [Figma Design](https://www.figma.com/file/2CvdoVs7fObbeotTtRSWhu/Publicly-Shared---helmisatria.com?type=design&node-id=0%3A1&t=Yv66ybuy1jjjlhlV-1)
 - Deployed on Cloudflare Pages: [https://helmisatria.com](https://helmisatria.com)
 
 You can also follow my journey on Twitter @helmisatria\_ 👋
