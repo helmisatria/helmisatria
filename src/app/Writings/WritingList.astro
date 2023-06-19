@@ -14,11 +14,11 @@ dayjs.tz.setDefault("Asia/Jakarta");
 let blogs = await Astro.glob("../../pages/blog/*.mdx");
 
 blogs.forEach((blogPost) => {
-  blogPost.frontmatter.publishedAt = dayjs(blogPost.frontmatter.publishedAt).format("YYYY-MM-DDTHH:mm:ss.000Z");
+  blogPost.frontmatter.publishDate = dayjs(blogPost.frontmatter.publishDate).format("YYYY-MM-DDTHH:mm:ss.000Z");
 });
 
 blogs = blogs.sort((a, b) => {
-  return dayjs(b.frontmatter.publishedAt).unix() - dayjs(a.frontmatter.publishedAt).unix();
+  return dayjs(b.frontmatter.publishDate).unix() - dayjs(a.frontmatter.publishDate).unix();
 });
 
 const posts = blogs.map((blogPost) => {
@@ -26,34 +26,37 @@ const posts = blogs.map((blogPost) => {
     title: blogPost.frontmatter.title,
     coverImage:
       "https://images.unsplash.com/photo-1606206873764-fd15e242df52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-    publishedAt: blogPost.frontmatter.publishedAt,
+    publishedAt: blogPost.frontmatter.publishDate,
     link: blogPost.url,
+    tags: blogPost.frontmatter.tags,
   };
 });
 
-const articles = [
-  {
-    title: "Cara Berhasil Mendapatkan Data Tweet dari Twitter — 2023",
-    coverImage: "https://cdn-images-1.medium.com/max/1024/1*el-mdT2rvqkywHkwAbtHYg.png",
-    link: "https://medium.com/@helmisatria/cara-mendapatkan-data-twitter-di-2023-44aaefb616ea?source=rss-3ce7bcb10e65------2",
-    publishedAt: "2023-01-15T09:08:02.000Z",
-  },
-  ...posts,
-].slice(0, 4);
+const articles = posts.slice(0, 4);
 ---
 
 <ul
   class="mx-auto grid max-w-[1244px] grid-cols-1 place-content-center gap-x-5 gap-y-3 sm:grid-cols-2 sm:gap-y-6 lg:grid-cols-[repeat(2,480px)] xl:grid-cols-[repeat(2,545px)]"
 >
   {
-    articles?.map((article: { title: string; coverImage: string; slug?: string; domain?: string; link?: string }) => (
-      <WritingListItem
-        hostname={article.domain as string}
-        slug={article.slug}
-        link={article.link}
-        title={article.title}
-        coverImage={article.coverImage}
-      />
-    ))
+    articles?.map(
+      (article: {
+        title: string;
+        coverImage: string;
+        slug?: string;
+        domain?: string;
+        link?: string;
+        tags?: string[];
+      }) => (
+        <WritingListItem
+          hostname={article.domain as string}
+          slug={article.slug}
+          link={article.link}
+          title={article.title}
+          coverImage={article.coverImage}
+          tags={article.tags}
+        />
+      )
+    )
   }
 </ul>

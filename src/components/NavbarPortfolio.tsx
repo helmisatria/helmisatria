@@ -1,9 +1,8 @@
-import React from "react";
-import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
+import { Fragment } from "react";
 import { twJoin, twMerge } from "tailwind-merge";
+import useIntersectionObserver from "../hooks/useIntersectionObserver";
 
 const navigation = [
   { name: "Projects", href: "#projects" },
@@ -22,8 +21,8 @@ export default function NavbarPortfolio() {
   let navBackground = isIntersectingProjects
     ? "navbar-background-light"
     : isIntersectingDarkSection
-      ? "navbar-background-dark"
-      : "bg-opacity-0";
+    ? "navbar-background-dark"
+    : "bg-opacity-0";
 
   displayable = isIntersectingFooter ? "!opacity-0 !pointer-events-none" : displayable;
 
@@ -31,7 +30,10 @@ export default function NavbarPortfolio() {
     <div className={twMerge("fixed top-0 z-50 w-full bg-opacity-100 transition-all duration-500", navBackground)}>
       <Popover as="header" className="">
         <div className="py-6">
-          <nav className="relative mx-auto flex items-center justify-between px-8 md:px-12 xl:px-4 max-w-[1244px]" aria-label="Global">
+          <nav
+            className="relative mx-auto flex max-w-[1244px] items-center justify-between px-8 md:px-12 xl:px-4"
+            aria-label="Global"
+          >
             <div className="flex flex-1 items-center">
               <div className="flex w-full items-center justify-end md:w-auto">
                 <div className="-mr-2 flex items-center md:hidden">

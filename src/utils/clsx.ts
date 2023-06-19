@@ -1,3 +1,3 @@
-import { twMerge } from 'tailwind-merge'
+import { twMerge } from "tailwind-merge";
 
-export const tw = twMerge
+export const tw = twMerge;

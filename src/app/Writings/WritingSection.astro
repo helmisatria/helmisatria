@@ -30,20 +30,20 @@ import WritingList from "./WritingList.astro";
     <WritingList />
 
     <div class="mb-10 mt-11 flex w-full justify-center sm:mb-20 sm:mt-28 lg:mb-40">
-      <a
-        class="btn-blog relative mx-auto inline-block w-full rounded-xl px-5 py-6 sm:w-[550px] sm:rounded-[32px] sm:px-10 sm:py-9 md:w-[650px] lg:w-[865px]"
-        href="/blog#title"
+      <div
+        class="btn-blog relative mx-auto flex w-full flex-col items-center rounded-xl px-5 py-6 text-center sm:w-[550px] sm:rounded-[32px] sm:px-10 sm:py-9 md:w-[650px] lg:w-[865px]"
       >
-        <h3 class="text-2xl font-semibold text-cyan-100 sm:text-3xl sm:leading-[120%]">Check out my blog 📖</h3>
+        <h3 class="text-2xl font-semibold text-cyan-100 sm:text-3xl sm:leading-[120%]">Check out my blog</h3>
         <p
           class="mt-2.5 max-w-[300px] text-sm leading-140 text-cyan-100 text-opacity-80 sm:max-w-none sm:text-lg md:max-w-[506px]"
         >
-          If you want to stay up-to-date with my writing content, <br /> you can subscribe to my blog.
+          Stay informed about my writing by subscribing to my blog.
         </p>
-        <p class="mt-6 text-2xl font-semibold text-cyan-400 sm:mt-14 md:text-3xl lg:text-[46px]">
-          helmisatria.com/blog
-        </p>
-      </a>
+
+        <a href="/blog#title" class="mt-6 text-cyan-600 hover:underline sm:mt-14">
+          <p class="text-2xl font-semibold text-cyan-400 md:text-3xl lg:text-[46px]">helmisatria.com/blog</p>
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -51,13 +51,6 @@ import WritingList from "./WritingList.astro";
 <style>
   section {
     background: linear-gradient(181.32deg, rgba(5, 31, 46, 0.53) 1.13%, rgba(0, 0, 0, 0) 34%), #091f2a;
-  }
-
-  .btn-blog {
-    background: linear-gradient(97.44deg, rgba(0, 0, 0, 0.33) -1.06%, rgba(0, 0, 0, 0) 102.45%),
-      radial-gradient(72.37% 256.4% at 94.8% 96.28%, rgba(3, 105, 161, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #041f2a;
-    box-shadow: 0px 146px 58px rgba(0, 0, 0, 0.01), 0px 82px 49px rgba(0, 0, 0, 0.05), 0px 36px 36px rgba(0, 0, 0, 0.09),
-      0px 9px 20px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
   }
 
   section::before {
@@ -69,35 +62,6 @@ import WritingList from "./WritingList.astro";
     border-radius: inherit;
     padding-top: 3px;
     background: linear-gradient(90deg, hsla(200, 98%, 39%, 1) 0%, rgba(217, 217, 217, 0) 66.89%);
-    content: "";
-    pointer-events: none;
-    user-select: none;
-    position: absolute;
-    border-radius: inherit;
-    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-
-  .btn-blog::before {
-    content: "";
-    pointer-events: none;
-    user-select: none;
-    position: absolute;
-    inset: 0px;
-    border-radius: inherit;
-    padding: 2px;
-    background: linear-gradient(
-        135deg,
-        hsla(189, 94%, 43%, 1) 1%,
-        transparent,
-        transparent,
-        transparent,
-        transparent,
-        transparent,
-        transparent
-      ),
-      linear-gradient(300deg, hsla(200, 98%, 39%, 0.32) 10%, transparent, transparent, transparent, transparent);
     content: "";
     pointer-events: none;
     user-select: none;

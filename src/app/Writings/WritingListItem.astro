@@ -5,47 +5,45 @@ export type Props = {
   hostname?: string;
   slug?: string;
   link?: string;
+  tags?: string[];
 };
 
-const { title, coverImage, hostname, slug, link } = Astro.props;
+const { title, hostname, slug, link, tags } = Astro.props;
 const linkUrl = link ?? `https://${hostname}/${slug}`;
+const tag = tags?.[0] ?? "";
+import { tw } from "../../utils/clsx";
 ---
 
-<li class="relative h-[150px] overflow-hidden rounded-2xl sm:h-[230px] lg:h-[230px]">
+<li
+  class={tw(
+    "relative transition-all duration-150 h-[150px] overflow-hidden rounded-2xl border border-cyan-600 border-opacity-10 sm:h-[230px] lg:h-[230px]",
+    "hover:shadow-xl"
+  )}
+>
   <article class="h-full">
-    <a href={linkUrl} target="_blank" class="relative block h-full px-6 py-5 sm:py-6 md:p-9">
+    <a href={linkUrl} target="_blank" class="relative block h-full px-6 py-5 shadow-md sm:py-6 md:p-9">
+      <p class="mb-2 text-cyan-600">{tag}</p>
       <h3
-        class="max-w-[250px] text-xl font-semibold leading-7 text-cyan-50 sm:max-w-[424px] sm:text-xl sm:leading-[120%] md:max-w-[300px] md:leading-8 lg:max-w-[350px] lg:text-2xl"
+        class="max-w-[250px] text-xl font-medium leading-7 text-cyan-50 sm:max-w-[424px] sm:text-xl sm:leading-[120%] md:max-w-[300px] md:leading-8 lg:max-w-[350px] lg:text-2xl"
       >
         {title}
       </h3>
-
-      {
-        coverImage && (
-          <div
-            style="transform: rotate(-11.26deg); background: radial-gradient(67.35% 67.35% at 45.72% 0.81%, #0C4A6E 0%, rgba(12, 74, 110, 0) 80%);"
-            class="lg:h-50 absolute -bottom-11 right-0 inline-block h-32 w-48 rounded-2xl p-1 sm:-right-3 sm:h-44 sm:w-64 md:-bottom-14 md:right-4 lg:-bottom-11"
-          >
-            <img
-              class="h-full w-full rounded-2xl object-cover"
-              height="200"
-              loading="lazy"
-              src={coverImage}
-              alt={title}
-            />
-          </div>
-        )
-      }
     </a>
   </article>
 </li>
 
 <style>
   li {
-    background: radial-gradient(36.68% 57.98% at 29.72% 109.5%, #04243400 0%, rgba(4, 36, 52, 0) 100%),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 73.83%),
-      linear-gradient(0deg, rgba(8, 46, 69, 0.3), rgba(8, 46, 69, 0.3)),
-      radial-gradient(41.38% 84.37% at 4.95% 91.12%, #0285c75c 0%, #0a243300 80%);
+    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+    background: radial-gradient(83.58% 466.3% at 88.14% 12.93%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #0f1f29;
+  }
+
+  li:hover {
+    background: radial-gradient(83.58% 466.3% at 88.14% 12.93%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+        /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+      #0d202c;
   }
 
   li::before {
@@ -56,7 +54,16 @@ const linkUrl = link ?? `https://${hostname}/${slug}`;
     inset: 0px;
     border-radius: inherit;
     padding: 2px;
-    background: linear-gradient(135deg, #0285c7aa 5%, transparent, transparent, transparent, transparent);
+    background: linear-gradient(
+      135deg,
+      #173c4eb7 5%,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    );
     content: "";
     pointer-events: none;
     user-select: none;
@@ -65,5 +72,18 @@ const linkUrl = link ?? `https://${hostname}/${slug}`;
     -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+  }
+
+  li:hover::before {
+    background: linear-gradient(
+      135deg,
+      #173c4eb7 25%,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent,
+      transparent
+    );
   }
 </style>

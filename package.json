@@ -1,6 +1,6 @@
 {
   "name": "helmisatria.com",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "astro dev",
@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^5.0.0",
+    "@astrojs/cloudflare": "^6.5.0",
     "@astrojs/mdx": "^0.15.1",
     "@astrojs/partytown": "^1.0.3",
     "@astrojs/react": "^2.0.2",
@@ -22,7 +22,7 @@
     "@tailwindcss/forms": "^0.5.3",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
-    "astro": "^1.9.1",
+    "astro": "^2.6.5",
     "astro-imagetools": "^0.6.17",
     "astro-seo": "^0.6.1",
     "autoprefixer": "^10.4.13",
