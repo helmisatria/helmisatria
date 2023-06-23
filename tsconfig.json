@@ -1,6 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": ["/**/*.{astro}", "/**/*.ts", "/**/*.tsx", "/**/*.js", "/**/*.jsx", "/**/*.mjs", "/**/*.json", "/**/*."],
+  "include": ["**/*.astro", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "**/*.mjs", "**/*.json", "**/*."],
   "compilerOptions": {
     "jsx": "react-jsx",
     "jsxImportSource": "react"

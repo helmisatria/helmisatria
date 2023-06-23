@@ -1,6 +1,5 @@
 ---
 import { SEO } from "astro-seo";
-import "../styles/fonts.css";
 import LayoutScripts from "./LayoutScripts.astro";
 
 const seoDescription =
@@ -19,6 +18,8 @@ const {
   description = seoDescription,
   publishedDate,
 } = Astro.props;
+
+const url = Astro.url.pathname;
 ---
 
 <!DOCTYPE html>
@@ -26,6 +27,9 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+
+    {url.includes("/blog") && <link rel="stylesheet" href="/fonts/Satoshi/satoshi.css" />}
+    {url === "/" && <link rel="stylesheet" href="/fonts/Figtree/figtree.css" />}
 
     {publishedDate && <meta property="article:published_time" content={publishedDate} />}
 
@@ -90,7 +94,7 @@ const {
       html {
         font-family: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
           "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
+          "Segoe UI Symbol" !important;
         background-color: #f6f6f6;
         min-height: 100vh;
       }

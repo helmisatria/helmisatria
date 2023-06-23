@@ -1,32 +1,37 @@
 ---
-import BlogSideNavigation from "../components/Blog/BlogSideNavigation.astro";
-import BlogSidebar from "../components/Blog/BlogSidebar.astro";
-import BlogTitleOurnament from "../components/Blog/BlogTitleOurnament.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Blog - Helmi Satria" seoTitle="Blog - Helmi Satria">
-  <div class="flex min-h-screen flex-col bg-white lg:flex-row">
-    <header class="z-30 lg:fixed lg:flex lg:min-h-screen lg:w-[360px] xl:w-[420px]">
-      <BlogSideNavigation />
-      <BlogSidebar />
-    </header>
+  <header
+    class="relative h-full w-full overflow-hidden border-b-2 border-black px-16 text-neutral-300"
+    style="background: linear-gradient(180deg, rgba(41, 37, 36, 0.2) 0%, rgba(64, 64, 64, 0.2) 100%);"
+  >
+    <img width="848px" height="383px" src="/images/blog/blog-background.png" class="absolute right-0 top-0 z-0" />
+    <div class="relative z-10 mx-auto w-[65rem] pt-14 pb-20">
+      <h1 class="text-[4rem] font-bold tracking-tighter">Blog</h1>
 
-    <div class="relative flex-1 pb-20 lg:ml-[420px] 2xl:ml-[480px]">
-      <div class="sticky top-0 z-20 bg-white/20 backdrop-blur-sm">
-        <div class="absolute top-0 min-h-full w-full overflow-x-hidden">
-          <BlogTitleOurnament />
-        </div>
+      <p class="mt-6 text-[2rem] font-bold tracking-tighter">Helmi Satria</p>
+      <p class="mt-1 text-lg tracking-tighter">
+        a happy full-stack developer who aims to <br /> help others grow in web/apps development
+      </p>
 
-        <div class="relative z-10 w-full border-b border-slate-200 py-6 lg:py-10">
-          <div class="mx-auto max-w-2xl px-6 lg:mx-0 xl:max-w-4xl">
-            <div class="mx-auto max-w-2xl px-0 lg:px-16 xl:px-8">
-              <h1 id="title" class="text-2xl font-semibold text-slate-700">Blog</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <slot />
+      <a href="/" class="mt-5 inline-block text-sm text-neutral-500 underline">Full Profile</a>
     </div>
-  </div>
+  </header>
 </Layout>
+
+<main
+  class="h-screen"
+  style="background: radial-gradient(82.23% 82.23% at 48.91% 0%, #030303 0%, rgba(10, 10, 10, 0) 100%);"
+>
+  <p></p>
+</main>
+
+<style is:global>
+  html {
+    font-family: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+      "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    @apply bg-neutral-900;
+  }
+</style>
