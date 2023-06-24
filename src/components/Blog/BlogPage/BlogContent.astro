@@ -4,6 +4,10 @@ import Balancer, { Provider } from "react-wrap-balancer";
 
 import IconDate from "../../icons/IconDate.astro";
 
+// dayjs locale id
+import "dayjs/locale/id";
+dayjs.locale("id");
+
 const posts = await Astro.glob("../../../pages/blog/*");
 
 // order by publishDate
