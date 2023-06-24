@@ -34,7 +34,7 @@
         {
           "title": "published",
           "name": "published",
-          "type": "datetime"
+          "type": "boolean"
         },
         {
           "title": "publishDate",
