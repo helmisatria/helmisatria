@@ -9,7 +9,9 @@ export default defineConfig({
   integrations: [
     tailwind(),
     mdx({
-      shikiConfig: {},
+      shikiConfig: {
+        theme: "github-dark",
+      },
     }),
     react(),
   ],
