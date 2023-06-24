@@ -19,6 +19,12 @@ module.exports = {
         150: "150%",
       },
       colors: {
+        blog: {
+          dark: "#080B12",
+          5: "#080B12",
+          60: "#748ABE",
+          95: "#EDF0F7",
+        },
         dark: "#051C29",
         cyan: {
           dark: "#093853",

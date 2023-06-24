@@ -74,20 +74,25 @@ const url = Astro.url.pathname;
         ],
       }}
     />
-    <LayoutScripts />
+    {import.meta.env.DEV !== true && <LayoutScripts />}
   </head>
 
   <body>
     <slot />
 
     <!-- Google Tag Manager (noscript) -->
-    <noscript
-      ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-NDLDNMH"
-        height="0"
-        width="0"
-        style="display:none;visibility:hidden"></iframe></noscript
-    >
+    {
+      import.meta.env.DEV !== true && (
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NDLDNMH"
+            height="0"
+            width="0"
+            style="display:none;visibility:hidden"
+          />
+        </noscript>
+      )
+    }
     <!-- End Google Tag Manager (noscript) -->
 
     <style is:global>
