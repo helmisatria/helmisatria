@@ -1,4 +1,6 @@
 ---
+import { tw } from "../../utils/tw";
+
 export type Props = {
   title: string;
   coverImage?: string;
@@ -11,7 +13,6 @@ export type Props = {
 const { title, hostname, slug, link, tags } = Astro.props;
 const linkUrl = link ?? `https://${hostname}/${slug}`;
 const tag = tags?.[0] ?? "";
-import { tw } from "../../utils/clsx";
 ---
 
 <li

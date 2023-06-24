@@ -2,13 +2,15 @@
 layout: ../../layouts/LayoutBlogDetail.astro
 title: Sentimen Analisis API menggunakan python Flask
 author: Helmi Satria
-description: "Kapan lagi bisa belajar API dikombinasikan dengan sentimen analisis pakai python Flask, di blog ini saya akan membagikan tutorial lengkapnya..."
-tags: ["Tiktok", "Data"]
+description: Kapan lagi bisa belajar API dikombinasikan dengan sentimen analisis pakai python Flask, di blog ini saya akan membagikan tutorial lengkapnya...
+tags:
+  - Data
+  - Tiktok
 published: true
 publishDate: 2023-02-03T20:21:00+07:00
 ---
 
-import { SentimentAnalysisApp } from '../../components/Blog/content/SentimentAnalysisApp.tsx'
+import { SentimentAnalysisApp } from "../../components/Blog/content/SentimentAnalysisApp.tsx";
 
 # Sentiment Analysis API menggunakan python Flask
 
@@ -33,8 +35,9 @@ Ketika mendapat request dari path /sentiment, kita akan memanggil fungsi sentime
 Kemudian, hasil dari sentimen analisis akan kita pakai untuk kirim balik ke pengguna berupa json dengan format sebagai berikut:
 
 ```json
-{"label": "positif", "score": 0.8}
+{ "label": "positif", "score": 0.8 }
 ```
+
 Selesai!
 
 Dengan membuat API sentimen analisis dengan framework server Flask kita akan dapat membuat aplikasi web yang akan memparsing input dari pengguna dan mengirim respons berupa sentimen analisis dan skornya.

@@ -1,32 +1,46 @@
 ---
-import BlogSideNavigation from "../components/Blog/BlogSideNavigation.astro";
-import BlogSidebar from "../components/Blog/BlogSidebar.astro";
-import BlogTitleOurnament from "../components/Blog/BlogTitleOurnament.astro";
+import BlogContent from "../components/Blog/BlogPage/BlogContent.astro";
+import BlogHeader from "../components/Blog/BlogPage/BlogHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Blog - Helmi Satria" seoTitle="Blog - Helmi Satria">
-  <div class="flex min-h-screen flex-col bg-white lg:flex-row">
-    <header class="z-30 lg:fixed lg:flex lg:min-h-screen lg:w-[360px] xl:w-[420px]">
-      <BlogSideNavigation />
-      <BlogSidebar />
-    </header>
+  <BlogHeader />
+  <div role="separator" class="header-separator relative h-[2px] w-full"></div>
 
-    <div class="relative flex-1 pb-20 lg:ml-[420px] 2xl:ml-[480px]">
-      <div class="sticky top-0 z-20 bg-white/20 backdrop-blur-sm">
-        <div class="absolute top-0 min-h-full w-full overflow-x-hidden">
-          <BlogTitleOurnament />
-        </div>
-
-        <div class="relative z-10 w-full border-b border-slate-200 py-6 lg:py-10">
-          <div class="mx-auto max-w-2xl px-6 lg:mx-0 xl:max-w-4xl">
-            <div class="mx-auto max-w-2xl px-0 lg:px-16 xl:px-8">
-              <h1 id="title" class="text-2xl font-semibold text-slate-700">Blog</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-      <slot />
-    </div>
-  </div>
+  <BlogContent />
 </Layout>
+
+<style>
+  .header-separator {
+    background: linear-gradient(
+      to right,
+      transparent,
+      transparent,
+      transparent,
+      hsla(221, 39%, 64%, 0.5) 60%,
+      transparent,
+      transparent
+    );
+  }
+</style>
+
+<style is:global>
+  html {
+    font-family: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+      "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+    @apply !bg-blog-dark;
+  }
+
+  @media (max-width: 1440px) {
+    html {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    html {
+      font-size: 20px !important;
+    }
+  }
+</style>

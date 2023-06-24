@@ -1,9 +1,12 @@
 ---
 layout: ../../layouts/LayoutBlogDetail.astro
-title: Crawl Data Twitter Cepat dan Mudah dengan Python dan snscrape - Mei 2023
+title: Crawl Data Twitter dengan Python dan snscrape - Juni 2023
 author: Helmi Satria
-description: Pelajari cara mengambil data Twitter dengan mudah menggunakan snscrape dan Python. Temukan cara untuk mengekstrak tweet berdasarkan kata kunci, hashtag, tanggal, lokasi, dan lain sebagainya.
-tags: ["Twitter", "Crawl", "Data"]
+description: Cara mengambil data Twitter dengan mudah menggunakan snscrape dan Python. Temukan cara mengekstrak tweet berdasarkan kata kunci, hashtag, tanggal, dan lokasi.
+tags:
+  - Data
+  - Crawl
+  - Twitter
 published: true
 publishDate: 2023-05-17T09:25:00+07:00
 ---
@@ -68,14 +71,14 @@ Jika kamu tidak memiliki Python terinstal atau lebih suka menggunakan solusi ber
 1. Buka Google Colab dan buat notebook baru.
 2. Instal snscrape dan pandas dengan menjalankan:
 
-```
+```bash
 !pip3 install git+https://github.com/JustAnotherArchivist/snscrape.git
 !pip install pandas
 ```
 
 3. Gunakan perintah snscrape untuk mengambil data Twitter. Misalnya, untuk mengekstrak semua tweet yang mengandung kata Presiden dengan bahasa Indonesia dan memiliki jumlah like minimum 10.000, kamu dapat menjalankan:
 
-```
+```bash
 import os
 
 # Menggunakan library OS untuk memanggil perintah CLI di Python
@@ -84,7 +87,7 @@ os.system("snscrape --jsonl --max-results 10 twitter-search 'Presiden lang:id mi
 
 Ini akan menyimpan hasilnya dalam file JSON Lines yang disebut presiden.json. 4. Konversi file JSON Lines menjadi file CSV dengan menjalankan:
 
-```
+```python
 import pandas as pd
 
 df = pd.read_json('tweets.json', lines=True)
@@ -99,14 +102,14 @@ Jika kamu sudah terbiasa dengan Python dan Jupyter Notebook, kamu dapat mengguna
 
 1. Instal snscrape dengan menjalankan
 
-```
+```bash
 !pip3 install git+https://github.com/JustAnotherArchivist/snscrape.git
 !pip install pandas
 ```
 
 2. Import modul snscrape dan tentukan kueri pencarian kamu. Misalnya, untuk mengekstrak semua tweet yang mengandung hashtag `#datascience` yang diposting sejak 20 Januari 2023, kamu dapat menjalankan:
 
-```
+```py
 import snscrape.modules.twitter as sntwitter
 import pandas as pd
 
@@ -129,7 +132,7 @@ Ini akan menyimpan hasilnya dalam file CSV yang disebut tweets.csv.
 
 Terakhir, jika kamu ingin menggunakan snscrape dalam sebuah skrip Python lengkap, kamu dapat melakukannya dengan mengimpor modul snscrape dan menggunakan fungsinya. Berikut contohnya:
 
-```
+```py
 import snscrape.modules.twitter as sntwitter
 import pandas as pd
 

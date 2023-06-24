@@ -1,0 +1,57 @@
+---
+import dayjs from "dayjs";
+import Balancer, { Provider } from "react-wrap-balancer";
+
+import IconDate from "../../icons/IconDate.astro";
+
+// dayjs locale id
+import "dayjs/locale/id";
+dayjs.locale("id");
+
+const posts = await Astro.glob("../../../pages/blog/*");
+
+// order by publishDate
+posts.forEach((blogPost) => {
+  blogPost.frontmatter.publishDate = dayjs(blogPost.frontmatter.publishDate).format("YYYY-MM-DDTHH:mm:ss.000Z");
+});
+
+posts.sort((a, b) => {
+  return dayjs(b.frontmatter.publishDate).unix() - dayjs(a.frontmatter.publishDate).unix();
+});
+---
+
+<main
+  class="relative mx-auto min-h-screen max-w-[2560px] overflow-hidden px-6 py-16 sm:px-16 sm:pb-32 sm:pt-20"
+  style="background: radial-gradient(82.23% 82.23% at 48.91% 0%, #030303 0%, rgba(10, 10, 10, 0) 100%);"
+>
+  <div class="content-overlay absolute inset-x-0 top-0 z-0 h-[704px] w-screen"></div>
+
+  <Provider>
+    <ul class="relative mx-auto grid max-w-[1024px] gap-x-20 gap-y-10 sm:grid-cols-2 sm:gap-y-16">
+      {
+        posts.map((post) => (
+          <li class="text-blog-95 max-w-[410px]">
+            <article>
+              <p class="text-blog-60 mb-2 text-xs">{post.frontmatter.tags[0]}</p>
+              <a href={post.url}>
+                <h2 class="leading-120 text-base font-bold underline-offset-2 hover:underline sm:text-xl">
+                  <Balancer>{post.frontmatter.title}</Balancer>
+                </h2>
+              </a>
+              <div class="text-blog-80 mt-4 flex items-center space-x-2 text-xs">
+                <IconDate />
+                <p>{dayjs(post.frontmatter.publishDate).format("dddd, DD MMM YYYY")}</p>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </Provider>
+</main>
+
+<style>
+  .content-overlay {
+    background: radial-gradient(163.28% 86.18% at 50% 0%, rgba(62, 87, 142, 0.3) 0%, rgba(8, 11, 18, 0) 100%);
+  }
+</style>
