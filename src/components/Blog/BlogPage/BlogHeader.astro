@@ -1,3 +1,7 @@
+---
+import { tw } from "../../../utils/tw";
+---
+
 <header
   class="relative mx-auto mb-0 h-full w-full overflow-hidden bg-blog-dark px-6 text-blog-95 sm:max-w-[2560px] sm:px-16"
 >
@@ -7,26 +11,26 @@
     width="848px"
     height="383px"
     alt=""
-    src="/images/blog/coba.png"
-    class="absolute right-0 bottom-0 top-0 z-0 h-full w-[60%] object-cover"
+    src="/images/blog/blog-header-background.png"
+    class="absolute right-0 bottom-0 top-0 z-0 h-full w-[50%] object-cover sm:w-[60%]"
   />
 
-  <div class="relative z-10 mx-auto pt-14 pb-20 sm:w-[65rem]">
-    <div class="relative">
-      <h1 class="title-gradient relative z-10 text-[4rem] font-bold tracking-tighter">Blog</h1>
+  <div class="relative z-10 mx-auto py-10 sm:w-[65rem] sm:pt-24 sm:pb-20">
+    <div class="relative inline-block">
+      <h1 class={tw(["relative z-10 font-bold tracking-tighter text-4xl", "sm:text-[4rem]"])}>Blog</h1>
       <div
-        class="absolute bottom-5 h-[13px] w-40"
+        class={tw(["absolute h-[8px] w-24 bottom-[3px]", "sm:h-[13px] sm:w-40 sm:-bottom-2"])}
         style="background: linear-gradient(88.94deg, #3B4F7E 3.82%, rgba(186, 199, 229, 0) 92.17%); transform: rotate(-3.17deg);"
       >
       </div>
     </div>
 
-    <p class="mt-6 text-[2rem] font-bold tracking-tighter">Helmi Satria</p>
-    <p class="mt-1 max-w-[320px] text-lg tracking-tighter lg:max-w-[410px]">
+    <p class={tw("pt-8 sm:pt-12 font-bold tracking-tighter text-2xl", "sm:text-[2rem]")}>Helmi Satria</p>
+    <p class="max-w-[320px] pt-2 text-xs !leading-140 tracking-tighter text-opacity-80 sm:text-lg lg:max-w-[410px]">
       a happy full-stack developer who aims to help others grow in web/apps development
     </p>
 
-    <a href="/" class="mt-5 inline-block text-sm text-blog-60 underline underline-offset-4">Full Profile</a>
+    <a href="/" class="mt-5 inline-block text-xs text-blog-60 underline underline-offset-4 sm:text-sm">Full Profile</a>
   </div>
 </header>
 

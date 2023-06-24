@@ -1,6 +1,8 @@
 ---
 import dayjs from "dayjs";
-import IconDate from "../../../components/icons/IconDate.astro";
+import Balancer, { Provider } from "react-wrap-balancer";
+
+import IconDate from "../../icons/IconDate.astro";
 
 const posts = await Astro.glob("../../../pages/blog/*");
 
@@ -15,29 +17,33 @@ posts.sort((a, b) => {
 ---
 
 <main
-  class="relative mx-auto h-screen max-w-[2560px] overflow-hidden px-6 pt-20 sm:px-16"
+  class="relative mx-auto min-h-screen max-w-[2560px] overflow-hidden px-6 py-16 sm:px-16 sm:pb-32 sm:pt-20"
   style="background: radial-gradient(82.23% 82.23% at 48.91% 0%, #030303 0%, rgba(10, 10, 10, 0) 100%);"
 >
   <div class="content-overlay absolute inset-x-0 top-0 z-0 h-[704px] w-screen"></div>
 
-  <ul class="relative mx-auto grid max-w-[1024px] gap-x-20 gap-y-16 sm:grid-cols-2">
-    {
-      posts.map((post) => (
-        <li class="text-blog-95 max-w-[410px]">
-          <article>
-            <p class="text-blog-60 mb-2 text-xs">{post.frontmatter.tags[0]}</p>
-            <a href={post.url} class="underline-offset-4 hover:underline">
-              <h2 class="leading-120 text-xl font-bold">{post.frontmatter.title}</h2>
-            </a>
-            <div class="text-blog-80 mt-4 flex items-center space-x-2 text-xs">
-              <IconDate />
-              <p>{dayjs(post.frontmatter.publishDate).format("dddd, DD MMM YYYY")}</p>
-            </div>
-          </article>
-        </li>
-      ))
-    }
-  </ul>
+  <Provider>
+    <ul class="relative mx-auto grid max-w-[1024px] gap-x-20 gap-y-10 sm:grid-cols-2 sm:gap-y-16">
+      {
+        posts.map((post) => (
+          <li class="text-blog-95 max-w-[410px]">
+            <article>
+              <p class="text-blog-60 mb-2 text-xs">{post.frontmatter.tags[0]}</p>
+              <a href={post.url} class="underline-offset-4 hover:underline">
+                <h2 class="leading-120 text-base font-bold sm:text-xl">
+                  <Balancer>{post.frontmatter.title}</Balancer>
+                </h2>
+              </a>
+              <div class="text-blog-80 mt-4 flex items-center space-x-2 text-xs">
+                <IconDate />
+                <p>{dayjs(post.frontmatter.publishDate).format("dddd, DD MMM YYYY")}</p>
+              </div>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+  </Provider>
 </main>
 
 <style>
