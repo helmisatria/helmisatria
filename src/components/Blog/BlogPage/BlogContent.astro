@@ -29,8 +29,8 @@ posts.sort((a, b) => {
           <li class="text-blog-95 max-w-[410px]">
             <article>
               <p class="text-blog-60 mb-2 text-xs">{post.frontmatter.tags[0]}</p>
-              <a href={post.url} class="underline-offset-4 hover:underline">
-                <h2 class="leading-120 text-base font-bold sm:text-xl">
+              <a href={post.url}>
+                <h2 class="leading-120 text-base font-bold underline-offset-2 hover:underline sm:text-xl">
                   <Balancer>{post.frontmatter.title}</Balancer>
                 </h2>
               </a>
