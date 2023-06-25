@@ -59,6 +59,39 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
       </div>
     </main>
   </div>
+
+  <script>
+    const copyIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>`;
+
+    // use a class selector if available
+    let blocks = document.querySelectorAll("pre");
+
+    blocks.forEach((block) => {
+      // only add button if browser supports Clipboard API
+      if (navigator.clipboard) {
+        let button = document.createElement("button");
+
+        button.innerHTML = copyIcon;
+        block.appendChild(button);
+
+        button.addEventListener("click", async () => {
+          button.innerText = "Copied!";
+          setTimeout(() => {
+            button.innerHTML = copyIcon;
+          }, 1000);
+
+          await copyCode(block);
+        });
+      }
+    });
+
+    async function copyCode(block) {
+      let code = block.querySelector("code");
+      let text = code.innerText;
+
+      await navigator.clipboard.writeText(text);
+    }
+  </script>
 </Layout>
 
 <style lang="scss" is:global>
@@ -97,10 +130,30 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
     max-height: 600px;
   }
 
+  code:not(pre code) {
+    @apply rounded-sm bg-neutral-100 p-1 text-sm;
+  }
+
   .astro-code {
     padding: 1rem;
-    @apply rounded-md text-sm shadow-md;
+    @apply relative rounded-md text-sm shadow-md;
     margin-bottom: 2rem;
+
+    code {
+      text-wrap: wrap;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
+
+    button {
+      @apply absolute top-2 right-2 p-1;
+      color: #fafafa;
+    }
+
+    button:hover {
+      @apply absolute top-2 right-2;
+      color: #fafafac7;
+    }
   }
 
   code {

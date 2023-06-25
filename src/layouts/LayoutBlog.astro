@@ -9,6 +9,10 @@ import Layout from "../layouts/Layout.astro";
   <div role="separator" class="header-separator relative h-[2px] w-full"></div>
 
   <BlogContent />
+
+  <script>
+    balanceText();
+  </script>
 </Layout>
 
 <style>
@@ -42,5 +46,9 @@ import Layout from "../layouts/Layout.astro";
     html {
       font-size: 20px !important;
     }
+  }
+
+  .balance-text {
+    text-wrap: balance; /* Apply (proposed) CSS style */
   }
 </style>
