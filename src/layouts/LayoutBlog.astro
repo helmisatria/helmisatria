@@ -1,38 +1,17 @@
 ---
-import BlogContent from "../components/Blog/BlogPage/BlogContent.astro";
-import BlogHeader from "../components/Blog/BlogPage/BlogHeader.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Blog - Helmi Satria" seoTitle="Blog - Helmi Satria">
-  <BlogHeader />
-  <div role="separator" class="header-separator relative h-[2px] w-full"></div>
-
-  <BlogContent />
+  <slot />
 
   <script>
     balanceText();
   </script>
 </Layout>
 
-<style>
-  .header-separator {
-    background: linear-gradient(
-      to right,
-      transparent,
-      transparent,
-      transparent,
-      hsla(221, 39%, 64%, 0.5) 60%,
-      transparent,
-      transparent
-    );
-  }
-</style>
-
 <style is:global>
   html {
-    font-family: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-      "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
     @apply !bg-blog-dark;
   }
 

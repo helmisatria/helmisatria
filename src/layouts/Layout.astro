@@ -22,10 +22,17 @@ const {
 const url = Astro.url.pathname;
 
 const inBlog = url.includes("/blog");
+
+const fontFamily = inBlog ? "Satoshi" : "Figtree";
 ---
 
 <!DOCTYPE html>
-<html lang="id">
+<html
+  lang="id"
+  style=`font-family: ${fontFamily}, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+"Segoe UI Symbol"`
+>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -101,11 +108,9 @@ const inBlog = url.includes("/blog");
 
     <style is:global>
       html {
-        font-family: "Figtree", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-          "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
         background-color: #f6f6f6;
         min-height: 100vh;
+        scroll-behavior: smooth;
       }
 
       body {
@@ -114,11 +119,6 @@ const inBlog = url.includes("/blog");
 
       strong {
         @apply font-semibold;
-      }
-
-      /* smooth scroll */
-      html {
-        scroll-behavior: smooth;
       }
 
       .navbar-background-light {

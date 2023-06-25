@@ -1,8 +1,6 @@
 ---
 import dayjs from "dayjs";
-import BlogSideNavigation from "../components/Blog/BlogSideNavigation.astro";
-import BlogSidebar from "../components/Blog/BlogSidebar.astro";
-import BlogTitleOurnament from "../components/Blog/BlogTitleOurnament.astro";
+import BlogDetailHeader from "../components/Blog/BlogDetailPage/BlogDetailHeader.astro";
 import Layout from "../layouts/Layout.astro";
 
 type Props = {
@@ -27,44 +25,29 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
   description={frontmatter.description}
   publishedDate={articlePublishedDate}
 >
-  <div class="flex min-h-screen flex-col-reverse bg-white lg:flex-row">
-    <header class="z-30 lg:fixed lg:flex lg:min-h-screen lg:w-[360px] xl:w-[420px]">
-      <BlogSideNavigation />
-      <BlogSidebar sidebarOnDetail />
-    </header>
+  <div class="min-h-screen min-w-full">
+    <BlogDetailHeader />
+    <div role="separator" class="header-separator relative h-[2px] w-full"></div>
 
-    <main class="relative flex-1 pb-20 lg:ml-[420px] xl:ml-[420px] 2xl:ml-[480px]">
-      <div class="sticky top-0 z-20 overflow-y-clip bg-gradient-to-b from-white to-transparent">
-        <div class="absolute top-0 min-h-full w-full overflow-x-hidden">
-          <BlogTitleOurnament />
-        </div>
-        <div class="relative z-10 w-full border-slate-200 py-10">
-          <div class="mx-auto max-w-2xl px-6 lg:mx-0 xl:mx-0 xl:max-w-4xl">
-            <div class="mx-auto flex max-w-2xl flex-col px-0 lg:px-8 xl:mx-0 xl:px-32">
-              <a href="/blog" class="text-xl font-semibold text-slate-900 hover:underline">Blog</a>
-              <span class="inline-block max-w-[320px] text-sm text-slate-600 lg:max-w-none">{frontmatter.title}</span>
-            </div>
-          </div>
-        </div>
-      </div>
+    <main class="relative py-28">
+      <div class="content-overlay absolute inset-x-0 top-0 z-0 h-[704px] w-screen"></div>
 
-      <div class="relative z-10 bg-white pb-20">
-        <div class="relative mx-auto mt-11 max-w-2xl px-6 lg:mx-0 xl:mx-0 xl:max-w-4xl 2xl:max-w-5xl">
-          <div class="mx-auto space-y-10 lg:space-y-14 lg:px-10 xl:mx-0 xl:px-32">
-            <article class="blog-detail">
-              <slot />
-            </article>
-          </div>
-        </div>
-      </div>
+      <article class="blog-detail relative mx-auto !max-w-[48rem] text-blog-95">
+        <slot />
+      </article>
     </main>
   </div>
+
+  <script>
+    balanceText();
+  </script>
 
   <script is:inline>
     const copyIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>`;
 
     // use a class selector if available
-    let blocks = document.querySelectorAll("pre");
+    const blocks = document.querySelectorAll("pre");
+    const headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
 
     blocks.forEach((block) => {
       // only add button if browser supports Clipboard API
@@ -85,6 +68,11 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
       }
     });
 
+    // append balance-text for each headings
+    headers.forEach((header) => {
+      balanceText(header);
+    });
+
     async function copyCode(block) {
       let code = block.querySelector("code");
       let text = code.innerText;
@@ -95,6 +83,43 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
 </Layout>
 
 <style lang="scss" is:global>
+  .header-separator {
+    background: linear-gradient(
+      to right,
+      transparent,
+      transparent,
+      transparent,
+      hsla(221, 39%, 64%, 0.5) 50%,
+      transparent,
+      transparent,
+      transparent
+    );
+  }
+
+  html {
+    @apply bg-blog-dark;
+  }
+
+  @media (max-width: 1440px) {
+    html {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    html {
+      font-size: 20px !important;
+    }
+  }
+</style>
+
+<style lang="scss" is:global>
+  .content-overlay {
+    background: radial-gradient(163.28% 86.18% at 50% 0%, rgba(62, 87, 142, 0.3) 0%, rgba(8, 11, 18, 0) 100%);
+  }
+
+  @import url("https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/idle-fingers.css");
+
   .gist {
     font-size: 13px;
     line-height: 18px;
@@ -117,7 +142,6 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
   }
 
   .gist-meta a {
-    color: #3b5998 !important;
     font-weight: bold;
     text-decoration: none;
   }
@@ -131,7 +155,7 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
   }
 
   code:not(pre code) {
-    @apply rounded-sm bg-neutral-100 p-1 text-sm;
+    @apply rounded-md bg-blog-60 bg-opacity-20 p-1 px-2 text-xs;
   }
 
   .astro-code {
@@ -157,8 +181,8 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
   }
 
   code {
-    // @apply inline-block rounded-md bg-gray-100 text-sm tracking-tighter text-gray-800;
-    // padding: 0.2rem 0.4rem;
+    @apply inline-block rounded-md text-sm leading-normal;
+    padding: 0.2rem 0.4rem;
   }
 
   @media (max-width: 768px) {
@@ -170,14 +194,10 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
   /* Blog styling */
   .blog-detail {
     a {
-      color: #3b5998;
+      @apply text-cyan-300 hover:underline;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 400;
       transition: all 0.2s ease-in-out;
-      &:hover {
-        color: #1a1a1a;
-        text-decoration: underline;
-      }
     }
 
     h1 {
@@ -196,20 +216,25 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
       line-height: 130%;
       margin-bottom: 20px;
       padding-top: 32px;
-      @apply 2xl:text-2xl;
+    }
+
+    li {
+      p:first-of-type {
+        margin-bottom: 0.2rem;
+      }
+
+      p:last-of-type {
+        margin-bottom: 1rem;
+      }
     }
 
     p,
     ul,
     li,
     ol {
-      font-size: 1rem;
-      line-height: 150%;
       margin-bottom: 1rem;
-      @apply break-words text-slate-800;
-      max-width: 620px;
+      @apply break-words text-blog-95 text-opacity-90;
       line-height: 180%;
-      @apply 2xl:max-w-4xl 2xl:text-lg 2xl:leading-8;
     }
 
     li > ol {
