@@ -15,7 +15,7 @@ import { tw } from "../../../utils/tw";
     class="absolute right-0 bottom-0 top-0 z-0 h-full w-[50%] object-cover sm:w-[60%]"
   />
 
-  <div class="relative z-10 mx-auto py-10 sm:w-[65rem] sm:pt-24 sm:pb-20">
+  <div class="relative z-10 mx-auto max-w-[1024px] py-10 sm:w-[65rem] sm:pt-24 sm:pb-20">
     <div class="relative inline-block">
       <h1 class={tw(["relative z-10 font-bold tracking-tighter text-4xl", "sm:text-[4rem]"])}>Blog</h1>
       <div
@@ -26,7 +26,9 @@ import { tw } from "../../../utils/tw";
     </div>
 
     <p class={tw("pt-8 sm:pt-12 font-bold tracking-tighter text-2xl", "sm:text-[2rem]")}>Helmi Satria</p>
-    <p class="max-w-[320px] pt-2 text-xs !leading-140 tracking-tighter text-opacity-80 sm:text-lg lg:max-w-[410px]">
+    <p
+      class="balance-text max-w-[320px] pt-2 text-xs !leading-140 tracking-tighter text-blog-80 sm:text-lg lg:max-w-[410px]"
+    >
       a happy full-stack developer who aims to help others grow in web/apps development
     </p>
 

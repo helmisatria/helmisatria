@@ -1,7 +1,7 @@
 ---
 import dayjs from "dayjs";
 import BlogDetailHeader from "../components/Blog/BlogDetailPage/BlogDetailHeader.astro";
-import Layout from "../layouts/Layout.astro";
+import Layout from "./Layout.astro";
 
 type Props = {
   frontmatter: {
@@ -25,14 +25,14 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
   description={frontmatter.description}
   publishedDate={articlePublishedDate}
 >
-  <div class="min-h-screen min-w-full">
+  <div id="blog-detail-page" class="min-h-screen min-w-full overflow-x-hidden">
     <BlogDetailHeader />
     <div role="separator" class="header-separator relative h-[2px] w-full"></div>
 
-    <main class="relative py-28">
+    <main class="relative py-20 sm:py-28">
       <div class="content-overlay absolute inset-x-0 top-0 z-0 h-[704px] w-screen"></div>
 
-      <article class="blog-detail relative mx-auto !max-w-[48rem] text-blog-95">
+      <article class="blog-detail relative mx-auto text-blog-95 sm:!max-w-[48rem]">
         <slot />
       </article>
     </main>
@@ -41,46 +41,46 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
   <script>
     balanceText();
   </script>
-
-  <script is:inline>
-    const copyIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>`;
-
-    // use a class selector if available
-    const blocks = document.querySelectorAll("pre");
-    const headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
-
-    blocks.forEach((block) => {
-      // only add button if browser supports Clipboard API
-      if (navigator.clipboard) {
-        let button = document.createElement("button");
-
-        button.innerHTML = copyIcon;
-        block.appendChild(button);
-
-        button.addEventListener("click", async () => {
-          button.innerText = "Copied!";
-          setTimeout(() => {
-            button.innerHTML = copyIcon;
-          }, 1000);
-
-          await copyCode(block);
-        });
-      }
-    });
-
-    // append balance-text for each headings
-    headers.forEach((header) => {
-      balanceText(header);
-    });
-
-    async function copyCode(block) {
-      let code = block.querySelector("code");
-      let text = code.innerText;
-
-      await navigator.clipboard.writeText(text);
-    }
-  </script>
 </Layout>
+
+<script is:global>
+  const copyIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256"><path d="M216,32H88a8,8,0,0,0-8,8V80H40a8,8,0,0,0-8,8V216a8,8,0,0,0,8,8H168a8,8,0,0,0,8-8V176h40a8,8,0,0,0,8-8V40A8,8,0,0,0,216,32ZM160,208H48V96H160Zm48-48H176V88a8,8,0,0,0-8-8H96V48H208Z"></path></svg>`;
+
+  // use a class selector if available
+  const blocks = document.querySelectorAll("pre");
+  const headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+
+  blocks.forEach((block) => {
+    // only add button if browser supports Clipboard API
+    if (navigator.clipboard) {
+      let button = document.createElement("button");
+
+      button.innerHTML = copyIcon;
+      block.appendChild(button);
+
+      button.addEventListener("click", async () => {
+        button.innerText = "Copied!";
+        setTimeout(() => {
+          button.innerHTML = copyIcon;
+        }, 1000);
+
+        await copyCode(block);
+      });
+    }
+  });
+
+  // append balance-text for each headings
+  headers.forEach((header) => {
+    balanceText(header);
+  });
+
+  async function copyCode(block) {
+    let code = block.querySelector("code");
+    let text = code.innerText;
+
+    await navigator.clipboard.writeText(text);
+  }
+</script>
 
 <style lang="scss" is:global>
   .header-separator {
@@ -96,163 +96,187 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
     );
   }
 
-  html {
+  html:has(#blog-detail-page) {
     @apply bg-blog-dark;
   }
 
   @media (max-width: 1440px) {
-    html {
+    html:has(#blog-detail-page) {
       font-size: 16px !important;
     }
   }
 
   @media (min-width: 1440px) {
-    html {
-      font-size: 20px !important;
+    html:has(#blog-detail-page) {
+      font-size: 18px !important;
     }
-  }
-</style>
-
-<style lang="scss" is:global>
-  .content-overlay {
-    background: radial-gradient(163.28% 86.18% at 50% 0%, rgba(62, 87, 142, 0.3) 0%, rgba(8, 11, 18, 0) 100%);
   }
 
   @import url("https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/idle-fingers.css");
 
-  .gist {
-    font-size: 13px;
-    line-height: 18px;
-    width: 100%;
-  }
+  #blog-detail-page {
+    .content-overlay {
+      background: radial-gradient(163.28% 86.18% at 50% 0%, rgba(62, 87, 142, 0.3) 0%, rgba(8, 11, 18, 0) 100%);
+    }
 
-  @media (max-width: 768px) {
     .gist {
+      font-size: 13px;
+      line-height: 18px;
       width: 100%;
     }
-  }
 
-  .gist pre {
-    font-family: Menlo, Monaco, "Bitstream Vera Sans Mono", "Courier New", monospace !important;
-  }
+    @media (max-width: 768px) {
+      .gist {
+        width: 100%;
+      }
+    }
 
-  .gist-meta {
-    font-family: Arial, sans-serif;
-    font-size: 13px !important;
-  }
+    .gist pre {
+      font-family: Menlo, Monaco, "Bitstream Vera Sans Mono", "Courier New", monospace !important;
+    }
 
-  .gist-meta a {
-    font-weight: bold;
-    text-decoration: none;
-  }
+    .gist-meta {
+      font-family: Arial, sans-serif;
+      font-size: 13px !important;
+    }
 
-  .gist-meta a:hover {
-    text-decoration: underline;
-  }
+    .gist-meta a {
+      font-weight: bold;
+      text-decoration: none;
+    }
 
-  .gist-data {
-    max-height: 600px;
-  }
+    .gist-meta a:hover {
+      text-decoration: underline;
+    }
 
-  code:not(pre code) {
-    @apply rounded-md bg-blog-60 bg-opacity-20 p-1 px-2 text-xs;
-  }
+    .gist-data {
+      max-height: 600px;
+    }
 
-  .astro-code {
-    padding: 1rem;
-    @apply relative rounded-md text-sm shadow-md;
-    margin-bottom: 2rem;
+    code:not(pre code) {
+      @apply rounded-md bg-blog-60 bg-opacity-20 p-1 px-2 text-xs;
+    }
+
+    .astro-code {
+      padding: 1rem;
+      @apply relative rounded-md text-sm shadow-md;
+      margin-bottom: 2rem;
+
+      code {
+        text-wrap: wrap;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+
+      button {
+        @apply absolute top-2 right-2 p-1;
+        color: #fafafa;
+      }
+
+      button:hover {
+        @apply absolute top-2 right-2;
+        color: #fafafac7;
+      }
+    }
 
     code {
-      text-wrap: wrap;
-      overflow-wrap: break-word;
-      word-wrap: break-word;
+      @apply inline-block rounded-md text-sm leading-normal;
+      padding: 0.2rem 0.4rem;
     }
 
-    button {
-      @apply absolute top-2 right-2 p-1;
-      color: #fafafa;
+    @media (max-width: 768px) {
+      .gist-data {
+        max-height: 300px;
+      }
     }
 
-    button:hover {
-      @apply absolute top-2 right-2;
-      color: #fafafac7;
-    }
-  }
+    /* Blog styling */
+    .blog-detail {
+      max-width: 48rem !important;
 
-  code {
-    @apply inline-block rounded-md text-sm leading-normal;
-    padding: 0.2rem 0.4rem;
-  }
+      > *:not(pre) {
+        padding: 0 20px;
+      }
 
-  @media (max-width: 768px) {
-    .gist-data {
-      max-height: 300px;
-    }
-  }
+      > ol,
+      > ul {
+        margin: 0 20px;
+      }
 
-  /* Blog styling */
-  .blog-detail {
-    a {
-      @apply text-cyan-300 hover:underline;
-      text-decoration: none;
-      font-weight: 400;
-      transition: all 0.2s ease-in-out;
-    }
+      @media (max-width: 768px) {
+        pre {
+          border-radius: 0;
+        }
+      }
 
-    h1 {
-      font-size: 1.5rem;
-      font-weight: bold;
-      max-width: 580px;
-      line-height: 130%;
-      margin-bottom: 40px;
-      @apply 2xl:text-3xl;
-    }
+      a {
+        @apply text-cyan-300 hover:underline;
+        text-decoration: none;
+        font-weight: 400;
+        transition: all 0.2s ease-in-out;
+      }
 
-    h2 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      max-width: 480px;
-      line-height: 130%;
-      margin-bottom: 20px;
-      padding-top: 32px;
-    }
+      h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        max-width: 580px;
+        line-height: 130%;
+        margin-bottom: 40px;
+        @apply 2xl:text-3xl;
+      }
 
-    li {
-      p:first-of-type {
+      h2 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        max-width: 480px;
+        line-height: 130%;
+        margin-bottom: 20px;
+        padding-top: 32px;
+      }
+
+      li {
+        p:first-of-type {
+          margin-bottom: 0.2rem;
+        }
+
+        p:last-of-type {
+          margin-bottom: 1rem;
+        }
+      }
+
+      p,
+      ul,
+      li,
+      ol {
+        margin-bottom: 1rem;
+        @apply text-blog-95;
+        line-height: 180%;
+      }
+
+      li > ol {
+        margin-top: 0.5rem;
+      }
+
+      ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+      }
+
+      ol {
+        list-style: decimal;
+        padding-left: 1.5rem;
+      }
+
+      li {
         margin-bottom: 0.2rem;
       }
-
-      p:last-of-type {
-        margin-bottom: 1rem;
-      }
     }
 
-    p,
     ul,
-    li,
     ol {
-      margin-bottom: 1rem;
-      @apply break-words text-blog-95 text-opacity-90;
-      line-height: 180%;
-    }
-
-    li > ol {
-      margin-top: 0.5rem;
-    }
-
-    ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-    }
-
-    ol {
-      list-style: decimal;
-      padding-left: 1.5rem;
-    }
-
-    li {
-      margin-bottom: 0.2rem;
+      p {
+        margin-bottom: 0.2px !important;
+      }
     }
   }
 </style>

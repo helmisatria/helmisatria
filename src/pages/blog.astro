@@ -23,4 +23,24 @@ import LayoutBlog from "../layouts/LayoutBlog.astro";
       transparent
     );
   }
+
+  html {
+    @apply !bg-blog-dark;
+  }
+
+  @media (max-width: 1440px) {
+    html {
+      font-size: 16px !important;
+    }
+  }
+
+  @media (min-width: 1440px) {
+    html {
+      font-size: 20px !important;
+    }
+  }
+
+  .balance-text {
+    text-wrap: balance; /* Apply (proposed) CSS style */
+  }
 </style>

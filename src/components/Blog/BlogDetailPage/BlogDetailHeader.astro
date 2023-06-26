@@ -4,12 +4,15 @@ import IconDate from "../../icons/IconDate.astro";
 ---
 
 <header
-  class="relative mx-auto flex flex-col items-center justify-center bg-blog-dark px-6 pt-24 pb-20 text-center text-blog-95 sm:max-w-[2560px] sm:px-16"
+  class="relative mx-auto flex max-w-none flex-col items-center justify-center bg-blog-dark px-6 pt-24 pb-20 text-center text-blog-95 sm:max-w-[2560px] sm:px-16"
 >
   <div class="header-bg absolute inset-0 mx-auto h-full"></div>
 
   <div class="absolute top-0 w-full max-w-7xl px-6">
-    <a href="/blog" class="absolute top-10 left-10 flex items-center space-x-2 text-blog-40 hover:underline">
+    <a
+      href="/blog"
+      class="absolute top-6 left-6 flex items-center space-x-2 text-blog-40 hover:underline sm:top-10 sm:left-10"
+    >
       <IconBack />
       <span>Back to blog</span>
     </a>
@@ -17,10 +20,10 @@ import IconDate from "../../icons/IconDate.astro";
 
   <div class="relative">
     <p class="mb-3 text-blog-80">Data</p>
-    <h1 class="balance-text w-[40rem] text-[2rem] font-bold leading-120">
+    <h1 class="balance-text text-2xl font-bold leading-120 sm:w-[40rem] sm:text-[2rem]">
       Crawl Data Twitter Cepat dan Mudah dengan Python dan snscrape - Mei 2023
     </h1>
-    <div class="mt-8 flex items-center justify-center space-x-2 text-blog-60">
+    <div class="mt-8 flex items-center justify-center space-x-2 text-sm text-blog-60 sm:text-base">
       <IconDate />
       <span class="sr-only">Published at</span>
       <span>Senin, 18 Juni 2023</span>
