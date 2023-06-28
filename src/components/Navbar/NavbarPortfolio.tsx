@@ -40,6 +40,8 @@ export default function NavbarPortfolio() {
                 id="nav"
                 ref={navRef}
                 style={{
+                  opacity: 0,
+                  transform: "translateY(-100%)",
                   backgroundColor: "rgba(236, 254, 255, 0.40)",
                   backdropFilter: "blur(3px)",
                   boxShadow: navShadow,
