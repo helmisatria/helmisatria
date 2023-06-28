@@ -7,11 +7,13 @@ import ProjectHeader from "./ProjectHeader.astro";
 <section class="relative pt-16 lg:pt-32 xl:pt-36 2xl:pt-[11rem]" id="projects">
   <!-- mesh -->
   <img
+    id="mesh-project-section-top"
     loading="lazy"
     src="/images/mesh.png"
     alt=""
     width="1400"
     height="1089"
+    style="opacity: 0;"
     class="aspect-auto absolute top-[-150px] right-0 hidden min-w-[554px] sm:top-[-150px] sm:left-[550px] sm:block lg:min-w-[1400px]"
   />
 
@@ -23,11 +25,13 @@ import ProjectHeader from "./ProjectHeader.astro";
 
   <div class="relative">
     <img
+      id="mesh-project-section-bottom"
       loading="lazy"
       src="/images/mesh.png"
       alt=""
       width="1400"
       height="1089"
+      style="opacity: 0;"
       class="aspect-auto absolute top-[-700px] left-[-250px] hidden w-auto sm:block sm:min-h-[1400px]"
     />
   </div>
@@ -39,6 +43,18 @@ import ProjectHeader from "./ProjectHeader.astro";
 
   <div class="sm:pt-32"></div>
 </section>
+
+<script>
+  import {
+    animate,
+    inView,
+  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+  inView("#title-highlighed-projects", () => {
+    animate("#mesh-project-section-top", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.5 });
+    animate("#mesh-project-section-bottom", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.5 });
+  });
+</script>
 
 <style>
   .overlay-natatoko {

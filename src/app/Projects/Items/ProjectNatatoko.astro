@@ -10,7 +10,11 @@ import IconNatatoko from "../Natanya/IconNatatoko.astro";
 import ProjectSlider from "../ProjectSlider.astro";
 ---
 
-<article id="project-natatoko" class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 sm:rounded-3xl">
+<article
+  style={{ transform: "perspective(75em) rotateX(18deg)" }}
+  id="project-natatoko"
+  class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 sm:rounded-3xl"
+>
   <!-- Outnament Lines (Top) -->
   <img
     src="/images/project-ournament-lines.png"
@@ -46,6 +50,7 @@ import ProjectSlider from "../ProjectSlider.astro";
 
   <div class="portfolio-images">
     <ProjectSlider
+      project="natatoko"
       images={[
         { url: "/images/projects/1@natatoko.png", alt: "Natatoko" },
         { url: "/images/projects/2@natatoko.png", alt: "Natatoko" },

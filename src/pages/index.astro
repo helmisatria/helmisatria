@@ -38,8 +38,8 @@ import Layout from "../layouts/Layout.astro";
     } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
 
     inView("body", () => {
-      animate("#hero-ournament", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.5 });
-      animate("#nav", { opacity: 1, transform: "translateY(0%)" }, { easing: [0.17, 0.55, 0.55, 1] });
+      animate("#hero-ournament", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1] });
+      animate("#nav", { opacity: 1, transform: "translateY(0%)" }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.6 });
     });
   </script>
 </Layout>

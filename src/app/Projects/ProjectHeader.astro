@@ -1,11 +1,21 @@
 <div class="project-header relative z-10 mx-auto max-w-[1244px] px-5 sm:px-12 md:px-16 lg:px-12 xl:px-4">
   <h2
+    id="title-highlighed-projects"
     class="relative inline text-4xl font-bold tracking-tight text-cyan-dark sm:text-5xl sm:leading-150 md:text-5xl lg:text-[64px]"
   >
-    <span class="block sm:inline-block">🚀</span>
+    <span
+      id="title-highlighed-projects-rocket"
+      style={{
+        transform: "translate(-150%, 150%)",
+        opacity: 0,
+      }}
+      class="block sm:inline-block">🚀</span
+    >
     <span class="relative mt-2 inline-block sm:mt-0">
       <span class="relative z-[1]">Highlighted Projects</span>
       <span
+        id="title-highlight-project"
+        style={{ width: 0 }}
         class="title-highlight absolute left-0 -bottom-1 z-0 hidden h-[15px] w-[250px] max-[350px]:w-[220px] min-[375px]:block sm:bottom-2 sm:w-[320px] md:bottom-1 lg:h-[20px] lg:w-[600px]"
       >
       </span>
@@ -17,6 +27,33 @@
     array of features <br class="hidden lg:inline-block" /> and functionalities in projects.
   </p>
 </div>
+
+<script>
+  import {
+    animate,
+    inView,
+    glide,
+  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+  inView("#title-highlighed-projects", () => {
+    animate("#title-highlight-project", { opacity: 1, width: "100%" }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.3 });
+    animate(
+      "#title-highlighed-projects-rocket",
+      { opacity: 1, transform: "translate(0, 0)" },
+      { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
+    );
+  });
+
+  inView("#project-natanya", () => {
+    animate("#project-natanya", { transform: "rotateX(0)" }, { duration: 0.7, easing: [0.17, 0.55, 0.55, 1] });
+    animate(".project-slider-item-natanya", { x: 0 }, { easing: glide({ velocity: -500, max: 10 }) });
+  });
+
+  inView("#project-natatoko", () => {
+    animate("#project-natatoko", { transform: "rotateX(0)" }, { duration: 0.7, easing: [0.17, 0.55, 0.55, 1] });
+    animate(".project-slider-item-natatoko", { x: 0 }, { easing: glide({ velocity: -500, max: 10 }) });
+  });
+</script>
 
 <style>
   .title-highlight {
