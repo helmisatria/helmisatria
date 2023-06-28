@@ -1,0 +1,15 @@
+.active {
+  z-index: 99;
+  opacity: 1 !important;
+}
+
+.nav-pointer {
+  position: absolute;
+  z-index: 0;
+}
+
+.nav-pointer {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.08), 0 3px 1px 0 rgba(0, 0, 0, 0.04), inset 0 0 0 0 rgba(0, 0, 0, 0.04);
+}
