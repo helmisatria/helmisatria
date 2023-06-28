@@ -108,10 +108,12 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
     }
   });
 
-  // append balance-text for each headings
-  headers.forEach((header) => {
-    balanceText(header);
-  });
+  if (window.location.pathname.includes("blog")) {
+    // append balance-text for each headings
+    headers.forEach((header) => {
+      balanceText(header);
+    });
+  }
 
   async function copyCode(block) {
     let code = block.querySelector("code");

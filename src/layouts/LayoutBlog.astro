@@ -6,6 +6,8 @@ import Layout from "../layouts/Layout.astro";
   <slot />
 
   <script>
-    balanceText();
+    if (window.location.pathname.includes("blog")) {
+      balanceText();
+    }
   </script>
 </Layout>
