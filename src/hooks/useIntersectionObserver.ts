@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 
-export const useIntersectionObserver = (id: string) => {
+export const useIntersectionObserver = (
+  id: string,
+  { root = null, rootMargin = "0px", threshold = 0 }: IntersectionObserverInit = {}
+) => {
   const [isIntersecting, setIntersecting] = React.useState(false);
 
   useEffect(() => {
@@ -10,15 +13,32 @@ export const useIntersectionObserver = (id: string) => {
       return;
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIntersecting(true);
-        } else {
-          setIntersecting(false);
-        }
-      });
-    });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // console.log("entries -->", entries);
+
+        entries.forEach((entry) => {
+          // top intersection
+          console.log("id -->", id);
+          const topIntersecting = entry.boundingClientRect.top <= 0;
+
+          console.log("entry.intersectionRect.top -->", entry.intersectionRect.top);
+          console.log("topIntersecting -->", topIntersecting);
+
+          if (entry.isIntersecting) {
+            setIntersecting(true);
+          } else {
+            setIntersecting(false);
+          }
+        });
+      },
+      {
+        root,
+        rootMargin,
+        threshold,
+      }
+    );
+
     observer.observe(element);
     return () => observer.disconnect();
   }, [id]);
