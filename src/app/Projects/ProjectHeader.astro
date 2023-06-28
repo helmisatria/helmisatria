@@ -35,23 +35,17 @@
     glide,
   } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
 
+  const defaultEasing = [0.17, 0.55, 0.55, 1];
+
   inView("#title-highlighed-projects", () => {
-    animate("#title-highlight-project", { opacity: 1, width: "100%" }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.3 });
+    animate("#title-highlight-project", { opacity: 1, width: "100%" }, { easing: defaultEasing, delay: 0.3 });
     animate(
       "#title-highlighed-projects-rocket",
       { opacity: 1, transform: "translate(0, 0)" },
-      { duration: 0.8, easing: [0.17, 0.55, 0.55, 1] }
+      { duration: 0.8, easing: defaultEasing }
     );
-  });
-
-  inView("#project-natanya", () => {
-    animate("#project-natanya", { transform: "rotateX(0)" }, { duration: 0.7, easing: [0.17, 0.55, 0.55, 1] });
-    animate(".project-slider-item-natanya", { x: 0 }, { easing: glide({ velocity: -500, max: 10 }) });
-  });
-
-  inView("#project-natatoko", () => {
-    animate("#project-natatoko", { transform: "rotateX(0)" }, { duration: 0.7, easing: [0.17, 0.55, 0.55, 1] });
-    animate(".project-slider-item-natatoko", { x: 0 }, { easing: glide({ velocity: -500, max: 10 }) });
+    animate("#mesh-project-section-top", { opacity: 1 }, { easing: defaultEasing, delay: 0.5 });
+    animate("#mesh-project-section-bottom", { opacity: 1 }, { easing: defaultEasing, delay: 0.5 });
   });
 </script>
 

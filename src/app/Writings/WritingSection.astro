@@ -3,7 +3,7 @@ import WritingHeader from "./WritingHeader.astro";
 import WritingList from "./WritingList.astro";
 ---
 
-<section class="relative overflow-hidden">
+<section id="latest-writings" class="relative overflow-hidden">
   <!-- Ournament at Top -->
   <img
     class="pointer-events-none absolute -left-4 -right-4 top-[-30px] z-0 mx-auto scale-[350%] sm:scale-150 xl:scale-105"
@@ -24,7 +24,7 @@ import WritingList from "./WritingList.astro";
     alt=""
   />
 
-  <div class="px-5 pt-12 sm:pt-[14rem]" id="latest-writings">
+  <div class="px-5 pt-12 sm:pt-[14rem]">
     <WritingHeader />
     <WritingList />
 
@@ -46,6 +46,29 @@ import WritingList from "./WritingList.astro";
     </div>
   </div>
 </section>
+
+<script>
+  import {
+    animate,
+    inView,
+  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+  const defaultEasing = [0.17, 0.55, 0.55, 1];
+
+  inView("#latest-writings .title-highlight", (el) => {
+    animate("#latest-writings .title-highlight", { maxWidth: "100%" }, { duration: 0.4, delay: 0.3 });
+  });
+
+  document.querySelectorAll(".writing-list-item").forEach((item, i) => {
+    inView(item, (el) => {
+      animate(
+        item,
+        { opacity: 1, transform: "translateY(0)" },
+        { duration: 0.3, delay: 0.1 + i / 10, easing: defaultEasing }
+      );
+    });
+  });
+</script>
 
 <style>
   section {

@@ -48,11 +48,38 @@ import ProjectHeader from "./ProjectHeader.astro";
   import {
     animate,
     inView,
+    glide,
   } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
 
-  inView("#title-highlighed-projects", () => {
-    animate("#mesh-project-section-top", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.5 });
-    animate("#mesh-project-section-bottom", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.5 });
+  const defaultEasing = [0.17, 0.55, 0.55, 1];
+
+  const projects = ["natanya", "natatoko"];
+
+  projects.forEach((project) => {
+    inView(`#project-${project}`, () => {
+      animate(`#project-${project}`, { transform: "rotateX(0)" }, { duration: 0.7, easing: defaultEasing });
+      animate(
+        `.project-slider-item-${project}`,
+        { x: 0 },
+        { duration: 1, easing: glide({ velocity: -500, max: 10, min: -10 }) }
+      );
+    });
+  });
+
+  const buttons = ["#btn-live-in-production-natatoko-com", "#btn-live-in-production-natanya-app"];
+
+  buttons.forEach((btn) => {
+    inView(`${btn}`, () => {
+      animate(
+        `${btn}-arrow-wrapper`,
+        {
+          opacity: 1,
+          boxShadow: `10px 11px 6px rgba(0, 0, 0, 0.01), 6px 6px 5px rgba(0, 0, 0, 0.05), 3px 3px 4px rgba(0, 0, 0, 0.09), 1px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1)`,
+        },
+        { delay: 0.3, duration: 0.3, easing: defaultEasing }
+      );
+      animate(`${btn}-arrow`, { transform: "translate(0, 0)", opacity: 1 }, { delay: 0.4 });
+    });
   });
 </script>
 

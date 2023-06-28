@@ -8,9 +8,11 @@ export type Props = {
 };
 
 const { link, name } = Astro.props;
+const id = `btn-live-in-production-${name.replace(/\./g, "-").toLowerCase()}`;
 ---
 
 <a
+  id={id}
   href={link}
   target="_blank"
   class={tw(
@@ -21,7 +23,10 @@ const { link, name } = Astro.props;
 >
   <div>
     <div class="inline-flex items-center space-x-2 sm:space-x-3">
-      <div class="h-[8px] w-[8px] rounded-full bg-green-light sm:h-[10px] sm:w-[10px]"></div>
+      <div class="relative">
+        <div class="absolute h-[8px] w-[8px] animate-ping rounded-full bg-green-light sm:h-[10px] sm:w-[10px]"></div>
+        <div class="h-[8px] w-[8px] rounded-full bg-green-light sm:h-[10px] sm:w-[10px]"></div>
+      </div>
       <span class="text-base font-semibold leading-100 tracking-tight text-green-light sm:text-2xl"
         >Live in production</span
       >
@@ -36,11 +41,21 @@ const { link, name } = Astro.props;
   </div>
 
   <div
+    id={`${id}-arrow-wrapper`}
     class="rounded-lg bg-cyan-900 p-3"
-    style="box-shadow: 10px 11px 6px rgba(0, 0, 0, 0.01), 6px 6px 5px rgba(0, 0, 0, 0.05), 3px 3px 4px rgba(0, 0, 0, 0.09), 1px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-  "
+    style={{
+      opacity: 0,
+    }}
   >
-    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      style={{ opacity: 0, transform: "translate(-150%, 150%)" }}
+      id={`${id}-arrow`}
+      width="17"
+      height="18"
+      viewBox="0 0 17 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <path
         d="M1 16.5L16 1.5M16 1.5H4.75M16 1.5V12.75"
         stroke="#ECFEFF"
