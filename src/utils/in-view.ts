@@ -26,7 +26,7 @@ export function inView(
     return () => {};
   }
 
-  const elements = elementOrSelector;
+  // const elements = elementOrSelector;
 
   const activeIntersections = new WeakMap<Element, ViewChangeHandler>();
 
