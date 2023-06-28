@@ -1,34 +1,25 @@
 import { Popover, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
-import { twJoin, twMerge } from "tailwind-merge";
-import useIntersectionObserver from "../hooks/useIntersectionObserver";
+import { twMerge } from "tailwind-merge";
+import { useNavbarTransition } from "../../hooks/useNavbarTransitions";
+import { tw } from "../../utils/tw";
+import "./navbar.css";
 
 const navigation = [
   { name: "Projects", href: "#projects" },
   { name: "Work Experiences", href: "#work-experiences" },
   { name: "Latest Writings", href: "#latest-writings" },
-  { name: "✨ Blog", href: "/blog#title" },
   { name: "Contact Me", href: "#contact-me" },
+  { name: "✨ Blog", href: "/blog" },
 ];
 
 export default function NavbarPortfolio() {
-  const [isIntersectingProjects] = useIntersectionObserver("project-section");
-  const [isIntersectingDarkSection] = useIntersectionObserver("dark-section");
-  const [isIntersectingFooter] = useIntersectionObserver("footer");
-
-  let displayable = isIntersectingProjects || isIntersectingDarkSection ? "md:flex" : "!opacity-0 !pointer-events-none";
-  let navBackground = isIntersectingProjects
-    ? "navbar-background-light"
-    : isIntersectingDarkSection
-    ? "navbar-background-dark"
-    : "bg-opacity-0";
-
-  displayable = isIntersectingFooter ? "!opacity-0 !pointer-events-none" : displayable;
+  const [navRef, navShadow] = useNavbarTransition();
 
   return (
-    <div className={twMerge("fixed top-0 z-50 w-full bg-opacity-100 transition-all duration-500", navBackground)}>
-      <Popover as="header" className="">
+    <div className={twMerge("fixed top-0 z-50 w-full bg-opacity-100")}>
+      <Popover as="header">
         <div className="py-6">
           <nav
             className="relative mx-auto flex max-w-[1244px] items-center justify-between px-8 md:px-12 xl:px-4"
@@ -43,17 +34,33 @@ export default function NavbarPortfolio() {
                   </Popover.Button>
                 </div>
               </div>
-              <div className={twJoin("hidden space-x-8 transition duration-500 md:flex", displayable)}>
+
+              {/* Desktop Navbar */}
+              <div
+                id="nav"
+                ref={navRef}
+                style={{
+                  backgroundColor: "rgba(236, 254, 255, 0.40)",
+                  backdropFilter: "blur(3px)",
+                  boxShadow: navShadow,
+                }}
+                className={tw([
+                  "hidden text-cyan-800 text-opacity-40 transition-all duration-500",
+                  "mx-auto space-x-2.5 rounded-full px-6 py-2.5 md:flex",
+                ])}
+              >
+                <div className="nav-pointer"></div>
                 {navigation.map((item) => (
                   <a
                     key={item.name}
                     href={item.href}
-                    className="text-base font-semibold text-cyan-600 hover:text-cyan-700 hover:underline"
+                    className="nav-item py-2 px-3 text-base font-semibold leading-140 underline-offset-2 opacity-40 hover:opacity-70"
                   >
                     {item.name}
                   </a>
                 ))}
               </div>
+              {/* End - Desktop Navbar */}
             </div>
           </nav>
         </div>
