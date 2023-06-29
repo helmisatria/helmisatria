@@ -2,12 +2,14 @@ import image from "@astrojs/image";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
+import vercel from "@astrojs/vercel/serverless";
 import { defineConfig } from "astro/config";
 
-import vercel from "@astrojs/vercel/serverless";
+import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://helmisatria.com",
   integrations: [
     tailwind(),
     mdx({
@@ -19,6 +21,7 @@ export default defineConfig({
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
+    sitemap(),
   ],
   output: "server",
   adapter: vercel(),
