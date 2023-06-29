@@ -45,9 +45,10 @@ export default function NavbarPortfolio() {
                   backgroundColor: "rgba(236, 254, 255, 0.40)",
                   backdropFilter: "blur(3px)",
                   boxShadow: navShadow,
+                  transition: "box-shadow .3s",
                 }}
                 className={tw([
-                  "hidden text-cyan-800 text-opacity-40 transition-all duration-500",
+                  "hidden text-cyan-800 text-opacity-40",
                   "mx-auto space-x-2.5 rounded-full px-6 py-2.5 md:flex",
                 ])}
               >

@@ -32,7 +32,7 @@ import WritingList from "./WritingList.astro";
     <WritingHeader />
     <WritingList />
 
-    <div class="mb-10 mt-11 flex w-full justify-center sm:mb-20 sm:mt-28 lg:mb-40">
+    <div class="mb-10 flex w-full justify-center sm:mb-20 sm:mt-24 lg:mb-40">
       <div
         class="btn-blog relative mx-auto flex w-full flex-col items-center rounded-xl px-5 py-6 text-center sm:w-[550px] sm:rounded-[32px] sm:px-10 sm:py-9 md:w-[650px] lg:w-[865px]"
       >
@@ -55,6 +55,7 @@ import WritingList from "./WritingList.astro";
   import {
     animate,
     inView,
+    glide,
   } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
 
   const defaultEasing = [0.17, 0.55, 0.55, 1];
@@ -68,12 +69,16 @@ import WritingList from "./WritingList.astro";
     animate("#latest-writings .bg-2", { opacity: 1 }, { duration: 1 });
   });
 
-  document.querySelectorAll(".writing-list-item").forEach((item, i) => {
+  document.querySelectorAll("#latest-writings .writing-list-item").forEach((item, i) => {
     inView(item, (el) => {
       animate(
         item,
-        { opacity: 1, transform: "translateY(0)" },
-        { duration: 0.3, delay: 0.1 + i / 10, easing: defaultEasing }
+        { y: -100, opacity: 1 },
+        {
+          duration: 0.3,
+          delay: 0.1 + i / 10,
+          easing: glide({ velocity: -100, max: 0 }),
+        }
       );
     });
   });

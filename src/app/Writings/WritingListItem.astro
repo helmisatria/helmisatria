@@ -16,10 +16,10 @@ const tag = tags?.[0] ?? "";
 ---
 
 <li
-  style={{ transform: "translateY(50%)" }}
+  style={{ opacity: 0 }}
   class={tw(
-    "writing-list-item opacity-0",
-    "relative transition-all duration-150 h-[150px] overflow-hidden rounded-2xl border border-cyan-600 border-opacity-10 sm:h-[230px] lg:h-[230px]",
+    "writing-list-item",
+    "relative h-[150px] overflow-hidden rounded-2xl border border-cyan-600 border-opacity-10 sm:h-[230px] lg:h-[230px]",
     "hover:shadow-xl"
   )}
 >
@@ -37,7 +37,6 @@ const tag = tags?.[0] ?? "";
 
 <style>
   li {
-    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     background: radial-gradient(83.58% 466.3% at 88.14% 12.93%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
       #0f1f29;
