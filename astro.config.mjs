@@ -21,7 +21,9 @@ export default defineConfig({
     image({
       serviceEntryPoint: "@astrojs/image/sharp",
     }),
-    sitemap(),
+    sitemap({
+      filter: (page) => page !== "https://helmisatria.com/belajar/" && page !== "https://helmisatria.com/_image/",
+    }),
   ],
   output: "server",
   adapter: vercel(),
