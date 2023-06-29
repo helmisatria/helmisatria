@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^6.5.1",
+    "@astrojs/image": "^0.17.1",
     "@astrojs/mdx": "^0.19.7",
     "@astrojs/partytown": "^1.2.3",
     "@astrojs/react": "^2.2.1",
@@ -31,6 +32,7 @@
     "motion": "^10.16.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "sharp": "^0.32.1",
     "tailwind-merge": "^1.8.1",
     "tailwindcss": "^3.2.4",
     "typescript": "^5.1.3"

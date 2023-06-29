@@ -8,6 +8,8 @@ export type Props = {
 };
 
 const { images, project } = Astro.props as Props;
+
+import { Image } from "@astrojs/image/components";
 ---
 
 <div class="relative">
@@ -23,7 +25,14 @@ const { images, project } = Astro.props as Props;
             ` project-slider-item-${project}`
           }
         >
-          <img height="484" width="484" class="rounded-3xl" loading="lazy" src={image.url} alt={image.alt} />
+          <Image
+            height={484 * 1.5}
+            width={484 * 1.5}
+            class="rounded-3xl"
+            loading="lazy"
+            src={image.url}
+            alt={image.alt}
+          />
         </div>
       ))
     }

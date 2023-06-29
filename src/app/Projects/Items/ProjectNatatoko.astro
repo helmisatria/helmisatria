@@ -1,4 +1,6 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import ButtonLiveProduction from "../../../components/ButtonLiveProduction/ButtonLiveProduction.astro";
 import IconCloudflare from "../Icons/IconCloudflare.astro";
 import IconDokku from "../Icons/IconDokku.astro";
@@ -16,7 +18,7 @@ import ProjectSlider from "../ProjectSlider.astro";
   class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 sm:rounded-3xl"
 >
   <!-- Outnament Lines (Top) -->
-  <img
+  <Image
     src="/images/project-ournament-lines.png"
     width="1000"
     height="1000"
@@ -26,7 +28,7 @@ import ProjectSlider from "../ProjectSlider.astro";
   />
 
   <!-- Outnament Lines (Bottom) -->
-  <img
+  <Image
     src="/images/project-ournament-lines-btm-red.png"
     loading="lazy"
     width="1000"

@@ -4,6 +4,8 @@ import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 import { defineConfig } from "astro/config";
 
+import image from "@astrojs/image";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -14,6 +16,9 @@ export default defineConfig({
       },
     }),
     react(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
   ],
   output: "server",
   adapter: cloudflare(),

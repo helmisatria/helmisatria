@@ -6,6 +6,7 @@ import WorkExperienceSection from "../app/WorkExperience/WorkExperienceSection.a
 import WritingSection from "../app/Writings/WritingSection.astro";
 import NavbarPortfolio from "../components/Navbar/NavbarPortfolio";
 import Layout from "../layouts/Layout.astro";
+import { Image } from "@astrojs/image/components";
 ---
 
 <Layout title="Helmi Satria - Fullstack Developer" seoTitle="Helmi Satria - Experienced Fullstack Developer">
@@ -14,12 +15,13 @@ import Layout from "../layouts/Layout.astro";
     <HeroSection />
     <div>
       <!-- ournament -->
-      <img
+      <Image
         id="hero-ournament"
         src="/images/hero-ournament.png"
         alt=""
-        width="800"
-        height="100%"
+        width={800}
+        aspectRatio={1}
+        quality={100}
         class="pointer-events-none absolute inset-0 top-[-10px] left-[-50px] min-w-[950px] scale-125 opacity-0 sm:mx-auto sm:min-w-[1420px] sm:scale-100 2xl:min-w-[1600px] 2xl:scale-105"
       />
     </div>

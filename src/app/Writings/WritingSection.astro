@@ -1,12 +1,14 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import WritingHeader from "./WritingHeader.astro";
 import WritingList from "./WritingList.astro";
 ---
 
 <section id="latest-writings" class="relative overflow-hidden">
   <!-- Ournament at Top -->
-  <img
-    class="pointer-events-none absolute -left-4 -right-4 top-[-30px] z-0 mx-auto scale-[350%] sm:scale-150 xl:scale-105"
+  <Image
+    class="pointer-events-none bg-1 opacity-0 absolute -left-4 -right-4 top-[-30px] z-0 mx-auto scale-[350%] sm:scale-150 xl:scale-105"
     src="/images/work-experiences-ournament.png"
     width="1406"
     height="1052"
@@ -15,8 +17,8 @@ import WritingList from "./WritingList.astro";
   />
 
   <!-- Ournament at Bottom -->
-  <img
-    class="pointer-events-none absolute inset-x-0 -bottom-5 z-0 mx-auto 2xl:scale-[120%]"
+  <Image
+    class="pointer-events-none bg-2 opacity-0 absolute inset-x-0 -bottom-5 z-0 mx-auto 2xl:scale-[120%]"
     src="/images/writings-ournament-bottom.png"
     width="1406"
     height="1052"
@@ -57,6 +59,11 @@ import WritingList from "./WritingList.astro";
 
   inView("#latest-writings .title-highlight", (el) => {
     animate("#latest-writings .title-highlight", { maxWidth: "100%" }, { duration: 0.4, delay: 0.3 });
+    animate("#latest-writings .bg-1", { opacity: 1 }, { delay: 0.4 });
+  });
+
+  inView("#latest-writings .bg-2", () => {
+    animate("#latest-writings .bg-2", { opacity: 1 }, { duration: 1 });
   });
 
   document.querySelectorAll(".writing-list-item").forEach((item, i) => {

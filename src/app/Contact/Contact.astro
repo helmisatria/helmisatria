@@ -1,10 +1,16 @@
+---
+import { Image } from "@astrojs/image/components";
+---
+
 <section class="relative flex items-center overflow-hidden lg:max-h-screen lg:min-h-screen">
   <!-- Background -->
-  <img
+  <Image
+    width={1100}
+    aspectRatio={1.1}
     id="contact-bg"
     src="/images/contact-bg.png"
     alt=""
-    class="aspect-auto absolute bottom-0 -right-24 z-0 min-w-[800px] opacity-0 sm:right-0 sm:min-w-[1200px]"
+    class="aspect-auto absolute bottom-0 -right-24 z-0 w-[800px] min-w-[800px] opacity-0 sm:right-0 sm:min-w-[1200px]"
   />
 
   <div
@@ -36,7 +42,9 @@
         <div
           class="aspect-square relative inline-flex h-24 max-h-24 items-center justify-center rounded-full bg-cyan-dark sm:min-h-[32px] sm:min-w-[32px] md:h-28 xl:h-32 xl:max-h-32"
         >
-          <img
+          <Image
+            width={96 * 2}
+            aspectRatio={1}
             src="/images/helmi-square.png"
             alt="Helmi Satria"
             loading="lazy"
