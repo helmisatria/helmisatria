@@ -3,15 +3,13 @@ import { tw } from "../../utils/tw";
 
 export type Props = {
   title: string;
-  coverImage?: string;
-  hostname?: string;
   slug?: string;
-  link?: string;
   tags?: string[];
 };
 
-const { title, hostname, slug, link, tags } = Astro.props;
-const linkUrl = link ?? `https://${hostname}/${slug}`;
+const url = Astro.url;
+const { title, slug, tags } = Astro.props;
+const linkUrl = `${url}blog/${slug}`;
 const tag = tags?.[0] ?? "";
 ---
 

@@ -1,0 +1,10 @@
+---
+import { getEntry } from "astro:content";
+import BlogLayoutDetail from "../../layouts/LayoutBlogDetail.astro";
+
+const { slug } = Astro.params;
+
+const blog = await getEntry("blog", slug);
+---
+
+<BlogLayoutDetail blog={blog} />

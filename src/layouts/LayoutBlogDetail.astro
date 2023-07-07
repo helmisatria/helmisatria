@@ -3,37 +3,28 @@ import dayjs from "dayjs";
 import BlogDetailHeader from "../components/Blog/BlogDetailPage/BlogDetailHeader.astro";
 import Layout from "./Layout.astro";
 
-type Props = {
-  frontmatter: {
-    title: string;
-    author: string;
-    description: string;
-    tags: string[];
-    published: boolean;
-    publishDate: string;
-  };
-};
+const { blog } = Astro.props;
 
-const { frontmatter } = Astro.props;
+const articlePublishedDate = dayjs(blog.data.publishDate).format("YYYY-MM-DD");
 
-const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD");
+const { Content } = await blog.render();
 ---
 
 <Layout
-  title={frontmatter.title}
-  seoTitle={frontmatter.title}
-  description={frontmatter.description}
+  title={blog.data.title}
+  seoTitle={blog.data.title}
+  description={blog.data.description}
   publishedDate={articlePublishedDate}
 >
   <div id="blog-detail-page" class="min-h-screen min-w-full overflow-x-hidden">
-    <BlogDetailHeader />
+    <BlogDetailHeader frontmatter={blog.data} />
     <div role="separator" class="header-separator relative h-[2px] w-full"></div>
 
     <main class="relative py-20 sm:py-28">
       <div class="content-overlay absolute inset-x-0 top-0 z-0 h-[704px] w-screen"></div>
 
       <article class="blog-detail relative mx-auto text-blog-95 sm:!max-w-[48rem]">
-        <slot />
+        <Content />
       </article>
     </main>
   </div>
@@ -111,6 +102,7 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
   if (window.location.pathname.includes("blog")) {
     // append balance-text for each headings
     headers.forEach((header) => {
+      // @ts-ignore
       balanceText(header);
     });
   }
@@ -163,7 +155,7 @@ const articlePublishedDate = dayjs(frontmatter.publishDate).format("YYYY-MM-DD")
 
   #blog-detail-page {
     .content-overlay {
-      background: radial-gradient(163.28% 86.18% at 50% 0%, rgba(62, 87, 142, 0.3) 0%, rgba(8, 11, 18, 0) 100%);
+      background: radial-gradient(163.28% 86.18% at 50% 0%, rgba(62, 87, 142, 0.07) 0%, rgba(8, 11, 18, 0) 100%);
     }
 
     .gist {

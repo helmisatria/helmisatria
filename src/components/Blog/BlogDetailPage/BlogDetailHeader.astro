@@ -1,6 +1,20 @@
 ---
+import dayjs from "dayjs";
 import IconBack from "../../icons/IconBack.astro";
 import IconDate from "../../icons/IconDate.astro";
+
+type Props = {
+  frontmatter: {
+    title: string;
+    author: string;
+    description: string;
+    tags: string[];
+    published: boolean;
+    publishDate: string;
+  };
+};
+
+const { frontmatter } = Astro.props;
 ---
 
 <header
@@ -19,14 +33,15 @@ import IconDate from "../../icons/IconDate.astro";
   </div>
 
   <div class="relative">
-    <p class="mb-3 text-blog-80">Data</p>
+    <p class="mb-3 text-blog-80">{frontmatter.tags[0]}</p>
     <h1 class="balance-text text-2xl font-bold leading-120 sm:w-[40rem] sm:text-[2rem]">
-      Crawl Data Twitter Cepat dan Mudah dengan Python dan snscrape - Mei 2023
+      {frontmatter.title}
     </h1>
     <div class="mt-8 flex items-center justify-center space-x-2 text-sm text-blog-60 sm:text-base">
       <IconDate />
       <span class="sr-only">Published at</span>
-      <span>Senin, 18 Juni 2023</span>
+      <span>{dayjs(frontmatter.publishDate).format("dddd, DD MMMM YYYY")}</span>
+      <!-- <span>Senin, 18 Juni 2023</span> -->
     </div>
   </div>
 </header>
