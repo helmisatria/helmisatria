@@ -1,12 +1,18 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import IconGovTech from "../../../components/icons/IconGovTech.astro";
 ---
 
 <article
   id="work-govtech"
+  style={{ transform: "perspective(75em) rotateX(18deg)" }}
   class="relative z-10 mx-auto max-w-[1244px] overflow-hidden px-5 py-20 pb-40 sm:rounded-2xl sm:px-10 lg:px-[5.4rem]"
 >
-  <img
+  <Image
+    format="webp"
+    width={800}
+    aspectRatio={1}
     loading="lazy"
     class="pointer-events-none absolute right-0 bottom-0 z-0"
     src="/images/work-ournament-blue.png"

@@ -1,4 +1,6 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import { tw } from "../../utils/tw";
 
 type Props = {
@@ -26,7 +28,8 @@ const { sidebarOnDetail = false } = Astro.props;
         sidebarOnDetail && "hidden lg:block"
       )}
     >
-      <img
+      <Image
+        format="webp"
         height={184}
         width={184}
         class="aspect-square h-52 max-w-sm rounded-lg object-cover lg:w-52"

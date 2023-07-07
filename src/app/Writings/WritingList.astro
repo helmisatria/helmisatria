@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import dayjs from "dayjs";
 import WritingListItem from "./WritingListItem.astro";
 
@@ -11,24 +12,22 @@ import timezone from "dayjs/plugin/timezone";
 dayjs.extend(timezone);
 dayjs.tz.setDefault("Asia/Jakarta");
 
-let blogs = await Astro.glob("../../pages/blog/*.mdx");
+let blogs = await getCollection("blog");
 
 blogs.forEach((blogPost) => {
-  blogPost.frontmatter.publishDate = dayjs(blogPost.frontmatter.publishDate).format("YYYY-MM-DDTHH:mm:ss.000Z");
+  blogPost.data.publishDate = dayjs(blogPost.data.publishDate).format("YYYY-MM-DDTHH:mm:ss.000Z");
 });
 
 blogs = blogs.sort((a, b) => {
-  return dayjs(b.frontmatter.publishDate).unix() - dayjs(a.frontmatter.publishDate).unix();
+  return dayjs(b.data.publishDate).unix() - dayjs(a.data.publishDate).unix();
 });
 
 const posts = blogs.map((blogPost) => {
   return {
-    title: blogPost.frontmatter.title,
-    coverImage:
-      "https://images.unsplash.com/photo-1606206873764-fd15e242df52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80",
-    publishedAt: blogPost.frontmatter.publishDate,
-    link: blogPost.url,
-    tags: blogPost.frontmatter.tags,
+    title: blogPost.data.title,
+    publishedAt: blogPost.data.publishDate,
+    tags: blogPost.data.tags,
+    slug: blogPost.data.slug,
   };
 });
 
@@ -36,27 +35,12 @@ const articles = posts.slice(0, 4);
 ---
 
 <ul
-  class="mx-auto grid max-w-[1244px] grid-cols-1 place-content-center gap-x-5 gap-y-3 sm:grid-cols-2 sm:gap-y-6 lg:grid-cols-[repeat(2,480px)] xl:grid-cols-[repeat(2,545px)]"
+  id="writing-list"
+  class="mx-auto grid max-w-[1244px] grid-cols-1 place-content-center gap-x-5 gap-y-3 pt-24 sm:grid-cols-2 sm:gap-y-6 lg:grid-cols-[repeat(2,480px)] xl:grid-cols-[repeat(2,545px)]"
 >
   {
-    articles?.map(
-      (article: {
-        title: string;
-        coverImage: string;
-        slug?: string;
-        domain?: string;
-        link?: string;
-        tags?: string[];
-      }) => (
-        <WritingListItem
-          hostname={article.domain as string}
-          slug={article.slug}
-          link={article.link}
-          title={article.title}
-          coverImage={article.coverImage}
-          tags={article.tags}
-        />
-      )
-    )
+    articles?.map((article: { title: string; slug?: string; link?: string; tags?: string[] }) => (
+      <WritingListItem slug={article.slug} title={article.title} tags={article.tags} />
+    ))
   }
 </ul>

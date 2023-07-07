@@ -3,21 +3,21 @@ import { tw } from "../../utils/tw";
 
 export type Props = {
   title: string;
-  coverImage?: string;
-  hostname?: string;
   slug?: string;
-  link?: string;
   tags?: string[];
 };
 
-const { title, hostname, slug, link, tags } = Astro.props;
-const linkUrl = link ?? `https://${hostname}/${slug}`;
+const url = Astro.url;
+const { title, slug, tags } = Astro.props;
+const linkUrl = `${url}blog/${slug}`;
 const tag = tags?.[0] ?? "";
 ---
 
 <li
+  style={{ opacity: 0 }}
   class={tw(
-    "relative transition-all duration-150 h-[150px] overflow-hidden rounded-2xl border border-cyan-600 border-opacity-10 sm:h-[230px] lg:h-[230px]",
+    "writing-list-item",
+    "relative h-[150px] overflow-hidden rounded-2xl border border-cyan-600 border-opacity-10 sm:h-[230px] lg:h-[230px]",
     "hover:shadow-xl"
   )}
 >
@@ -35,7 +35,6 @@ const tag = tags?.[0] ?? "";
 
 <style>
   li {
-    transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
     background: radial-gradient(83.58% 466.3% at 88.14% 12.93%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
       #0f1f29;

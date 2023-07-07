@@ -67,6 +67,11 @@ export const useNavbarTransition = () => {
       makeActive(navPointer, document.querySelector('a[href="#latest-writings"]'));
     });
 
+    inView(document.querySelector("#writing-list"), () => {
+      animate(nav, { backgroundColor: darkBlueNavbarBackground, color: textLightColor, opacity: 1 }, animateOption);
+      makeActive(navPointer, document.querySelector('a[href="#latest-writings"]'));
+    });
+
     inView(document.querySelector("#contact-me"), () => {
       animate(nav, { opacity: 0 }, animateOption);
       makeActive(navPointer, document.querySelector('a[href="#contact-me"]'));

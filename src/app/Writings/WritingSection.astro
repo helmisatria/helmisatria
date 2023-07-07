@@ -1,12 +1,15 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import WritingHeader from "./WritingHeader.astro";
 import WritingList from "./WritingList.astro";
 ---
 
-<section class="relative overflow-hidden">
+<section id="latest-writings" class="relative overflow-hidden">
   <!-- Ournament at Top -->
-  <img
-    class="pointer-events-none absolute -left-4 -right-4 top-[-30px] z-0 mx-auto scale-[350%] sm:scale-150 xl:scale-105"
+  <Image
+    format="webp"
+    class="pointer-events-none bg-1 opacity-0 absolute -left-4 -right-4 top-[-30px] z-0 mx-auto scale-[350%] sm:scale-150 xl:scale-105"
     src="/images/work-experiences-ournament.png"
     width="1406"
     height="1052"
@@ -15,8 +18,9 @@ import WritingList from "./WritingList.astro";
   />
 
   <!-- Ournament at Bottom -->
-  <img
-    class="pointer-events-none absolute inset-x-0 -bottom-5 z-0 mx-auto 2xl:scale-[120%]"
+  <Image
+    format="webp"
+    class="pointer-events-none bg-2 opacity-0 absolute inset-x-0 -bottom-5 z-0 mx-auto 2xl:scale-[120%]"
     src="/images/writings-ournament-bottom.png"
     width="1406"
     height="1052"
@@ -24,11 +28,11 @@ import WritingList from "./WritingList.astro";
     alt=""
   />
 
-  <div class="px-5 pt-12 sm:pt-[14rem]" id="latest-writings">
+  <div class="px-5 pt-12 sm:pt-[14rem]">
     <WritingHeader />
     <WritingList />
 
-    <div class="mb-10 mt-11 flex w-full justify-center sm:mb-20 sm:mt-28 lg:mb-40">
+    <div class="mb-10 flex w-full justify-center sm:mb-20 sm:mt-24 lg:mb-40">
       <div
         class="btn-blog relative mx-auto flex w-full flex-col items-center rounded-xl px-5 py-6 text-center sm:w-[550px] sm:rounded-[32px] sm:px-10 sm:py-9 md:w-[650px] lg:w-[865px]"
       >
@@ -46,6 +50,39 @@ import WritingList from "./WritingList.astro";
     </div>
   </div>
 </section>
+
+<script>
+  import {
+    animate,
+    inView,
+    glide,
+  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+  const defaultEasing = [0.17, 0.55, 0.55, 1];
+
+  inView("#latest-writings .title-highlight", (el) => {
+    animate("#latest-writings .title-highlight", { maxWidth: "100%" }, { duration: 0.4, delay: 0.3 });
+    animate("#latest-writings .bg-1", { opacity: 1 }, { delay: 0.4 });
+  });
+
+  inView("#latest-writings .bg-2", () => {
+    animate("#latest-writings .bg-2", { opacity: 1 }, { duration: 1 });
+  });
+
+  document.querySelectorAll("#latest-writings .writing-list-item").forEach((item, i) => {
+    inView(item, (el) => {
+      animate(
+        item,
+        { y: -100, opacity: 1 },
+        {
+          duration: 0.3,
+          delay: 0.1 + i / 10,
+          easing: glide({ velocity: -100, max: 0 }),
+        }
+      );
+    });
+  });
+</script>
 
 <style>
   section {

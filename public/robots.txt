@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://helmisatria.com/sitemap-index.xml

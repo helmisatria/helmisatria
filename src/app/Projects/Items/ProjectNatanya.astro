@@ -1,4 +1,6 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import ButtonLiveProduction from "../../../components/ButtonLiveProduction/ButtonLiveProduction.astro";
 import IconFirebase from "../Icons/IconFirebase.astro";
 import IconNext from "../Icons/IconNext.astro";
@@ -7,9 +9,14 @@ import NatanyaIcon from "../Natanya/IconNatanya.astro";
 import ProjectSlider from "../ProjectSlider.astro";
 ---
 
-<article id="project-natanya" class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 sm:rounded-3xl">
+<article
+  style={{ transform: "perspective(75em) rotateX(18deg)" }}
+  id="project-natanya"
+  class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 sm:rounded-3xl"
+>
   <!-- Outnament Lines (Top) -->
-  <img
+  <Image
+    format="webp"
     src="/images/project-ournament-lines.png"
     width="1000"
     height="1000"
@@ -19,7 +26,8 @@ import ProjectSlider from "../ProjectSlider.astro";
   />
 
   <!-- Outnament Lines (Bottom) -->
-  <img
+  <Image
+    format="webp"
     src="/images/project-ournament-lines-btm.png"
     loading="lazy"
     width="1000"
@@ -43,6 +51,7 @@ import ProjectSlider from "../ProjectSlider.astro";
 
   <div class="portfolio-images">
     <ProjectSlider
+      project="natanya"
       images={[
         { url: "/images/projects/5@natanya.png", alt: "Natanya" },
         { url: "/images/projects/1@natanya.png", alt: "Natanya" },
@@ -134,8 +143,7 @@ import ProjectSlider from "../ProjectSlider.astro";
   article {
     background: linear-gradient(146.63deg, rgba(2, 132, 199, 0.1) 1.32%, rgba(236, 254, 255, 0) 66%),
       linear-gradient(325.76deg, rgba(2, 132, 199, 0.2) 3.68%, rgba(236, 254, 255, 0) 66.89%), #ffffff;
-    box-shadow: 15px 24px 17px rgba(0, 0, 0, 0.01), 7px 11px 13px rgba(0, 0, 0, 0.02), 2px 3px 7px rgba(0, 0, 0, 0.02),
-      0px 0px 0px rgba(0, 0, 0, 0.02);
+    box-shadow: "15px24px17pxrgba(0,0,0,0.01),7px11px13pxrgba(0,0,0,0.02),2px3px7pxrgba(0,0,0,0.02),0px0px0pxrgba(0,0,0,0.02)";
   }
 
   @media (max-width: 640px) {
@@ -145,13 +153,15 @@ import ProjectSlider from "../ProjectSlider.astro";
   }
 
   article::before {
+    --something: 2px !important;
     content: "";
     pointer-events: none;
     user-select: none;
     position: absolute;
     inset: 0px;
     border-radius: inherit;
-    padding: 2px;
+    padding: var(--something);
+    opacity: var(--something-opa);
     background: linear-gradient(
         135deg,
         #0285c7aa 5%,

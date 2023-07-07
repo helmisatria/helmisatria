@@ -1,4 +1,6 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import ProjectNatanya from "./Items/ProjectNatanya.astro";
 import ProjectNatatoko from "./Items/ProjectNatatoko.astro";
 import ProjectHeader from "./ProjectHeader.astro";
@@ -6,12 +8,15 @@ import ProjectHeader from "./ProjectHeader.astro";
 
 <section class="relative pt-16 lg:pt-32 xl:pt-36 2xl:pt-[11rem]" id="projects">
   <!-- mesh -->
-  <img
+  <Image
+    format="webp"
+    id="mesh-project-section-top"
     loading="lazy"
     src="/images/mesh.png"
     alt=""
     width="1400"
     height="1089"
+    style="opacity: 0;"
     class="aspect-auto absolute top-[-150px] right-0 hidden min-w-[554px] sm:top-[-150px] sm:left-[550px] sm:block lg:min-w-[1400px]"
   />
 
@@ -22,12 +27,15 @@ import ProjectHeader from "./ProjectHeader.astro";
   </div>
 
   <div class="relative">
-    <img
+    <Image
+      format="webp"
+      id="mesh-project-section-bottom"
       loading="lazy"
       src="/images/mesh.png"
       alt=""
       width="1400"
       height="1089"
+      style="opacity: 0;"
       class="aspect-auto absolute top-[-700px] left-[-250px] hidden w-auto sm:block sm:min-h-[1400px]"
     />
   </div>
@@ -39,6 +47,45 @@ import ProjectHeader from "./ProjectHeader.astro";
 
   <div class="sm:pt-32"></div>
 </section>
+
+<script>
+  import {
+    animate,
+    glide,
+    inView,
+  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+  const defaultEasing = [0.17, 0.55, 0.55, 1];
+
+  const projects = ["natanya", "natatoko"];
+
+  projects.forEach((project) => {
+    inView(`#project-${project}`, () => {
+      animate(`#project-${project}`, { transform: "rotateX(0)" }, { duration: 0.7, easing: defaultEasing });
+      animate(
+        `.project-slider-item-${project}`,
+        { x: 0 },
+        { duration: 1, easing: glide({ velocity: -500, max: 10, min: -10 }) }
+      );
+    });
+  });
+
+  const buttons = ["#btn-live-in-production-natatoko-com", "#btn-live-in-production-natanya-app"];
+
+  buttons.forEach((btn) => {
+    inView(`${btn}`, () => {
+      animate(
+        `${btn}-arrow-wrapper`,
+        {
+          opacity: 1,
+          boxShadow: `10px 11px 6px rgba(0, 0, 0, 0.01), 6px 6px 5px rgba(0, 0, 0, 0.05), 3px 3px 4px rgba(0, 0, 0, 0.09), 1px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1)`,
+        },
+        { delay: 0.3, duration: 0.3, easing: defaultEasing }
+      );
+      animate(`${btn}-arrow`, { transform: "translate(0, 0)", opacity: 1 }, { delay: 0.4 });
+    });
+  });
+</script>
 
 <style>
   .overlay-natatoko {

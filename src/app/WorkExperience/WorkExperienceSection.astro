@@ -1,10 +1,13 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import WorkExperienceHeader from "./WorkExperienceHeader.astro";
 import WorkExperienceList from "./WorkExperienceList.astro";
 ---
 
 <section class="relative overflow-hidden" id="work-experiences-section">
-  <img
+  <Image
+    format="webp"
     class="pointer-events-none absolute -left-4 -right-4 top-[-30px] z-0 mx-auto scale-[350%] sm:scale-150 xl:scale-105"
     src="/images/work-experiences-ournament.png"
     width="1406"

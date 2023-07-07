@@ -6,6 +6,7 @@
     <span class="relative">
       <span class="relative z-[1]">Work Experiences</span>
       <span
+        style={{ maxWidth: 0 }}
         class="title-highlight absolute left-0 bottom-0 z-0 hidden h-[15px] w-[250px] max-[350px]:w-[220px] min-[325px]:block sm:bottom-1 sm:w-[320px] lg:bottom-2 lg:h-[20px] lg:w-[500px]"
       >
       </span>
@@ -44,6 +45,27 @@
     </defs>
   </svg>
 </div>
+
+<script>
+  import {
+    animate,
+    inView,
+  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+  const defaultEasing = [0.17, 0.55, 0.55, 1];
+
+  inView("#work-experiences-section .title-highlight", (el) => {
+    animate("#work-experiences-section .title-highlight", { maxWidth: "100%" }, { duration: 0.4, delay: 0.3 });
+  });
+
+  const works = ["govtech", "buka"];
+
+  works.forEach((work) => {
+    inView(`#work-${work}`, () => {
+      animate(`#work-${work}`, { transform: "rotateX(0)" }, { duration: 0.7, easing: defaultEasing });
+    });
+  });
+</script>
 
 <style>
   .title-highlight {

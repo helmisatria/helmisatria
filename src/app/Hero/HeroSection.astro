@@ -30,7 +30,8 @@ import Wave from "../../components/icons/Wave.astro";
           <span class="no-text-fill-color relative">
             <span class="relative z-[1] text-[#294049]">happy</span>
             <span
-              class="happy-bg absolute inset-0 -left-1 top-6 z-0 block h-[42px] w-full rotate-[-2.2deg] mob:top-7 mob:h-[48px] sm:top-8 sm:h-[54px] md:-left-2 md:top-7 md:h-[50px] lg:top-6 lg:h-[56px] xl:top-8 xl:h-[60px]"
+              id="happy-bg"
+              class="happy-bg absolute inset-0 -left-1 top-6 z-0 block h-[42px] w-0 rotate-[-2.2deg] opacity-0 mob:top-7 mob:h-[48px] sm:top-8 sm:h-[54px] md:-left-2 md:top-7 md:h-[50px] lg:top-6 lg:h-[56px] xl:top-8 xl:h-[60px]"
               style="background: linear-gradient(85.27deg, #57E9F9 0.78%, rgba(165, 243, 252, 0) 123.9%);"></span>
           </span>
           full-stack developer
@@ -73,6 +74,18 @@ import Wave from "../../components/icons/Wave.astro";
       </p>
     </div>
   </div>
+
+  <script>
+    import {
+      animate,
+      inView,
+    } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+    inView("#header", () => {
+      animate("#happy-bg", { opacity: 1, width: "100%" }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.2 });
+      animate("#hero-wave", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.3 });
+    });
+  </script>
 </section>
 
 <style>

@@ -4,18 +4,19 @@ import dayjs from "dayjs";
 import IconDate from "../../icons/IconDate.astro";
 
 // dayjs locale id
+import { getCollection } from "astro:content";
 import "dayjs/locale/id";
 dayjs.locale("id");
 
-const posts = await Astro.glob("../../../pages/blog/*");
+const blogPosts = await getCollection("blog");
 
 // order by publishDate
-posts.forEach((blogPost) => {
-  blogPost.frontmatter.publishDate = dayjs(blogPost.frontmatter.publishDate).format("YYYY-MM-DDTHH:mm:ss.000Z");
+blogPosts.forEach((blogPost) => {
+  blogPost.data.publishDate = dayjs(blogPost.data.publishDate).format("YYYY-MM-DDTHH:mm:ss.000Z");
 });
 
-posts.sort((a, b) => {
-  return dayjs(b.frontmatter.publishDate).unix() - dayjs(a.frontmatter.publishDate).unix();
+blogPosts.sort((a, b) => {
+  return dayjs(b.data.publishDate).unix() - dayjs(a.data.publishDate).unix();
 });
 ---
 
@@ -27,18 +28,18 @@ posts.sort((a, b) => {
 
   <ul class="relative mx-auto grid max-w-[1024px] gap-x-20 gap-y-10 sm:grid-cols-2 sm:gap-y-16">
     {
-      posts.map((post) => (
-        <li class="text-blog-95 max-w-[410px]">
+      blogPosts.map((post) => (
+        <li class="max-w-[410px] text-blog-95">
           <article>
-            <p class="text-blog-60 mb-2 text-xs">{post.frontmatter.tags[0]}</p>
-            <a href={post.url}>
-              <h2 class="balance-text leading-120 text-base font-bold underline-offset-2 hover:underline sm:text-xl">
-                {post.frontmatter.title}
+            <p class="mb-2 text-xs text-blog-60">{post.data.tags[0]}</p>
+            <a href={`/blog/${post.data.slug}`}>
+              <h2 class="balance-text text-base font-bold leading-120 underline-offset-2 hover:underline sm:text-xl">
+                {post.data.title}
               </h2>
             </a>
-            <div class="text-blog-80 mt-4 flex items-center space-x-2 text-xs">
+            <div class="mt-4 flex items-center space-x-2 text-xs text-blog-80">
               <IconDate />
-              <p>{dayjs(post.frontmatter.publishDate).format("dddd, DD MMM YYYY")}</p>
+              <p>{dayjs(post.data.publishDate).format("dddd, DD MMM YYYY")}</p>
             </div>
           </article>
         </li>

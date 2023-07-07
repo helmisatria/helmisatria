@@ -1,4 +1,6 @@
 ---
+import { Image } from "@astrojs/image/components";
+
 import { tw } from "../../../utils/tw";
 ---
 
@@ -7,9 +9,10 @@ import { tw } from "../../../utils/tw";
 >
   <div class="header-bg absolute inset-0 h-full w-full"></div>
 
-  <img
-    width="848px"
-    height="383px"
+  <Image
+    format="webp"
+    width={848}
+    height={383}
     alt=""
     src="/images/blog/blog-background.png"
     class="absolute right-0 bottom-0 top-0 z-0 h-full w-[50%] object-cover sm:w-[60%]"

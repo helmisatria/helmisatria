@@ -4,19 +4,36 @@ export type Props = {
     url: string;
     alt: string;
   }[];
+  project: string;
 };
 
-const { images } = Astro.props as Props;
+const { images, project } = Astro.props as Props;
+
+import { Image } from "@astrojs/image/components";
 ---
 
 <div class="relative">
   <div
-    class="hide-scrollbar z-0 grid relative overflow-y-hidden pl-5 sm:pl-10 lg:pl-16 grid-flow-col snap-x snap-center mx-[2px]"
+    class="hide-scrollbar project-slider relative z-0 mx-[2px] grid snap-x grid-flow-col overflow-y-hidden pl-5 sm:pl-10 lg:pl-16"
   >
     {
       images.map((image) => (
-        <div class="w-[86vw] max-w-[86vw] sm:max-w-none sm:w-[484px] pr-5 py-10 sm:py-16">
-          <img height="484" width="484" class="rounded-3xl" loading="lazy" src={image.url} alt={image.alt} />
+        <div
+          style={{ transform: "translateX(100px)" }}
+          class={
+            "w-[86vw] max-w-[86vw] snap-center py-10 pr-5 sm:w-[484px] sm:max-w-none sm:py-16" +
+            ` project-slider-item-${project}`
+          }
+        >
+          <Image
+            format="webp"
+            height={484 * 1.5}
+            width={484 * 1.5}
+            class="rounded-3xl"
+            loading="lazy"
+            src={image.url}
+            alt={image.alt}
+          />
         </div>
       ))
     }

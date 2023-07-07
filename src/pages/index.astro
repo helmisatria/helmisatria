@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Contact from "../app/Contact/Contact.astro";
 import HeroSection from "../app/Hero/HeroSection.astro";
 import ProjectSection from "../app/Projects/ProjectSection.astro";
@@ -14,12 +15,15 @@ import Layout from "../layouts/Layout.astro";
     <HeroSection />
     <div>
       <!-- ournament -->
-      <img
+      <Image
+        format="webp"
+        id="hero-ournament"
         src="/images/hero-ournament.png"
         alt=""
-        width="800"
-        height="100%"
-        class="pointer-events-none absolute inset-0 top-[-10px] left-[-50px] min-w-[950px] scale-125 sm:mx-auto sm:min-w-[1420px] sm:scale-100 2xl:min-w-[1600px] 2xl:scale-105"
+        width={800}
+        aspectRatio={1}
+        quality={100}
+        class="pointer-events-none absolute inset-0 top-[-10px] left-[-50px] min-w-[950px] scale-125 opacity-0 sm:mx-auto sm:min-w-[1420px] sm:scale-100 2xl:min-w-[1600px] 2xl:scale-105"
       />
     </div>
     <ProjectSection />
@@ -29,4 +33,16 @@ import Layout from "../layouts/Layout.astro";
     </div>
     <Contact />
   </main>
+
+  <script>
+    import {
+      animate,
+      inView,
+    } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+
+    inView("body", () => {
+      animate("#hero-ournament", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1] });
+      animate("#nav", { opacity: 1, transform: "translateY(0%)" }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.6 });
+    });
+  </script>
 </Layout>
