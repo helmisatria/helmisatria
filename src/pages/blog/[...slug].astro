@@ -1,10 +1,25 @@
 ---
-import { getEntry } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 import BlogLayoutDetail from "../../layouts/LayoutBlogDetail.astro";
 
 const { slug } = Astro.params;
 
+export async function getStaticPaths() {
+  const blogs = await getCollection("blog");
+  const paths = blogs.map((entry) => ({
+    params: { slug: entry.slug },
+  }));
+
+  return paths;
+}
+
+export const prerender = true;
+
 const blog = await getEntry("blog", slug);
+
+if (blog === undefined) {
+  return Astro.redirect(`/blog?404=${Astro.url}`);
+}
 ---
 
 <BlogLayoutDetail blog={blog} />
