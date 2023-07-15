@@ -151,6 +151,12 @@ const { Content } = await blog.render();
     }
   }
 
+  @media (min-width: 1600px) {
+    html:has(#blog-detail-page) {
+      font-size: 20px !important;
+    }
+  }
+
   @import url("https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/idle-fingers.css");
 
   #blog-detail-page {
@@ -288,7 +294,7 @@ const { Content } = await blog.render();
       li,
       ol {
         margin-bottom: 1rem;
-        @apply text-blog-95;
+        @apply text-blog-90;
         line-height: 180%;
       }
 

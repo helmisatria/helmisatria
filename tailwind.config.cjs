@@ -27,6 +27,7 @@ module.exports = {
           50: "hsla(222, 38%, 50%, 1)",
           60: "#748ABE",
           80: "#BAC5DE",
+          90: "#DCE1F1",
           95: "#EDF0F7",
         },
         dark: "#051C29",
