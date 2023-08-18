@@ -248,6 +248,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".mdx"] };
+"008-cara-crawl-data-twitter-berdasarkan-lokasi.mdx": {
+	id: "008-cara-crawl-data-twitter-berdasarkan-lokasi.mdx";
+  slug: "cara-crawl-data-twitter-berdasarkan-lokasi";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
 };
 
 	};

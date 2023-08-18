@@ -1,0 +1,23 @@
+---
+title: Cara Crawl Data Twitter Berdasarkan Lokasi - Agustus 2023
+author: Helmi Satria
+description: Lakukan crawl data Twitter berdasarkan lokasi dengan latitude, longitude, radius. Atasi batasan dan gunakan dengan bijak. Masih bekerja di Agustus 2023.
+tags:
+  - Data
+  - Twitter
+published: true
+publishDate: 2023-08-18T14:32:44.755Z
+slug: cara-crawl-data-twitter-berdasarkan-lokasi
+---
+
+Untuk melakukan crawl data kita akan menggunakan tweet-harvest sebagai alat untuk crawl datanya karena alat lain seperti snscrape, tweepy sejauh ini sudah tidak bisa digunakan lagi secara gratis. Baca tentang tweet-harvest di blog saya ini [Crawl Data Twitter Menggunakan Tweet Harvest - Juli 2023](https://helmisatria.com/blog/crawl-data-twitter-menggunakan-tweet-harvest)
+
+Mengingatkan kembali, blog ini saya tulis agar teman-teman bisa melakukan crawl data twitter berdasarkan lokasi hanya untuk keperluan edukasi saja seperti skripsi, thesis, dll.
+
+Sebenarnya tidak ada yang spesial dalam melakukan crawl data berdasarkan lokasi ini, kita hanya cukup menggunakan special keyword yang ada pada fitur twitter yaitu `geocode:latitude,longitude,radius`.
+
+Contohnya, jika kamu ingin crawl data twitter tentang PLTU yang di tweet di bandung kamu bisa menggunakan search keyword ini: `PLTU geocode:-6.920059440961432,107.61531279061492,20km`
+
+Tunggu saja sampai semua data terambil dan nantinya kamu akan mendapatkan semua data tentang PLTU yang di tweet di sekitaran Kota Bandung.
+
+Semoga membantu!
