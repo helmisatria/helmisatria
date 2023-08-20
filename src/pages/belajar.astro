@@ -2,25 +2,20 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<style>
-  iframe {
-    position: absolute;
-    top: 20px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    border: 0;
-  }
-</style>
-
 <Layout title="Helmi Satria - Fullstack Developer" seoTitle="Helmi Satria - Experienced Fullstack Developer">
-  <main>
-    <script async src="https://tally.so/widgets/embed.js"></script>
-
-    <iframe
-      data-tally-src="https://tally.so/r/wa9Bbv?transparentBackground=1"
-      width="100%"
-      height="100%"
-      title="Online Mentoring with Helmi Satria (Maret 2023)"></iframe>
+  <main class="min-h-screen w-full bg-neutral-900">
+    <div class="mx-auto my-auto max-w-2xl pt-[35vh] text-neutral-50">
+      <p class="px-6 text-xl md:text-4xl">
+        ✅ Bentar ya, otw ke telegram group <span class="block pt-5 font-medium">Belajar Bareng Helmi...</span>
+      </p>
+    </div>
   </main>
 </Layout>
+
+<script>
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      window.location.href = "https://t.me/+98ehPZjc5athNmQ1";
+    }, 3000);
+  });
+</script>
