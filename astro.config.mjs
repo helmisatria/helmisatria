@@ -25,6 +25,9 @@ export default defineConfig({
       filter: (page) => page !== "https://helmisatria.com/belajar/" && page !== "https://helmisatria.com/_image/",
     }),
   ],
+  redirects: {
+    "/Belajar": "/belajar",
+  },
   output: "server",
   adapter: vercel(),
 });
