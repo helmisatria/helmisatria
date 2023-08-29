@@ -255,6 +255,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".mdx"] };
+"009-cara-crawl-data-twitter-thread-komentar.mdx": {
+	id: "009-cara-crawl-data-twitter-thread-komentar.mdx";
+  slug: "cara-crawl-data-twitter-thread-komentar";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
 };
 
 	};

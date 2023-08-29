@@ -57,7 +57,5 @@
       "title": "blog",
       "path": "[[workspace]]/src/pages/blog"
     }
-  ],
-  "frontMatter.taxonomy.tags": ["Astro", "Crawl", "Data", "Tiktok", "Twitter", "Web", "Web Development"],
-  "frontMatter.taxonomy.categories": []
+  ]
 }
