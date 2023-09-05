@@ -32,5 +32,7 @@ export default defineConfig({
     "/Belajar": "/belajar",
   },
   output: "server",
-  adapter: vercel(),
+  adapter: vercel({
+    analytics: true,
+  }),
 });
