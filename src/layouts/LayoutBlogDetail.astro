@@ -23,7 +23,7 @@ const { Content } = await blog.render();
     <main class="relative py-20 sm:py-28">
       <div class="content-overlay absolute inset-x-0 top-0 z-0 h-[704px] w-screen"></div>
 
-      <article class="blog-detail relative mx-auto text-blog-95 sm:!max-w-[48rem]">
+      <article class="blog-detail relative mx-auto !font-content !text-blog-40 sm:!max-w-[48rem]">
         <Content />
       </article>
     </main>
@@ -294,8 +294,15 @@ const { Content } = await blog.render();
       li,
       ol {
         margin-bottom: 1rem;
-        @apply text-blog-90;
-        line-height: 180%;
+        @apply text-blog-85;
+        line-height: 2rem;
+      }
+
+      a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        word-break: break-all;
+        width: 100%;
       }
 
       li > ol {

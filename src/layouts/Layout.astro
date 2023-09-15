@@ -23,6 +23,11 @@ const url = Astro.url.pathname;
 
 const inBlog = url.includes("/blog");
 
+if (inBlog) {
+  import("@fontsource/open-sans/400.css");
+  import("@fontsource/open-sans/700.css");
+}
+
 const fontFamily = inBlog ? "Satoshi" : "Figtree";
 ---
 

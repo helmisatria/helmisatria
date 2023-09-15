@@ -2,6 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    fontFamily: {
+      content: [
+        `Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+        "Segoe UI Symbol"`,
+      ],
+    },
     extend: {
       screens: {
         mini: "484px",
@@ -27,6 +34,7 @@ module.exports = {
           50: "hsla(222, 38%, 50%, 1)",
           60: "#748ABE",
           80: "#BAC5DE",
+          85: "#C9D0E8",
           90: "#DCE1F1",
           95: "#EDF0F7",
         },

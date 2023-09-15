@@ -29,6 +29,9 @@ dependencies:
   '@astrojs/vercel':
     specifier: ^3.5.1
     version: 3.5.1(astro@2.7.2)(react@18.2.0)
+  '@fontsource/open-sans':
+    specifier: ^5.0.12
+    version: 5.0.12
   '@headlessui/react':
     specifier: ^1.7.8
     version: 1.7.8(react-dom@18.2.0)(react@18.2.0)
@@ -814,6 +817,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/open-sans@5.0.12:
+    resolution: {integrity: sha512-Ptri5McmTGEJkQ5nvGQeJX8YdGbZpOT6V03By1pISIPZygO/ps4bQIvwPO+X/WtBY+2C1xKeyqx7LX+3fxlo2A==}
+    dev: false
 
   /@headlessui/react@1.7.8(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-zcwb0kd7L05hxmoAMIioEaOn235Dg0fUO+iGbLPgLVSjzl/l39V6DTpC2Df49PE5aG5/f5q0PZ9ZHZ78ENNV+A==}
