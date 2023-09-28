@@ -1,6 +1,6 @@
 # Helmi Satria - Full-stack Developer
 
-A happy full-stack developer who aims to help others grow in web development 🤝
+A happy full-stack developer who strives to help others grow in web development 🤝
 
 I have worked on a variety of projects, from MVPs to full-scale applications. I have also held various positions in the web and mobile application development industry and have a lot of experience in the field.
 
