@@ -33,7 +33,7 @@ blogPosts.sort((a, b) => {
           <article>
             <p class="mb-2 text-xs text-blog-60">{post.data.tags[0]}</p>
             <a href={`/blog/${post.data.slug}`}>
-              <h2 class="balance-text text-base font-bold leading-120 underline-offset-2 hover:underline sm:text-xl">
+              <h2 class="balance-text text-base font-bold leading-120 decoration-blog-95/50 underline-offset-4 hover:underline sm:text-xl">
                 {post.data.title}
               </h2>
             </a>
@@ -50,6 +50,6 @@ blogPosts.sort((a, b) => {
 
 <style>
   .content-overlay {
-    background: radial-gradient(163.28% 86.18% at 50% 0%, rgba(62, 87, 142, 0.3) 0%, rgba(8, 11, 18, 0) 100%);
+    background: radial-gradient(163.28% 86.18% at 50% 0%, rgba(62, 87, 142, 0.1) 0%, rgba(8, 11, 18, 0) 100%);
   }
 </style>

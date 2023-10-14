@@ -23,7 +23,7 @@ const { Content } = await blog.render();
     <main class="relative py-20 sm:py-28">
       <div class="content-overlay absolute inset-x-0 top-0 z-0 h-[704px] w-screen"></div>
 
-      <article class="blog-detail relative mx-auto !font-content !text-blog-40 sm:!max-w-[48rem]">
+      <article class="blog-detail relative mx-auto !font-content !text-blog-80 sm:!max-w-[48rem]">
         <Content />
       </article>
     </main>
@@ -128,7 +128,7 @@ const { Content } = await blog.render();
       transparent,
       transparent,
       transparent,
-      hsla(221, 39%, 64%, 0.5) 50%,
+      hsla(221, 39%, 64%, 0.3) 50%,
       transparent,
       transparent,
       transparent
@@ -160,10 +160,6 @@ const { Content } = await blog.render();
   @import url("https://cdn.rawgit.com/lonekorean/gist-syntax-themes/d49b91b3/stylesheets/idle-fingers.css");
 
   #blog-detail-page {
-    .content-overlay {
-      background: radial-gradient(163.28% 86.18% at 50% 0%, rgba(62, 87, 142, 0.07) 0%, rgba(8, 11, 18, 0) 100%);
-    }
-
     .gist {
       font-size: 13px;
       line-height: 18px;
