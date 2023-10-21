@@ -262,6 +262,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: any
 } & { render(): Render[".mdx"] };
+"010-cara-dapetin-data-twitter-yang-besar.mdx": {
+	id: "010-cara-dapetin-data-twitter-yang-besar.mdx";
+  slug: "cara-mendapatkan-data-twitter-yang-besar";
+  body: string;
+  collection: "blog";
+  data: any
+} & { render(): Render[".mdx"] };
 };
 
 	};
