@@ -158,6 +158,8 @@ export const getBlogPosts = async ({ limit = 1000 }: { limit?: number } = {}) =>
     content_type: "blog",
     limit,
     "sys.revision[gte]": 1,
+    // @ts-ignore
+    order: "-sys.createdAt",
   });
 
   const posts = await Promise.all(
