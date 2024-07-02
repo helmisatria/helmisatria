@@ -12,10 +12,10 @@ const thresholds = {
 };
 
 export function inView(
-  elementOrSelector: Element,
+  elementOrSelector: Element | string,
   onStart: (entry: IntersectionObserverEntry) => void | ViewChangeHandler,
   { root, margin: rootMargin, amount = "any" }: InViewOptions = {}
-): VoidFunction {
+) {
   /**
    * If this browser doesn't support IntersectionObserver, return a dummy stop function.
    * Default triggering of onStart is tricky - it could be used for starting/stopping
@@ -25,8 +25,6 @@ export function inView(
   if (typeof IntersectionObserver === "undefined") {
     return () => {};
   }
-
-  // const elements = elementOrSelector;
 
   const activeIntersections = new WeakMap<Element, ViewChangeHandler>();
 
@@ -45,6 +43,7 @@ export function inView(
         if (newOnEnd) {
           activeIntersections.set(entry.target, newOnEnd);
         } else {
+          // intentionally not unobserving so that when the user scroll up again, the element will be observed again
           // observer.unobserve(entry.target);
         }
       } else if (onEnd) {
@@ -54,13 +53,23 @@ export function inView(
     });
   };
 
-  const observer = new IntersectionObserver(onIntersectionChange, {
-    root,
-    rootMargin,
-    threshold: typeof amount === "number" ? amount : thresholds[amount],
-  });
+  setTimeout(() => {
+    const element =
+      typeof elementOrSelector === "string" ? document.querySelector(elementOrSelector) : elementOrSelector;
 
-  observer.observe(elementOrSelector);
+    if (!element) {
+      console.warn("Element not found (in-view)", elementOrSelector);
+      return () => {};
+    }
 
-  return () => observer.disconnect();
+    const observer = new IntersectionObserver(onIntersectionChange, {
+      root,
+      rootMargin,
+      threshold: typeof amount === "number" ? amount : thresholds[amount],
+    });
+
+    observer.observe(element!);
+
+    return () => observer.disconnect();
+  }, 500);
 }

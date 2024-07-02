@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import Contact from "../app/Contact/Contact.astro";
 import HeroSection from "../app/Hero/HeroSection.astro";
 import ProjectSection from "../app/Projects/ProjectSection.astro";
@@ -10,7 +10,12 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Helmi Satria - Fullstack Developer" seoTitle="Helmi Satria - Experienced Fullstack Developer">
-  <NavbarPortfolio client:idle />
+  <slot name="font">
+    <link rel="stylesheet" href="/fonts/Figtree/figtree.css" />
+  </slot>
+
+  <NavbarPortfolio client:only="react" />
+
   <main class="relative min-h-screen overflow-hidden">
     <HeroSection />
     <div>
@@ -22,9 +27,8 @@ import Layout from "../layouts/Layout.astro";
         alt=""
         width={800}
         height={800}
-        aspectRatio={1}
         quality={100}
-        class="pointer-events-none absolute inset-0 top-[-10px] left-[-50px] min-w-[950px] scale-125 opacity-0 sm:mx-auto sm:min-w-[1420px] sm:scale-100 2xl:min-w-[1600px] 2xl:scale-105"
+        class="pointer-events-none absolute inset-0 left-[-50px] top-[-10px] min-w-[950px] scale-125 opacity-0 sm:mx-auto sm:min-w-[1420px] sm:scale-100 2xl:min-w-[1600px] 2xl:scale-105"
       />
     </div>
     <ProjectSection />
@@ -36,14 +40,13 @@ import Layout from "../layouts/Layout.astro";
   </main>
 
   <script>
-    import {
-      animate,
-      inView,
-    } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+    import { animate, inView } from "motion";
 
-    inView("body", () => {
-      animate("#hero-ournament", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1] });
-      animate("#nav", { opacity: 1, transform: "translateY(0%)" }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.6 });
-    });
+    setTimeout(() => {
+      inView("body", () => {
+        animate("#hero-ournament", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1] });
+        animate("#nav", { opacity: 1, transform: "translateY(0%)" }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.6 });
+      });
+    }, 500);
   </script>
 </Layout>

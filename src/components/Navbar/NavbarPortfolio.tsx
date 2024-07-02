@@ -1,4 +1,4 @@
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Fragment } from "react";
 import { twMerge } from "tailwind-merge";
@@ -19,7 +19,7 @@ export default function NavbarPortfolio() {
 
   return (
     <div className={twMerge("fixed top-0 z-50 w-full bg-opacity-100")}>
-      <Popover as="header">
+      <Popover as="header" className="relative">
         <div className="py-6">
           <nav
             className="relative mx-auto flex max-w-[1244px] items-center justify-between px-8 md:px-12 xl:px-4"
@@ -28,10 +28,10 @@ export default function NavbarPortfolio() {
             <div className="flex flex-1 items-center">
               <div className="flex w-full items-center justify-end md:w-auto">
                 <div className="-mr-2 flex items-center md:hidden">
-                  <Popover.Button className="focus-ring-inset inline-flex items-center justify-center rounded-md bg-cyan-900 p-2 text-cyan-400 hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-white">
+                  <PopoverButton className="focus-ring-inset inline-flex items-center justify-center rounded-md bg-cyan-900 p-2 text-cyan-400 hover:bg-cyan-800 focus:outline-none focus:ring-2 focus:ring-white">
                     <span className="sr-only">Open main menu</span>
                     <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-                  </Popover.Button>
+                  </PopoverButton>
                 </div>
               </div>
 
@@ -44,7 +44,7 @@ export default function NavbarPortfolio() {
                   transform: "translateY(-150%)",
                   backgroundColor: "rgba(236, 254, 255, 0.40)",
                   backdropFilter: "blur(3px)",
-                  boxShadow: navShadow,
+                  boxShadow: navShadow as string,
                   transition: "box-shadow .3s",
                 }}
                 className={tw([
@@ -57,7 +57,7 @@ export default function NavbarPortfolio() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="nav-item py-2 px-3 text-base font-semibold leading-140 underline-offset-2 opacity-40 hover:opacity-70"
+                    className="nav-item px-3 py-2 text-base font-semibold leading-140 underline-offset-2 opacity-40 hover:opacity-70"
                   >
                     {item.name}
                   </a>
@@ -77,20 +77,20 @@ export default function NavbarPortfolio() {
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <Popover.Panel focus className="absolute inset-x-0 top-0 z-20 origin-top transform p-2 transition md:hidden">
+          <PopoverPanel className="absolute inset-x-0 top-0 origin-top transform p-2 transition md:hidden">
             <div className="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
               <div className="flex items-center justify-between px-5 pt-4">
                 <div>
                   <img className="h-12 w-auto rounded-full" src="/images/helmi-blog-square.png" alt="" />
                 </div>
                 <div className="-mr-2">
-                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-cyan-400 hover:bg-cyan-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
+                  <PopoverButton className="inline-flex items-center justify-center rounded-md bg-white p-2 text-cyan-400 hover:bg-cyan-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
                     <span className="sr-only">Close menu</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                  </Popover.Button>
+                  </PopoverButton>
                 </div>
               </div>
-              <div className="relative z-20 pt-5 pb-6">
+              <div className="relative z-20 pb-6 pt-5">
                 <div className="space-y-1 px-2">
                   {navigation.map((item) => (
                     <a
@@ -104,7 +104,7 @@ export default function NavbarPortfolio() {
                 </div>
               </div>
             </div>
-          </Popover.Panel>
+          </PopoverPanel>
         </Transition>
       </Popover>
     </div>
