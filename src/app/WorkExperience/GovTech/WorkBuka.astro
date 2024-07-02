@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 import IconBuka from "../../../components/icons/IconBuka.astro";
 
@@ -20,6 +20,7 @@ const responsibilities = [
   <Image
     loading="lazy"
     width={800}
+    height={1100}
     aspectRatio={1}
     class="pointer-events-none absolute right-0 bottom-0 z-0"
     src="/images/work-ournament-red.png"

@@ -4,10 +4,11 @@ module.exports = {
   theme: {
     fontFamily: {
       content: [
-        `Open Sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+        `Haskoy, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
         "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol"`,
       ],
+      code: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
     },
     extend: {
       screens: {
@@ -28,15 +29,9 @@ module.exports = {
       },
       colors: {
         blog: {
-          dark: "#080B12",
-          5: "#080B12",
-          40: "hsla(222, 38%, 40%, 1)",
-          50: "hsla(222, 38%, 50%, 1)",
-          60: "#748ABE",
-          80: "#BAC5DE",
-          85: "#C9D0E8",
-          90: "#DCE1F1",
-          95: "#EDF0F7",
+          light: "#FDF9F6",
+          "dark-main": "#1E0B01",
+          "dark-secondary": "#A75D25",
         },
         dark: "#051C29",
         cyan: {
@@ -48,5 +43,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/aspect-ratio")],
+  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/aspect-ratio"), require("@tailwindcss/typography")],
 };

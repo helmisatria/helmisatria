@@ -3,27 +3,23 @@ import { SEO } from "astro-seo";
 import LayoutScripts from "./LayoutScripts.astro";
 
 const seoDescription =
-  "Experienced fullstack javascript developer with 5+ years of experience in building web applications";
+  "Experienced full-stack software engineer with over 5 years of expertise in crafting scalable web applications with intuitive user interfaces";
 
 type Props = {
   title?: string;
   seoTitle?: string;
   description?: string;
   publishedDate?: string;
+  fontFamily?: string;
 };
 
 const {
-  title = "Helmi Satria - Fullstack Developer",
-  seoTitle = "Helmi Satria - Experienced Fullstack Developer",
+  title = "Helmi Satria - Full-stack Developer",
+  seoTitle = "Helmi Satria - Experienced Full-stack Developer",
   description = seoDescription,
+  fontFamily = "Figtree",
   publishedDate,
 } = Astro.props;
-
-const url = Astro.url.pathname;
-
-const inBlog = url.includes("/blog");
-
-const fontFamily = inBlog ? "Satoshi" : "Figtree";
 ---
 
 <!DOCTYPE html>
@@ -37,14 +33,11 @@ const fontFamily = inBlog ? "Satoshi" : "Figtree";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
 
-    {inBlog && <link rel="stylesheet" href="/fonts/Satoshi/satoshi.css" />}
-    {url === "/" && <link rel="stylesheet" href="/fonts/Figtree/figtree.css" />}
-
-    {inBlog && <script src="https://cdnjs.cloudflare.com/ajax/libs/balance-text/3.3.1/balancetext.min.js" />}
-
     {publishedDate && <meta property="article:published_time" content={publishedDate} />}
 
     <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <slot name="font" />
 
     <SEO
       title={title}

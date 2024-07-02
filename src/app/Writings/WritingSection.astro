@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 import WritingHeader from "./WritingHeader.astro";
 import WritingList from "./WritingList.astro";
@@ -9,7 +9,7 @@ import WritingList from "./WritingList.astro";
   <!-- Ournament at Top -->
   <Image
     format="webp"
-    class="pointer-events-none bg-1 opacity-0 absolute -left-4 -right-4 top-[-30px] z-0 mx-auto scale-[350%] sm:scale-150 xl:scale-105"
+    class="bg-1 pointer-events-none absolute -left-4 -right-4 top-[-30px] z-0 mx-auto scale-[350%] opacity-0 sm:scale-150 xl:scale-105"
     src="/images/work-experiences-ournament.png"
     width="1406"
     height="1052"
@@ -20,7 +20,7 @@ import WritingList from "./WritingList.astro";
   <!-- Ournament at Bottom -->
   <Image
     format="webp"
-    class="pointer-events-none bg-2 opacity-0 absolute inset-x-0 -bottom-5 z-0 mx-auto 2xl:scale-[120%]"
+    class="bg-2 pointer-events-none absolute inset-x-0 -bottom-5 z-0 mx-auto opacity-0 2xl:scale-[120%]"
     src="/images/writings-ournament-bottom.png"
     width="1406"
     height="1052"
@@ -52,16 +52,16 @@ import WritingList from "./WritingList.astro";
 </section>
 
 <script>
-  import {
-    animate,
-    inView,
-    glide,
-  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+  import { animate, inView, glide } from "motion";
 
-  const defaultEasing = [0.17, 0.55, 0.55, 1];
+  const defaultEasing = [0.17, 0.55, 0.55, 1] as const;
 
   inView("#latest-writings .title-highlight", (el) => {
-    animate("#latest-writings .title-highlight", { maxWidth: "100%" }, { duration: 0.4, delay: 0.3 });
+    animate(
+      "#latest-writings .title-highlight",
+      { maxWidth: "100%" },
+      { duration: 0.4, delay: 0.3, easing: defaultEasing }
+    );
     animate("#latest-writings .bg-1", { opacity: 1 }, { delay: 0.4 });
   });
 

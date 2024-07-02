@@ -1,0 +1,53 @@
+/* haskoy-400 - latin */
+@font-face {
+  font-family: "Haskoy";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/Haskoy/Haskoy-Regular.woff2") format("woff2");
+}
+
+/* haskoy-400italic - latin */
+@font-face {
+  font-family: "Haskoy";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/Haskoy/Haskoy-Italic.woff2") format("woff2");
+}
+
+/* haskoy-600 - latin */
+@font-face {
+  font-family: "Haskoy";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/fonts/Haskoy/Haskoy-SemiBold.woff2") format("woff2");
+}
+
+/* haskoy-600italic - latin */
+@font-face {
+  font-family: "Haskoy";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/fonts/Haskoy/Haskoy-SemiBoldItalic.woff2") format("woff2");
+}
+
+/* haskoy-700 - latin */
+@font-face {
+  font-family: "Haskoy";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/Haskoy/Haskoy-Bold.woff2") format("woff2");
+}
+
+/* haskoy-700italic - latin */
+@font-face {
+  font-family: "Haskoy";
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/Haskoy/Haskoy-BoldItalic.woff2") format("woff2");
+}

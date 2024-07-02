@@ -1,35 +1,9 @@
 ---
-import { getCollection } from "astro:content";
-import dayjs from "dayjs";
 import WritingListItem from "./WritingListItem.astro";
 
-// dayjs locale id
-import "dayjs/locale/id";
-dayjs.locale("id");
+import { getBlogPosts } from "../../lib/contentful";
 
-// dayjs timezone
-import timezone from "dayjs/plugin/timezone";
-dayjs.extend(timezone);
-dayjs.tz.setDefault("Asia/Jakarta");
-
-let blogs = await getCollection("blog");
-
-blogs.forEach((blogPost) => {
-  blogPost.data.publishDate = dayjs(blogPost.data.publishDate).format("YYYY-MM-DDTHH:mm:ss.000Z");
-});
-
-blogs = blogs.sort((a, b) => {
-  return dayjs(b.data.publishDate).unix() - dayjs(a.data.publishDate).unix();
-});
-
-const posts = blogs.map((blogPost) => {
-  return {
-    title: blogPost.data.title,
-    publishedAt: blogPost.data.publishDate,
-    tags: blogPost.data.tags,
-    slug: blogPost.data.slug,
-  };
-});
+const posts = await getBlogPosts();
 
 const articles = posts.slice(0, 4);
 ---

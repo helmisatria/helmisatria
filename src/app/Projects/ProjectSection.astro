@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 
 import ProjectNatanya from "./Items/ProjectNatanya.astro";
 import ProjectNatatoko from "./Items/ProjectNatatoko.astro";
@@ -49,13 +49,9 @@ import ProjectHeader from "./ProjectHeader.astro";
 </section>
 
 <script>
-  import {
-    animate,
-    glide,
-    inView,
-  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+  import { animate, glide, inView } from "motion";
 
-  const defaultEasing = [0.17, 0.55, 0.55, 1];
+  const defaultEasing = [0.17, 0.67, 0.83, 0.67] as const;
 
   const projects = ["natanya", "natatoko"];
 

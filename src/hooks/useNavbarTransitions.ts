@@ -19,13 +19,13 @@ export const useNavbarTransition = () => {
     : "0px 4px 10px 0px rgba(0, 0, 0, 0.03)";
 
   useEffect(() => {
-    const nav = document.querySelector("#nav");
-    const navPointer = nav.querySelector(".nav-pointer");
+    const nav = document.querySelector("#nav")!;
+    const navPointer = nav.querySelector(".nav-pointer")!;
 
     const animateOption = { duration: 0.5, easing: [0.17, 0.55, 0.55, 1] } satisfies AnimationOptionsWithOverrides;
 
     inView(
-      document.querySelector("#header"),
+      "#header",
       () => {
         animate(nav, { backgroundColor: defaultBackground, color: textDarkColor, opacity: 1 }, animateOption);
         makeActive(navPointer, null);
@@ -33,46 +33,59 @@ export const useNavbarTransition = () => {
       { amount: "all" }
     );
 
-    inView(document.querySelector("#projects"), () => {
+    inView("#projects", () => {
+      console.log("#projects");
       animate(nav, { backgroundColor: defaultBackground, color: textDarkColor, opacity: 1 }, animateOption);
     });
 
-    inView(document.querySelector("#project-natanya"), () => {
+    inView("#project-natanya", () => {
+      console.log("#project-natanya");
       animate(nav, { backgroundColor: defaultBackground, color: textDarkColor, opacity: 1 }, animateOption);
       makeActive(navPointer, document.querySelector('a[href="#projects"]'));
     });
 
-    inView(document.querySelector("#project-natatoko"), () => {
+    inView("#project-natatoko", () => {
+      console.log("#project-natatoko");
       animate(nav, { backgroundColor: darkRedNavbarBackground, color: textRedColor, opacity: 1 }, animateOption);
       makeActive(navPointer, document.querySelector('a[href="#projects"]'));
     });
 
-    inView(document.querySelector("#work-govtech"), () => {
+    inView("#work-govtech", () => {
+      console.log("#work-govtech");
       animate(nav, { backgroundColor: darkBlueNavbarBackground, color: textLightColor, opacity: 1 }, animateOption);
       makeActive(navPointer, document.querySelector('a[href="#work-experiences"]'));
     });
 
-    inView(document.querySelector("#work-buka"), () => {
+    inView("#work-buka", () => {
+      console.log("#work-buka");
       animate(nav, { backgroundColor: darkRedNavbarBackground, color: textLightColor, opacity: 1 }, animateOption);
       makeActive(navPointer, document.querySelector('a[href="#work-experiences"]'));
     });
 
-    inView(document.querySelector("#work-experiences"), () => {
+    inView("#work-experiences", () => {
+      console.log("#work-experiences");
       animate(nav, { backgroundColor: darkBlueNavbarBackground, color: textLightColor, opacity: 1 }, animateOption);
       makeActive(navPointer, document.querySelector('a[href="#work-experiences"]'));
     });
 
-    inView(document.querySelector("#latest-writings"), () => {
+    inView("#latest-writings", () => {
+      console.log("#latest-writings");
       animate(nav, { backgroundColor: darkBlueNavbarBackground, color: textLightColor, opacity: 1 }, animateOption);
       makeActive(navPointer, document.querySelector('a[href="#latest-writings"]'));
     });
 
-    inView(document.querySelector("#writing-list"), () => {
-      animate(nav, { backgroundColor: darkBlueNavbarBackground, color: textLightColor, opacity: 1 }, animateOption);
-      makeActive(navPointer, document.querySelector('a[href="#latest-writings"]'));
-    });
+    inView(
+      "#writing-list",
+      () => {
+        console.log("#writing-list");
+        animate(nav, { backgroundColor: darkBlueNavbarBackground, color: textLightColor, opacity: 1 }, animateOption);
+        makeActive(navPointer, document.querySelector('a[href="#latest-writings"]'));
+      },
+      { amount: 0.1 }
+    );
 
-    inView(document.querySelector("#contact-me"), () => {
+    inView("#contact-me", () => {
+      console.log("#contact-me");
       animate(nav, { opacity: 0 }, animateOption);
       makeActive(navPointer, document.querySelector('a[href="#contact-me"]'));
     });
@@ -81,7 +94,7 @@ export const useNavbarTransition = () => {
     let isAnimating = false;
 
     function cleanActive() {
-      nav.querySelectorAll(".active")?.forEach?.((tab: any) => tab.classList.remove("active"));
+      nav?.querySelectorAll(".active")?.forEach?.((tab: any) => tab.classList.remove("active"));
     }
 
     nav.querySelectorAll(".nav-item").forEach((tab: any) => {
@@ -104,7 +117,7 @@ export const useNavbarTransition = () => {
       }
 
       if (event !== "click") {
-        nav.querySelector(".active")?.classList?.remove("active");
+        nav?.querySelector(".active")?.classList?.remove("active");
         active.classList.add("active");
       }
 

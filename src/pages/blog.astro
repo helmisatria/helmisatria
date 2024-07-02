@@ -1,0 +1,71 @@
+---
+import { Image } from "astro:assets";
+import dayjs from "dayjs";
+import blogBgHeader from "../assets/blog/blog-bg-header.png";
+import Layout from "../layouts/Layout.astro";
+import { getBlogPosts } from "../lib/contentful";
+
+const posts = await getBlogPosts();
+---
+
+<Layout fontFamily="Haskoy" title="Blog - Helmi Satria" seoTitle="Helmi Satria Writings: Stories and Learnings">
+  <slot name="font">
+    <link rel="stylesheet" href="/fonts/Haskoy/haskoy.css" />
+  </slot>
+
+  <header class="relative py-16 text-blog-dark-main lg:py-24">
+    <div class="mx-auto max-w-[800px] px-6 xl:px-0">
+      <Image src={blogBgHeader} alt="" class="absolute left-0 top-0 z-10 h-full w-full object-cover" />
+      <div class="relative z-20">
+        <div class="inline-block rounded bg-blog-dark-secondary px-2 py-[2px] text-lg font-semibold text-blog-light">
+          Blog
+        </div>
+        <h1 class="mt-2 text-3xl font-bold leading-[110%] tracking-tighter lg:text-[40px]">
+          Helmi Satria Writings: Stories and Learnings
+        </h1>
+        <p class="mt-4 max-w-[548px] text-base tracking-tight lg:text-lg">
+          <a href="/" class="font-semibold underline">I'm a full-stack software engineer</a> crafting scalable, user-centric
+          web solutions. Expertise in modern frameworks with a focus on performance optimization and intuitive interfaces.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="overflow-hidden bg-blog-light pb-20 lg:pb-40">
+    <div class="mx-auto max-w-[800px] px-6 text-blog-dark-main xl:px-0">
+      <ul>
+        {
+          posts.map((post) => (
+            <li class="border-t border-[#F6E3D5] py-5">
+              <article>
+                <ul>
+                  {/* tags */}
+                  {post.tags.map((tag) => (
+                    <li class="inline-block rounded bg-blog-dark-secondary/15 px-1 py-[2px] text-xs font-semibold capitalize text-blog-dark-secondary">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+                <a href={`/blog/${post.fields.slug}`} class="flex justify-between space-x-3 lg:space-x-0">
+                  <div>
+                    <h2 class="mt-2 text-xl font-semibold leading-120 tracking-tight">{post.title}</h2>
+                    <p class="mt-2 line-clamp-2 max-w-[420px] text-sm tracking-tight">{post.subheadline}</p>
+                  </div>
+                  <p class="mt-2 text-right text-sm tracking-tight">
+                    {dayjs(post.fields.publishDate).format("MMMM D, YYYY")}
+                  </p>
+                </a>
+              </article>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  body {
+    @apply bg-blog-light;
+  }
+</style>

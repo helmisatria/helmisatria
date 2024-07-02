@@ -1,25 +1,188 @@
 ---
-import { getCollection, getEntry } from "astro:content";
-import BlogLayoutDetail from "../../layouts/LayoutBlogDetail.astro";
+import dayjs from "dayjs";
+import Layout from "../../layouts/Layout.astro";
+import { getBlogDetail, getBlogPosts } from "../../lib/contentful";
+import { Image } from "astro:assets";
+import blogBgHeader from "../../assets/blog/blog-bg-header.png";
 
 const { slug } = Astro.params;
 
 export async function getStaticPaths() {
-  const blogs = await getCollection("blog");
-  const paths = blogs.map((entry) => ({
+  const posts = await getBlogPosts();
+  const paths = posts.map((entry) => ({
     params: { slug: entry.slug },
   }));
 
   return paths;
 }
 
-export const prerender = true;
+const blog = await getBlogDetail(slug);
 
-const blog = await getEntry("blog", slug);
+type Props = {
+  blog: {
+    title: string;
+    subheadline: string;
+    content: string;
+    publishDate: string;
+  };
+};
 
-if (blog === undefined) {
-  return Astro.redirect(`/blog?404=${Astro.url}`);
-}
+const articlePublishedDate = dayjs(blog.publishDate).format("YYYY-MM-DD");
 ---
 
-<BlogLayoutDetail blog={blog} />
+<Layout
+  fontFamily="Haskoy"
+  title={blog.title}
+  seoTitle={blog.title}
+  description={blog.subheadline}
+  publishedDate={articlePublishedDate}
+>
+  <slot name="font">
+    <link rel="stylesheet" href="/fonts/Haskoy/haskoy.css" />
+  </slot>
+
+  <header class="relative pb-10 pt-14 text-blog-dark-main lg:pt-20">
+    <div class="mx-auto max-w-[800px] px-6 xl:px-0">
+      <Image src={blogBgHeader} alt="" class="absolute left-0 top-0 z-10 h-full w-full object-cover" />
+      <div class="relative z-20">
+        <a href="/blog" class="inline-flex items-center space-x-1 text-sm text-blog-dark-main/60">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M10 12L6 8L10 4"
+              stroke="#1E0B01"
+              stroke-opacity="0.6"
+              stroke-width="1.33333"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+          <span>Back to blog</span>
+        </a>
+
+        <h1 class="mt-8 text-balance text-4xl font-bold tracking-tighter lg:mt-14">{blog.title}</h1>
+
+        <!-- Last updated on -->
+        <p class="mt-2 max-w-[548px] text-base tracking-tight text-blog-dark-main/60 lg:text-lg">
+          Last updated on {dayjs(blog.publishDate).format("MMMM D, YYYY")}
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main
+    class="prose mx-auto max-w-[800px] overflow-hidden px-6 pb-32 pt-4 text-blog-dark-main lg:pb-60 lg:pt-8 xl:px-0"
+  >
+    <article class="text-base lg:text-lg">
+      <p class="text-base lg:text-lg">{blog.subheadline}</p>
+      <Fragment set:html={blog.content} />
+    </article>
+  </main>
+</Layout>
+
+<style is:global>
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-semibold !text-blog-dark-main/90;
+  }
+
+  p {
+    @apply mb-4 !text-blog-dark-main;
+  }
+
+  article a {
+    @apply text-blog-dark-secondary !important;
+  }
+
+  article ul li p,
+  article ol li p {
+    margin: 0 !important;
+  }
+</style>
+
+<style is:global>
+  /* Styles for Shiki-highlighted code blocks */
+  body {
+    @apply bg-blog-light;
+  }
+
+  .shiki {
+    margin: 1em 0;
+    padding: 1.5em;
+    border-radius: 5px;
+    overflow: auto;
+    position: relative;
+  }
+
+  .shiki.houston {
+    margin: 2px;
+    display: inline;
+    user-select: auto;
+    padding: 2px 4px;
+    border-radius: 5px;
+  }
+
+  .shiki-inline::before,
+  .shiki-inline::after {
+    content: "";
+  }
+
+  p + pre {
+    display: inline;
+  }
+
+  p:has(+ pre) {
+    display: inline;
+  }
+
+  .shiki code {
+    font-family: "Fira Code", monospace;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Style for the copy button */
+  .copy-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .copy-button:hover {
+    opacity: 1;
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".code-block-wrapper").forEach((wrapper) => {
+      const copyButton = wrapper.querySelector(".copy-button");
+      const codeBlock = wrapper.querySelector("code");
+
+      copyButton.addEventListener("click", () => {
+        const code = codeBlock.textContent;
+        navigator.clipboard
+          .writeText(code)
+          .then(() => {
+            copyButton.textContent = "Copied!";
+            setTimeout(() => {
+              copyButton.textContent = "Copy";
+            }, 2000);
+          })
+          .catch((err) => {
+            console.error("Failed to copy text: ", err);
+          });
+      });
+    });
+  });
+</script>
