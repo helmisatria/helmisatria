@@ -55,12 +55,16 @@ import Wave from "../../components/icons/Wave.astro";
 
       <!-- description -->
       <p
-        class="mt-12 text-xl leading-120 text-cyan-dark mob:text-2xl sm:mt-20 md:text-3xl md:!leading-140 xl:mt-24 xl:text-4xl 2xl:mt-[8.5rem]"
+        class="mt-12 max-w-[340px] text-xl leading-120 text-cyan-dark mob:text-2xl sm:mt-20 md:max-w-full md:text-3xl md:!leading-140 xl:mt-24 xl:text-4xl 2xl:mt-[8.5rem]"
       >
-        <span class="font-semibold">6 years of experience</span> in using <br class="block md:hidden" /> node.js and <span
-          class="relative"
+        <span class="font-semibold">6 years of experience</span> in using <br class="block md:hidden" /> node.js<span
+          class="hidden lg:inline"
         >
-          vue.js
+          and
+        </span>
+        <span class="inline lg:hidden">,</span>
+        <span class="relative">
+          vue.js <span class="inline lg:hidden">/ react.js</span>
           <span
             class="absolute inset-0 left-2 top-12 hidden min-w-[24rem] text-2xl tracking-tight lg:inline-block xl:left-7"
           >
