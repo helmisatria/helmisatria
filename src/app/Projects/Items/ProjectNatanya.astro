@@ -9,11 +9,7 @@ import NatanyaIcon from "../Natanya/IconNatanya.astro";
 import ProjectSlider from "../ProjectSlider.astro";
 ---
 
-<article
-  style={{ transform: "perspective(75em) rotateX(18deg)" }}
-  id="project-natanya"
-  class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 sm:rounded-3xl"
->
+<article id="project-natanya" class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 sm:rounded-3xl">
   <!-- Outnament Lines (Top) -->
   <Image
     format="webp"
@@ -33,7 +29,7 @@ import ProjectSlider from "../ProjectSlider.astro";
     width="1000"
     height="1000"
     alt=""
-    class="pointer-events-none absolute right-0 bottom-0 z-0 min-w-[500px] sm:min-w-[1000px]"
+    class="pointer-events-none absolute bottom-0 right-0 z-0 min-w-[500px] sm:min-w-[1000px]"
   />
 
   <div class="relative z-10 px-5 sm:px-10 lg:px-16">
@@ -73,7 +69,7 @@ import ProjectSlider from "../ProjectSlider.astro";
       during a live event, similar to using Slido.
     </p>
 
-    <div class="mt-10 mb-10 sm:mt-[4.4rem] sm:mb-14">
+    <div class="mb-10 mt-10 sm:mb-14 sm:mt-[4.4rem]">
       <ButtonLiveProduction name="natanya.app" link="https://natanya.app" />
     </div>
 
@@ -125,8 +121,8 @@ import ProjectSlider from "../ProjectSlider.astro";
     </div>
 
     <div class="mt-20">
-      <h4 class="text-2xl font-semibold leading-140 text-dark sm:text-[32px]">Featured technologies used</h4>
-      <div class="mt-6 -ml-2 flex flex-wrap gap-3 sm:ml-0">
+      <h4 class="text-2xl font-semibold leading-140 text-dark sm:text-[32px]">Technologies used</h4>
+      <div class="-ml-2 mt-6 flex flex-wrap gap-3 sm:ml-0">
         {
           [<IconNext />, <IconFirebase />, <IconReact />].map((icon) => (
             <div class="-ml-2 w-20 scale-[90%] sm:ml-0 sm:min-h-[100px] sm:min-w-[100px] sm:scale-100">{icon}</div>
@@ -178,7 +174,9 @@ import ProjectSlider from "../ProjectSlider.astro";
     user-select: none;
     position: absolute;
     border-radius: inherit;
-    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }

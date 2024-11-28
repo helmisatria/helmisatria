@@ -18,7 +18,7 @@ const tag = tags?.[0] ?? "";
   class={tw(
     "writing-list-item",
     "relative h-[150px] overflow-hidden rounded-2xl border border-cyan-600 border-opacity-10 sm:h-[230px] lg:h-[230px]",
-    "hover:shadow-xl"
+    "hover:shadow-xl",
   )}
 >
   <article class="h-full">
@@ -35,13 +35,15 @@ const tag = tags?.[0] ?? "";
 
 <style>
   li {
-    background: radial-gradient(83.58% 466.3% at 88.14% 12.93%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+    background:
+      radial-gradient(83.58% 466.3% at 88.14% 12.93%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
       #0f1f29;
   }
 
   li:hover {
-    background: radial-gradient(83.58% 466.3% at 88.14% 12.93%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
+    background:
+      radial-gradient(83.58% 466.3% at 88.14% 12.93%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
       #0d202c;
   }
@@ -69,7 +71,9 @@ const tag = tags?.[0] ?? "";
     user-select: none;
     position: absolute;
     border-radius: inherit;
-    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }

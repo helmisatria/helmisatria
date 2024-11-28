@@ -21,8 +21,7 @@ const responsibilities = [
     loading="lazy"
     width={800}
     height={1100}
-    aspectRatio={1}
-    class="pointer-events-none absolute right-0 bottom-0 z-0"
+    class="pointer-events-none absolute bottom-0 right-0 z-0"
     src="/images/work-ournament-red.png"
     alt=""
   />
@@ -120,7 +119,9 @@ const responsibilities = [
     user-select: none;
     position: absolute;
     border-radius: inherit;
-    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }
@@ -147,7 +148,9 @@ const responsibilities = [
     user-select: none;
     position: absolute;
     border-radius: inherit;
-    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }

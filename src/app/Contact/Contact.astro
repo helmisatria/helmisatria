@@ -105,16 +105,16 @@ import { Image } from "astro:assets";
       animate(
         item,
         { opacity: 1, transform: "translateY(0)" },
-        { duration: 0.4, delay: 0.1 + i / 2, easing: defaultEasing }
+        { duration: 0.4, delay: 0.1 + i / 2, ease: defaultEasing },
       );
     });
   });
 
   inView("#contact-me", (el) => {
-    animate("#contact-bg", { opacity: 1 }, { duration: 0.4, delay: 2.2, easing: defaultEasing });
-    animate("#contact-profile", { opacity: 1 }, { duration: 0.4, delay: 1.7, easing: defaultEasing });
-    animate("#contact-me", { opacity: 1 }, { duration: 0.4, delay: 2.2, easing: defaultEasing });
-    animate("#footer", { opacity: 1 }, { duration: 0.4, delay: 2.2, easing: defaultEasing });
+    animate("#contact-bg", { opacity: 1 }, { duration: 0.4, delay: 2.2, ease: defaultEasing });
+    animate("#contact-profile", { opacity: 1 }, { duration: 0.4, delay: 1.7, ease: defaultEasing });
+    animate("#contact-me", { opacity: 1 }, { duration: 0.4, delay: 2.2, ease: defaultEasing });
+    animate("#footer", { opacity: 1 }, { duration: 0.4, delay: 2.2, ease: defaultEasing });
   });
 </script>
 
@@ -170,7 +170,9 @@ import { Image } from "astro:assets";
     user-select: none;
     position: absolute;
     border-radius: inherit;
-    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }

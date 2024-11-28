@@ -1,5 +1,5 @@
 import { useHover } from "@uidotdev/usehooks";
-import { animate, spring, type AnimationOptionsWithOverrides } from "motion";
+import { animate, spring } from "motion";
 import { useEffect } from "react";
 import { inView } from "../utils/in-view";
 
@@ -22,7 +22,7 @@ export const useNavbarTransition = () => {
     const nav = document.querySelector("#nav")!;
     const navPointer = nav.querySelector(".nav-pointer")!;
 
-    const animateOption = { duration: 0.5, easing: [0.17, 0.55, 0.55, 1] } satisfies AnimationOptionsWithOverrides;
+    const animateOption = { duration: 0.5, easing: [0.17, 0.55, 0.55, 1] };
 
     inView(
       "#header",
@@ -30,7 +30,7 @@ export const useNavbarTransition = () => {
         animate(nav, { backgroundColor: defaultBackground, color: textDarkColor, opacity: 1 }, animateOption);
         makeActive(navPointer, null);
       },
-      { amount: "all" }
+      { amount: "all" },
     );
 
     inView("#projects", () => {
@@ -38,8 +38,8 @@ export const useNavbarTransition = () => {
       animate(nav, { backgroundColor: defaultBackground, color: textDarkColor, opacity: 1 }, animateOption);
     });
 
-    inView("#project-natanya", () => {
-      console.log("#project-natanya");
+    inView("#project-natauang", () => {
+      console.log("#project-natauang");
       animate(nav, { backgroundColor: defaultBackground, color: textDarkColor, opacity: 1 }, animateOption);
       makeActive(navPointer, document.querySelector('a[href="#projects"]'));
     });
@@ -81,7 +81,7 @@ export const useNavbarTransition = () => {
         animate(nav, { backgroundColor: darkBlueNavbarBackground, color: textLightColor, opacity: 1 }, animateOption);
         makeActive(navPointer, document.querySelector('a[href="#latest-writings"]'));
       },
-      { amount: 0.1 }
+      { amount: 0.1 },
     );
 
     inView("#contact-me", () => {
@@ -122,16 +122,13 @@ export const useNavbarTransition = () => {
       }
 
       let { width } = active.getBoundingClientRect();
-      const animation = !toAnimate
+      const animationOptions = !toAnimate
         ? {}
         : {
-            easing: spring({
-              damping: 20,
-              stiffness: 300,
-            }),
+            easing: spring({ damping: 20, stiffness: 300, keyframes: [] }),
           };
 
-      const { finished } = animate(
+      const animation = animate(
         pointer,
         {
           opacity: 1,
@@ -140,10 +137,10 @@ export const useNavbarTransition = () => {
           top: `${active.offsetTop}px`,
           left: `${active.offsetLeft}px`,
         },
-        animation
+        animationOptions,
       );
 
-      finished.then(() => {
+      animation.then(() => {
         isAnimating = false;
       });
     }

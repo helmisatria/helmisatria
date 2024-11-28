@@ -16,7 +16,7 @@
       <span
         id="title-highlight-project"
         style={{ width: 0 }}
-        class="title-highlight absolute left-0 -bottom-1 z-0 hidden h-[15px] w-[250px] max-[350px]:w-[220px] min-[375px]:block sm:bottom-2 sm:w-[320px] md:bottom-1 lg:h-[20px] lg:w-[600px]"
+        class="title-highlight absolute -bottom-1 left-0 z-0 hidden h-[15px] w-[250px] max-[350px]:w-[220px] min-[375px]:block sm:bottom-2 sm:w-[320px] md:bottom-1 lg:h-[20px] lg:w-[600px]"
       >
       </span>
     </span>
@@ -29,28 +29,26 @@
 </div>
 
 <script>
-  import {
-    animate,
-    inView,
-  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
+  import { animate, inView } from "motion";
 
-  const defaultEasing = [0.17, 0.55, 0.55, 1];
+  const defaultEasing = [0.17, 0.55, 0.55, 1] as const;
 
   inView("#title-highlighed-projects", () => {
-    animate("#title-highlight-project", { opacity: 1, width: "100%" }, { easing: defaultEasing, delay: 0.3 });
+    animate("#title-highlight-project", { opacity: 1, width: "100%" }, { ease: defaultEasing, delay: 0.3 });
     animate(
       "#title-highlighed-projects-rocket",
       { opacity: 1, transform: "translate(0, 0)" },
-      { duration: 0.8, easing: defaultEasing }
+      { duration: 0.8, ease: defaultEasing },
     );
-    animate("#mesh-project-section-top", { opacity: 1 }, { easing: defaultEasing, delay: 0.5 });
-    animate("#mesh-project-section-bottom", { opacity: 1 }, { easing: defaultEasing, delay: 0.5 });
+    animate("#mesh-project-section-top", { opacity: 1 }, { ease: defaultEasing, delay: 0.5 });
+    animate("#mesh-project-section-bottom", { opacity: 1 }, { ease: defaultEasing, delay: 0.5 });
   });
 </script>
 
 <style>
   .title-highlight {
-    background: radial-gradient(75.3% 65106.57% at 1.06% -86.9%, rgba(12, 80, 105, 0.2) 0%, rgba(12, 74, 110, 0) 100%)
+    background:
+      radial-gradient(75.3% 65106.57% at 1.06% -86.9%, rgba(12, 80, 105, 0.2) 0%, rgba(12, 74, 110, 0) 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
       linear-gradient(89.96deg, #91dafc -0.07%, rgba(145, 218, 252, 0) 113.39%);
     transform: rotate(-1.13deg);
@@ -58,7 +56,8 @@
 
   @media (max-width: 640px) {
     .title-highlight {
-      background: radial-gradient(75.3% 65106.57% at 1.06% -86.9%, rgba(12, 80, 105, 0.2) 0%, rgba(12, 74, 110, 0) 100%)
+      background:
+        radial-gradient(75.3% 65106.57% at 1.06% -86.9%, rgba(12, 80, 105, 0.2) 0%, rgba(12, 74, 110, 0) 100%)
           /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
         linear-gradient(89.96deg, #beebff -0.07%, rgba(145, 218, 252, 0) 113.39%);
       transform: rotate(-1.13deg);
@@ -74,7 +73,8 @@
       width: 100%;
       height: 450%;
       opacity: 40%;
-      background: radial-gradient(78.47% 16.24% at 0% 39.21%, rgba(221, 214, 254, 0.44) 0%, rgba(217, 217, 217, 0) 100%)
+      background:
+        radial-gradient(78.47% 16.24% at 0% 39.21%, rgba(221, 214, 254, 0.44) 0%, rgba(217, 217, 217, 0) 100%)
           /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
         radial-gradient(77.5% 23.35% at -3.06% 47.79%, rgba(14, 165, 233, 0.294) 0%, rgba(217, 217, 217, 0) 100%)
           /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;

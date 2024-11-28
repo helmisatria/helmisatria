@@ -36,7 +36,7 @@ import ProjectSlider from "../ProjectSlider.astro";
     width="1000"
     height="1000"
     alt=""
-    class="pointer-events-none absolute right-0 bottom-0 z-0 min-w-[500px] sm:min-w-[1000px]"
+    class="pointer-events-none absolute bottom-0 right-0 z-0 min-w-[500px] sm:min-w-[1000px]"
   />
 
   <div class="relative z-10 px-5 sm:px-10 lg:px-16">
@@ -80,7 +80,7 @@ import ProjectSlider from "../ProjectSlider.astro";
       Natatoko <strong>makes sure the store can be up and running in a matter of minutes.</strong>
     </p>
 
-    <div class="mt-10 mb-10 sm:mt-[4.4rem] sm:mb-14">
+    <div class="mb-10 mt-10 sm:mb-14 sm:mt-[4.4rem]">
       <ButtonLiveProduction name="natatoko.com" link="https://natatoko.com" />
     </div>
 
@@ -109,8 +109,8 @@ import ProjectSlider from "../ProjectSlider.astro";
     </div>
 
     <div class="mt-20">
-      <h4 class="text-2xl font-semibold leading-140 text-dark sm:text-[32px]">Featured technologies used</h4>
-      <div class="mt-6 -ml-2 flex flex-wrap gap-4 gap-y-0 sm:ml-0 sm:gap-y-4">
+      <h4 class="text-2xl font-semibold leading-140 text-dark sm:text-[32px]">Technologies used</h4>
+      <div class="-ml-2 mt-6 flex flex-wrap gap-4 gap-y-0 sm:ml-0 sm:gap-y-4">
         {
           [<IconHasura />, <IconNuxt />, <IconVue />, <IconCloudflare />, <IconDokku />, <IconSentry />].map((icon) => (
             <div class="-ml-2 w-20 scale-[80%] sm:ml-0 sm:min-h-[100px] sm:min-w-[100px] sm:scale-100">{icon}</div>
@@ -127,7 +127,10 @@ import ProjectSlider from "../ProjectSlider.astro";
   article {
     background: linear-gradient(142.21deg, rgba(231, 80, 117, 0.1) -0.37%, rgba(236, 254, 255, 0) 66.76%),
       linear-gradient(318.59deg, rgba(232, 85, 121, 0.2) 3.78%, rgba(236, 254, 255, 0) 47.39%), #ffffff;
-    box-shadow: 15px 24px 17px rgba(0, 0, 0, 0.01), 7px 11px 13px rgba(0, 0, 0, 0.02), 2px 3px 7px rgba(0, 0, 0, 0.02),
+    box-shadow:
+      15px 24px 17px rgba(0, 0, 0, 0.01),
+      7px 11px 13px rgba(0, 0, 0, 0.02),
+      2px 3px 7px rgba(0, 0, 0, 0.02),
       0px 0px 0px rgba(0, 0, 0, 0.02);
   }
 
@@ -169,7 +172,9 @@ import ProjectSlider from "../ProjectSlider.astro";
     user-select: none;
     position: absolute;
     border-radius: inherit;
-    -webkit-mask: linear-gradient(black, black) content-box content-box, linear-gradient(black, black);
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
   }

@@ -44,8 +44,8 @@ import Layout from "../layouts/Layout.astro";
 
     setTimeout(() => {
       inView("body", () => {
-        animate("#hero-ournament", { opacity: 1 }, { easing: [0.17, 0.55, 0.55, 1] });
-        animate("#nav", { opacity: 1, transform: "translateY(0%)" }, { easing: [0.17, 0.55, 0.55, 1], delay: 0.6 });
+        animate("#hero-ournament", { opacity: 1 }, { ease: [0.17, 0.55, 0.55, 1] });
+        animate("#nav", { opacity: 1, transform: "translateY(0%)" }, { ease: [0.17, 0.55, 0.55, 1], delay: 0.6 });
       });
     }, 500);
   </script>

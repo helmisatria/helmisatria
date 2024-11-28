@@ -5,19 +5,20 @@ import WaveButtonLiveProduction from "./WaveButtonLiveProduction.astro";
 export type Props = {
   name: string;
   link: string;
+  id?: string;
 };
 
-const { link, name } = Astro.props;
-const id = `btn-live-in-production-${name.replace(/\./g, "-").toLowerCase()}`;
+const { link, name, id } = Astro.props;
+const btnId = id ?? `btn-live-in-production-${name.replace(/\./g, "-").toLowerCase()}`;
 ---
 
 <a
-  id={id}
+  id={btnId}
   href={link}
   target="_blank"
   class={tw(
-    "button-live-production relative inline-flex w-full items-start justify-between rounded-2xl px-5 py-5 pb-8",
-    "sm:px-8 sm:py-6 sm:w-[495px]"
+    "button-live-production relative inline-flex items-start justify-between rounded-2xl px-5 py-5 pb-8",
+    "sm:px-8 sm:py-6 w-full !pr-24 sm:w-auto",
   )}
   style="background: radial-gradient(94.57% 1117.67% at 2.02% 94.57%, rgba(34, 211, 238, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #123E4F;"
 >
@@ -40,16 +41,9 @@ const id = `btn-live-in-production-${name.replace(/\./g, "-").toLowerCase()}`;
     </span>
   </div>
 
-  <div
-    id={`${id}-arrow-wrapper`}
-    class="rounded-lg bg-cyan-900 p-3"
-    style={{
-      opacity: 0,
-    }}
-  >
+  <div id={`${btnId}-arrow-wrapper`} class="absolute right-5 top-5 rounded-lg bg-cyan-900 p-3" style={{ opacity: 0 }}>
     <svg
-      style={{ opacity: 0, transform: "translate(-150%, 150%)" }}
-      id={`${id}-arrow`}
+      id={`${btnId}-arrow`}
       width="17"
       height="18"
       viewBox="0 0 17 18"
@@ -68,8 +62,12 @@ const id = `btn-live-in-production-${name.replace(/\./g, "-").toLowerCase()}`;
 
 <style>
   .button-live-production {
-    box-shadow: 22px 17px 11px rgba(0, 0, 0, 0.01), 13px 10px 9px rgba(0, 0, 0, 0.05), 6px 4px 7px rgba(0, 0, 0, 0.09),
-      1px 1px 4px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow:
+      22px 17px 11px rgba(0, 0, 0, 0.01),
+      13px 10px 9px rgba(0, 0, 0, 0.05),
+      6px 4px 7px rgba(0, 0, 0, 0.09),
+      1px 1px 4px rgba(0, 0, 0, 0.1),
+      0px 0px 0px rgba(0, 0, 0, 0.1);
     border: 1.5px solid transparent;
   }
 </style>

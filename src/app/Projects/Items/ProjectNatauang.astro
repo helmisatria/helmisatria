@@ -1,0 +1,178 @@
+---
+import { Image } from "astro:assets";
+
+import ButtonLiveProduction from "../../../components/ButtonLiveProduction/ButtonLiveProduction.astro";
+import IconReact from "../Icons/IconReact.astro";
+import ProjectSlider from "../ProjectSlider.astro";
+
+import bgNatauang from "@/assets/images/bg-natauang.png";
+import iconCouchDB from "../Icons/icon-couchdb.png";
+import iconNatauang from "../Icons/icon-natauang.png";
+import iconPWA from "../Icons/icon-pwa.png";
+import iconTailwind from "../Icons/icon-tailwind.png";
+import iconVite from "../Icons/icon-vite.png";
+---
+
+<article
+  id="project-natauang"
+  class="relative z-10 mx-auto max-w-[1244px] overflow-hidden py-20 text-dark sm:rounded-3xl"
+>
+  <!-- Outnament Lines (Top) -->
+  <Image
+    format="webp"
+    src="/images/project-ournament-lines.png"
+    width="1000"
+    height="1000"
+    loading="lazy"
+    alt=""
+    class="pointer-events-none absolute left-0 top-0 z-0 min-w-[600px] sm:min-w-[1000px]"
+  />
+
+  <!-- Outnament Lines (Bottom) -->
+  <Image
+    format="webp"
+    src="/images/project-ournament-lines-btm.png"
+    loading="lazy"
+    width="1000"
+    height="1000"
+    alt=""
+    class="pointer-events-none absolute bottom-0 right-0 z-0 min-w-[500px] sm:min-w-[1000px]"
+  />
+
+  <div class="absolute left-[2px] top-[2px] h-[160px] w-full rounded-2xl bg-gradient-to-b"></div>
+
+  <div class="relative z-10 px-5 sm:px-10 lg:px-16">
+    <h3 class="sr-only">Natauang</h3>
+    <div class="relative w-[240px]">
+      <img src={iconNatauang.src} alt="Natauang" height="54" width="240" />
+    </div>
+
+    <h4 class="sr-only">About Natauang</h4>
+
+    <p class="mt-10 text-lg !leading-150 sm:text-2xl">
+      <span class="font-semibold">Natauang</span> - an easy-to-use expense tracker that <strong
+        >helps you record spending in under 10 seconds</strong
+      >. Track expenses on any device, analyze your spending patterns, and stay on top of your finances – all through
+      your web browser.
+    </p>
+  </div>
+
+  <div class="portfolio-images">
+    <ProjectSlider
+      project="natauang"
+      images={[
+        { url: "/images/projects/natauang/1@natauang.png", alt: "Natauang" },
+        { url: "/images/projects/natauang/2@natauang.png", alt: "Natauang" },
+        { url: "/images/projects/natauang/3@natauang.png", alt: "Natauang" },
+        { url: "/images/projects/natauang/4@natauang.png", alt: "Natauang" },
+        { url: "/images/projects/natauang/5@natauang.png", alt: "Natauang" },
+        { url: "/images/projects/natauang/6@natauang.png", alt: "Natauang" },
+      ]}
+    />
+  </div>
+
+  <div class="relative z-10 px-5 sm:px-10 lg:px-16">
+    <p class="text-lg !leading-150 sm:text-2xl">
+      Most expense trackers make it a chore to record your spending.
+      <span class="font-semibold">Natauang makes it simple.</span>
+      <br />Just open your browser, record expenses in 10 seconds, and get insights into your spending patterns
+      instantly.
+      <br />
+      <br />
+      What makes Natauang different? It works offline, syncs across all devices, and requires no app to download. Just visit
+      <a href="https://web.natauang.com" class="font-semibold">web.natauang.com</a> and start tracking. Plus, your data stays
+      in sync with Google sign-in, so you can track expenses from any device, anytime – even without internet.
+    </p>
+
+    <div class="mb-10 mt-10 sm:mb-14 sm:mt-[4.4rem]">
+      <ButtonLiveProduction
+        id="btn-live-in-production-natauang"
+        name="web.natauang.com"
+        link="https://web.natauang.com"
+      />
+    </div>
+
+    <div class="mt-20">
+      <h4 class="text-2xl font-semibold leading-140 sm:text-[32px]">Technologies used</h4>
+      <div class="-ml-2 mt-6 flex flex-wrap gap-3 sm:ml-0">
+        {
+          [
+            <IconReact />,
+            <img src={iconVite.src} alt="Vite" class="h-[80px] w-[80px] object-contain" title="Vite" />,
+            <img src={iconTailwind.src} alt="Tailwind" class="h-[80px] w-[80px] object-contain" title="Tailwind" />,
+            <img src={iconPWA.src} alt="PWA" class="h-[80px] w-[80px] object-contain" title="PWA" />,
+            <img src={iconCouchDB.src} alt="CouchDB" class="h-[80px] w-[80px] object-contain" title="CouchDB" />,
+          ].map((icon) => (
+            <div class="-ml-2 flex w-20 scale-[90%] items-center justify-center sm:ml-0 sm:min-h-[100px] sm:min-w-[100px] sm:scale-100">
+              {icon}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="mt-14"></div>
+  </div>
+
+  <img src={bgNatauang.src} alt="" class="absolute right-[2px] top-[2px] w-full rotate-180 opacity-10" />
+</article>
+
+<style>
+  article {
+    background: linear-gradient(146.63deg, rgba(41, 169, 224, 0.1) 1.32%, rgba(236, 254, 255, 0) 66%),
+      linear-gradient(325.76deg, rgba(41, 169, 224, 0.2) 3.68%, rgba(236, 254, 255, 0) 66.89%), #ffffff;
+
+    box-shadow:
+      15px 24px 17px rgba(0, 0, 0, 0.01),
+      7px 11px 13px rgba(0, 0, 0, 0.02),
+      2px 3px 7px rgba(0, 0, 0, 0.02),
+      0px 0px 0px rgba(0, 0, 0, 0.02);
+  }
+
+  @media (max-width: 640px) {
+    article {
+      background: linear-gradient(90deg, rgba(12, 129, 192, 0.1) 0%, rgba(236, 254, 255, 0) 66.89%);
+    }
+  }
+
+  article::before {
+    --something: 2px !important;
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    padding: var(--something);
+    opacity: var(--something-opa);
+    background: linear-gradient(
+        135deg,
+        #031d2baa 5%,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent,
+        transparent
+      ),
+      linear-gradient(300deg, #031d2b 10%, transparent, transparent, transparent, transparent, transparent);
+    content: "";
+    pointer-events: none;
+    user-select: none;
+    position: absolute;
+    border-radius: inherit;
+    -webkit-mask:
+      linear-gradient(black, black) content-box content-box,
+      linear-gradient(black, black);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  @media (max-width: 640px) {
+    article::before {
+      padding: 0;
+      padding-top: 2px !important;
+      background: linear-gradient(90deg, #0284c7 0%, #ffffff 66.89%);
+    }
+  }
+</style>

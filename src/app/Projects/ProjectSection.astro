@@ -4,6 +4,7 @@ import { Image } from "astro:assets";
 import ProjectNatanya from "./Items/ProjectNatanya.astro";
 import ProjectNatatoko from "./Items/ProjectNatatoko.astro";
 import ProjectHeader from "./ProjectHeader.astro";
+import ProjectNatauang from "./Items/ProjectNatauang.astro";
 ---
 
 <section class="relative pt-16 lg:pt-32 xl:pt-36 2xl:pt-[11rem]" id="projects">
@@ -17,14 +18,19 @@ import ProjectHeader from "./ProjectHeader.astro";
     width="1400"
     height="1089"
     style="opacity: 0;"
-    class="aspect-auto absolute top-[-150px] right-0 hidden min-w-[554px] sm:top-[-150px] sm:left-[550px] sm:block lg:min-w-[1400px]"
+    class="aspect-auto absolute right-0 top-[-150px] hidden min-w-[554px] sm:left-[550px] sm:top-[-150px] sm:block lg:min-w-[1400px]"
   />
 
   <ProjectHeader />
 
   <div class="mt-20 px-0 sm:px-8 md:px-12 lg:mt-24 xl:mt-32">
-    <ProjectNatanya />
+    <ProjectNatauang />
   </div>
+
+  <!-- 
+  <div class="mt-20 px-0 sm:px-8 md:px-12 lg:mt-24 xl:mt-32">
+    <ProjectNatanya />
+  </div> -->
 
   <div class="relative">
     <Image
@@ -36,7 +42,7 @@ import ProjectHeader from "./ProjectHeader.astro";
       width="1400"
       height="1089"
       style="opacity: 0;"
-      class="aspect-auto absolute top-[-700px] left-[-250px] hidden w-auto sm:block sm:min-h-[1400px]"
+      class="aspect-auto absolute left-[-250px] top-[-700px] hidden w-auto sm:block sm:min-h-[1400px]"
     />
   </div>
 
@@ -49,24 +55,31 @@ import ProjectHeader from "./ProjectHeader.astro";
 </section>
 
 <script>
-  import { animate, glide, inView } from "motion";
+  import { animate, inView, spring, stagger } from "motion";
 
   const defaultEasing = [0.17, 0.67, 0.83, 0.67] as const;
 
-  const projects = ["natanya", "natatoko"];
+  const projects = ["natauang", "natatoko"];
 
   projects.forEach((project) => {
     inView(`#project-${project}`, () => {
-      animate(`#project-${project}`, { transform: "rotateX(0)" }, { duration: 0.7, easing: defaultEasing });
+      animate(`#project-${project}`, { y: [50, 0], opacity: [0, 1] }, { ease: "easeInOut", duration: 0.3 });
+    });
+
+    inView(`#project-${project}-slider`, () => {
       animate(
         `.project-slider-item-${project}`,
-        { x: 0 },
-        { duration: 1, easing: glide({ velocity: -500, max: 10, min: -10 }) }
+        { x: [50, 0], opacity: [0, 1] },
+        { ease: "easeInOut", duration: 0.5, delay: stagger(0.1) },
       );
     });
   });
 
-  const buttons = ["#btn-live-in-production-natatoko-com", "#btn-live-in-production-natanya-app"];
+  const buttons = [
+    "#btn-live-in-production-natauang",
+    "#btn-live-in-production-natatoko-com",
+    "#btn-live-in-production-natanya-app",
+  ];
 
   buttons.forEach((btn) => {
     inView(`${btn}`, () => {
@@ -76,9 +89,14 @@ import ProjectHeader from "./ProjectHeader.astro";
           opacity: 1,
           boxShadow: `10px 11px 6px rgba(0, 0, 0, 0.01), 6px 6px 5px rgba(0, 0, 0, 0.05), 3px 3px 4px rgba(0, 0, 0, 0.09), 1px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1)`,
         },
-        { delay: 0.3, duration: 0.3, easing: defaultEasing }
+        { delay: 0.3, duration: 0.3, type: spring, ease: defaultEasing },
       );
-      animate(`${btn}-arrow`, { transform: "translate(0, 0)", opacity: 1 }, { delay: 0.4 });
+
+      animate(
+        `${btn}-arrow`,
+        { transform: ["translate(-150%, 150%)", "translate(0%, 0%)"], opacity: [0, 1] },
+        { delay: 0.4, ease: "easeInOut" },
+      );
     });
   });
 </script>

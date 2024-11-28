@@ -7,13 +7,13 @@
       <span class="relative z-[1]">Work Experiences</span>
       <span
         style={{ maxWidth: 0 }}
-        class="title-highlight absolute left-0 bottom-0 z-0 hidden h-[15px] w-[250px] max-[350px]:w-[220px] min-[325px]:block sm:bottom-1 sm:w-[320px] lg:bottom-2 lg:h-[20px] lg:w-[500px]"
+        class="title-highlight absolute bottom-0 left-0 z-0 hidden h-[15px] w-[250px] max-[350px]:w-[220px] min-[325px]:block sm:bottom-1 sm:w-[320px] lg:bottom-2 lg:h-[20px] lg:w-[500px]"
       >
       </span>
     </span>
   </h2>
 
-  <p class="max-w-[720px] pt-11 pb-16 text-left text-xl !leading-150 text-sky-200 sm:pb-32 sm:text-center sm:text-2xl">
+  <p class="max-w-[720px] pb-16 pt-11 text-left text-xl !leading-150 text-sky-200 sm:pb-32 sm:text-center sm:text-2xl">
     I have previously worked on freelance web and mobile application development projects as a full-stack developer, and
     held <br class="hidden md:block" /> a full-time job as a front-end developer.
   </p>
@@ -47,12 +47,7 @@
 </div>
 
 <script>
-  import {
-    animate,
-    inView,
-  } from "https://cdn.skypack.dev/pin/motion@v10.14.2-LJwQD7W51KHV0ZIF3ZRz/mode=imports,min/optimized/motion.js";
-
-  const defaultEasing = [0.17, 0.55, 0.55, 1];
+  import { animate, inView } from "motion";
 
   inView("#work-experiences-section .title-highlight", (el) => {
     animate("#work-experiences-section .title-highlight", { maxWidth: "100%" }, { duration: 0.4, delay: 0.3 });
@@ -62,14 +57,15 @@
 
   works.forEach((work) => {
     inView(`#work-${work}`, () => {
-      animate(`#work-${work}`, { transform: "rotateX(0)" }, { duration: 0.7, easing: defaultEasing });
+      animate(`#work-${work}`, { transform: "rotateX(0)" }, { duration: 0.7 });
     });
   });
 </script>
 
 <style>
   .title-highlight {
-    background: radial-gradient(75.3% 65106.57% at 1.06% -86.9%, rgba(14, 165, 233, 0.2) 0%, rgba(12, 74, 110, 0) 100%)
+    background:
+      radial-gradient(75.3% 65106.57% at 1.06% -86.9%, rgba(14, 165, 233, 0.2) 0%, rgba(12, 74, 110, 0) 100%)
         /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
       linear-gradient(89.96deg, rgba(14, 165, 233, 0.8) -0.07%, rgba(145, 218, 252, 0) 113.39%);
     transform: rotate(-1.13deg);

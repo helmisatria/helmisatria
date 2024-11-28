@@ -14,12 +14,12 @@ import { Image } from "astro:assets";
 
 <div class="relative">
   <div
+    id={`project-${project}-slider`}
     class="hide-scrollbar project-slider relative z-0 mx-[2px] grid snap-x grid-flow-col overflow-y-hidden pl-5 sm:pl-10 lg:pl-16"
   >
     {
       images.map((image) => (
         <div
-          style={{ transform: "translateX(100px)" }}
           class={
             "w-[86vw] max-w-[86vw] snap-center py-10 pr-5 sm:w-[484px] sm:max-w-none sm:py-16" +
             ` project-slider-item-${project}`
@@ -52,7 +52,11 @@ import { Image } from "astro:assets";
   }
 
   img {
-    box-shadow: 14px 15px 8px rgba(160, 171, 176, 0.01), 8px 8px 7px rgba(160, 171, 176, 0.05),
-      4px 4px 5px rgba(160, 171, 176, 0.09), 1px 1px 3px rgba(160, 171, 176, 0.1), 0px 0px 0px rgba(160, 171, 176, 0.1);
+    box-shadow:
+      14px 15px 8px rgba(160, 171, 176, 0.01),
+      8px 8px 7px rgba(160, 171, 176, 0.05),
+      4px 4px 5px rgba(160, 171, 176, 0.09),
+      1px 1px 3px rgba(160, 171, 176, 0.1),
+      0px 0px 0px rgba(160, 171, 176, 0.1);
   }
 </style>

@@ -1,6 +1,7 @@
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 import { BLOCKS, MARKS, type Document } from "@contentful/rich-text-types";
-import contentful, { type Asset, type EntryFieldTypes } from "contentful";
+import * as contentful from "contentful";
+import { type Asset, type EntryFieldTypes } from "contentful";
 import { marked } from "marked";
 import { codeToHtml, createHighlighter } from "shiki";
 
