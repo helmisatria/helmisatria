@@ -22,6 +22,27 @@ export const Route = createRootRoute({
       { name: "theme-color", content: "#f7f6f2" },
     ],
     links: [
+      {
+        rel: "preload",
+        href: "/fonts/geist/Geist.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: "/fonts/geist/GeistMono.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
+      {
+        rel: "preload",
+        href: "/fonts/geist/GeistPixel-Square.woff2",
+        as: "font",
+        type: "font/woff2",
+        crossOrigin: "anonymous",
+      },
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico" },
       { rel: "sitemap", href: "/sitemap-index.xml" },

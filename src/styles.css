@@ -929,14 +929,12 @@ footer p {
 @keyframes header-in {
   from {
     opacity: 0;
-    transform: translateY(-8px);
   }
 }
 
 @keyframes content-in {
   from {
     opacity: 0;
-    transform: translateY(10px);
   }
 }
 
