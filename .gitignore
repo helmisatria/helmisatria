@@ -4,6 +4,8 @@ dist/
 
 # dependencies
 node_modules/
+.pnpm-store/
+.wrangler/
 
 # logs
 npm-debug.log*
@@ -19,4 +21,4 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-.vercel
+.vercel/
