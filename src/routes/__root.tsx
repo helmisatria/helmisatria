@@ -14,6 +14,19 @@ const themeScript = `(() => {
   } catch {}
 })();`;
 
+const fontScript = `(() => {
+  if (!document.fonts) return;
+
+  const root = document.documentElement;
+  root.classList.add("fonts-loading");
+
+  Promise.all([
+    document.fonts.load('400 1em "Geist"'),
+    document.fonts.load('400 1em "Geist Mono"'),
+    document.fonts.load('400 1em "Geist Pixel"'),
+  ]).finally(() => root.classList.remove("fonts-loading"));
+})();`;
+
 export const Route = createRootRoute({
   head: () => ({
     meta: [
@@ -58,6 +71,7 @@ function RootDocument({ children }: { children: ReactNode }) {
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: fontScript }} />
       </head>
       <body>
         {children}
