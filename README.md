@@ -1,52 +1,29 @@
-# helmisatria.com
+# Hi, I'm Helmi Satria 👋
 
-Helmi Satria’s personal website and blog, built with TanStack Start and React.
+I like finding the problems that keep coming back and building things that make them go away for good.
 
-The site uses a document-inspired visual system based on the approved markdown portfolio prototype. Blog articles are MDX files stored in `src/content/blog`, so publishing the site does not depend on Contentful or another CMS.
+I'm a software engineer who's most at home in frontend, but I don't stop at the UI — I get involved in product decisions, architecture, and whatever else it takes to ship a complete solution.
 
-## Local development
+## What I do
 
-Use Node.js 22 and pnpm through Corepack:
+Most of my work lives in the platform space: building services and tools around needs shared by more than one team. I work across tribes to understand different constraints, find common ground, and turn them into foundations teams can adopt without starting from zero.
 
-```bash
-corepack pnpm install
-corepack pnpm dev
-```
+Developer experience is a big part of that — shared identity services and their SDKs, project boilerplates, frontend tooling, and internal platforms that replace repetitive work. I make these easier to adopt through reusable components, clear documentation, RFCs, and proofs of concept.
 
-The development server runs on `http://localhost:3000`.
+## Products I've built
 
-## Checks
+- **[Natauang](https://web.natauang.com)** — a simple expense tracker designed to make recording spending quick. Works in the browser, supports offline use, and keeps data in sync across devices.
+- **[Natatoko](https://natatoko.com)** — a tool for creating a customizable online store without starting from zero. Covers storefront setup, products, orders, design changes, and business reporting.
 
-```bash
-corepack pnpm typecheck
-corepack pnpm build
-```
+## How I work
 
-The production build regenerates the sitemap, then prerenders the homepage, blog index, and every linked blog article.
+I start from the problem, not the job title. Sometimes the fix is an SDK, sometimes a service, a component, a quick script, or just better docs. What matters to me is that someone else's day gets a little easier because of it.
 
-## Deployment
+## Contact
 
-The project is configured for Cloudflare Workers:
+Have a problem that keeps coming back? Tell me about it.
 
-```bash
-corepack pnpm deploy
-```
-
-Before the first deployment, connect the existing `helmisatria.com` domain to the Worker. The repository does not change DNS or deploy automatically.
-
-## Content and analytics
-
-- The original 11 blog articles keep their existing `/blog/<slug>` URLs.
-- `/belajar` and the legacy `/Belajar` URL remain available.
-- The blog index, article count, routes, and sitemap are generated from each article's frontmatter.
-- PostHog is the only analytics integration. It loads after the main page becomes idle.
-
-## Writing a blog post
-
-Create a draft with:
-
-```bash
-corepack pnpm blog:new "My article title"
-```
-
-This creates `src/content/blog/my-article-title.mdx`. Fill in the description, dates, and tags in the frontmatter, then write the article with Markdown below it. Set `draft: false` when it is ready to publish. Drafts are visible locally and excluded from production builds and the sitemap.
+- Website: [helmisatria.com](https://helmisatria.com)
+- Email: [satriahelmi@gmail.com](mailto:satriahelmi@gmail.com)
+- LinkedIn: [linkedin.com/in/helmisatria](https://www.linkedin.com/in/helmisatria/)
+- X / Twitter: [@helmisatria_](https://x.com/helmisatria_)
