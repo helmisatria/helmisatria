@@ -1,0 +1,74 @@
+---
+title: "Cara Crawl/Mendapatkan Data Twitter dengan Filter Waktu dan Lainnya"
+description: "Gimana caranya dapetin data tweet dengan menggunakan filter jangka waktu dan lainnya?"
+publishedAt: "2024-07-19"
+updatedAt: "2024-07-19"
+tags:
+  - "data"
+draft: false
+---
+
+Halo, teman-teman! Hari ini kita akan membahas cara menarik data dari Twitter menggunakan filter waktu dan jenis filter lainnya. Teknik ini sangat berguna untuk penelitian, skripsi, atau proyek kalian yang membutuhkan data Twitter yang spesifik.
+
+## Memanfaatkan Advanced Search Twitter
+
+Langkah pertama kita adalah menggunakan Advanced Search Twitter. Fitur ini memungkinkan kita untuk mencari tweet berdasarkan berbagai kriteria seperti waktu, bahasa, dan akun tertentu.
+
+Contoh pencarian:
+
+```
+gibran since:2023-04-01 until:2024-04-01 lang:id
+```
+
+Pencarian ini akan menampilkan tweet tentang Gibran dalam bahasa Indonesia dari April 2023 hingga April 2024.
+
+## Menggunakan Tweet Harvest untuk Crawling
+
+Setelah menemukan query yang tepat, kita akan menggunakan Tweet Harvest untuk mengambil datanya secara otomatis. Berikut contoh scriptnya:
+
+```
+filename = 'gibran.csv'
+search_keyword = 'gibran since:2023-04-01 until:2024-04-01 lang:id'
+limit = 100
+
+!npx -y tweet-harvest@2.6.1 -o "{filename}" -s "{search_keyword}" --tab "LATEST" -l {limit} --token {twitter_auth_token}
+```
+
+Script ini akan mengambil 100 tweet terbaru yang sesuai dengan kriteria pencarian kita.
+
+## Tips Query Pencarian yang Efektif
+
+Berikut beberapa tips untuk membuat query pencarian yang lebih efektif:
+
+- **Filter Waktu**: Gunakan `since:` dan `until:` untuk menentukan rentang waktu.
+- **Filter Bahasa**: Tambahkan `lang:id` untuk tweets berbahasa Indonesia.
+- **Pencarian dari Akun Tertentu**: Gunakan `from:username`.
+- **Pengecualian Kata**: Gunakan `-` sebelum kata yang ingin dikecualikan.
+
+### Contoh query lainnya:
+
+- `#pemilu2024 since:2024-01-01 until:2024-02-14 lang:id`
+- `"belajar coding" from:hacktiv8id`
+- `kuliah online -webinar since:2023-09-01`
+
+## Pertanyaan yang Sering Diajukan (FAQ)
+
+> **Q:** Berapa banyak tweet yang bisa saya ambil?
+>
+> **A:** Jumlahnya bisa diatur sesuai kebutuhan kamu dengan mengubah nilai 'limit' pada script.
+
+> **Q:** Apakah saya perlu kemampuan coding yang tinggi?
+>
+> **A:** Tidak, pengetahuan dasar sudah cukup untuk menggunakan tool ini.
+
+> **Q:** Apakah data yang diambil real-time?
+>
+> **A:** Ya, data yang diambil adalah data terbaru sesuai dengan kriteria pencarian kamu.
+
+## Penutup
+
+Dengan teknik ini, kamu bisa mendapatkan data Twitter yang relevan untuk keperluan penelitian atau proyek kamu. Ingat, kualitas data sangat penting untuk hasil analisis yang baik.
+
+Untuk praktek langsung, kamu bisa menggunakan Google Colab yang sudah saya siapkan di [sini](https://colab.research.google.com/drive/1U3rxqHZPsuLklzRLQnshJZmQXYDfQoc_?usp=sharing). Tinggal copy-paste script yang sudah diberikan dan jalankan!
+
+Semoga artikel ini membantu, teman-teman! Jika masih ada yang kurang jelas, jangan ragu untuk bertanya. Selamat mencoba dan sukses untuk proyek kalian!

@@ -1,18 +1,52 @@
-# Helmi Satria - Full-stack Developer
+# helmisatria.com
 
-A happy full-stack developer who strives to help others grow in web development 🤝
+Helmi Satria’s personal website and blog, built with TanStack Start and React.
 
-I have worked on a variety of projects, from MVPs to full-scale applications. I have also held various positions in the web and mobile application development industry and have a lot of experience in the field.
+The site uses a document-inspired visual system based on the approved markdown portfolio prototype. Blog articles are MDX files stored in `src/content/blog`, so publishing the site does not depend on Contentful or another CMS.
 
-Feel free to contact me if you need any help with your web development projects. I'm always willing to serve as a mentor on specific technologies and to help teams achieve success.
+## Local development
 
-Check all of my past projects and complete experience on [https://helmisatria.com](https://helmisatria.com)
+Use Node.js 22 and pnpm through Corepack:
 
-## About my personal website
+```bash
+corepack pnpm install
+corepack pnpm dev
+```
 
-It built using Astro and design it using Figma.
+The development server runs on `http://localhost:3000`.
 
-- Figma design: [Figma Design](https://www.figma.com/file/2CvdoVs7fObbeotTtRSWhu/Publicly-Shared---helmisatria.com?type=design&node-id=0%3A1&t=Yv66ybuy1jjjlhlV-1)
-- Deployed on Cloudflare Pages: [https://helmisatria.com](https://helmisatria.com)
+## Checks
 
-You can also follow my journey on Twitter @helmisatria\_ 👋
+```bash
+corepack pnpm typecheck
+corepack pnpm build
+```
+
+The production build regenerates the sitemap, then prerenders the homepage, blog index, and every linked blog article.
+
+## Deployment
+
+The project is configured for Cloudflare Workers:
+
+```bash
+corepack pnpm deploy
+```
+
+Before the first deployment, connect the existing `helmisatria.com` domain to the Worker. The repository does not change DNS or deploy automatically.
+
+## Content and analytics
+
+- The original 11 blog articles keep their existing `/blog/<slug>` URLs.
+- `/belajar` and the legacy `/Belajar` URL remain available.
+- The blog index, article count, routes, and sitemap are generated from each article's frontmatter.
+- PostHog is the only analytics integration. It loads after the main page becomes idle.
+
+## Writing a blog post
+
+Create a draft with:
+
+```bash
+corepack pnpm blog:new "My article title"
+```
+
+This creates `src/content/blog/my-article-title.mdx`. Fill in the description, dates, and tags in the frontmatter, then write the article with Markdown below it. Set `draft: false` when it is ready to publish. Drafts are visible locally and excluded from production builds and the sitemap.
