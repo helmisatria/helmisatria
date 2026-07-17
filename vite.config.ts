@@ -92,6 +92,8 @@ export default defineConfig({
         crawlLinks: true,
         failOnError: true,
         filter: ({ path }) => !path.includes("#"),
+        retryCount: 2,
+        retryDelay: 500,
       },
     }),
     react({ include: /\.(jsx|js|mdx|tsx|ts)$/ }),
