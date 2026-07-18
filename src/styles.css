@@ -1022,6 +1022,22 @@ footer p {
 }
 
 @media (max-width: 660px) {
+  .status-dot {
+    width: 8px;
+    height: 8px;
+    isolation: isolate;
+    transform: translateZ(0);
+  }
+
+  .status-dot::after {
+    z-index: -1;
+    border: 0;
+    background: #4d8c55;
+    backface-visibility: hidden;
+    transform-origin: center;
+    will-change: opacity, transform;
+  }
+
   .document {
     width: min(calc(100% - 2rem), 43rem);
   }

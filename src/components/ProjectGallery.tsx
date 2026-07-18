@@ -5,6 +5,7 @@ import {
   useState,
   type CSSProperties,
   type KeyboardEvent,
+  type PointerEvent,
 } from "react";
 
 type ProjectGalleryProps = {
@@ -36,6 +37,7 @@ export function ProjectGallery({
   const closeTimer = useRef<number | undefined>(undefined);
   const menuRef = useRef<HTMLDivElement>(null);
   const previewRef = useRef<HTMLDivElement>(null);
+  const pointerType = useRef<string | null>(null);
   const triggerRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   const positionPreview = useCallback((index: number) => {
@@ -95,6 +97,20 @@ export function ProjectGallery({
 
   useEffect(() => () => window.clearTimeout(closeTimer.current), []);
 
+  useEffect(() => {
+    function closeOnOutsidePress(event: globalThis.PointerEvent) {
+      if (menuRef.current?.contains(event.target as Node)) {
+        return;
+      }
+
+      window.clearTimeout(closeTimer.current);
+      setActiveIndex(null);
+    }
+
+    document.addEventListener("pointerdown", closeOnOutsidePress);
+    return () => document.removeEventListener("pointerdown", closeOnOutsidePress);
+  }, []);
+
   function closePreview() {
     closeTimer.current = window.setTimeout(() => setActiveIndex(null), 120);
   }
@@ -110,6 +126,27 @@ export function ProjectGallery({
       window.clearTimeout(closeTimer.current);
       setActiveIndex(null);
     }
+  }
+
+  function handlePointerEnter(event: PointerEvent<HTMLButtonElement>, index: number) {
+    if (event.pointerType !== "touch") {
+      showPreview(index);
+    }
+  }
+
+  function handlePointerDown(event: PointerEvent<HTMLButtonElement>) {
+    pointerType.current = event.pointerType;
+  }
+
+  function handleClick(index: number) {
+    if (pointerType.current === "touch" && activeIndex === index) {
+      window.clearTimeout(closeTimer.current);
+      setActiveIndex(null);
+    } else {
+      showPreview(index);
+    }
+
+    pointerType.current = null;
   }
 
   const previewStyle = {
@@ -162,9 +199,14 @@ export function ProjectGallery({
               triggerRefs.current[index] = element;
             }}
             type="button"
-            onPointerEnter={() => showPreview(index)}
-            onFocus={() => showPreview(index)}
-            onClick={() => showPreview(index)}
+            onPointerEnter={(event) => handlePointerEnter(event, index)}
+            onPointerDown={handlePointerDown}
+            onFocus={() => {
+              if (pointerType.current !== "touch") {
+                showPreview(index);
+              }
+            }}
+            onClick={() => handleClick(index)}
             aria-label={`Preview ${project} screen ${index + 1} of ${images.length}`}
           >
             <img
