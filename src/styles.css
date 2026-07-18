@@ -1021,7 +1021,7 @@ footer p {
   }
 }
 
-@media (hover: none) and (pointer: coarse) {
+@media (max-width: 660px) {
   .status-dot {
     width: 8px;
     height: 8px;
@@ -1037,9 +1037,7 @@ footer p {
     transform-origin: center;
     will-change: opacity, transform;
   }
-}
 
-@media (max-width: 660px) {
   .document {
     width: min(calc(100% - 2rem), 43rem);
   }
