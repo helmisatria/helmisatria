@@ -84,9 +84,9 @@ function AnimatedSectionHeading({ children, id }: { children: ReactNode; id: str
 export const Route = createFileRoute("/")({
   head: () =>
     createSeoHead({
-      title: "Helmi Satria — Software Engineer",
+      title: "Helmi Satria, Product Engineer",
       description:
-        "Helmi Satria is a software engineer who builds tools and products that make repeated work easier and faster.",
+        "Helmi Satria, Product Engineer at INA Digital Edu. Internal products, identity services, QA automation, design systems, and shared tools.",
       path: "/",
     }),
   component: HomePage,
@@ -103,11 +103,12 @@ function HomePage() {
             <span aria-hidden="true">#</span> helmi satria
           </h1>
           <p className="lead">
-            I turn recurring problems into shared foundations that help teams move faster.
+            I build products and improve the tools teams use every day.
           </p>
           <p>
-            I’m a software engineer with 8 years of experience. Frontend is my strongest discipline, but I work across
-            product, architecture, and implementation to solve problems end to end.
+            Product Engineer with 8 years of experience and a frontend background. At INA Digital Edu, my work
+            covers internal products, identity services, QA automation, and shared libraries. That includes deciding what to improve,
+            building it, and keeping it working.
           </p>
           <p className="status">
             <span className="status-dot" aria-hidden="true" />
@@ -133,26 +134,23 @@ function HomePage() {
               platform · identity · developer experience
             </m.p>
             <m.h3 variants={revealItem}>
-              <span aria-hidden="true">###</span> Building what teams need in common
+              <span aria-hidden="true">###</span> Shared services and developer tools
             </m.h3>
             <m.p variants={revealItem}>
-              Our platform team builds services and tools around needs shared by more than one team. That means working
-              across product tribes to understand different constraints, find common ground, and create foundations
-              people can adopt without starting from zero.
+              On the platform team, I work out what different product teams need in common and what we can build
+              once for them to share.
             </m.p>
             <m.p variants={revealItem}>
-              Part of my role is helping the team work through service architecture decisions. I dig into the problem,
-              weigh trade-offs across frontend and backend, and help shape the direction before implementation begins.
+              Architecture decisions involve the teams who will use and maintain what we build.
             </m.p>
             <m.p variants={revealItem}>
-              My responsibilities include maintaining our identity provider (IdP), a shared identity service used
-              across tribes, and the authentication SDK that helps services integrate with it. I also contribute to and
-              help manage the E2E boilerplate, CMS boilerplate, and frontend tooling used by teams across the
-              organization.
+              My work includes maintaining QA automation tools for API and web testing, a design system component
+              library, and a shared tooling library. It also covers our identity service, its auth SDK, and tools
+              for content management.
             </m.p>
             <m.p variants={revealItem}>
-              I also make these foundations easier to adopt through reusable components, clear documentation, RFCs,
-              and proofs of concept, so teams can build on them without having to rediscover the same decisions.
+              Reusable components, working examples, and documentation help teams get started and understand our
+              decisions.
             </m.p>
           </m.div>
 
@@ -167,28 +165,69 @@ function HomePage() {
               workflow automation · organizational knowledge
             </m.p>
             <m.h3 variants={revealItem}>
-              <span aria-hidden="true">###</span> Giving time back to the organization
+              <span aria-hidden="true">###</span> Replacing repetitive compliance work
             </m.h3>
             <m.p variants={revealItem}>
-              On my own initiative, I built an internal platform that replaced a repetitive monthly process across the
-              organization—work that previously took every employee roughly 3-5 hours each month.
+              Every employee used to spend roughly 3 to 5 hours a month on repetitive compliance work. I decided to
+              tackle it and built an internal platform to replace that process.
             </m.p>
             <m.p variants={revealItem}>
-              I also build and maintain systems that make the organization easier to navigate. In Backstage, I help
-              people understand services, products, ownership, and dependencies. I support compliance tools used by
-              employee, PMO, and talent teams, and maintain Outline as our internal documentation platform.
+              Backstage is another tool under my care. It helps people find our products and services, who owns
+              them, and how they connect. The work also includes supporting compliance tools for employees, PMO,
+              and talent teams.
+            </m.p>
+          </m.div>
+
+          <m.div
+            className="entry"
+            initial="hidden"
+            variants={staggerContent}
+            viewport={viewport}
+            whileInView="visible"
+          >
+            <m.p className="entry-label" variants={revealItem}>
+              internal products · test case management
+            </m.p>
+            <m.h3 variants={revealItem}>
+              <span aria-hidden="true">###</span> Reworking Kiwi and moving off Xray
+            </m.h3>
+            <m.p variants={revealItem}>
+              Kiwi is our test case management tool. My work includes reworking its interface so teams can find
+              their way around, adding improvements, and fixing problems as they come up.
             </m.p>
             <m.p variants={revealItem}>
-              When we moved from Confluence to Outline, I led the migration while preserving the original document
-              hierarchy, content, and layout, so teams could keep working without losing years of organizational
-              knowledge.
+              I built a way for teams to move from Xray to Kiwi safely on their own. The switch is in progress, and
+              we expect it to lower our software costs.
+            </m.p>
+          </m.div>
+
+          <m.div
+            className="entry"
+            initial="hidden"
+            variants={staggerContent}
+            viewport={viewport}
+            whileInView="visible"
+          >
+            <m.p className="entry-label" variants={revealItem}>
+              internal products · documentation
+            </m.p>
+            <m.h3 variants={revealItem}>
+              <span aria-hidden="true">###</span> Moving our docs to Outline
+            </m.h3>
+            <m.p variants={revealItem}>
+              I led our move from Confluence to Outline. We kept years of docs and their organization intact, and
+              cut our monthly software costs.
+            </m.p>
+            <m.p variants={revealItem}>
+              Ongoing maintenance focuses on bugs, slow scrolling, and confusing navigation as our document
+              collection grows.
             </m.p>
           </m.div>
         </section>
 
         <section id="projects" aria-labelledby="projects-heading">
           <AnimatedSectionHeading id="projects-heading">
-            <span aria-hidden="true">##</span> products I’ve built
+            <span aria-hidden="true">##</span> products I've built
           </AnimatedSectionHeading>
 
           <m.article
@@ -206,8 +245,8 @@ function HomePage() {
               <a href="https://web.natauang.com">web.natauang.com ↗</a>
             </m.div>
             <m.p variants={revealItem}>
-              A simple expense tracker designed to make recording spending quick. It works in the browser, supports
-              offline use, and keeps data in sync across devices.
+              Natauang makes recording expenses quick. It works in the browser, including offline, and syncs your
+              data across devices.
             </m.p>
             <m.div className="project-gallery-motion" variants={revealFade}>
               <ProjectGallery
@@ -234,8 +273,8 @@ function HomePage() {
               <a href="https://natatoko.com">natatoko.com ↗</a>
             </m.div>
             <m.p variants={revealItem}>
-              A tool for creating a customizable online store without starting from zero. It covers storefront setup,
-              products, orders, design changes, and business reporting.
+              Natatoko lets people set up an online store without building one from scratch. They can customize the
+              storefront, manage products and orders, and view business reports.
             </m.p>
             <m.div className="project-gallery-motion" variants={revealFade}>
               <ProjectGallery
@@ -261,7 +300,7 @@ function HomePage() {
             whileInView="visible"
           >
             <m.p className="job-date" variants={revealFromLeft}>
-              2022 — now
+              2022 to now
             </m.p>
             <m.div variants={staggerContent}>
               <m.h3 variants={revealItem}>INA Digital Edu</m.h3>
@@ -269,15 +308,13 @@ function HomePage() {
                 Frontend Software Engineer
               </m.p>
               <m.p variants={revealItem}>
-                I maintain shared identity and developer platforms, help shape service architecture, and collaborate
-                across tribes on tools used beyond a single team. The role combines technical leadership with hands-on
-                frontend and backend work.
+                My responsibilities include building and maintaining Kiwi, Outline, and Backstage, along with QA
+                automation tools for API and web testing. The work also covers our design system component library,
+                shared tooling library, and identity service, including its auth SDK.
               </m.p>
               <m.p variants={revealItem}>
-                I often work on initiatives that span multiple tribes. I work with teams to identify shared needs,
-                navigate architecture trade-offs, and turn recurring problems into foundations multiple products can
-                build on. I stay hands-on through delivery and adoption, whether that requires code, documentation, an
-                RFC, or a proof of concept.
+                The role includes deciding what these tools need and working across frontend and backend to improve
+                them. Guides, proposals, and working examples help teams adopt the changes.
               </m.p>
               <m.p className="note" variants={revealItem}>
                 Performance rating: Exceeds Expectations
@@ -293,7 +330,7 @@ function HomePage() {
             whileInView="visible"
           >
             <m.p className="job-date" variants={revealFromLeft}>
-              2019 — 2022
+              2019 to 2022
             </m.p>
             <m.div variants={staggerContent}>
               <m.h3 variants={revealItem}>Bukalapak</m.h3>
@@ -301,8 +338,8 @@ function HomePage() {
                 Frontend Developer
               </m.p>
               <m.p variants={revealItem}>
-                I worked on virtual products, product performance, and reusable frontend foundations. The role helped me
-                grow as an individual contributor, and included building a configurable internal transaction tool that
+                At Bukalapak, my work covered virtual products, performance, and reusable frontend code. It helped
+                me grow as an individual contributor. One project was a configurable internal transaction tool that
                 other teams could extend.
               </m.p>
               <m.p className="note" variants={revealItem}>
@@ -323,12 +360,12 @@ function HomePage() {
             <span aria-hidden="true">##</span> how I work
           </m.h2>
           <m.p variants={revealItem}>
-            Frontend is my strongest area, but I care more about solving the whole problem than staying inside a narrow
-            job boundary.
+            I move quickly from a problem to working software, and stay involved after it ships. That means
+            deciding what needs to change and taking responsibility for keeping the product useful and working.
           </m.p>
           <m.p variants={revealItem}>
-            The answer might be an SDK, a service, a component, a script, or clearer documentation. I enjoy work that
-            helps other people move faster and spend less time on repeated tasks.
+            Frontend is my strongest area, but the work goes wherever the product needs it. Sometimes that means
+            a backend change. Sometimes a small script or a better guide is enough.
           </m.p>
         </m.section>
 

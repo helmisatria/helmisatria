@@ -13,7 +13,7 @@ const dateFormatter = new Intl.DateTimeFormat("en", {
 export const Route = createFileRoute("/blog/")({
   head: () =>
     createSeoHead({
-      title: "Blog — Helmi Satria",
+      title: "Blog, Helmi Satria",
       description: "Notes and practical guides from Helmi Satria about software, data, and building useful tools.",
       path: "/blog/",
     }),
@@ -29,7 +29,7 @@ function BlogIndexPage() {
           <h1 id="blog-heading">
             <span aria-hidden="true">#</span> blog
           </h1>
-          <p className="lead">Practical notes from things I built, tested, or had to figure out.</p>
+          <p className="lead">Notes on what I've built and what I learned along the way.</p>
           <p>Mostly software and data tutorials.</p>
         </section>
 
