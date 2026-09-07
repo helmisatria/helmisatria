@@ -86,7 +86,7 @@ export const Route = createFileRoute("/")({
     createSeoHead({
       title: "Helmi Satria, Product Engineer",
       description:
-        "Helmi Satria, Product Engineer at INA Digital Edu. Internal products, identity services, QA automation, design systems, and shared tools.",
+        "Product Engineer on the platform team at INA Digital Edu. I build products and improve the tools teams use every day.",
       path: "/",
     }),
   component: HomePage,

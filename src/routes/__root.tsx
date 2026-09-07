@@ -1,7 +1,7 @@
+import { NotFoundPage } from "#/components/NotFoundPage";
+import { PostHog } from "#/components/PostHog";
 import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router";
 import type { ReactNode } from "react";
-import { PostHog } from "#/components/PostHog";
-import { NotFoundPage } from "#/components/NotFoundPage";
 import appCss from "../styles.css?url";
 
 const themeScript = `(() => {
@@ -57,7 +57,7 @@ export const Route = createRootRoute({
         crossOrigin: "anonymous",
       },
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.ico" },
+      { rel: "icon", type: "image/jpeg", href: "/images/avatar.jpg" },
       { rel: "sitemap", href: "/sitemap-index.xml" },
     ],
   }),
